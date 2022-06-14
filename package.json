@@ -3,7 +3,7 @@
   "author": "Nikita Gaidakov",
   "version": "0.0.0",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development vite",
+    "dev": "NODE_ENV=development vite",
     "build": "vite build",
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -15,7 +15,6 @@
     "@types/jest": "^26.0.21",
     "autoprefixer": "^10.2.5",
     "babel-jest": "^26.6.3",
-    "cross-env": "^7.0.3",
     "cssnano": "^5.0.6",
     "jest": "^26.6.3",
     "postcss": "^8.4.6",

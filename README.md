@@ -1,34 +1,25 @@
-STTV - Svelte / Typescript / Tailwind / Vite Template
-=====================================================
+# HCN
 
-Get up and running with Svelte, Typescript, Tailwind and Vite. Also includes testing setup using Jest.
+Project for Holocaust Centre North, using Svelte and Tailwind.
 
-Installation
-------------
+### Install
 
-```
-npx degit "srmullen/sttv#main" my_app
-cd my_app
-npm install
-```
-
-Scripts
--------
+`pnpm i`
 
 ### Start a development server
 
-`npm run dev`
+`pnpm dev`
 
 ### Run tests
 
-`npm run test`
+`pnpm test`
 or
-`npm run test:watch`
+`pnpm test:watch`
 
 ### Build the application
 
-`npm run build`
+`pnpm build`
 
-### Serve the application
+### Preview the build
 
-`npm run serve`
+`pnpm preview`

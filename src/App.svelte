@@ -1,6 +1,6 @@
 <script lang="ts">
-  import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
+import logo from './assets/svelte.png'
+import Counter from './lib/Counter.svelte'
 </script>
 
 <main class="text-center p-4 mx-0">
@@ -28,15 +28,16 @@
 </main>
 
 <style>
-  :root {
-    --svelte-rgb: 255, 62, 0;
-  }
+:root {
+  --svelte-rgb: 255, 62, 0;
+}
 
-  h1 {
-    color: rgb(var(--svelte-rgb));
-  }
+h1 {
+  color: rgb(var(--svelte-rgb));
+}
 </style>
 
-<!-- <style global style lang="postcss">
-  
-</style> -->
+<!--
+<style global style lang="postcss">
+</style>
+-->

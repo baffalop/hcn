@@ -1,7 +1,7 @@
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   content: [
-    "./src/**/*.{html,js,svelte,ts}",
+    './src/**/*.{html,js,svelte,ts}',
   ],
   theme: {
     extend: {
@@ -9,4 +9,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}

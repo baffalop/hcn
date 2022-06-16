@@ -1,5 +1,5 @@
-import './hmr';
-import './main.css';
+import './hmr'
+import './main.css'
 import App from './App.svelte'
 
 const app = new App({

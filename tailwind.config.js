@@ -5,7 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif']
+      fontFamily: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif'],
+      colors: {
+        svelte: 'rgb(255, 62, 0)'
+      },
     },
   },
   plugins: [],

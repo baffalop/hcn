@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, defineProps } from 'vue'
+import { delta } from '../utils/math'
 
 const props = defineProps<{
   time: number
@@ -15,7 +16,7 @@ const emit = defineEmits<{
 const resolution = computed(() => props.resolution ?? 15)
 const max = computed(() => Math.floor(props.duration))
 const gap = computed(() => props.duration / resolution.value)
-const atEnd = computed(() => Math.abs(max.value - current.value) < 0.1)
+const atEnd = computed(() => delta(max.value, current.value) < 0.1)
 
 const points = computed(
   () => range(resolution.value).map(scaleToMax)
@@ -39,7 +40,7 @@ function pointClasses (point: number): Record<string, boolean> {
   return {
     'bg-neutral-100': hasPlayed,
     'bg-neutral-500': !hasPlayed,
-    'scale-[2]': !!props.playing && hasPlayed && Math.abs(point - current.value) <= gap.value,
+    'scale-[2]': !!props.playing && hasPlayed && delta(point, current.value) <= gap.value,
   }
 }
 </script>

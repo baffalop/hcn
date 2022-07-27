@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import { ref, computed, defineProps } from 'vue'
+import { computed, defineProps } from 'vue'
 
 const props = defineProps<{
   modelValue: number,
   resolution?: number
+}>()
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: number): void
 }>()
 
 const resolution = computed(() => props.resolution ?? 15)
@@ -11,7 +15,10 @@ const points = computed(
   () => [...Array(resolution.value).keys()]
 )
 
-const current = ref(0)
+const current = computed({
+  get: () => props.modelValue,
+  set: (value: number) => emit('update:modelValue', value)
+})
 </script>
 
 <template>
@@ -25,9 +32,9 @@ const current = ref(0)
 
     <input
       type="range"
+      v-model.number="current"
       :max="resolution"
       step="0.1"
-      v-model.number="current"
       class="absolute inset-0 cursor-pointer
         opacity-0 appearance-none focus:outline-none focus:shadow-none"
     >

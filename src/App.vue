@@ -1,11 +1,16 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import { ref } from 'vue'
+
 import Timeline from './components/Timeline.vue'
+
+const time = ref(0)
 </script>
 
 <template>
-  <Timeline :resolution="25" />
+  <div class="flex items-center gap-4">
+    <Timeline :resolution="25" v-model="time" />
+    <span>{{ time }}</span>
+  </div>
 </template>
 
 <style scoped>

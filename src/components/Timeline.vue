@@ -2,25 +2,25 @@
 import { computed, defineProps } from 'vue'
 
 const props = defineProps<{
-  modelValue: number,
+  time: number,
+  duration: number,
   resolution?: number,
-  max?: number
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: number): void
+  (e: 'update:time', value: number): void
 }>()
 
 const resolution = computed(() => props.resolution ?? 15)
-const max = computed(() => props.max ?? 100)
+const max = computed(() => Math.floor(props.duration))
 
 const points = computed(
   () => range(resolution.value).map(scaleToMax)
 )
 
 const current = computed({
-  get: () => props.modelValue,
-  set: (value: number) => emit('update:modelValue', value)
+  get: () => props.time,
+  set: (value: number) => emit('update:time', value)
 })
 
 function range (length: number): number[] {

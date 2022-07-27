@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineProps, defineEmits, Ref, watch } from 'vue'
+import { ref, Ref, watch } from 'vue'
 import { delta } from '../utils/math'
 
 const props = defineProps<{

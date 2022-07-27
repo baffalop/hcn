@@ -13,8 +13,3 @@ body {
 a {
   @apply font-medium text-blue-400 hover:text-blue-300;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}

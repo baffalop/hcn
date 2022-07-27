@@ -5,6 +5,7 @@ const props = defineProps<{
   time: number,
   duration: number,
   resolution?: number,
+  playing?: boolean,
 }>()
 
 const emit = defineEmits<{
@@ -13,6 +14,8 @@ const emit = defineEmits<{
 
 const resolution = computed(() => props.resolution ?? 15)
 const max = computed(() => Math.floor(props.duration))
+const gap = computed(() => props.duration / resolution.value)
+const atEnd = computed(() => Math.abs(max.value - current.value) < 0.1)
 
 const points = computed(
   () => range(resolution.value).map(scaleToMax)
@@ -30,6 +33,15 @@ function range (length: number): number[] {
 function scaleToMax (value: number): number {
   return (value * max.value) / (resolution.value - 1)
 }
+
+function pointClasses (point: number): Record<string, boolean> {
+  const hasPlayed = atEnd.value || point < current.value
+  return {
+    'bg-neutral-100': hasPlayed,
+    'bg-neutral-500': !hasPlayed,
+    'scale-[2]': !!props.playing && hasPlayed && Math.abs(point - current.value) <= gap.value,
+  }
+}
 </script>
 
 <template>
@@ -37,8 +49,9 @@ function scaleToMax (value: number): number {
     <div
       v-for="point in points"
       :key="point"
-      class="h-1 w-1 min-w-1 rounded-full"
-      :class="point < current || current === max ? 'bg-neutral-100' : 'bg-neutral-500'"
+      class="h-1 w-1 min-w-1 rounded-full
+        transform transition-transform duration-300 ease-out"
+      :class="pointClasses(point)"
     ></div>
 
     <input

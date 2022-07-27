@@ -23,6 +23,7 @@ function updateTime (t: number): void {
       v-model:time="time"
       :resolution="34"
       :duration="duration"
+      :playing="playing"
       @update:time="updateTime"
     />
   </div>

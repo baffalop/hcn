@@ -15,15 +15,21 @@ const resolution = computed(() => props.resolution ?? 15)
 const max = computed(() => props.max ?? 100)
 
 const points = computed(
-  () => [...Array(resolution.value).keys()].map(
-    i => (i * max.value) / resolution.value
-  )
+  () => range(resolution.value).map(scaleToMax)
 )
 
 const current = computed({
   get: () => props.modelValue,
   set: (value: number) => emit('update:modelValue', value)
 })
+
+function range (length: number): number[] {
+  return [...Array(length).keys()]
+}
+
+function scaleToMax (value: number): number {
+  return (value * max.value) / (resolution.value - 1)
+}
 </script>
 
 <template>
@@ -32,7 +38,7 @@ const current = computed({
       v-for="point in points"
       :key="point"
       class="h-1 w-1 min-w-1 rounded-full"
-      :class="point < current ? 'bg-neutral-100' : 'bg-neutral-500'"
+      :class="point < current || current === max ? 'bg-neutral-100' : 'bg-neutral-500'"
     ></div>
 
     <input

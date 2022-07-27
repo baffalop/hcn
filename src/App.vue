@@ -11,7 +11,11 @@ const time = ref(0)
 
 <template>
   <div class="flex items-center gap-4">
-    <button class="text-lg cursor-pointer" @click="playing = !playing">▶</button>
+    <button class="text-lg cursor-pointer w-6" @click="playing = !playing">
+      <template v-if="playing">❚❚</template>
+      <template v-else>▶</template>
+    </button>
+
     <Timeline
       v-model:time="time"
       :resolution="34"

@@ -33,6 +33,10 @@ function updateTime (): void {
 function updateDuration (): void {
   if (audio.value) emit('update:duration', audio.value.duration)
 }
+
+function notPlaying (): void {
+  emit('update:playing', false)
+}
 </script>
 
 <template>
@@ -41,6 +45,7 @@ function updateDuration (): void {
     :src="src"
     @timeupdate="updateTime"
     @durationchange="updateDuration"
+    @ended="notPlaying"
   />
 </template>
 

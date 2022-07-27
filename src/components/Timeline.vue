@@ -2,10 +2,10 @@
 import { computed, defineProps } from 'vue'
 
 const props = defineProps<{
-  time: number,
-  duration: number,
-  resolution?: number,
-  playing?: boolean,
+  time: number
+  duration: number
+  resolution?: number
+  playing?: boolean
 }>()
 
 const emit = defineEmits<{

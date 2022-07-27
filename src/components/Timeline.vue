@@ -3,7 +3,8 @@ import { computed, defineProps } from 'vue'
 
 const props = defineProps<{
   modelValue: number,
-  resolution?: number
+  resolution?: number,
+  max?: number
 }>()
 
 const emit = defineEmits<{
@@ -11,8 +12,12 @@ const emit = defineEmits<{
 }>()
 
 const resolution = computed(() => props.resolution ?? 15)
+const max = computed(() => props.max ?? 100)
+
 const points = computed(
-  () => [...Array(resolution.value).keys()]
+  () => [...Array(resolution.value).keys()].map(
+    i => (i * max.value) / resolution.value
+  )
 )
 
 const current = computed({
@@ -33,7 +38,7 @@ const current = computed({
     <input
       type="range"
       v-model.number="current"
-      :max="resolution"
+      :max="max"
       step="0.1"
       class="absolute inset-0 cursor-pointer
         opacity-0 appearance-none focus:outline-none focus:shadow-none"

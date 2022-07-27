@@ -8,8 +8,8 @@ const time = ref(0)
 
 <template>
   <div class="flex items-center gap-4">
-    <Timeline :resolution="25" v-model="time" />
-    <span>{{ time }}</span>
+    <Timeline v-model="time" :resolution="26" :max="200" />
+    <span class="w-8">{{ time.toFixed(1) }}</span>
   </div>
 </template>
 

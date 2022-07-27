@@ -11,8 +11,16 @@ const audio: Ref<HTMLAudioElement|null> = ref(null)
 
 watch(playing, playing => playing ? audio.value?.play() : audio.value?.pause())
 
-function updateTime (t: number): void {
+function seek (t: number): void {
   if (audio.value) audio.value.currentTime = t
+}
+
+function updateTime (): void {
+  if (audio.value) time.value = audio.value.currentTime
+}
+
+function updateDuration (): void {
+  if (audio.value) duration.value = audio.value.duration
 }
 </script>
 
@@ -24,16 +32,16 @@ function updateTime (t: number): void {
       :resolution="34"
       :duration="duration"
       :playing="playing"
-      @update:time="updateTime"
+      @update:time="seek"
     />
   </div>
 
   <audio
     ref="audio"
     src="/example.mp3"
-    preload
-    @timeupdate="time = $event.target.currentTime"
-    @durationchange="duration = $event.target.duration"
+    preload="auto"
+    @timeupdate="updateTime"
+    @durationchange="updateDuration"
   />
 </template>
 

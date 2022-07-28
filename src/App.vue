@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Audio from './components/Audio.vue'
 
-import Timeline from './components/Timeline.vue'
+import Audio from '@components/Audio.vue'
+import Timeline from '@components/Timeline.vue'
 
 const playing = ref(false)
 const duration = ref(1)

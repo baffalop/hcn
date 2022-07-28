@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { delta } from '../utils/math'
+import { delta } from '@/utils/math'
 
 const props = defineProps<{
   time: number

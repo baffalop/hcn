@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import Audio from '@components/Audio.vue'
+import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
 
 const playing = ref(false)
@@ -24,7 +24,8 @@ const time = ref(0)
     />
   </div>
 
-  <Audio
+  <Media
+    type="audio"
     src="/example.mp3"
     preload="auto"
     v-model:time="time"

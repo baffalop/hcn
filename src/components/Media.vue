@@ -3,6 +3,7 @@ import { ref, Ref, watch } from 'vue'
 import { delta } from '@/utils/math'
 
 const props = defineProps<{
+  type: 'audio' | 'video'
   src: string
   playing: boolean
   time: number
@@ -14,24 +15,24 @@ const emit = defineEmits<{
   (e: 'update:duration', duration: number): void
 }>()
 
-const audio: Ref<HTMLAudioElement|null> = ref(null)
+const media: Ref<HTMLMediaElement|null> = ref(null)
 
 watch(() => props.playing, playing => {
-  playing ? audio.value?.play() : audio.value?.pause()
+  playing ? media.value?.play() : media.value?.pause()
 })
 
 watch(() => props.time, (time, oldTime) => {
-  if (audio.value && delta(time, oldTime) > 0.5) {
-    audio.value.currentTime = time
+  if (media.value && delta(time, oldTime) > 0.5) {
+    media.value.currentTime = time
   }
 })
 
 function updateTime (): void {
-  if (audio.value) emit('update:time', audio.value.currentTime)
+  if (media.value) emit('update:time', media.value.currentTime)
 }
 
 function updateDuration (): void {
-  if (audio.value) emit('update:duration', audio.value.duration)
+  if (media.value) emit('update:duration', media.value.duration)
 }
 
 function notPlaying (): void {
@@ -40,8 +41,9 @@ function notPlaying (): void {
 </script>
 
 <template>
-  <audio
-    ref="audio"
+  <component
+    :is="type"
+    ref="media"
     :src="src"
     @timeupdate="updateTime"
     @durationchange="updateDuration"

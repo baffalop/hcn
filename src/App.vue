@@ -25,9 +25,11 @@ const time = ref(0)
   </div>
 
   <Media
-    type="audio"
-    src="/example.mp3"
+    type="video"
+    src="/with-audio.mp4"
     preload="auto"
+    playsinline
+    class="fixed inset-0 -z-10 w-screen h-screen object-fill"
     v-model:time="time"
     v-model:playing="playing"
     @update:duration="duration = $event"

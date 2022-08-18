@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "vite",
+    "start": "vite --host",
     "check": "vue-tsc --noEmit",
     "build": "pnpm check && vite build",
     "preview": "vite preview"

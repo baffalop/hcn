@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, Ref, watch } from 'vue'
+import { computed, ref, Ref, watch } from 'vue'
 import { delta } from '@/utils/math'
 
 const props = defineProps<{
@@ -7,7 +7,10 @@ const props = defineProps<{
   src: string
   playing: boolean
   time: number
+  loop?: boolean
 }>()
+
+const loop = computed(() => props?.loop ?? false)
 
 const emit = defineEmits<{
   (e: 'update:playing', playing: boolean): void
@@ -35,7 +38,11 @@ function updateDuration (): void {
   if (media.value) emit('update:duration', media.value.duration)
 }
 
-function notPlaying (): void {
+function onEnded (): void {
+  if (loop) {
+    return
+  }
+
   emit('update:playing', false)
 }
 </script>
@@ -45,9 +52,10 @@ function notPlaying (): void {
     :is="type"
     ref="media"
     :src="src"
+    :loop="loop"
     @timeupdate="updateTime"
     @durationchange="updateDuration"
-    @ended="notPlaying"
+    @ended="onEnded"
   />
 </template>
 

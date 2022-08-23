@@ -29,7 +29,7 @@ const time = ref(0)
     src="/with-audio.mp4"
     preload="auto"
     playsinline
-    class="fixed inset-0 -z-10 w-screen h-screen object-fill"
+    class="fixed inset-0 -z-10 w-screen h-screen object-cover"
     v-model:time="time"
     v-model:playing="playing"
     @update:duration="duration = $event"

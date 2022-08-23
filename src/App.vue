@@ -10,7 +10,7 @@ const time = ref(0)
 </script>
 
 <template>
-  <div class="flex items-center gap-4">
+  <div class="flex items-center gap-4 w-3/4 max-w-lg">
     <button class="text-lg cursor-pointer w-6" @click="playing = !playing">
       <template v-if="playing">❚❚</template>
       <template v-else>▶</template>
@@ -21,6 +21,7 @@ const time = ref(0)
       :resolution="34"
       :duration="duration"
       :playing="playing"
+      class="flex-grow"
     />
   </div>
 

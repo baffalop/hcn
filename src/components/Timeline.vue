@@ -46,7 +46,7 @@ function pointClasses (point: number): Record<string, boolean> {
 </script>
 
 <template>
-  <div class="relative flex items-center justify-between gap-3 h-3">
+  <div class="relative flex items-center justify-between h-3">
     <div
       v-for="point in points"
       :key="point"

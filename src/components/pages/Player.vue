@@ -23,18 +23,18 @@ const time = ref(0)
       :playing="playing"
       class="flex-grow"
     />
-  </div>
 
-  <Media
-    type="video"
-    src="/with-audio.mp4"
-    preload="auto"
-    playsinline
-    class="fixed inset-0 -z-10 w-screen h-screen object-cover"
-    v-model:time="time"
-    v-model:playing="playing"
-    @update:duration="duration = $event"
-  />
+    <Media
+      type="video"
+      src="/with-audio.mp4"
+      preload="auto"
+      playsinline
+      class="fixed inset-0 -z-10 w-screen h-screen object-cover"
+      v-model:time="time"
+      v-model:playing="playing"
+      @update:duration="duration = $event"
+    />
+  </div>
 </template>
 
 <style scoped>

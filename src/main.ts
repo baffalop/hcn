@@ -4,10 +4,12 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import './tailwind.css'
 import './styles.css'
 import App from '@/App.vue'
-import Player from '@components/Player.vue'
+import Index from '@components/pages/Index.vue'
+import Player from '@components/pages/Player.vue'
 
 const routes: RouteRecordRaw[] = [
-  { path: '/', component: Player }
+  { path: '/', name: 'index', component: Index },
+  { path: '/player', name: 'player', component: Player },
 ]
 
 const app = createApp(App)

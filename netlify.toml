@@ -1,2 +1,5 @@
 [build.environment]
-  NPM_FLAGS="--prefix=/"
+  NPM_FLAGS="--version"
+
+[build]
+  command = "npx pnpm i --store=node_modules/.pnpm-store --frozen-lockfile && npm run build"

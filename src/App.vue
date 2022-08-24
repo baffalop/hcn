@@ -18,10 +18,10 @@ const isOnIndexPage = computed(() => route.name === 'index')
       mode="out-in"
       enter-from-class="opacity-0"
       enter-to-class="opacity-100"
-      enter-active-class="transition-opacity duration-75"
+      enter-active-class="transition-opacity duration-300"
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
-      leave-active-class="transition-opacity duration-75"
+      leave-active-class="transition-opacity duration-150"
     >
       <component :is="Component" />
     </transition>

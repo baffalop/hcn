@@ -30,7 +30,8 @@ const time = ref(0)
       src="/example-aous.mp4"
       preload="auto"
       playsinline
-      class="fixed inset-0 -z-10 w-screen h-screen object-cover"
+      class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
+      :class="playing ? 'opacity-100' : 'opacity-0'"
       v-model:time="time"
       v-model:playing="playing"
       @update:duration="duration = $event"

@@ -57,6 +57,6 @@ button.play-pause.playing:hover {
 }
 
 video {
-  filter: invert(0.9) sepia(1) saturate(1.5) hue-rotate(180deg);
+  filter: invert(0.8) brightness(0.4) sepia(1) saturate(1.5) hue-rotate(139deg);
 }
 </style>

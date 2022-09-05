@@ -11,9 +11,9 @@ const time = ref(0)
 
 <template>
   <div class="flex items-center gap-4 w-3/4 max-w-lg">
-    <button class="text-lg cursor-pointer w-6" @click="playing = !playing">
-      <template v-if="playing">❚❚</template>
-      <template v-else>▶</template>
+    <button class="text-lg cursor-pointer w-6 invert" @click="playing = !playing">
+      <img v-show="!playing" src="/icon/play-simple.svg" alt="Play">
+      <img v-show="playing" src="/icon/pause-simple.svg" alt="Pause">
     </button>
 
     <Timeline

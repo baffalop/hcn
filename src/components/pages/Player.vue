@@ -26,7 +26,7 @@ const time = ref(0)
 
     <Media
       type="video"
-      src="/with-audio.mp4"
+      src="/example-aous.mp4"
       preload="auto"
       playsinline
       class="fixed inset-0 -z-10 w-screen h-screen object-cover"
@@ -38,4 +38,7 @@ const time = ref(0)
 </template>
 
 <style scoped>
+video {
+  filter: invert(0.9) sepia(1) saturate(1.5) hue-rotate(180deg);
+}
 </style>

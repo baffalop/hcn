@@ -11,5 +11,6 @@ body {
 }
 
 a {
-  @apply font-medium text-blue-400 hover:text-blue-300;
+  @apply font-medium text-primary-green hover:text-green-300;
 }
+

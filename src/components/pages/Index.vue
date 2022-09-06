@@ -4,7 +4,7 @@
       Welcome to some audio guides for Holocaust Centre North.
     </p>
     <p>
-      Proceed to <RouterLink :to="{ name: 'player' }" class="text-primary-blue">player</RouterLink>
+      Proceed to <RouterLink :to="{ name: 'player' }">player</RouterLink>
     </p>
   </div>
 </template>

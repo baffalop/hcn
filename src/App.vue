@@ -10,7 +10,7 @@ const isOnIndexPage = computed(() => route.name === 'index')
   <RouterLink
     v-if="!isOnIndexPage"
     :to="{ name: 'index' }"
-    class="fixed left-20 top-20 text-primary-blue"
+    class="fixed left-20 top-20"
   >Home</RouterLink>
 
   <RouterView v-slot="{ Component }">

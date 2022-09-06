@@ -7,14 +7,23 @@ const isOnIndexPage = computed(() => route.name === 'index')
 </script>
 
 <template>
-  <RouterLink
-    v-if="!isOnIndexPage"
-    :to="{ name: 'index' }"
-    title="Back"
-    class="fixed left-20 top-20 w-10 invert"
+  <transition
+    enter-from-class="opacity-0"
+    enter-to-class="opacity-100"
+    enter-active-class="transition-opacity duration-300 delay-150"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+    leave-active-class="transition-opacity duration-150"
   >
-    <img src="/icon/play-simple.svg" class="transform -scale-100">
-  </RouterLink>
+    <RouterLink
+      v-if="!isOnIndexPage"
+      :to="{ name: 'index' }"
+      title="Back"
+      class="fixed left-20 top-20 w-10 invert"
+    >
+      <img src="/icon/play-simple.svg" class="transform -scale-100">
+    </RouterLink>
+  </transition>
 
   <RouterView v-slot="{ Component }">
     <transition

@@ -10,8 +10,11 @@ const isOnIndexPage = computed(() => route.name === 'index')
   <RouterLink
     v-if="!isOnIndexPage"
     :to="{ name: 'index' }"
-    class="fixed left-20 top-20"
-  >Home</RouterLink>
+    title="Back"
+    class="fixed left-20 top-20 w-10 invert"
+  >
+    <img src="/icon/play-simple.svg" class="transform -scale-100">
+  </RouterLink>
 
   <RouterView v-slot="{ Component }">
     <transition

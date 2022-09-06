@@ -11,11 +11,10 @@ const time = ref(0)
 
 <template>
   <div class="flex items-center gap-4 w-3/4 max-w-lg">
-    <button
-      class="play-pause text-lg cursor-pointer w-6 h-6 bg-contain invert"
-      :class="{ playing }"
-      @click="playing = !playing"
-    />
+    <button class="text-lg cursor-pointer w-6 invert" @click="playing = !playing">
+      <img v-show="!playing" src="/icon/play-simple.svg" alt="Play">
+      <img v-show="playing" src="/icon/pause-simple.svg" alt="Pause">
+    </button>
 
     <Timeline
       v-model:time="time"
@@ -40,22 +39,6 @@ const time = ref(0)
 </template>
 
 <style scoped>
-button.play-pause {
-  background: url(/icon/play-simple.svg)
-}
-
-button.play-pause:hover {
-  background: url(/icon/play-inv.svg)
-}
-
-button.play-pause.playing {
-  background: url(/icon/pause-simple.svg)
-}
-
-button.play-pause.playing:hover {
-  background: url(/icon/pause-inv.svg)
-}
-
 video {
   filter: invert(0.8) brightness(0.4) sepia(1) saturate(1.5) hue-rotate(139deg);
 }

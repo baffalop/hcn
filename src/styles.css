@@ -5,7 +5,7 @@
 }
 
 body {
-  @apply flex place-items-center min-h-screen font-text text-lg;
+  @apply flex place-items-center min-h-screen font-text text-lg tracking-wider;
   font-stretch: condensed;
 }
 

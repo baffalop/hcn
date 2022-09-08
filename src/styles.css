@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Agrandir';
+  src: url(/font/PPAgrandir-NarrowRegular.otf);
+  font-stretch: condensed;
+  font-weight: 400 600;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url(/font/PPAgrandir-Regular.otf);
+  font-stretch: normal;
+  font-weight: 400 600;
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;

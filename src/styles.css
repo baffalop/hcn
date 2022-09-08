@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply flex place-items-center min-h-screen font-text text-lg tracking-wider;
+  @apply flex place-items-center min-h-screen font-text text-lg leading-snug tracking-wider;
   font-stretch: condensed;
 }
 

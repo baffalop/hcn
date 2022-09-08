@@ -19,7 +19,7 @@ const isOnIndexPage = computed(() => route.name === 'index')
       v-if="!isOnIndexPage"
       :to="{ name: 'index' }"
       title="Back"
-      class="fixed left-20 top-20 w-10 invert"
+      class="absolute left-12 top-12 w-10 invert"
     >
       <img src="/icon/play-simple.svg" class="transform -scale-100">
     </RouterLink>

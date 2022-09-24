@@ -9,13 +9,13 @@ import Player from '@components/pages/Player.vue'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'index', component: Index },
-  { path: '/player', name: 'player', component: Player },
+  { path: '/play/:slug', name: 'player', component: Player },
 ]
 
 const app = createApp(App)
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 })
 app.use(router)
 

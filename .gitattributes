@@ -1,6 +1,6 @@
 public/with-audio.mp4 filter=lfs diff=lfs merge=lfs -text
 public/example-aous.mp4 filter=lfs diff=lfs merge=lfs -text
 public/video/constant-vigilance.mp4 filter=lfs diff=lfs merge=lfs -text
-public/video/restrictions-and-rejection.mp4 filter=lfs diff=lfs merge=lfs -text
 public/video/saying-goodbye.mp4 filter=lfs diff=lfs merge=lfs -text
 public/video/wire-and-fences.mp4 filter=lfs diff=lfs merge=lfs -text
+public/video/restrictions-and-ejection.mp4 filter=lfs diff=lfs merge=lfs -text

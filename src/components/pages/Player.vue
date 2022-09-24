@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
@@ -7,6 +8,9 @@ import Timeline from '@components/Timeline.vue'
 const playing = ref(false)
 const duration = ref(1)
 const time = ref(0)
+
+const route = useRoute()
+const src = computed(() => `/video/${route.params.slug}.mp4`)
 </script>
 
 <template>
@@ -35,7 +39,7 @@ const time = ref(0)
 
     <Media
       type="video"
-      src="/example-aous.mp4"
+      :src="src"
       preload="auto"
       playsinline
       class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"

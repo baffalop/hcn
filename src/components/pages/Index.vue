@@ -1,13 +1,14 @@
 <script setup lang="ts">
 interface Track {
   title: string
+  slug: string
 }
 
 const lindaTracks: Track[] = [
-  { title: 'Constant Vigilance' },
-  { title: 'Restrictions and Ejection' },
-  { title: 'Saying Goodbye' },
-  { title: 'Wires and Fences' },
+  { title: 'Constant Vigilance', slug: 'constant-vigilance' },
+  { title: 'Restrictions and Ejection', slug: 'restrictions-and-ejection' },
+  { title: 'Saying Goodbye', slug: 'saying-goodbye' },
+  { title: 'Wire and Fences', slug: 'wire-and-fences' },
 ]
 
 function formatTrackNumber (i: number): string {
@@ -30,7 +31,7 @@ function formatTrackNumber (i: number): string {
     <ul class="text-left max-w-max mx-auto">
       <li v-for="(track, i) in lindaTracks">
         {{ formatTrackNumber(i) }}.
-        <RouterLink :to="{ name: 'player' }">{{ track.title }}</RouterLink>
+        <RouterLink :to="{ name: 'player', params: { slug: track.slug } }">{{ track.title }}</RouterLink>
       </li>
     </ul>
   </div>

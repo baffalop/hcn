@@ -27,7 +27,7 @@ function formatTrackNumber (i: number): string {
 
     <h2 class="mt-10 mb-6 text-2xl">Linda O'Keefe</h2>
 
-    <ul>
+    <ul class="text-left max-w-max mx-auto">
       <li v-for="(track, i) in lindaTracks">
         {{ formatTrackNumber(i) }}.
         <RouterLink :to="{ name: 'player' }">{{ track.title }}</RouterLink>

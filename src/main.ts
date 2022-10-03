@@ -3,13 +3,19 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 import './tailwind.css'
 import './styles.css'
+
+import { lindaTracks } from '@/tracks'
 import App from '@/App.vue'
 import Index from '@components/pages/Index.vue'
 import Player from '@components/pages/Player.vue'
+import NotFound from '@components/pages/NotFound.vue'
+
+const slugRegex = lindaTracks.map(track => track.slug).join('|')
 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'index', component: Index },
-  { path: '/play/:slug', name: 'player', component: Player },
+  { path: `/play/:slug(${slugRegex})`, name: 'player', component: Player },
+  { path: '/:pathMatch(.*)*', name: '404', component: NotFound },
 ]
 
 const app = createApp(App)

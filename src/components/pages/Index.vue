@@ -1,15 +1,5 @@
 <script setup lang="ts">
-interface Track {
-  title: string
-  slug: string
-}
-
-const lindaTracks: Track[] = [
-  { title: 'Constant Vigilance', slug: 'constant-vigilance' },
-  { title: 'Restrictions and Ejection', slug: 'restrictions-and-ejection' },
-  { title: 'Saying Goodbye', slug: 'saying-goodbye' },
-  { title: 'Wire and Fences', slug: 'wire-and-fences' },
-]
+import { lindaTracks } from '@/tracks'
 
 function formatTrackNumber (i: number): string {
   return (i + 1).toFixed(0).padStart(2, '0')

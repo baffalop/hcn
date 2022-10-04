@@ -3,6 +3,7 @@ import { computed, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 import { fromSlug, Track } from '@/data/tracks'
+import { formatSecs } from '@/utils/time'
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
 
@@ -10,6 +11,9 @@ const hasPlayed = ref(false)
 const playing = ref(false)
 const duration = ref(1)
 const time = ref(0)
+
+const durationFormatted = computed(() => formatSecs(duration.value))
+const timeFormatted = computed(() => formatSecs(time.value))
 
 watch(() => playing.value, playing => {
   if (playing) hasPlayed.value = true
@@ -51,12 +55,23 @@ function clearMediaMetadata (): void {
   <div class="w-3/4 max-w-lg">
     <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
 
-    <Timeline
-      v-model:time="time"
-      :resolution="34"
-      :duration="duration"
-      :playing="playing"
-    />
+    <div class="grid grid-cols-2 gap-2">
+      <Timeline
+        v-model:time="time"
+        :resolution="34"
+        :duration="duration"
+        :playing="playing"
+        class="col-span-full"
+      />
+
+      <span class="justify-self-start text-base tabular-nums whitespace-nowrap">
+        {{ timeFormatted }}
+      </span>
+
+      <span class="justify-self-end text-base tabular-nums whitespace-nowrap">
+        {{ durationFormatted }}
+      </span>
+    </div>
 
     <div class="flex items-center justify-center gap-6 -mt-2">
       <button class="control" @click="time -= 10">

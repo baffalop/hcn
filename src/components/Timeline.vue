@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 
 import { delta } from '@/utils/math'
-import { formatSecs } from '@/utils/time'
 
 const props = defineProps<{
   time: number
@@ -29,9 +28,6 @@ const current = computed({
   set: (value: number) => emit('update:time', value)
 })
 
-const durationFormatted = computed(() => formatSecs(props.duration))
-const timeFormatted = computed(() => formatSecs(props.time))
-
 function range (length: number): number[] {
   return [...Array(length).keys()]
 }
@@ -51,33 +47,23 @@ function pointClasses (point: number): Record<string, boolean> {
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-2 justify-between">
-    <div class="col-span-full relative timeline flex items-center justify-between h-3">
-      <div
-        v-for="point in points"
-        :key="point"
-        class="h-1 w-1 min-w-1 rounded-full
+  <div class="relative timeline flex items-center justify-between h-3">
+    <div
+      v-for="point in points"
+      :key="point"
+      class="h-1 w-1 min-w-1 rounded-full
         transform transition-transform duration-300 ease-out"
-        :class="pointClasses(point)"
-      ></div>
+      :class="pointClasses(point)"
+    ></div>
 
-      <input
-        type="range"
-        v-model.number="current"
-        :max="max"
-        step="0.1"
-        class="absolute inset-0 cursor-pointer
+    <input
+      type="range"
+      v-model.number="current"
+      :max="max"
+      step="0.1"
+      class="absolute inset-0 cursor-pointer
         opacity-0 appearance-none focus:outline-none focus:shadow-none"
-      >
-    </div>
-
-    <span class="justify-self-start text-base tabular-nums whitespace-nowrap">
-      {{ timeFormatted }}
-    </span>
-
-    <span class="justify-self-end text-base tabular-nums whitespace-nowrap">
-      {{ durationFormatted }}
-    </span>
+    >
   </div>
 </template>
 

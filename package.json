@@ -4,10 +4,11 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "vite --host",
+    "start": "npm run generate-track-metadata && vite --host",
     "check": "vue-tsc --noEmit",
-    "build": "npm run check && vite build",
-    "preview": "vite preview"
+    "build": "npm run generate-track-metadata && npm run check && vite build",
+    "preview": "vite preview",
+    "generate-track-metadata": "node script/generateTrackMetadata.mjs"
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",

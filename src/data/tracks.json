@@ -1,18 +1,22 @@
 [
   {
     "slug": "constant-vigilance",
-    "title": "Constant Vigilance"
+    "title": "Constant Vigilance",
+    "duration": 0
   },
   {
     "slug": "restrictions-and-ejection",
-    "title": "Restrictions and Ejection"
+    "title": "Restrictions and Ejection",
+    "duration": 0
   },
   {
     "slug": "saying-goodbye",
-    "title": "Saying Goodbye"
+    "title": "Saying Goodbye",
+    "duration": 0
   },
   {
     "slug": "wire-and-fences",
-    "title": "Wire and Fences"
+    "title": "Wire and Fences",
+    "duration": 0
   }
 ]

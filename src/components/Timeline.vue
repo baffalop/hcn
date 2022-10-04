@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+
 import { delta } from '@/utils/math'
+import { formatSecs } from '@/utils/time'
 
 const props = defineProps<{
   time: number
@@ -27,6 +29,9 @@ const current = computed({
   set: (value: number) => emit('update:time', value)
 })
 
+const durationFormatted = computed(() => formatSecs(props.duration))
+const timeFormatted = computed(() => formatSecs(props.time))
+
 function range (length: number): number[] {
   return [...Array(length).keys()]
 }
@@ -47,6 +52,10 @@ function pointClasses (point: number): Record<string, boolean> {
 
 <template>
   <div class="relative flex items-center justify-between h-3">
+    <span class="text-base text-right tabular-nums whitespace-nowrap w-12 -ml-12">
+      {{ timeFormatted }}
+    </span>
+
     <div
       v-for="point in points"
       :key="point"
@@ -54,6 +63,10 @@ function pointClasses (point: number): Record<string, boolean> {
         transform transition-transform duration-300 ease-out"
       :class="pointClasses(point)"
     ></div>
+
+    <span class="text-base tabular-nums whitespace-nowrap w-12 -mr-12">
+      {{ durationFormatted }}
+    </span>
 
     <input
       type="range"

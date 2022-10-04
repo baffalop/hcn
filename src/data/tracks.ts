@@ -7,7 +7,3 @@ export interface Track {
 }
 
 export const tracks = tracksJson as Track[]
-
-export function fromSlug (slug: string): Track|null {
-  return tracks.find(track => track.slug === slug) ?? null
-}

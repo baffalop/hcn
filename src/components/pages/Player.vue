@@ -2,7 +2,7 @@
 import { computed, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-import { fromSlug, Track } from '@/data/tracks'
+import { Track, tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
@@ -22,7 +22,11 @@ watch(() => playing.value, playing => {
 const route = useRoute()
 const slug = computed<string>(() => route.params.slug as string)
 const src = computed<string>(() => `/video/${slug.value}.mp4`)
-const track = computed<Track|null>(() => fromSlug(slug.value))
+
+const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === slug.value))
+const track = computed<Track|null>(() => getTrack(0))
+const nextTrack = computed<Track|null>(() => getTrack(1))
+const prevTrack = computed<Track|null>(() => getTrack(-1))
 
 watch(() => track.value, () => {
   hasPlayed.value = false
@@ -38,6 +42,14 @@ watch(() => hasPlayed.value, hasPlayed => {
 onUnmounted(() => {
   clearMediaMetadata()
 })
+
+function getTrack (offset: number): Track|null {
+  if (trackIndex.value === -1) {
+    return null
+  }
+
+  return tracks[trackIndex.value + offset] ?? null
+}
 
 function setMediaMetadataFrom (track: Track): void {
   navigator.mediaSession.metadata = new MediaMetadata({
@@ -86,6 +98,24 @@ function clearMediaMetadata (): void {
       <button class="control" @click="time += 10">
         <img src="/icon/ffw-simple.svg" alt="Forward 10 seconds">
       </button>
+    </div>
+
+    <div class="grid grid-cols-2 items-center mt-8">
+      <RouterLink
+        v-if="prevTrack"
+        :to="{ name: 'player', params: { slug: prevTrack.slug } }"
+        class="justify-self-start -ml-12"
+      >
+        &lt; {{ prevTrack.title }}
+      </RouterLink>
+
+      <RouterLink
+        v-if="nextTrack"
+        :to="{ name: 'player', params: { slug: nextTrack.slug } }"
+        class="justify-self-end col-start-2 -mr-12"
+      >
+        {{ nextTrack.title }} &gt;
+      </RouterLink>
     </div>
 
     <Media

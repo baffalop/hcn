@@ -9,7 +9,9 @@ html {
 }
 
 body {
-  @apply flex place-items-center min-h-full font-text text-lg leading-snug tracking-wider;
+  background: rgb(16, 27, 29);
+  @apply flex place-items-center min-h-full
+    font-text text-gray-100 text-lg leading-snug tracking-wider;
   font-stretch: condensed;
 }
 

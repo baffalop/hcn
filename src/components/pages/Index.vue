@@ -21,9 +21,9 @@ function formatTrackNumber (i: number): string {
 
     <ul class="text-left max-w-max mx-auto">
       <li v-for="(track, i) in tracks">
-        {{ formatTrackNumber(i) }}.
-        <RouterLink :to="{ name: 'player', params: { slug: track.slug } }">{{ track.title }}</RouterLink>
-        <span class="ml-1 text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
+        <span>{{ formatTrackNumber(i) }}.</span>
+        <RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink>
+        <span class="text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
       </li>
     </ul>
   </div>

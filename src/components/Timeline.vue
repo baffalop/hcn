@@ -51,31 +51,35 @@ function pointClasses (point: number): Record<string, boolean> {
 </script>
 
 <template>
-  <div class="relative flex items-center justify-between h-3">
-    <span class="text-base text-right tabular-nums whitespace-nowrap w-12 -ml-12">
-      {{ timeFormatted }}
-    </span>
-
-    <div
-      v-for="point in points"
-      :key="point"
-      class="h-1 w-1 min-w-1 rounded-full
+  <div class="space-y-2">
+    <div class="relative flex items-center justify-between h-3">
+      <div
+        v-for="point in points"
+        :key="point"
+        class="h-1 w-1 min-w-1 rounded-full
         transform transition-transform duration-300 ease-out"
-      :class="pointClasses(point)"
-    ></div>
+        :class="pointClasses(point)"
+      ></div>
 
-    <span class="text-base tabular-nums whitespace-nowrap w-12 -mr-12">
-      {{ durationFormatted }}
-    </span>
-
-    <input
-      type="range"
-      v-model.number="current"
-      :max="max"
-      step="0.1"
-      class="absolute inset-0 cursor-pointer
+      <input
+        type="range"
+        v-model.number="current"
+        :max="max"
+        step="0.1"
+        class="absolute inset-0 cursor-pointer
         opacity-0 appearance-none focus:outline-none focus:shadow-none"
-    >
+      >
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-base tabular-nums whitespace-nowrap">
+        {{ timeFormatted }}
+      </span>
+
+      <span class="text-base tabular-nums whitespace-nowrap">
+        {{ durationFormatted }}
+      </span>
+    </div>
   </div>
 </template>
 

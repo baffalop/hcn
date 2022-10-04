@@ -48,7 +48,7 @@ function clearMediaMetadata (): void {
 </script>
 
 <template>
-  <div class="space-y-8 w-3/4 max-w-lg">
+  <div class="w-3/4 max-w-lg">
     <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
 
     <Timeline
@@ -58,7 +58,7 @@ function clearMediaMetadata (): void {
       :playing="playing"
     />
 
-    <div class="flex items-center justify-center gap-6">
+    <div class="flex items-center justify-center gap-6 -mt-2">
       <button class="control" @click="time -= 10">
         <img src="/icon/rew-simple.svg" alt="Back 10 seconds">
       </button>

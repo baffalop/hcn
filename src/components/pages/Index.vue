@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { tracks } from '@/data/tracks'
+import { formatSecs } from '@/utils/time'
 
 function formatTrackNumber (i: number): string {
   return (i + 1).toFixed(0).padStart(2, '0')
@@ -22,6 +23,7 @@ function formatTrackNumber (i: number): string {
       <li v-for="(track, i) in tracks">
         {{ formatTrackNumber(i) }}.
         <RouterLink :to="{ name: 'player', params: { slug: track.slug } }">{{ track.title }}</RouterLink>
+        {{ formatSecs(track.duration) }}
       </li>
     </ul>
   </div>

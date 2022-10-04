@@ -37,6 +37,8 @@ function clearMediaMetadata (): void {
 
 <template>
   <div class="space-y-8 w-3/4 max-w-lg">
+    <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
+
     <Timeline
       v-model:time="time"
       :resolution="34"

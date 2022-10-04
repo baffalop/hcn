@@ -51,8 +51,8 @@ function pointClasses (point: number): Record<string, boolean> {
 </script>
 
 <template>
-  <div class="space-y-2">
-    <div class="relative flex items-center justify-between h-3">
+  <div class="grid grid-cols-2 gap-2 justify-between">
+    <div class="col-span-full relative timeline flex items-center justify-between h-3">
       <div
         v-for="point in points"
         :key="point"
@@ -71,15 +71,13 @@ function pointClasses (point: number): Record<string, boolean> {
       >
     </div>
 
-    <div class="flex items-center justify-between">
-      <span class="text-base tabular-nums whitespace-nowrap">
-        {{ timeFormatted }}
-      </span>
+    <span class="justify-self-start text-base tabular-nums whitespace-nowrap">
+      {{ timeFormatted }}
+    </span>
 
-      <span class="text-base tabular-nums whitespace-nowrap">
-        {{ durationFormatted }}
-      </span>
-    </div>
+    <span class="justify-self-end text-base tabular-nums whitespace-nowrap">
+      {{ durationFormatted }}
+    </span>
   </div>
 </template>
 

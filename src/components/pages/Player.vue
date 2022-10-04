@@ -19,11 +19,19 @@ watch(() => track.value, track => {
   track && setMediaMetadataFrom(track)
 }, { immediate: true })
 
+onUnmounted(() => {
+  clearMediaMetadata()
+})
+
 function setMediaMetadataFrom (track: Track): void {
   navigator.mediaSession.metadata = new MediaMetadata({
     title: track.title,
     artist: 'Linda O\'Keefe',
   })
+}
+
+function clearMediaMetadata (): void {
+  navigator.mediaSession.playbackState = 'none'
 }
 </script>
 

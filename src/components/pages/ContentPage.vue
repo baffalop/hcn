@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
+
 import PageTransition from '@components/PageTransition.vue'
+
+const route = useRoute()
 </script>
 
 <template>
@@ -14,7 +18,7 @@ import PageTransition from '@components/PageTransition.vue'
 
     <RouterView v-slot="{ Component }">
       <PageTransition>
-        <component :is="Component" />
+        <component :key="route.params.slug" :is="Component" />
       </PageTransition>
     </RouterView>
   </div>

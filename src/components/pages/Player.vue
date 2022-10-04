@@ -2,7 +2,7 @@
 import { computed, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-import { fromSlug, Track } from '@/tracks'
+import { fromSlug, Track } from '@/data/tracks'
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
 

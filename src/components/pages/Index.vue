@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { tracks } from '@/tracks'
+import { tracks } from '@/data/tracks'
 
 function formatTrackNumber (i: number): string {
   return (i + 1).toFixed(0).padStart(2, '0')

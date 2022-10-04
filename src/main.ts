@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import './tailwind.css'
 import './styles.css'
 
-import { tracks } from '@/tracks'
+import { tracks } from '@/data/tracks'
 import App from '@/App.vue'
 import Index from '@components/pages/Index.vue'
 import Player from '@components/pages/Player.vue'

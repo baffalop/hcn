@@ -64,7 +64,7 @@ function clearMediaMetadata (): void {
 </script>
 
 <template>
-  <div class="w-3/4 max-w-lg">
+  <div class="w-4/5 max-w-lg">
     <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
 
     <div class="grid grid-cols-2 gap-1">
@@ -100,23 +100,21 @@ function clearMediaMetadata (): void {
       </button>
     </div>
 
-    <div class="grid grid-cols-2 items-start mt-8">
-      <RouterLink
-        v-if="prevTrack"
-        :to="{ name: 'player', params: { slug: prevTrack.slug } }"
-        class="justify-self-start -ml-12"
-      >
-        &lt; {{ prevTrack.title }}
-      </RouterLink>
+    <RouterLink
+      v-if="prevTrack"
+      :to="{ name: 'player', params: { slug: prevTrack.slug } }"
+      class="absolute bottom-14 left-2 w-1/3"
+    >
+      &lt; {{ prevTrack.title }}
+    </RouterLink>
 
-      <RouterLink
-        v-if="nextTrack"
-        :to="{ name: 'player', params: { slug: nextTrack.slug } }"
-        class="justify-self-end col-start-2 -mr-12"
-      >
-        {{ nextTrack.title }} &gt;
-      </RouterLink>
-    </div>
+    <RouterLink
+      v-if="nextTrack"
+      :to="{ name: 'player', params: { slug: nextTrack.slug } }"
+      class="absolute bottom-14 right-2 w-1/3"
+    >
+      {{ nextTrack.title }} &gt;
+    </RouterLink>
 
     <Media
       type="video"

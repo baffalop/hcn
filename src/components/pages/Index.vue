@@ -23,7 +23,7 @@ function formatTrackNumber (i: number): string {
       <li v-for="(track, i) in tracks">
         {{ formatTrackNumber(i) }}.
         <RouterLink :to="{ name: 'player', params: { slug: track.slug } }">{{ track.title }}</RouterLink>
-        {{ formatSecs(track.duration) }}
+        <span class="ml-1 text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
       </li>
     </ul>
   </div>

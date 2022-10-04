@@ -67,7 +67,7 @@ function clearMediaMetadata (): void {
   <div class="w-3/4 max-w-lg">
     <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
 
-    <div class="grid grid-cols-2 gap-2">
+    <div class="grid grid-cols-2 gap-1">
       <Timeline
         v-model:time="time"
         :resolution="34"
@@ -76,11 +76,11 @@ function clearMediaMetadata (): void {
         class="col-span-full"
       />
 
-      <span class="justify-self-start text-base tabular-nums whitespace-nowrap">
+      <span class="timestamp justify-self-start">
         {{ timeFormatted }}
       </span>
 
-      <span class="justify-self-end text-base tabular-nums whitespace-nowrap">
+      <span class="timestamp justify-self-end">
         {{ durationFormatted }}
       </span>
     </div>
@@ -139,5 +139,9 @@ video {
 
 .control {
   @apply cursor-pointer w-10 invert;
+}
+
+.timestamp {
+  @apply text-base text-gray-300 tabular-nums whitespace-nowrap;
 }
 </style>

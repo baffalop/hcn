@@ -1,28 +1,15 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { computed, TransitionProps } from 'vue'
+import { computed } from 'vue'
+
+import PageTransition from '@components/PageTransition.vue'
 
 const route = useRoute()
 const isOnIndexPage = computed(() => route.name === 'index')
-
-const inDuration = 300
-const outDuration = 150
-
-const transitionParams: TransitionProps = {
-  enterFromClass: 'opacity-0',
-  enterToClass: 'opacity-100',
-  enterActiveClass: `transition-opacity duration-${inDuration}`,
-  leaveFromClass: 'opacity-100',
-  leaveToClass: 'opacity-0',
-  leaveActiveClass: `transition-opacity duration-${outDuration}`,
-}
 </script>
 
 <template>
-  <transition
-    v-bind="transitionParams"
-    :enter-active-class="`${transitionParams.enterActiveClass} delay-${outDuration}`"
-  >
+  <PageTransition>
     <RouterLink
       v-if="!isOnIndexPage"
       :to="{ name: 'index' }"
@@ -31,12 +18,12 @@ const transitionParams: TransitionProps = {
     >
       <img alt="Back" src="/icon/play-simple.svg" class="transform -scale-100">
     </RouterLink>
-  </transition>
+  </PageTransition>
 
   <RouterView v-slot="{ Component }">
-    <transition mode="out-in" v-bind="transitionParams">
+    <PageTransition>
       <component :is="Component" />
-    </transition>
+    </PageTransition>
   </RouterView>
 </template>
 

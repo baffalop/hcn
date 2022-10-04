@@ -29,7 +29,7 @@ const transitionParams: TransitionProps = {
       title="Back"
       class="absolute left-12 top-12 w-10 invert"
     >
-      <img src="/icon/play-simple.svg" class="transform -scale-100">
+      <img alt="Back" src="/icon/play-simple.svg" class="transform -scale-100">
     </RouterLink>
   </transition>
 

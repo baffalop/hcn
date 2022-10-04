@@ -9,23 +9,31 @@ function formatTrackNumber (i: number): string {
 
 <template>
   <div class="h-full px-4 max-w-screen-md">
-    <p>
-      Welcome to some audio guides for Holocaust Centre North.
-    </p>
+    <div class="h-screen flex flex-col justify-center">
+      <p>
+        Welcome to some audio guides for Holocaust Centre North.
+      </p>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
 
-    <h2 class="mt-10 mb-6 text-2xl">Linda O'Keefe</h2>
+      <p>
+        Now please scroll down and select a track.
+      </p>
+    </div>
 
-    <ul class="text-left max-w-max mx-auto">
-      <li v-for="(track, i) in tracks">
-        <span>{{ formatTrackNumber(i) }}.</span>
-        <RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink>
-        <span class="text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
-      </li>
-    </ul>
+    <div class="h-screen flex flex-col justify-center">
+      <h2 class="mt-10 mb-6 text-2xl">Linda O'Keefe</h2>
+
+      <ul class="text-left max-w-max mx-auto">
+        <li v-for="(track, i) in tracks">
+          <span>{{ formatTrackNumber(i) }}.</span>
+          <RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink>
+          <span class="text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 

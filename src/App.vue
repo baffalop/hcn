@@ -1,19 +1,27 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, TransitionProps } from 'vue'
 
 const route = useRoute()
 const isOnIndexPage = computed(() => route.name === 'index')
+
+const inDuration = 300
+const outDuration = 150
+
+const transitionParams: TransitionProps = {
+  enterFromClass: 'opacity-0',
+  enterToClass: 'opacity-100',
+  enterActiveClass: `transition-opacity duration-${inDuration}`,
+  leaveFromClass: 'opacity-100',
+  leaveToClass: 'opacity-0',
+  leaveActiveClass: `transition-opacity duration-${outDuration}`,
+}
 </script>
 
 <template>
   <transition
-    enter-from-class="opacity-0"
-    enter-to-class="opacity-100"
-    enter-active-class="transition-opacity duration-300 delay-150"
-    leave-from-class="opacity-100"
-    leave-to-class="opacity-0"
-    leave-active-class="transition-opacity duration-150"
+    v-bind="transitionParams"
+    :enter-active-class="`${transitionParams.enterActiveClass} delay-${outDuration}`"
   >
     <RouterLink
       v-if="!isOnIndexPage"
@@ -26,15 +34,7 @@ const isOnIndexPage = computed(() => route.name === 'index')
   </transition>
 
   <RouterView v-slot="{ Component }">
-    <transition
-      mode="out-in"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      enter-active-class="transition-opacity duration-300"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-      leave-active-class="transition-opacity duration-150"
-    >
+    <transition mode="out-in" v-bind="transitionParams">
       <component :is="Component" />
     </transition>
   </RouterView>

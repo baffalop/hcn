@@ -100,7 +100,7 @@ function clearMediaMetadata (): void {
       </button>
     </div>
 
-    <div class="grid grid-cols-2 items-center mt-8">
+    <div class="grid grid-cols-2 items-start mt-8">
       <RouterLink
         v-if="prevTrack"
         :to="{ name: 'player', params: { slug: prevTrack.slug } }"

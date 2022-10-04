@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, Ref, watch } from 'vue'
+import { ref, Ref, watch } from 'vue'
 import { delta } from '@/utils/math'
 
 const props = defineProps<{
@@ -10,18 +10,18 @@ const props = defineProps<{
   loop?: boolean
 }>()
 
-const loop = computed(() => props?.loop ?? false)
-
 const emit = defineEmits<{
   (e: 'update:playing', playing: boolean): void
   (e: 'update:time', time: number): void
   (e: 'update:duration', duration: number): void
 }>()
 
+defineExpose({ play })
+
 const media: Ref<HTMLMediaElement|null> = ref(null)
 
 watch(() => props.playing, playing => {
-  playing ? media.value?.play() : media.value?.pause()
+  if (!playing) media.value?.pause()
 })
 
 watch(() => props.time, (time, oldTime) => {
@@ -29,6 +29,10 @@ watch(() => props.time, (time, oldTime) => {
     media.value.currentTime = time
   }
 })
+
+function play (): void {
+  media.value?.play()
+}
 
 function updatePlaying (playing: boolean): void {
   emit('update:playing', playing)

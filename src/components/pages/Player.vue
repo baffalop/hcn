@@ -15,6 +15,16 @@ const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
 
+type MediaInstance = InstanceType<typeof Media>
+const media = ref<MediaInstance|null>(null)
+
+function onClickPlayPause () {
+  playing.value = !playing.value
+  if (playing.value) {
+    media.value?.play()
+  }
+}
+
 const durationFormatted = computed(() => formatSecs(duration.value))
 const timeFormatted = computed(() => formatSecs(time.value))
 
@@ -63,7 +73,7 @@ function getTrack (offset: number): Track|null {
         <img src="/icon/rew-simple.svg" alt="Back 10 seconds">
       </button>
 
-      <button class="control" @click="playing = !playing">
+      <button class="control" @click="onClickPlayPause">
         <img v-show="!playing" src="/icon/play-simple.svg" alt="Play">
         <img v-show="playing" src="/icon/pause-simple.svg" alt="Pause">
       </button>
@@ -90,6 +100,7 @@ function getTrack (offset: number): Track|null {
     </RouterLink>
 
     <Media
+      ref="media"
       type="video"
       :src="src"
       preload="auto"

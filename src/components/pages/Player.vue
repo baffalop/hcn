@@ -6,18 +6,30 @@ import { fromSlug, Track } from '@/data/tracks'
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
 
+const hasPlayed = ref(false)
 const playing = ref(false)
 const duration = ref(1)
 const time = ref(0)
+
+watch(() => playing.value, playing => {
+  if (playing) hasPlayed.value = true
+})
 
 const route = useRoute()
 const slug = computed<string>(() => route.params.slug as string)
 const src = computed<string>(() => `/video/${slug.value}.mp4`)
 const track = computed<Track|null>(() => fromSlug(slug.value))
 
-watch(() => track.value, track => {
-  track && setMediaMetadataFrom(track)
-}, { immediate: true })
+watch(() => track.value, () => {
+  hasPlayed.value = false
+  clearMediaMetadata()
+})
+
+watch(() => hasPlayed.value, hasPlayed => {
+  if (hasPlayed && track.value) {
+    setMediaMetadataFrom(track.value)
+  }
+})
 
 onUnmounted(() => {
   clearMediaMetadata()

@@ -19,7 +19,21 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     component: ContentPage,
     children: [
-      { path: `/play/:slug(${slugRegex})`, name: 'player', component: Player },
+      {
+        path: `/play/:slug(${slugRegex})`,
+        name: 'player',
+        component: Player,
+        props: route => {
+          const slug = route.params.slug as string
+          const track = tracks.find(track => track.slug === slug)
+
+          if (track == null) {
+            throw new Error(`Slug not recognised: ${slug}`)
+          }
+
+          return { track }
+        },
+      },
     ],
   },
   { path: '/:pathMatch(.*)*', name: '404', component: NotFound },

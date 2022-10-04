@@ -30,20 +30,16 @@ watch(() => props.time, (time, oldTime) => {
   }
 })
 
+function updatePlaying (playing: boolean): void {
+  emit('update:playing', playing)
+}
+
 function updateTime (): void {
   if (media.value) emit('update:time', media.value.currentTime)
 }
 
 function updateDuration (): void {
   if (media.value) emit('update:duration', media.value.duration)
-}
-
-function onEnded (): void {
-  if (loop) {
-    return
-  }
-
-  emit('update:playing', false)
 }
 </script>
 
@@ -53,9 +49,10 @@ function onEnded (): void {
     ref="media"
     :src="src"
     :loop="loop"
+    @play="updatePlaying(true)"
+    @pause="updatePlaying(false)"
     @timeupdate="updateTime"
     @durationchange="updateDuration"
-    @ended="onEnded"
   />
 </template>
 

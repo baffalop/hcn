@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { lindaTracks } from '@/tracks'
+import { tracks } from '@/tracks'
 
 function formatTrackNumber (i: number): string {
   return (i + 1).toFixed(0).padStart(2, '0')
@@ -19,7 +19,7 @@ function formatTrackNumber (i: number): string {
     <h2 class="mt-10 mb-6 text-2xl">Linda O'Keefe</h2>
 
     <ul class="text-left max-w-max mx-auto">
-      <li v-for="(track, i) in lindaTracks">
+      <li v-for="(track, i) in tracks">
         {{ formatTrackNumber(i) }}.
         <RouterLink :to="{ name: 'player', params: { slug: track.slug } }">{{ track.title }}</RouterLink>
       </li>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onUnmounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+import { fromSlug, Track } from '@/tracks'
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
 
@@ -10,7 +11,20 @@ const duration = ref(1)
 const time = ref(0)
 
 const route = useRoute()
-const src = computed(() => `/video/${route.params.slug}.mp4`)
+const slug = computed<string>(() => route.params.slug as string)
+const src = computed<string>(() => `/video/${slug.value}.mp4`)
+const track = computed<Track|null>(() => fromSlug(slug.value))
+
+watch(() => track.value, track => {
+  track && setMediaMetadataFrom(track)
+}, { immediate: true })
+
+function setMediaMetadataFrom (track: Track): void {
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: track.title,
+    artist: 'Linda O\'Keefe',
+  })
+}
 </script>
 
 <template>

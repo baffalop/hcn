@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed, onUnmounted, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
+import { useMediaMetadata } from '@/composable/media'
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
 
@@ -10,7 +11,6 @@ const props = defineProps<{
   track: Track
 }>()
 
-const hasPlayed = ref(false)
 const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
@@ -18,30 +18,13 @@ const time = ref(0)
 const durationFormatted = computed(() => formatSecs(duration.value))
 const timeFormatted = computed(() => formatSecs(time.value))
 
-watch(() => playing.value, playing => {
-  if (playing) hasPlayed.value = true
-})
-
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))
 const prevTrack = computed<Track|null>(() => getTrack(-1))
 
 const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 
-watch(() => props.track, () => {
-  hasPlayed.value = false
-  clearMediaMetadata()
-})
-
-watch(() => hasPlayed.value, hasPlayed => {
-  if (hasPlayed && props.track) {
-    setMediaMetadataFrom(props.track)
-  }
-})
-
-onUnmounted(() => {
-  clearMediaMetadata()
-})
+useMediaMetadata(ref(props.track), playing)
 
 function getTrack (offset: number): Track|null {
   if (trackIndex.value === -1) {
@@ -51,16 +34,6 @@ function getTrack (offset: number): Track|null {
   return tracks[trackIndex.value + offset] ?? null
 }
 
-function setMediaMetadataFrom (track: Track): void {
-  navigator.mediaSession.metadata = new MediaMetadata({
-    title: track.title,
-    artist: 'Linda O\'Keefe',
-  })
-}
-
-function clearMediaMetadata (): void {
-  navigator.mediaSession.playbackState = 'none'
-}
 </script>
 
 <template>

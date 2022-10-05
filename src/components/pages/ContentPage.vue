@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { useRoute } from 'vue-router'
-
-import PageTransition from '@components/PageTransition.vue'
-
-const route = useRoute()
-</script>
-
 <template>
   <div class="w-full h-full flex flex-col place-items-center mx-auto">
     <RouterLink
@@ -23,6 +15,14 @@ const route = useRoute()
     </RouterView>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+
+import PageTransition from '@components/PageTransition.vue'
+
+const route = useRoute()
+</script>
 
 <style scoped>
 </style>

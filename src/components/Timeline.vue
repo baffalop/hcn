@@ -1,3 +1,24 @@
+<template>
+  <div class="relative timeline flex items-center justify-between h-3">
+    <div
+      v-for="point in points"
+      :key="point"
+      class="h-1 w-1 min-w-1 rounded-full
+        transform transition-transform duration-300 ease-out"
+      :class="pointClasses(point)"
+    ></div>
+
+    <input
+      type="range"
+      v-model.number="current"
+      :max="max"
+      step="0.1"
+      class="absolute inset-0 cursor-pointer
+        opacity-0 appearance-none focus:outline-none focus:shadow-none"
+    >
+  </div>
+</template>
+
 <script setup lang="ts">
 import { computed } from 'vue'
 
@@ -45,27 +66,6 @@ function pointClasses (point: number): Record<string, boolean> {
   }
 }
 </script>
-
-<template>
-  <div class="relative timeline flex items-center justify-between h-3">
-    <div
-      v-for="point in points"
-      :key="point"
-      class="h-1 w-1 min-w-1 rounded-full
-        transform transition-transform duration-300 ease-out"
-      :class="pointClasses(point)"
-    ></div>
-
-    <input
-      type="range"
-      v-model.number="current"
-      :max="max"
-      step="0.1"
-      class="absolute inset-0 cursor-pointer
-        opacity-0 appearance-none focus:outline-none focus:shadow-none"
-    >
-  </div>
-</template>
 
 <style scoped>
 </style>

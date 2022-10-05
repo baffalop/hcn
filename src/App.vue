@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import PageTransition from '@components/PageTransition.vue'
-</script>
-
 <template>
   <RouterView v-slot="{ Component }">
     <PageTransition>
@@ -9,6 +5,10 @@ import PageTransition from '@components/PageTransition.vue'
     </PageTransition>
   </RouterView>
 </template>
+
+<script setup lang="ts">
+import PageTransition from '@components/PageTransition.vue'
+</script>
 
 <style scoped>
 </style>

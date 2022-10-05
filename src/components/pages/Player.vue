@@ -1,51 +1,3 @@
-<script setup lang="ts">
-import { computed, ref } from 'vue'
-
-import { Track, tracks } from '@/data/tracks'
-import { formatSecs } from '@/utils/time'
-import { useMediaMetadata } from '@/composable/media'
-import Media from '@components/Media.vue'
-import Timeline from '@components/Timeline.vue'
-
-const props = defineProps<{
-  track: Track
-}>()
-
-const playing = ref(false)
-const duration = ref(props.track.duration)
-const time = ref(0)
-
-type MediaInstance = InstanceType<typeof Media>
-const media = ref<MediaInstance|null>(null)
-
-function onClickPlayPause () {
-  playing.value = !playing.value
-  if (playing.value) {
-    media.value?.play()
-  }
-}
-
-const durationFormatted = computed(() => formatSecs(duration.value))
-const timeFormatted = computed(() => formatSecs(time.value))
-
-const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
-const nextTrack = computed<Track|null>(() => getTrack(1))
-const prevTrack = computed<Track|null>(() => getTrack(-1))
-
-const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
-
-useMediaMetadata(ref(props.track), playing)
-
-function getTrack (offset: number): Track|null {
-  if (trackIndex.value === -1) {
-    return null
-  }
-
-  return tracks[trackIndex.value + offset] ?? null
-}
-
-</script>
-
 <template>
   <div class="w-4/5 max-w-lg">
     <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
@@ -113,6 +65,54 @@ function getTrack (offset: number): Track|null {
     />
   </div>
 </template>
+
+<script setup lang="ts">
+import { computed, ref } from 'vue'
+
+import { Track, tracks } from '@/data/tracks'
+import { formatSecs } from '@/utils/time'
+import { useMediaMetadata } from '@/composable/media'
+import Media from '@components/Media.vue'
+import Timeline from '@components/Timeline.vue'
+
+const props = defineProps<{
+  track: Track
+}>()
+
+const playing = ref(false)
+const duration = ref(props.track.duration)
+const time = ref(0)
+
+type MediaInstance = InstanceType<typeof Media>
+const media = ref<MediaInstance|null>(null)
+
+function onClickPlayPause () {
+  playing.value = !playing.value
+  if (playing.value) {
+    media.value?.play()
+  }
+}
+
+const durationFormatted = computed(() => formatSecs(duration.value))
+const timeFormatted = computed(() => formatSecs(time.value))
+
+const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
+const nextTrack = computed<Track|null>(() => getTrack(1))
+const prevTrack = computed<Track|null>(() => getTrack(-1))
+
+const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
+
+useMediaMetadata(ref(props.track), playing)
+
+function getTrack (offset: number): Track|null {
+  if (trackIndex.value === -1) {
+    return null
+  }
+
+  return tracks[trackIndex.value + offset] ?? null
+}
+
+</script>
 
 <style scoped>
 video {

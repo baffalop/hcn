@@ -1,3 +1,16 @@
+<template>
+  <component
+    :is="type"
+    ref="media"
+    :src="src"
+    :loop="loop"
+    @play="updatePlaying(true)"
+    @pause="updatePlaying(false)"
+    @timeupdate="updateTime"
+    @durationchange="updateDuration"
+  />
+</template>
+
 <script setup lang="ts">
 import { ref, Ref, watch } from 'vue'
 import { delta } from '@/utils/math'
@@ -46,19 +59,6 @@ function updateDuration (): void {
   if (media.value) emit('update:duration', media.value.duration)
 }
 </script>
-
-<template>
-  <component
-    :is="type"
-    ref="media"
-    :src="src"
-    :loop="loop"
-    @play="updatePlaying(true)"
-    @pause="updatePlaying(false)"
-    @timeupdate="updateTime"
-    @durationchange="updateDuration"
-  />
-</template>
 
 <style scoped>
 </style>

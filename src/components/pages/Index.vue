@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { tracks } from '@/data/tracks'
-import { formatSecs } from '@/utils/time'
-
-function formatTrackNumber (i: number): string {
-  return (i + 1).toFixed(0).padStart(2, '0')
-}
-</script>
-
 <template>
   <div class="h-full px-4 max-w-screen-md">
     <div class="h-screen flex flex-col justify-center">
@@ -36,6 +27,15 @@ function formatTrackNumber (i: number): string {
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { tracks } from '@/data/tracks'
+import { formatSecs } from '@/utils/time'
+
+function formatTrackNumber (i: number): string {
+  return (i + 1).toFixed(0).padStart(2, '0')
+}
+</script>
 
 <style scoped>
 </style>

@@ -1,10 +1,3 @@
-<script setup lang="ts">
-const props = defineProps<{
-  in: number
-  out: number
-}>()
-</script>
-
 <template>
   <Transition
     enter-from-class="opacity-0"
@@ -17,6 +10,13 @@ const props = defineProps<{
     <slot />
   </Transition>
 </template>
+
+<script setup lang="ts">
+const props = defineProps<{
+  in: number
+  out: number
+}>()
+</script>
 
 <style scoped>
 </style>

@@ -47,7 +47,7 @@
     <Media
       ref="media"
       type="video"
-      :src="src"
+      :src="`/video/${track.slug}.mp4`"
       preload="auto"
       playsinline
       class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
@@ -79,6 +79,16 @@ const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
 
+type MediaInstance = InstanceType<typeof Media>
+const media = ref<MediaInstance|null>(null)
+
+function onClickPlayPause () {
+  playing.value = !playing.value
+  if (playing.value) {
+    media.value?.play()
+  }
+}
+
 // before player is launched, we show track credits and no media controls other than play
 // afterwards, track credits are minimised, show media controls
 const playerLaunched = ref(false)
@@ -91,21 +101,9 @@ watch(() => time.value, time => {
   if (time > 0) playerLaunched.value = true
 })
 
-type MediaInstance = InstanceType<typeof Media>
-const media = ref<MediaInstance|null>(null)
-
-function onClickPlayPause () {
-  playing.value = !playing.value
-  if (playing.value) {
-    media.value?.play()
-  }
-}
-
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))
 const prevTrack = computed<Track|null>(() => getTrack(-1))
-
-const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 
 useMediaMetadata(ref(props.track), playing)
 

@@ -55,6 +55,7 @@
       v-model:time="time"
       v-model:playing="playing"
       @update:duration="duration = $event"
+      @ended="onEnded"
     />
   </div>
 </template>
@@ -115,6 +116,10 @@ useLocalStorage(
   parseFloat,
   (t1, t2) => delta(t1, t2) > 1,
 )
+
+function onEnded (): void {
+  setTimeout(() => playerLaunched.value = false, 1500)
+}
 
 function getTrack (offset: number): Track|null {
   if (trackIndex.value === -1) {

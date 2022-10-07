@@ -10,14 +10,12 @@ let transitionState: TransitionState = Promise.resolve()
 let resolveTransition: Resolver|null = null
 
 export function transitionOut () {
-  console.log('transition out')
   transitionState = new Promise(resolve => {
     resolveTransition = resolve
   })
 }
 
 export function transitionIn () {
-  console.log('transition in')
   if (resolveTransition != null) {
     resolveTransition()
     resolveTransition = null

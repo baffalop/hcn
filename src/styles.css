@@ -4,14 +4,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
-html {
+html, body {
   height: 100%;
 }
 
 body {
   background: rgb(16, 27, 29);
-  @apply flex place-items-center min-h-full
-    font-text text-gray-100 text-lg text-center leading-snug tracking-wider;
+  @apply font-text text-gray-100 text-lg text-center leading-snug tracking-wider;
   font-stretch: condensed;
 }
 

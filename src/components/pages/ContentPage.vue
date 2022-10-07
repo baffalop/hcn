@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex flex-col place-items-center mx-auto">
+  <div class="h-full mx-auto">
     <RouterLink
       :to="{ name: 'index' }"
       title="Back"

@@ -2,23 +2,7 @@
   <div class="w-4/5 max-w-lg">
     <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
 
-    <div class="grid grid-cols-2 gap-1">
-      <Timeline
-        v-model:time="time"
-        :resolution="34"
-        :duration="duration"
-        :playing="playing"
-        class="col-span-full"
-      />
-
-      <span class="timestamp justify-self-start">
-        {{ timeFormatted }}
-      </span>
-
-      <span class="timestamp justify-self-end">
-        {{ durationFormatted }}
-      </span>
-    </div>
+    <Timeline v-model:time="time" :duration="duration" :playing="playing" />
 
     <div class="flex items-center justify-center gap-6 -mt-2">
       <button class="control" @click="time -= 10">
@@ -70,7 +54,6 @@
 import { computed, ref, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
-import { formatSecs } from '@/utils/time'
 import { useMediaMetadata } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
@@ -99,9 +82,6 @@ function onClickPlayPause () {
     media.value?.play()
   }
 }
-
-const durationFormatted = computed(() => formatSecs(duration.value))
-const timeFormatted = computed(() => formatSecs(time.value))
 
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))

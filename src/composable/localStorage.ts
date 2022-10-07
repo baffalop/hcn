@@ -1,4 +1,4 @@
-import { Ref, ref, watch } from 'vue'
+import { Ref, shallowRef, watch } from 'vue'
 
 type Stringable = string | { toString (): string }
 
@@ -8,7 +8,7 @@ export function useLocalStorage<T extends Stringable> (
   shouldStore: (newValue: T, oldValue: T) => boolean,
   decode: (v: string) => T,
 ): void {
-  const lastStoredValue = ref(value.value)
+  const lastStoredValue = shallowRef<T>(value.value)
 
   watch(() => key.value, (newKey, oldKey) => {
     if (oldKey != null) {
@@ -24,6 +24,7 @@ export function useLocalStorage<T extends Stringable> (
   watch(() => value.value, value => {
     if (shouldStore(value, lastStoredValue.value as T)) {
       store(key.value, value)
+      lastStoredValue.value = value
     }
   })
 }

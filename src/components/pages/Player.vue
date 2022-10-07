@@ -110,8 +110,9 @@ const trackStorageKey = computed(() => `${props.track.slug}_position`)
 useLocalStorage(
   trackStorageKey,
   time,
-  (x, y) => delta(x, y) > 1,
+  t => t.toFixed(1),
   parseFloat,
+  (t1, t2) => delta(t1, t2) > 1,
 )
 
 function getTrack (offset: number): Track|null {

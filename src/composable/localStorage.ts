@@ -1,18 +1,23 @@
 import { Ref, shallowRef, watch } from 'vue'
 
-type Stringable = string | { toString (): string }
-
-export function useLocalStorage<T extends Stringable> (
+export function useLocalStorage<T> (
   key: Ref<string>,
   value: Ref<T>,
-  shouldStore: (newValue: T, oldValue: T) => boolean,
+  encode: (v: T) => string,
   decode: (v: string) => T,
+  shouldStore: (newValue: T, oldValue: T) => boolean,
 ): void {
   const lastStoredValue = shallowRef<T>(value.value)
 
+  const store = (key: string, value: T) => {
+    const encoded = encode(value)
+    console.log(`storing value ${encoded} at key ${key}`)
+    localStorage.setItem(key, encoded)
+  }
+
   watch(() => key.value, (newKey, oldKey) => {
     if (oldKey != null) {
-      store(key.value, value.value)
+      store(oldKey, value.value)
     }
 
     const retrieved = localStorage.getItem(newKey)
@@ -27,16 +32,4 @@ export function useLocalStorage<T extends Stringable> (
       lastStoredValue.value = value
     }
   })
-}
-
-function store<T extends Stringable> (key: string, value: T): void {
-  localStorage.setItem(key, stringify(value))
-}
-
-function stringify<T extends Stringable> (v: T): string {
-  if (typeof v === 'string') {
-    return v
-  }
-
-  return v.toString()
 }

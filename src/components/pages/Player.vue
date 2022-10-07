@@ -3,7 +3,13 @@
     class="h-full flex flex-col mx-auto w-4/5 max-w-lg"
     :class="{ 'justify-center': playerLaunched }"
   >
-    <h2 class="text-4xl mb-14" :class="{ 'mt-36': !playerLaunched }">{{ track?.title }}</h2>
+    <h2
+      class="text-4xl mb-14 cursor-pointer"
+      :class="{ 'mt-36': !playerLaunched }"
+      @click="onTitleClick"
+    >
+      {{ track?.title }}
+    </h2>
 
     <Timeline v-if="playerLaunched" v-model:time="time" :duration="duration" :playing="playing" />
 
@@ -114,6 +120,10 @@ useLocalStorage(
   parseFloat,
   (t1, t2) => delta(t1, t2) > 1,
 )
+
+function onTitleClick (): void {
+  if (!playing.value) playerLaunched.value = !playerLaunched.value
+}
 
 function onEnded (): void {
   setTimeout(() => playerLaunched.value = false, 1500)

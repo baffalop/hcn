@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full px-4 max-w-screen-md">
+  <div class="h-full px-4 mx-auto max-w-screen-md">
     <div class="h-screen flex flex-col justify-center">
       <p>
         Welcome to some audio guides for Holocaust Centre North.

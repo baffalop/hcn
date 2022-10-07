@@ -1,16 +1,9 @@
-import { onUnmounted, ref, Ref, watch } from 'vue'
+import { Ref, onUnmounted, watch } from 'vue'
 
 import { Track } from '@/data/tracks'
 
-export function useMediaMetadata (track: Ref<Track>, playing: Ref<boolean>) {
-  const hasPlayed = ref(false)
-
-  watch(() => playing.value, playing => {
-    if (playing) hasPlayed.value = true
-  })
-
+export function useMediaMetadata (track: Ref<Track>, hasPlayed: Ref<boolean>) {
   watch(() => track.value, () => {
-    hasPlayed.value = false
     clearMediaMetadata()
   })
 

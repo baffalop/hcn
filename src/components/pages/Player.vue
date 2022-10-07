@@ -67,7 +67,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
@@ -84,6 +84,11 @@ const props = defineProps<{
 const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
+
+const hasPlayed = ref(false)
+watch(() => playing.value, playing => {
+  if (playing) hasPlayed.value = true
+})
 
 type MediaInstance = InstanceType<typeof Media>
 const media = ref<MediaInstance|null>(null)
@@ -104,7 +109,7 @@ const prevTrack = computed<Track|null>(() => getTrack(-1))
 
 const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 
-useMediaMetadata(ref(props.track), playing)
+useMediaMetadata(ref(props.track), hasPlayed)
 
 useLocalStorage(
   computed(() => `${props.track.slug}_position`),

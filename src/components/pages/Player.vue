@@ -1,22 +1,31 @@
 <template>
-  <div class="h-full flex flex-col justify-center mx-auto w-4/5 max-w-lg">
-    <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
+  <div
+    class="h-full flex flex-col mx-auto w-4/5 max-w-lg"
+    :class="{ 'justify-center': hasPlayed }"
+  >
+    <h2 class="text-4xl mb-14" :class="{ 'mt-36': !hasPlayed }">{{ track?.title }}</h2>
 
-    <Timeline v-model:time="time" :duration="duration" :playing="playing" />
+    <Timeline v-if="hasPlayed" v-model:time="time" :duration="duration" :playing="playing" />
 
-    <div class="flex items-center justify-center gap-6 -mt-2">
-      <button class="control" @click="time -= 10">
+    <div class="flex items-start justify-center gap-6 -mt-2">
+      <button v-if="hasPlayed" class="control" @click="time -= 10">
         <img src="/icon/rew-simple.svg" alt="Back 10 seconds">
       </button>
 
-      <button class="control" @click="onClickPlayPause">
+      <button
+        class="control flex-shrink-0"
+        :class="{ '!w-16': !hasPlayed }"
+        @click="onClickPlayPause"
+      >
         <img v-show="!playing" src="/icon/play-simple.svg" alt="Play">
         <img v-show="playing" src="/icon/pause-simple.svg" alt="Pause">
       </button>
 
-      <button class="control" @click="time += 10">
+      <button v-if="hasPlayed" class="control" @click="time += 10">
         <img src="/icon/ffw-simple.svg" alt="Forward 10 seconds">
       </button>
+
+      <TrackCredits v-if="!hasPlayed" />
     </div>
 
     <RouterLink
@@ -59,6 +68,7 @@ import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import { delta } from '@/utils/math'
+import TrackCredits from '@components/TrackCredits.vue'
 
 const props = defineProps<{
   track: Track

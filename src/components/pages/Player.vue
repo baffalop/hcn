@@ -117,8 +117,4 @@ video {
 .control {
   @apply cursor-pointer w-10 invert;
 }
-
-.timestamp {
-  @apply text-base text-gray-300 tabular-nums whitespace-nowrap;
-}
 </style>

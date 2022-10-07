@@ -1,31 +1,31 @@
 <template>
   <div
     class="h-full flex flex-col mx-auto w-4/5 max-w-lg"
-    :class="{ 'justify-center': hasPlayed }"
+    :class="{ 'justify-center': playerLaunched }"
   >
-    <h2 class="text-4xl mb-14" :class="{ 'mt-36': !hasPlayed }">{{ track?.title }}</h2>
+    <h2 class="text-4xl mb-14" :class="{ 'mt-36': !playerLaunched }">{{ track?.title }}</h2>
 
-    <Timeline v-if="hasPlayed" v-model:time="time" :duration="duration" :playing="playing" />
+    <Timeline v-if="playerLaunched" v-model:time="time" :duration="duration" :playing="playing" />
 
     <div class="flex items-start justify-center gap-6 -mt-2">
-      <button v-if="hasPlayed" class="control" @click="time -= 10">
+      <button v-if="playerLaunched" class="control" @click="time -= 10">
         <img src="/icon/rew-simple.svg" alt="Back 10 seconds">
       </button>
 
       <button
         class="control flex-shrink-0"
-        :class="{ '!w-16': !hasPlayed }"
+        :class="{ '!w-16': !playerLaunched }"
         @click="onClickPlayPause"
       >
         <img v-show="!playing" src="/icon/play-simple.svg" alt="Play">
         <img v-show="playing" src="/icon/pause-simple.svg" alt="Pause">
       </button>
 
-      <button v-if="hasPlayed" class="control" @click="time += 10">
+      <button v-if="playerLaunched" class="control" @click="time += 10">
         <img src="/icon/ffw-simple.svg" alt="Forward 10 seconds">
       </button>
 
-      <TrackCredits v-if="!hasPlayed" />
+      <TrackCredits v-if="!playerLaunched" />
     </div>
 
     <RouterLink
@@ -78,9 +78,16 @@ const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
 
-const hasPlayed = ref(false)
+// before player is launched, we show track credits and no media controls other than play
+// afterwards, track credits are minimised, show media controls
+const playerLaunched = ref(false)
+
 watch(() => playing.value, playing => {
-  if (playing) hasPlayed.value = true
+  if (playing) playerLaunched.value = true
+})
+
+watch(() => time.value, time => {
+  if (time > 0) playerLaunched.value = true
 })
 
 type MediaInstance = InstanceType<typeof Media>
@@ -99,7 +106,7 @@ const prevTrack = computed<Track|null>(() => getTrack(-1))
 
 const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 
-useMediaMetadata(ref(props.track), hasPlayed)
+useMediaMetadata(ref(props.track), playing)
 
 useLocalStorage(
   computed(() => `${props.track.slug}_position`),

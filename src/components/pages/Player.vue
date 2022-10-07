@@ -67,13 +67,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
 import { useMediaMetadata } from '@/composable/media'
+import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/Media.vue'
 import Timeline from '@components/Timeline.vue'
+import { delta } from '@/utils/math'
 
 const props = defineProps<{
   track: Track
@@ -103,6 +105,14 @@ const prevTrack = computed<Track|null>(() => getTrack(-1))
 const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 
 useMediaMetadata(ref(props.track), playing)
+
+const trackStorageKey = computed(() => `${props.track.slug}_position`)
+useLocalStorage(
+  trackStorageKey,
+  time,
+  (x, y) => delta(x, y) > 1,
+  parseFloat,
+)
 
 function getTrack (offset: number): Track|null {
   if (trackIndex.value === -1) {

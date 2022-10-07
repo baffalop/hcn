@@ -33,6 +33,10 @@ defineExpose({ play })
 
 const media: Ref<HTMLMediaElement|null> = ref(null)
 
+watch(() => media.value, media => {
+  if (media !== null) media.currentTime = props.time
+})
+
 watch(() => props.playing, playing => {
   if (!playing) media.value?.pause()
 })

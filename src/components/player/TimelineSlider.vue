@@ -1,13 +1,13 @@
 <template>
   <div
-    class="relative h-6 flex items-center -mb-2"
+    class="group relative h-6 flex items-center -mb-2"
     :style="{
       '--progress-percent': `${progressPercent}%`,
       '--progress': `${progress}`,
     }"
   >
-    <div class="track h-1 w-full rounded-full bg-gray-600"></div>
-    <div class="progress absolute top-1/2 transform -translate-y-1/2 left-0 h-1 rounded-full bg-gray-100"></div>
+    <div class="track bg-gray-600 w-full"></div>
+    <div class="progress bg-gray-100 absolute left-0 top-1/2 transform -translate-y-1/2"></div>
     <input
       type="range"
       v-model.number="current"
@@ -45,6 +45,10 @@ const progressPercent = computed(() => progress.value * 100)
 </script>
 
 <style scoped>
+.track, .progress {
+  @apply h-1 rounded-full group-hover:h-2 transition-height duration-200 ease-out;
+}
+
 .progress {
   --thumb-width: 0.5rem;
   width: calc(var(--progress-percent) + (var(--thumb-width) - (var(--thumb-width) * var(--progress))));

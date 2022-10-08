@@ -2,7 +2,6 @@
   <div class="grid grid-cols-2 gap-1">
     <TimelineSlider
       v-model:time="timeValue"
-      :resolution="34"
       :duration="duration"
       :playing="playing"
       class="col-span-full"

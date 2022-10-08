@@ -53,4 +53,8 @@ input {
 input::-webkit-slider-thumb {
   @apply appearance-none h-1 w-1 rounded-full bg-gray-100;
 }
+
+input::-moz-range-thumb {
+  @apply appearance-none h-1 w-1 rounded-full bg-gray-100;
+}
 </style>

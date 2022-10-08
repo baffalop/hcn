@@ -27,6 +27,7 @@ const current = computed({
   set: (value: number) => emit('update:time', value)
 })
 
+// floor to 1dp precision
 const max = computed(() => Math.floor(props.duration * 10) / 10)
 
 // position of cutoff for fill colour, adjusted for thumb position
@@ -40,6 +41,8 @@ const fillPosition = computed(() => {
 </script>
 
 <style scoped>
+@tailwind components;
+
 input {
   background: linear-gradient(
     to right,
@@ -51,10 +54,20 @@ input {
 }
 
 input::-webkit-slider-thumb {
-  @apply appearance-none h-1 w-1 rounded-full bg-gray-100;
+  @apply thumb;
 }
 
 input::-moz-range-thumb {
-  @apply appearance-none h-1 w-1 rounded-full bg-gray-100;
+  @apply thumb;
+}
+
+input::-ms-thumb {
+  @apply thumb;
+}
+
+@layer components {
+  .thumb {
+    @apply appearance-none h-1 w-1 rounded-full bg-gray-100;
+  }
 }
 </style>

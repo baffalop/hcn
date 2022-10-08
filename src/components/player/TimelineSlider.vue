@@ -1,33 +1,20 @@
 <template>
-  <div class="relative timeline flex items-center justify-between h-3">
-    <div
-      v-for="point in points"
-      :key="point"
-      class="h-1 w-1 min-w-1 rounded-full
-        transform transition-transform duration-300 ease-out"
-      :class="pointClasses(point)"
-    ></div>
-
-    <input
-      type="range"
-      v-model.number="current"
-      :max="max"
-      step="0.1"
-      class="absolute inset-0 cursor-pointer
-        opacity-0 appearance-none focus:outline-none focus:shadow-none"
-    >
-  </div>
+  <input
+    type="range"
+    v-model.number="current"
+    :max="max"
+    :step="0.1"
+    class="h-1 rounded cursor-pointer appearance-none focus:outline-none focus:shadow-none"
+    :style="{ '--fill-position': fillPosition }"
+  >
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { delta } from '@/utils/math'
-
 const props = defineProps<{
   time: number
   duration: number
-  resolution?: number
   playing?: boolean
 }>()
 
@@ -35,37 +22,35 @@ const emit = defineEmits<{
   (e: 'update:time', value: number): void
 }>()
 
-const resolution = computed(() => props.resolution ?? 15)
-const max = computed(() => Math.floor(props.duration))
-const gap = computed(() => props.duration / resolution.value)
-const atEnd = computed(() => delta(max.value, current.value) < 0.1)
-
-const points = computed(
-  () => range(resolution.value).map(scaleToMax)
-)
-
 const current = computed({
   get: () => props.time,
   set: (value: number) => emit('update:time', value)
 })
 
-function range (length: number): number[] {
-  return [...Array(length).keys()]
-}
+const max = computed(() => Math.floor(props.duration * 10) / 10)
 
-function scaleToMax (value: number): number {
-  return (value * max.value) / (resolution.value - 1)
-}
+// position of cutoff for fill colour, adjusted for thumb position
+// see https://css-tricks.com/value-bubbles-for-range-inputs/#:~:text=We%20can%20use%20some%20magic%20numbers%20there%20that%20seem%20to%20work%20decently%20well%20across%20browsers%3A
+const fillPosition = computed(() => {
+  const progress = props.time / max.value
+  const progressPercent = progress * 100
+  return `calc(${progressPercent}% + 0.125rem - ${progress * 0.25}rem)`
+})
 
-function pointClasses (point: number): Record<string, boolean> {
-  const hasPlayed = atEnd.value || point < current.value
-  return {
-    'bg-neutral-100': hasPlayed,
-    'bg-neutral-500': !hasPlayed,
-    'scale-[2]': !!props.playing && hasPlayed && delta(point, current.value) <= gap.value,
-  }
-}
 </script>
 
 <style scoped>
+input {
+  background: linear-gradient(
+    to right,
+    theme('colors.gray.100') 0%,
+    theme('colors.gray.100') var(--fill-position),
+    theme('colors.gray.600') var(--fill-position),
+    theme('colors.gray.600') 100%
+  );
+}
+
+input::-webkit-slider-thumb {
+  @apply appearance-none h-1 w-1 rounded-full bg-gray-100;
+}
 </style>

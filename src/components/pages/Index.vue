@@ -14,7 +14,7 @@
       </p>
     </div>
 
-    <div class="h-screen flex flex-col justify-center">
+    <div id="menu" class="h-screen flex flex-col justify-center">
       <h2 class="mt-10 mb-6 text-2xl">Linda O’Keefe</h2>
 
       <ul class="text-left max-w-max mx-auto">

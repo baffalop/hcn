@@ -1,10 +1,11 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteLocationNormalized, RouteRecordRaw } from 'vue-router'
 
 import './tailwind.css'
 import './styles.css'
 
 import { tracks } from '@/data/tracks'
+import { pageTransition } from '@/transitionState'
 import App from '@/App.vue'
 import Index from '@components/pages/Index.vue'
 import Player from '@components/pages/Player.vue'
@@ -18,6 +19,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: ContentPage,
+    name: 'content',
     children: [
       {
         path: `/play/:slug(${slugRegex})`,
@@ -43,7 +45,19 @@ const app = createApp(App)
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  async scrollBehavior (to, from) {
+    if (to.name === 'index' && isContentPage(from)) {
+      await pageTransition()
+      return { el: '#menu' }
+    }
+
+    return undefined
+  }
 })
 app.use(router)
 
 app.mount('#app')
+
+function isContentPage (route: RouteLocationNormalized): boolean {
+  return route.matched.some(r => r.name === 'content')
+}

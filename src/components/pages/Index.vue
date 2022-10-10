@@ -1,6 +1,6 @@
 <template>
-  <div class="h-full px-4 mx-auto max-w-screen-md">
-    <div class="h-screen flex flex-col justify-center">
+  <div class="h-full w-full">
+    <div class="h-4/5 px-4 mx-auto max-w-screen-md flex flex-col justify-center">
       <p>
         Welcome to some audio guides for Holocaust Centre North.
       </p>
@@ -14,7 +14,7 @@
       </p>
     </div>
 
-    <div id="menu" class="h-screen flex flex-col justify-center">
+    <div id="menu" class="h-screen w-full mx-auto flex flex-col justify-center">
       <h2 class="mt-10 mb-6 text-2xl">Linda O’Keeffe</h2>
 
       <ul class="text-left max-w-max mx-auto">
@@ -38,4 +38,12 @@ function formatTrackNumber (i: number): string {
 </script>
 
 <style scoped>
+#menu {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    theme(colors.primary.green.900) 20%,
+    theme(colors.primary.green.900)
+  );
+}
 </style>

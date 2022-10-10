@@ -2,7 +2,7 @@
   <FadeTransition
     mode="out-in"
     :in="300"
-    :out="150"
+    :out="200"
     @before-leave="transitionOut"
     @enter="transitionIn"
   >

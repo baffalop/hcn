@@ -38,16 +38,26 @@
     <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
 
     <Media
-      ref="media"
+      ref="audio"
+      type="audio"
+      :src="`/audio/${props.track.slug}.mp3`"
+      preload="auto"
+      v-model:time="time"
+      v-model:playing="playing"
+      @update:duration="duration = $event"
+    />
+
+    <Media
+      ref="video"
       type="video"
-      :src="src"
+      :src="`/video/${props.track.slug}.mp4`"
+      muted
       preload="auto"
       playsinline
       class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
       :class="playing ? 'opacity-100' : 'opacity-0'"
-      v-model:time="time"
+      v-model:time="videoTime"
       v-model:playing="playing"
-      @update:duration="duration = $event"
     />
   </div>
 </template>
@@ -61,6 +71,7 @@ import { useMediaMetadata } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
+import { formatSecs } from '@/utils/time'
 
 const props = defineProps<{
   track: Track
@@ -69,6 +80,14 @@ const props = defineProps<{
 const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
+const videoTime = ref(0)
+
+watch(() => time.value, time => {
+  if (delta(time, videoTime.value) > 0.5) {
+    console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)
+    videoTime.value = time
+  }
+})
 
 const hasPlayed = ref(false)
 watch(() => playing.value, playing => {
@@ -76,20 +95,18 @@ watch(() => playing.value, playing => {
 })
 
 type MediaInstance = InstanceType<typeof Media>
-const media = ref<MediaInstance|null>(null)
+const audio = ref<MediaInstance|null>(null)
 
 function onClickPlayPause () {
   playing.value = !playing.value
   if (playing.value) {
-    media.value?.play()
+    audio.value?.play()
   }
 }
 
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))
 const prevTrack = computed<Track|null>(() => getTrack(-1))
-
-const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 
 // TODO remove once all track videos are real
 const placeholderTracks = [

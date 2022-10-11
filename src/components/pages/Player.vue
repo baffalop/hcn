@@ -54,11 +54,11 @@
 import { computed, ref, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
+import { delta } from '@/utils/math'
 import { useMediaMetadata } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
-import { delta } from '@/utils/math'
 
 const props = defineProps<{
   track: Track

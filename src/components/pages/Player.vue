@@ -92,7 +92,7 @@ const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 useMediaMetadata(ref(props.track), hasPlayed)
 
 useLocalStorage(
-  computed(() => `${props.track.slug}_position`),
+  computed(() => `${props.track.slug}.position`),
   time,
   t => t.toFixed(1),
   parseFloat,

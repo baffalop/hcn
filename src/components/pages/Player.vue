@@ -73,6 +73,8 @@ import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import { formatSecs } from '@/utils/time'
 
+const SYNC_THRESHOLD = 0.5
+
 const props = defineProps<{
   track: Track
 }>()
@@ -82,16 +84,16 @@ const duration = ref(props.track.duration)
 const time = ref(0)
 const videoTime = ref(0)
 
-watch(() => time.value, time => {
-  if (delta(time, videoTime.value) > 0.5) {
-    console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)
-    videoTime.value = time
-  }
-})
-
 const hasPlayed = ref(false)
 watch(() => playing.value, playing => {
   if (playing) hasPlayed.value = true
+})
+
+watch(() => time.value, time => {
+  if (delta(time, videoTime.value) > SYNC_THRESHOLD) {
+    console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)
+    videoTime.value = time
+  }
 })
 
 type MediaInstance = InstanceType<typeof Media>

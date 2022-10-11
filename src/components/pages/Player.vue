@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex flex-col justify-center mx-auto w-4/5 max-w-lg">
-    <h2 class="text-4xl mb-14">{{ track?.title }}</h2>
+    <h2 class="text-4xl mb-14">{{ track.title }}</h2>
 
     <Timeline v-model:time="time" :duration="duration" :playing="playing" />
 

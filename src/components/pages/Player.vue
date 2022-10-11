@@ -57,7 +57,7 @@
       class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
       :class="playing ? 'opacity-100' : 'opacity-0'"
       v-model:time="videoTime"
-      v-model:playing="playing"
+      :playing="playing"
     />
   </div>
 </template>
@@ -98,10 +98,12 @@ watch(() => time.value, time => {
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)
+const video = ref<MediaInstance|null>(null)
 
 function onClickPlayPause () {
   playing.value = !playing.value
   if (playing.value) {
+    video.value?.play()
     audio.value?.play()
   }
 }

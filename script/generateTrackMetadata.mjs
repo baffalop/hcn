@@ -2,18 +2,18 @@ import { basename } from 'node:path'
 import { writeFile } from 'node:fs'
 
 import { globby } from 'globby'
-import { getVideoDurationInSeconds } from 'get-video-duration'
+import { getAudioDurationInSeconds } from 'get-audio-duration'
 
 import tracksData from '../src/data/tracks.json' assert { type: 'json' }
 
-const PATTERN = 'public/video/*.mp4'
+const PATTERN = 'public/audio/*.mp3'
 const DATA_PATH = 'src/data/tracks.json'
 
 const paths = await globby(PATTERN)
 
 for (const path of paths) {
-  const slug = basename(path, '.mp4')
-  const duration = await getVideoDurationInSeconds(path)
+  const slug = basename(path, '.mp3')
+  const duration = await getAudioDurationInSeconds(path)
 
   console.log(`Extracted duration for slug ${slug}:`, duration)
 

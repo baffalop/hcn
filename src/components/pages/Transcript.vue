@@ -3,7 +3,7 @@
     <Player :track="track" @update:time="time = $event" />
 
     <form class="flex mt-10 w-full gap-2" @submit.prevent="addLine">
-      <input type="text" v-model="currentLine.line" class="text-black w-full">
+      <input ref="input" type="text" v-model="currentLine.line" class="text-black w-full">
       <button type="submit" class="px-3 max-w-min bg-primary-blue text-xl font-bold rounded-lg">+</button>
     </form>
   </div>
@@ -19,6 +19,7 @@ const props = defineProps<{
 }>()
 
 const time = ref(0)
+const input = ref<HTMLInputElement|null>(null)
 
 interface Line {
   start: number
@@ -48,6 +49,8 @@ function addLine (): void {
     transcription.value.push({ start: time.value, line: '' })
     transcription.value.sort((a, b) => b.start - a.start)
   }
+
+  input.value?.focus()
 }
 
 function blankLine (): Line {

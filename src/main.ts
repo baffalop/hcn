@@ -8,7 +8,7 @@ import { tracks } from '@/data/tracks'
 import { pageTransition } from '@/transitionState'
 import App from '@/App.vue'
 import Index from '@components/pages/Index.vue'
-import Player from '@components/pages/Player.vue'
+import Transcript from '@components/pages/Transcript.vue'
 import ContentPage from '@components/pages/ContentPage.vue'
 import NotFound from '@components/pages/NotFound.vue'
 
@@ -24,7 +24,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: `/play/:slug(${slugRegex})`,
         name: 'player',
-        component: Player,
+        component: Transcript,
         props: route => {
           const slug = route.params.slug as string
           const track = tracks.find(track => track.slug === slug)

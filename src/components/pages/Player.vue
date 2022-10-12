@@ -86,6 +86,10 @@ const props = defineProps<{
   track: Track
 }>()
 
+const emit = defineEmits<{
+  (e: 'update:time', time: number): void
+}>()
+
 enum MediaState {
   Waiting,
   CanPlay,
@@ -115,6 +119,8 @@ function onClickPlayPause () {
 }
 
 watch(() => time.value, time => {
+  emit('update:time', time))
+
   if (delta(time, videoTime.value) > SYNC_THRESHOLD_SECS) {
     console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)
     videoTime.value = time

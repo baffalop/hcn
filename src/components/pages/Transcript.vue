@@ -1,8 +1,30 @@
 <template>
-  <div class="h-full flex flex-col justify-center mx-auto w-4/5 max-w-lg">
+  <div class="h-full flex flex-col justify-center items-center mx-auto">
     <Player :track="track" @update:time="time = $event" />
 
-    <form class="flex mt-10 w-full gap-2" @submit.prevent="addLine">
+    <TransitionGroup
+      tag="div"
+      class="my-10 h-20 w-screen px-4 overflow-hidden flex flex-col justify-center"
+      name="line"
+      move-class="transition-all duration-500 ease-in-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      enter-active-class="transition-opacity duration-500"
+    >
+      <p :key="expiredLine.start.toFixed(0)" class="opacity-0 !mb-0">
+        {{ expiredLine.line }}
+      </p>
+
+      <p :key="previousLine.start.toFixed(0)" class="text-gray-400 !mb-0">
+        {{ previousLine.line }}
+      </p>
+
+      <p :key="currentLine.start.toFixed(0)" class="text-gray-100 !mb-0">
+        {{ currentLine.line }}
+      </p>
+    </TransitionGroup>
+
+    <form class="flex w-4/5 max-w-lg gap-2" @submit.prevent="addLine">
       <input ref="input" type="text" v-model="currentLine.line" class="text-black w-full">
       <button type="submit" class="px-3 max-w-min bg-primary-blue text-xl font-bold rounded-lg">+</button>
     </form>
@@ -34,12 +56,14 @@ const transcription = ref<Line[]>([
   { "start": 60.966579, "line": "Well, obviously my contemporaries who committed these atrocities are dreadful" },
 ])
 
-const currentLine = computed(() => transcription.value.reduce(
-  (prev, cur) => {
-    if (cur.start > time.value) return prev
-    return cur.start > prev.start ? cur : prev
-  },
-  blankLine()
+const currentLine = computed(() => findMostRecentLine(transcription.value, time.value))
+const previousLine = computed(() => findMostRecentLine(
+  transcription.value.filter(line => line.line !== currentLine.value.line),
+  time.value
+))
+const expiredLine = computed(() => findMostRecentLine(
+  transcription.value.filter(line => line.line !== currentLine.value.line && line.line !== previousLine.value.line),
+  time.value
 ))
 
 function addLine (): void {
@@ -53,6 +77,13 @@ function addLine (): void {
   }
 
   input.value?.focus()
+}
+
+function findMostRecentLine (lines: Line[], time: number): Line {
+  return lines.reduce((prev, cur) => {
+    if (cur.start > time) return prev
+    return cur.start > prev.start ? cur : prev
+  }, blankLine())
 }
 
 function blankLine (): Line {

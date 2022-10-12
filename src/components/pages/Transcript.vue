@@ -54,6 +54,8 @@ const transcription = ref<Line[]>([
   { "start": 80.854896, "line": "and I probably would!" },
   { "start": 70.53638, "line": "but I'm concerned that... sometimes think... what I would have been if I hadn't been Jewish, would I have been a Nazi?" },
   { "start": 60.966579, "line": "Well, obviously my contemporaries who committed these atrocities are dreadful" },
+  { "start":59.839864, "line":"Well, you know you're a survivor because you're there" },
+  { "start":53.263789, "line":"And, erm..." },
 ])
 
 const currentLine = computed(() => findMostRecentLine(transcription.value, time.value))

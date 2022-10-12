@@ -27,9 +27,11 @@ interface Line {
 }
 
 const transcription = ref<Line[]>([
-  {"start":80.854896,"line":"and I probably would!"},
-  {"start":70.53638,"line":"but I'm concerned that... sometimes think... what I would have been if I hadn't been Jewish, would I have been a Nazi?"},
-  {"start":60.966579,"line":"Well, obviously my contemporaries who committed these atrocities are dreadful"},
+  { "start": 104.763893, "line": "to resist the temptations the Nazis offered for kids of that age" },
+  { "start": 102.091437, "line": "you know, it's very difficult for a 12, 13, 14 year old" },
+  { "start": 80.854896, "line": "and I probably would!" },
+  { "start": 70.53638, "line": "but I'm concerned that... sometimes think... what I would have been if I hadn't been Jewish, would I have been a Nazi?" },
+  { "start": 60.966579, "line": "Well, obviously my contemporaries who committed these atrocities are dreadful" },
 ])
 
 const currentLine = computed(() => transcription.value.reduce(

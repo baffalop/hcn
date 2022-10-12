@@ -67,7 +67,7 @@ const expiredLine = computed(() => findMostRecentLine(
 ))
 
 function addLine (): void {
-  if (currentLine.value.line === '') {
+  if (currentLine.value.line === '' && currentLine.value.start !== 0) {
     console.log(`time set: ${time.value}`)
     currentLine.value.start = time.value
   } else {

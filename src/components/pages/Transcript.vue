@@ -16,7 +16,7 @@
       <p
         :key="previousLine.start.toFixed(0)"
         class="text-gray-400 transition-opacity duration-500"
-        :class="previousLine.end && time - previousLine.end > 5 ? 'opacity-0' : 'opacity-100'"
+        :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
       >
         {{ previousLine.line }}
       </p>
@@ -24,7 +24,7 @@
       <p
         :key="currentLine.start.toFixed(0)"
         class="transition-opacity duration-500"
-        :class="currentLine.end && time - currentLine.end > 5 ? 'opacity-0' : 'opacity-100'"
+        :class="currentLine.end && time - currentLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
       >
         {{ currentLine.line }}
       </p>
@@ -45,6 +45,8 @@ import Player from '@components/pages/Player.vue'
 const props = defineProps<{
   track: Track
 }>()
+
+const EXPIRY_SECS = 6
 
 const time = ref(0)
 const input = ref<HTMLInputElement|null>(null)

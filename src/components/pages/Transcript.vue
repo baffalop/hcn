@@ -4,7 +4,7 @@
 
     <TransitionGroup
       tag="div"
-      class="my-10 h-20 w-screen px-4 overflow-hidden flex flex-col justify-center relative"
+      class="my-10 h-24 w-screen px-4 overflow-hidden flex flex-col justify-center relative"
       name="line"
       move-class="transition-all duration-300 ease-in-out"
       enter-from-class="!opacity-0 translate-y-10"

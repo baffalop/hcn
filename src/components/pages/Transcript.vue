@@ -62,7 +62,7 @@ const transcription = ref<Line[]>([
   {"start":148.445383,"line":"And not be part of the crowd","end":150.057817},
   {"start":141.622436,"line":"And, it's very very difficult for a kid of that age to resist that temptation","end":148.445383},
   {"start":137.913398,"line":"Things like that as they had in the Hitler Youth","end":141.622436},
-  {"start":134.186143,"line":"Uniforms, gunfires, learning to shoot rifles","end":137.913398},
+  {"start":134.186143,"line":"Uniforms, campfires, learning to shoot rifles","end":137.913398},
   {"start":105.05566,"line":"to resist the temptations the Nazis offered for kids of that age","end":109.756262},
   {"start":101.749868,"line":"You know, it's very difficult for a 12, 13, 14 year-old","end":105.05566},
   {"start":81.545969,"line":"And I probably would","end":83.677251},

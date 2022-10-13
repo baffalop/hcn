@@ -16,7 +16,7 @@
     >
       <p
         :key="previousLine.start.toFixed(0)"
-        class="text-gray-400 transition-opacity"
+        class="text-gray-400 transition-opacity duration-700"
         :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
       >
         {{ previousLine.line }}

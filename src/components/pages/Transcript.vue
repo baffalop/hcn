@@ -31,7 +31,7 @@
       </p>
     </TransitionGroup>
 
-    <form class="flex w-4/5 max-w-lg gap-2" @submit.prevent="addLine">
+    <form v-if="false" class="flex w-4/5 max-w-lg gap-2" @submit.prevent="addLine">
       <input ref="input" type="text" v-model="currentLine.line" class="text-black w-full">
       <button type="submit" class="px-3 max-w-min bg-primary-blue text-xl font-bold rounded-lg">+</button>
     </form>

@@ -6,17 +6,17 @@
       tag="div"
       class="my-10 h-24 w-screen px-4 flex flex-col justify-center relative"
       name="line"
-      move-class="transition-all duration-300 ease-in-out"
+      move-class="transition-all !duration-500 ease-in-out"
       enter-from-class="!opacity-0 translate-y-10"
       enter-to-class="opacity-100"
-      enter-active-class="transition-all ease-in-out transform"
+      enter-active-class="!duration-700 transition-all ease-in-out transform"
       leave-from-class="opacity-100"
       leave-to-class="!opacity-0 -translate-y-10"
-      leave-active-class="ease-in-out absolute w-screen transform"
+      leave-active-class="!duration-500 ease-in-out absolute w-screen transform"
     >
       <p
         :key="previousLine.start.toFixed(0)"
-        class="text-gray-400 transition-opacity duration-500"
+        class="text-gray-400 transition-opacity"
         :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
       >
         {{ previousLine.line }}
@@ -24,7 +24,7 @@
 
       <p
         :key="currentLine.start.toFixed(0)"
-        class="transition-opacity duration-500"
+        class="transition-opacity duration-700"
         :class="currentLine.end && time - currentLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
       >
         {{ currentLine.line }}

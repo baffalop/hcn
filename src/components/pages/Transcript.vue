@@ -16,7 +16,7 @@
       <p
         :key="previousLine.start.toFixed(0)"
         class="text-gray-400 transition-opacity duration-500"
-        :class="time - previousLine.start > 15 ? 'opacity-0' : 'opacity-100'"
+        :class="previousLine.end && time - previousLine.end > 5 ? 'opacity-0' : 'opacity-100'"
       >
         {{ previousLine.line }}
       </p>
@@ -24,7 +24,7 @@
       <p
         :key="currentLine.start.toFixed(0)"
         class="transition-opacity duration-500"
-        :class="time - previousLine.start > 15 ? 'opacity-0' : 'opacity-100'"
+        :class="currentLine.end && time - currentLine.end > 5 ? 'opacity-0' : 'opacity-100'"
       >
         {{ currentLine.line }}
       </p>
@@ -51,17 +51,21 @@ const input = ref<HTMLInputElement|null>(null)
 
 interface Line {
   start: number
+  end?: number
   line: string
 }
 
 const transcription = ref<Line[]>([
-  { "start": 104.763893, "line": "to resist the temptations the Nazis offered for kids of that age" },
-  { "start": 102.091437, "line": "you know, it's very difficult for a 12, 13, 14 year old" },
-  { "start": 80.854896, "line": "and I probably would!" },
-  { "start": 70.53638, "line": "but I'm concerned that... sometimes think... what I would have been if I hadn't been Jewish, would I have been a Nazi?" },
-  { "start": 60.966579, "line": "Well, obviously my contemporaries who committed these atrocities are dreadful" },
-  { "start":59.839864, "line":"Well, you know you're a survivor because you're there" },
-  { "start":53.263789, "line":"And, erm..." },
+  {"start":109.756262,"line":""},
+  {"start":105.05566,"line":"to resist the temptations the Nazis offered for kids of that age","end":109.756262},
+  {"start":101.749868,"line":"You know, it's very difficult for a 12, 13, 14 year-old","end":105.05566},
+  {"start":81.545969,"line":"And I probably would","end":83.677251},
+  {"start":79.575164,"line":"Would I have been a Nazi?","end":81.545969},
+  {"start":73.704323,"line":"sometimes think what I would have been if I hadn't been Jewish","end":79.575164},
+  {"start":70.002884,"line":"but I'm concerned that...","end":73.704323},
+  {"start":60.522463,"line":"Well obviously my contemporaries who committed these atrocities are dreadful","end":70.002884},
+  {"start":54.747394,"line":"Well, you know you're a survivor because you're there","end":60.522463},
+  {"start":53.908808,"line":"And, erm...","end":54.747394},
 ])
 
 const currentLine = computed(() => findMostRecentLine(transcription.value, time.value))
@@ -76,6 +80,7 @@ function addLine (): void {
     currentLine.value.start = time.value
   } else {
     console.log(`new line: ${time.value}`)
+    currentLine.value.end = time.value
     transcription.value.push({ start: time.value, line: '' })
     transcription.value.sort((a, b) => b.start - a.start)
   }

@@ -7,18 +7,25 @@
       class="my-10 h-20 w-screen px-4 overflow-hidden flex flex-col justify-center relative"
       name="line"
       move-class="transition-all duration-500 ease-in-out"
-      enter-from-class="opacity-0"
+      enter-from-class="!opacity-0"
       enter-to-class="opacity-100"
-      enter-active-class="transition-opacity duration-500"
       leave-from-class="opacity-100"
-      leave-to-class="opacity-0 -translate-y-10"
-      leave-active-class="transition-opacity duration-500 ease-in-out absolute w-screen transform"
+      leave-to-class="!opacity-0 -translate-y-10"
+      leave-active-class="ease-in-out absolute w-screen transform"
     >
-      <p :key="previousLine.start.toFixed(0)" class="text-gray-400 !mb-0">
+      <p
+        :key="previousLine.start.toFixed(0)"
+        class="text-gray-400 transition-opacity duration-500"
+        :class="time - previousLine.start > 15 ? 'opacity-0' : 'opacity-100'"
+      >
         {{ previousLine.line }}
       </p>
 
-      <p :key="currentLine.start.toFixed(0)" class="text-gray-100 !mb-0">
+      <p
+        :key="currentLine.start.toFixed(0)"
+        class="transition-opacity duration-500"
+        :class="time - previousLine.start > 15 ? 'opacity-0' : 'opacity-100'"
+      >
         {{ currentLine.line }}
       </p>
     </TransitionGroup>
@@ -89,4 +96,7 @@ function blankLine (): Line {
 </script>
 
 <style scoped>
+p {
+  @apply mb-0;
+}
 </style>

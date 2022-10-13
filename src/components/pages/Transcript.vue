@@ -4,17 +4,16 @@
 
     <TransitionGroup
       tag="div"
-      class="my-10 h-20 w-screen px-4 overflow-hidden flex flex-col justify-center"
+      class="my-10 h-20 w-screen px-4 overflow-hidden flex flex-col justify-center relative"
       name="line"
       move-class="transition-all duration-500 ease-in-out"
       enter-from-class="opacity-0"
       enter-to-class="opacity-100"
       enter-active-class="transition-opacity duration-500"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0 -translate-y-10"
+      leave-active-class="transition-opacity duration-500 ease-in-out absolute w-screen transform"
     >
-      <p :key="expiredLine.start.toFixed(0)" class="opacity-0 !mb-0">
-        {{ expiredLine.line }}
-      </p>
-
       <p :key="previousLine.start.toFixed(0)" class="text-gray-400 !mb-0">
         {{ previousLine.line }}
       </p>
@@ -61,10 +60,6 @@ const transcription = ref<Line[]>([
 const currentLine = computed(() => findMostRecentLine(transcription.value, time.value))
 const previousLine = computed(() => findMostRecentLine(
   transcription.value.filter(line => line.line !== currentLine.value.line),
-  time.value
-))
-const expiredLine = computed(() => findMostRecentLine(
-  transcription.value.filter(line => line.line !== currentLine.value.line && line.line !== previousLine.value.line),
   time.value
 ))
 

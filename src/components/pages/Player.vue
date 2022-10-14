@@ -83,7 +83,7 @@ import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
-import Transcript from '@components/pages/Transcript.vue'
+import Transcript from '@components/player/Transcript.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 

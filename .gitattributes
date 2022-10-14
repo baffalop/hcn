@@ -1,3 +1,4 @@
 public/with-audio.mp4 filter=lfs diff=lfs merge=lfs -text
 public/example-aous.mp4 filter=lfs diff=lfs merge=lfs -text
 public/video/*.mp4 filter=lfs diff=lfs merge=lfs -text
+public/transcript/video/*.mp4 filter=lfs diff=lfs merge=lfs -text

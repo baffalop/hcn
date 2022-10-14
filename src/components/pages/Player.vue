@@ -1,10 +1,10 @@
 <template>
-  <div class="h-full flex flex-col justify-center items-center">
-    <h2 class="text-4xl mb-14">{{ track.title }}</h2>
+  <div class="player grid h-full grid-cols-1 gap-10 content-center justify-items-center">
+    <h2 class="text-4xl place-self-end justify-self-center">{{ track.title }}</h2>
 
     <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-4/5 max-w-lg" />
 
-    <div class="flex items-center justify-center gap-6 -mt-2">
+    <div class="flex items-center justify-center gap-6 -mt-12">
       <button class="control" @click="time -= 10">
         <img src="/icon/rew-simple.svg" alt="Back 10 seconds">
       </button>
@@ -191,6 +191,10 @@ function atLeastOneMediaIs (state: MediaState): boolean {
 </script>
 
 <style scoped>
+.player {
+  grid-template-rows: 1.2fr min-content min-content 1fr;
+}
+
 .control {
   @apply cursor-pointer w-10 invert;
 }

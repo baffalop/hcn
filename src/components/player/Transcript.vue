@@ -1,7 +1,7 @@
 <template>
   <TransitionGroup
     tag="div"
-    class="my-10 h-24 w-screen px-4 flex flex-col justify-center relative"
+    class="h-24 w-screen px-4 flex flex-col justify-center relative"
     name="line"
     move-class="transition-all !duration-500 ease-in-out"
     enter-from-class="!opacity-0 translate-y-10"
@@ -28,10 +28,12 @@
     </p>
   </TransitionGroup>
 
+  <!--
   <form v-if="false" class="flex w-4/5 max-w-lg gap-2" @submit.prevent="addLine">
     <input ref="input" type="text" v-model="currentLine.line" class="text-black w-full">
     <button type="submit" class="px-3 max-w-min bg-primary-blue text-xl font-bold rounded-lg">+</button>
   </form>
+  -->
 </template>
 <script setup lang="ts">
 import { computed, ref } from 'vue'

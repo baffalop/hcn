@@ -1,55 +1,50 @@
 <template>
-  <div class="h-full flex flex-col justify-center items-center mx-auto">
-    <Player :track="track" @update:time="time = $event" />
-
-    <TransitionGroup
-      tag="div"
-      class="my-10 h-24 w-screen px-4 flex flex-col justify-center relative"
-      name="line"
-      move-class="transition-all !duration-500 ease-in-out"
-      enter-from-class="!opacity-0 translate-y-10"
-      enter-to-class="opacity-100"
-      enter-active-class="!duration-700 transition-all ease-in-out transform"
-      leave-from-class="opacity-100"
-      leave-to-class="!opacity-0 -translate-y-10"
-      leave-active-class="!duration-500 ease-in-out absolute w-screen transform"
+  <TransitionGroup
+    tag="div"
+    class="my-10 h-24 w-screen px-4 flex flex-col justify-center relative"
+    name="line"
+    move-class="transition-all !duration-500 ease-in-out"
+    enter-from-class="!opacity-0 translate-y-10"
+    enter-to-class="opacity-100"
+    enter-active-class="!duration-700 transition-all ease-in-out transform"
+    leave-from-class="opacity-100"
+    leave-to-class="!opacity-0 -translate-y-10"
+    leave-active-class="!duration-500 ease-in-out absolute w-screen transform"
+  >
+    <p
+      :key="previousLine.start.toFixed(0)"
+      class="text-gray-400 transition-opacity duration-700"
+      :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
     >
-      <p
-        :key="previousLine.start.toFixed(0)"
-        class="text-gray-400 transition-opacity duration-700"
-        :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
-      >
-        {{ previousLine.line }}
-      </p>
+      {{ previousLine.line }}
+    </p>
 
-      <p
-        :key="currentLine.start.toFixed(0)"
-        class="transition-opacity duration-700"
-        :class="currentLine.end && time - currentLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
-      >
-        {{ currentLine.line }}
-      </p>
-    </TransitionGroup>
+    <p
+      :key="currentLine.start.toFixed(0)"
+      class="transition-opacity duration-700"
+      :class="currentLine.end && time - currentLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
+    >
+      {{ currentLine.line }}
+    </p>
+  </TransitionGroup>
 
-    <form v-if="false" class="flex w-4/5 max-w-lg gap-2" @submit.prevent="addLine">
-      <input ref="input" type="text" v-model="currentLine.line" class="text-black w-full">
-      <button type="submit" class="px-3 max-w-min bg-primary-blue text-xl font-bold rounded-lg">+</button>
-    </form>
-  </div>
+  <form v-if="false" class="flex w-4/5 max-w-lg gap-2" @submit.prevent="addLine">
+    <input ref="input" type="text" v-model="currentLine.line" class="text-black w-full">
+    <button type="submit" class="px-3 max-w-min bg-primary-blue text-xl font-bold rounded-lg">+</button>
+  </form>
 </template>
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
 import { Track } from '@/data/tracks'
-import Player from '@components/pages/Player.vue'
 
 const props = defineProps<{
   track: Track
+  time: number
 }>()
 
 const EXPIRY_SECS = 6
 
-const time = ref(0)
 const input = ref<HTMLInputElement|null>(null)
 
 interface Line {
@@ -74,20 +69,20 @@ const transcription = ref<Line[]>([
   {"start":53.908808,"line":"And, erm...","end":54.747394}
 ])
 
-const currentLine = computed(() => findMostRecentLine(transcription.value, time.value))
+const currentLine = computed(() => findMostRecentLine(transcription.value, props.time))
 const previousLine = computed(() => findMostRecentLine(
   transcription.value.filter(line => line.line !== currentLine.value.line),
-  time.value
+  props.time
 ))
 
 function addLine (): void {
   if (currentLine.value.line === '' && currentLine.value.start !== 0) {
-    console.log(`time set: ${time.value}`)
-    currentLine.value.start = time.value
+    console.log(`time set: ${props.time}`)
+    currentLine.value.start = props.time
   } else {
-    console.log(`new line: ${time.value}`)
-    currentLine.value.end = time.value
-    transcription.value.push({ start: time.value, line: '' })
+    console.log(`new line: ${props.time}`)
+    currentLine.value.end = props.time
+    transcription.value.push({ start: props.time, line: '' })
     transcription.value.sort((a, b) => b.start - a.start)
   }
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col justify-center mx-auto w-4/5 max-w-lg">
+  <div class="h-full flex flex-col justify-center items-center">
     <h2 class="text-4xl mb-14">{{ track.title }}</h2>
 
-    <Timeline v-model:time="time" :duration="duration" :playing="playing" />
+    <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-4/5 max-w-lg" />
 
     <div class="flex items-center justify-center gap-6 -mt-2">
       <button class="control" @click="time -= 10">
@@ -22,6 +22,8 @@
         <img src="/icon/ffw-simple.svg" alt="Forward 10 seconds">
       </button>
     </div>
+
+    <Transcript :track="track" :time="time" />
 
     <RouterLink
       v-if="prevTrack"
@@ -76,11 +78,12 @@ import { computed, ref, UnwrapRef, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { delta } from '@/utils/math'
+import { formatSecs } from '@/utils/time'
 import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
-import { formatSecs } from '@/utils/time'
+import Transcript from '@components/pages/Transcript.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 

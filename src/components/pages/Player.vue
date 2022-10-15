@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex flex-col justify-center items-center">
+  <div class="h-full flex flex-col justify-center items-center" :class="{ placeholder }">
     <h2 class="text-4xl mb-14">{{ track.title }}</h2>
 
     <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-4/5 max-w-lg" />
@@ -91,6 +91,14 @@ const prevTrack = computed<Track|null>(() => getTrack(-1))
 
 const src = computed<string>(() => `/video/${props.track.slug}.mp4`)
 
+// TODO remove once all track videos are real
+const placeholderTracks = [
+  'restrictions-and-ejection',
+  'saying-goodbye',
+  'wire-and-fences',
+]
+const placeholder = computed<boolean>(() => placeholderTracks.includes(props.track.slug))
+
 useMediaMetadata(ref(props.track), hasPlayed)
 
 useLocalStorage(
@@ -112,11 +120,9 @@ function getTrack (offset: number): Track|null {
 </script>
 
 <style scoped>
-/*
-video {
+.placeholder video {
   filter: invert(0.8) brightness(0.4) sepia(1) saturate(1.5) hue-rotate(139deg);
 }
-*/
 
 .control {
   @apply cursor-pointer w-10 invert;

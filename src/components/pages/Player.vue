@@ -1,8 +1,8 @@
 <template>
-  <div class="h-full flex flex-col justify-center mx-auto w-4/5 max-w-lg">
+  <div class="h-full flex flex-col justify-center items-center">
     <h2 class="text-4xl mb-14">{{ track.title }}</h2>
 
-    <Timeline v-model:time="time" :duration="duration" :playing="playing" />
+    <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-4/5 max-w-lg" />
 
     <div class="flex items-center justify-center gap-6 -mt-2">
       <button class="control" @click="time -= 10">
@@ -34,6 +34,8 @@
     >
       {{ nextTrack.title }} &gt;
     </RouterLink>
+
+    <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
 
     <Media
       ref="media"
@@ -110,9 +112,11 @@ function getTrack (offset: number): Track|null {
 </script>
 
 <style scoped>
+/*
 video {
   filter: invert(0.8) brightness(0.4) sepia(1) saturate(1.5) hue-rotate(139deg);
 }
+*/
 
 .control {
   @apply cursor-pointer w-10 invert;

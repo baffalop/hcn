@@ -2,7 +2,8 @@
   {
     "slug": "constant-vigilance",
     "title": "Constant Vigilance",
-    "duration": 362.1
+    "duration": 362.1,
+    "bgColor": "rgb(114, 141, 114)"
   },
   {
     "slug": "restrictions-and-ejection",

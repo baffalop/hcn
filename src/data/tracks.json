@@ -2,22 +2,26 @@
   {
     "slug": "constant-vigilance",
     "title": "Constant Vigilance",
+    "artist": "Linda O’Keeffe",
     "duration": 362.1,
     "bgColor": "rgb(107, 142, 112)"
   },
   {
     "slug": "restrictions-and-ejection",
     "title": "Restrictions and Ejection",
+    "artist": "Linda O’Keeffe",
     "duration": 543.875
   },
   {
     "slug": "saying-goodbye",
     "title": "Saying Goodbye",
+    "artist": "Linda O’Keeffe",
     "duration": 567.75
   },
   {
     "slug": "wire-and-fences",
     "title": "Wire and Fences",
+    "artist": "Linda O’Keeffe",
     "duration": 485
   }
 ]

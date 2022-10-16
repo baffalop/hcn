@@ -4,6 +4,7 @@ export interface Track {
   title: string
   slug: string
   duration: number
+  artist: string
   bgColor?: string
 }
 

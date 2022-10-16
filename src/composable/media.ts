@@ -18,10 +18,10 @@ export function useMediaMetadata (track: Ref<Track>, hasPlayed: Ref<boolean>) {
   })
 }
 
-function setMediaMetadataFrom (track: Track): void {
+function setMediaMetadataFrom ({ title, artist }: Track): void {
   navigator.mediaSession.metadata = new MediaMetadata({
-    title: track.title,
-    artist: 'Linda O’Keeffe',
+    title,
+    artist,
   })
 }
 

@@ -64,7 +64,7 @@
       preload="auto"
       playsinline
       class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
-      :class="playing ? 'opacity-100' : 'opacity-0'"
+      :class="playState === PlayState.Playing ? 'opacity-100' : 'opacity-0'"
       @waiting="onMediaStateChange('video', MediaState.Waiting)"
       @canplay="onMediaStateChange('video', MediaState.CanPlay)"
     />
@@ -173,8 +173,6 @@ function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, stat
 
 function onAudioPlaying (newPlaying: boolean): void {
   // break feedback loop of audio reporting it's paused when it's waiting for video
-  console.log('audio playing', newPlaying)
-  console.log('play state', playState.value)
   if (!newPlaying && playState.value !== PlayState.Suspended) {
     playing.value = false
   }

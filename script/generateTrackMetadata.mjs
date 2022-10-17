@@ -26,7 +26,9 @@ for (const path of paths) {
   tracksData[trackIndex].duration = duration
 }
 
-writeFile(DATA_PATH, JSON.stringify(tracksData, null, 2), err => {
+const dataEncoded = JSON.stringify(tracksData, null, 2)
+
+writeFile(DATA_PATH, dataEncoded + '\n', err => {
   if (err) {
     console.error(err)
     return

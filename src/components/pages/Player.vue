@@ -9,7 +9,11 @@
         <img src="/icon/rew-simple.svg" alt="Back 10 seconds">
       </button>
 
-      <button class="control" @click="onClickPlayPause">
+      <button
+        class="control transition-opacity duration-300"
+        :class="playing && playState === PlayState.Waiting ? 'opacity-50' : 'opacity-100'"
+        @click="onClickPlayPause"
+      >
         <img v-show="!playing" src="/icon/play-simple.svg" alt="Play">
         <img v-show="playing" src="/icon/pause-simple.svg" alt="Pause">
       </button>
@@ -45,19 +49,23 @@
       v-model:time="time"
       v-model:playing="playing"
       @update:duration="duration = $event"
+      @waiting="playStates.audio = PlayState.Waiting"
+      @canplay="playStates.audio = PlayState.CanPlay"
     />
 
     <Media
       ref="video"
       type="video"
       :src="`/video/${props.track.slug}.mp4`"
+      v-model:time="videoTime"
+      :playing="playing"
       muted
       preload="auto"
       playsinline
       class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
       :class="playing ? 'opacity-100' : 'opacity-0'"
-      v-model:time="videoTime"
-      :playing="playing"
+      @waiting="playStates.video = PlayState.Waiting"
+      @canplay="playStates.video = PlayState.CanPlay"
     />
   </div>
 </template>
@@ -78,6 +86,11 @@ const SYNC_THRESHOLD = 0.5
 const props = defineProps<{
   track: Track
 }>()
+
+enum PlayState {
+  Waiting,
+  CanPlay,
+}
 
 const playing = ref(false)
 const duration = ref(props.track.duration)
@@ -108,6 +121,15 @@ function onClickPlayPause () {
   }
 }
 
+const playStates = ref({
+  audio: PlayState.Waiting,
+  video: PlayState.Waiting,
+})
+
+const playState = computed<PlayState>(
+  () => atLeastOneMediaIs(PlayState.Waiting) ? PlayState.Waiting : PlayState.CanPlay
+)
+
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))
 const prevTrack = computed<Track|null>(() => getTrack(-1))
@@ -136,6 +158,10 @@ function getTrack (offset: number): Track|null {
   }
 
   return tracks[trackIndex.value + offset] ?? null
+}
+
+function atLeastOneMediaIs (state: PlayState): boolean {
+  return playStates.value.audio === state || playStates.value.video === state
 }
 
 </script>

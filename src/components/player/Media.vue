@@ -38,7 +38,7 @@ watch(() => media.value, media => {
 })
 
 watch(() => props.playing, playing => {
-  if (!playing) media.value?.pause()
+  playing ? media.value?.play() : media.value?.pause()
 })
 
 watch(() => props.time, (time, oldTime) => {

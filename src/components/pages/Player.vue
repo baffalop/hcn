@@ -11,7 +11,7 @@
 
       <button
         class="control transition-opacity duration-300"
-        :class="playing && playState === PlayState.Waiting ? 'opacity-50' : 'opacity-100'"
+        :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
         @click="onClickPlayPause"
       >
         <img v-show="!playing" src="/icon/play-simple.svg" alt="Play">
@@ -47,10 +47,11 @@
       :src="`/audio/${props.track.slug}.mp3`"
       preload="auto"
       v-model:time="time"
-      v-model:playing="playing"
+      :playing="playState === PlayState.Playing"
+      @update:playing="onAudioPlaying"
       @update:duration="duration = $event"
-      @waiting="playStates.audio = PlayState.Waiting"
-      @canplay="playStates.audio = PlayState.CanPlay"
+      @waiting="onMediaStateChange('audio', MediaState.Waiting)"
+      @canplay="onMediaStateChange('audio', MediaState.CanPlay)"
     />
 
     <Media
@@ -58,20 +59,20 @@
       type="video"
       :src="`/video/${props.track.slug}.mp4`"
       v-model:time="videoTime"
-      :playing="playing"
+      :playing="playState === PlayState.Playing"
       muted
       preload="auto"
       playsinline
       class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
       :class="playing ? 'opacity-100' : 'opacity-0'"
-      @waiting="playStates.video = PlayState.Waiting"
-      @canplay="playStates.video = PlayState.CanPlay"
+      @waiting="onMediaStateChange('video', MediaState.Waiting)"
+      @canplay="onMediaStateChange('video', MediaState.CanPlay)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref, UnwrapRef, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { delta } from '@/utils/math'
@@ -87,9 +88,15 @@ const props = defineProps<{
   track: Track
 }>()
 
-enum PlayState {
+enum MediaState {
   Waiting,
   CanPlay,
+}
+
+enum PlayState {
+  Paused,
+  Playing,
+  Suspended,
 }
 
 const playing = ref(false)
@@ -121,14 +128,22 @@ function onClickPlayPause () {
   }
 }
 
-const playStates = ref({
-  audio: PlayState.Waiting,
-  video: PlayState.Waiting,
+const mediaStates = ref({
+  audio: MediaState.Waiting,
+  video: MediaState.Waiting,
 })
 
-const playState = computed<PlayState>(
-  () => atLeastOneMediaIs(PlayState.Waiting) ? PlayState.Waiting : PlayState.CanPlay
-)
+const playState = computed<PlayState>(() => {
+  if (!playing.value) {
+    return PlayState.Paused
+  }
+
+  if (atLeastOneMediaIs(MediaState.Waiting)) {
+    return PlayState.Suspended
+  }
+
+  return PlayState.Playing
+})
 
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))
@@ -152,6 +167,19 @@ useLocalStorage(
   (t1, t2) => delta(t1, t2) > 1,
 )
 
+function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, state: MediaState): void {
+  mediaStates.value[mediaKey] = state
+}
+
+function onAudioPlaying (newPlaying: boolean): void {
+  // break feedback loop of audio reporting it's paused when it's waiting for video
+  console.log('audio playing', newPlaying)
+  console.log('play state', playState.value)
+  if (!newPlaying && playState.value !== PlayState.Suspended) {
+    playing.value = false
+  }
+}
+
 function getTrack (offset: number): Track|null {
   if (trackIndex.value === -1) {
     return null
@@ -160,8 +188,8 @@ function getTrack (offset: number): Track|null {
   return tracks[trackIndex.value + offset] ?? null
 }
 
-function atLeastOneMediaIs (state: PlayState): boolean {
-  return playStates.value.audio === state || playStates.value.video === state
+function atLeastOneMediaIs (state: MediaState): boolean {
+  return mediaStates.value.audio === state || mediaStates.value.video === state
 }
 
 </script>

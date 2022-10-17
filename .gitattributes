@@ -1,8 +1,5 @@
 public/with-audio.mp4 filter=lfs diff=lfs merge=lfs -text
 public/example-aous.mp4 filter=lfs diff=lfs merge=lfs -text
 public/video/*.mp4 filter=lfs diff=lfs merge=lfs -text
+public/audio/*.mp3 filter=lfs diff=lfs merge=lfs -text
 public/transcript/video/*.mp4 filter=lfs diff=lfs merge=lfs -text
-public/audio/constant-vigilance.mp3 filter=lfs diff=lfs merge=lfs -text
-public/audio/restrictions-and-ejection.mp3 filter=lfs diff=lfs merge=lfs -text
-public/audio/saying-goodbye.mp3 filter=lfs diff=lfs merge=lfs -text
-public/audio/wire-and-fences.mp3 filter=lfs diff=lfs merge=lfs -text

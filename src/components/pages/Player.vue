@@ -171,11 +171,13 @@ function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, stat
   mediaStates.value[mediaKey] = state
 }
 
-function onAudioPlaying (newPlaying: boolean): void {
+function onAudioPlaying (nowPlaying: boolean): void {
   // break feedback loop of audio reporting it's paused when it's waiting for video
-  if (!newPlaying && playState.value !== PlayState.Suspended) {
-    playing.value = false
+  if (!nowPlaying && playState.value === PlayState.Suspended) {
+    return
   }
+
+  playing.value = nowPlaying
 }
 
 function getTrack (offset: number): Track|null {

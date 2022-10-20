@@ -48,7 +48,7 @@
       preload="auto"
       v-model:time="time"
       :playing="playState === PlayState.Playing"
-      @update:playing="onAudioPlaying"
+      @update:playing="onMediaPlaying"
       @update:duration="duration = $event"
       @waiting="onMediaStateChange('audio', MediaState.Waiting)"
       @canplay="onMediaStateChange('audio', MediaState.CanPlay)"
@@ -60,6 +60,7 @@
       :src="`/video/${props.track.slug}.mp4`"
       v-model:time="videoTime"
       :playing="playState === PlayState.Playing"
+      @update:playing="onMediaPlaying"
       muted
       preload="auto"
       playsinline
@@ -171,8 +172,8 @@ function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, stat
   mediaStates.value[mediaKey] = state
 }
 
-function onAudioPlaying (nowPlaying: boolean): void {
-  // break feedback loop of audio reporting it's paused when it's waiting for video
+function onMediaPlaying (nowPlaying: boolean): void {
+  // break feedback loop of media reporting it's paused when it's been paused to wait for the other media
   if (!nowPlaying && playState.value === PlayState.Suspended) {
     return
   }

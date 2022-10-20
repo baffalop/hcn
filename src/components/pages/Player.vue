@@ -10,7 +10,7 @@
       </button>
 
       <button
-        class="control transition-opacity duration-300"
+        class="control transition-opacity duration-500"
         :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
         @click="onClickPlayPause"
       >

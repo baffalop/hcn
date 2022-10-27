@@ -104,13 +104,6 @@ const duration = ref(props.track.duration)
 const time = ref(0)
 const videoTime = ref(0)
 
-watch(() => time.value, time => {
-  if (delta(time, videoTime.value) > SYNC_THRESHOLD_SECS) {
-    console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)
-    videoTime.value = time
-  }
-})
-
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)
 const video = ref<MediaInstance|null>(null)
@@ -122,6 +115,23 @@ function onClickPlayPause () {
     audio.value?.play()
   }
 }
+
+watch(() => time.value, time => {
+  if (delta(time, videoTime.value) > SYNC_THRESHOLD_SECS) {
+    console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)
+    videoTime.value = time
+  }
+})
+
+useMediaSession(ref(props.track), playing, time)
+
+useLocalStorage(
+  computed(() => `${props.track.slug}.position`),
+  time,
+  t => t.toFixed(1),
+  parseFloat,
+  (t1, t2) => delta(t1, t2) > 1,
+)
 
 const mediaStates = ref({
   audio: MediaState.Waiting,
@@ -151,16 +161,6 @@ const placeholderTracks = [
   'wire-and-fences',
 ]
 const placeholder = computed<boolean>(() => placeholderTracks.includes(props.track.slug))
-
-useMediaSession(ref(props.track), playing, time)
-
-useLocalStorage(
-  computed(() => `${props.track.slug}.position`),
-  time,
-  t => t.toFixed(1),
-  parseFloat,
-  (t1, t2) => delta(t1, t2) > 1,
-)
 
 function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, state: MediaState): void {
   mediaStates.value[mediaKey] = state

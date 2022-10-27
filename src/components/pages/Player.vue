@@ -82,7 +82,7 @@ import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import { formatSecs } from '@/utils/time'
 
-const SYNC_THRESHOLD_SECS = 1
+const SYNC_THRESHOLD_SECS = 2
 
 const props = defineProps<{
   track: Track

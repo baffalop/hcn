@@ -10,18 +10,21 @@
     "slug": "restrictions-and-ejection",
     "title": "Restrictions and Ejection",
     "artist": "Linda O’Keeffe",
-    "duration": 536.11102
+    "duration": 536.11102,
+    "bgColor": "rgb(189, 104, 89)"
   },
   {
     "slug": "saying-goodbye",
     "title": "Saying Goodbye",
     "artist": "Linda O’Keeffe",
-    "duration": 560.039184
+    "duration": 560.039184,
+    "bgColor": "rgb(182, 141, 86)"
   },
   {
     "slug": "wire-and-fences",
     "title": "Wire and Fences",
     "artist": "Linda O’Keeffe",
-    "duration": 477.33551
+    "duration": 477.33551,
+    "bgColor": "rgb(98, 83, 61)"
   }
 ]

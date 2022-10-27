@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex flex-col justify-center items-center" :class="{ placeholder }">
+  <div class="h-full flex flex-col justify-center items-center">
     <h2 class="text-4xl mb-14">{{ track.title }}</h2>
 
     <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-4/5 max-w-lg" />
@@ -154,10 +154,6 @@ const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug =
 const nextTrack = computed<Track|null>(() => getTrack(1))
 const prevTrack = computed<Track|null>(() => getTrack(-1))
 
-// TODO remove once all track videos are real
-const placeholderTracks: string[] = []
-const placeholder = computed<boolean>(() => placeholderTracks.includes(props.track.slug))
-
 function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, state: MediaState): void {
   mediaStates.value[mediaKey] = state
 }
@@ -186,10 +182,6 @@ function atLeastOneMediaIs (state: MediaState): boolean {
 </script>
 
 <style scoped>
-.placeholder video {
-  filter: invert(0.8) brightness(0.4) sepia(1) saturate(1.5) hue-rotate(139deg);
-}
-
 .control {
   @apply cursor-pointer w-10 invert;
 }

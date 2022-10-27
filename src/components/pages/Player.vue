@@ -60,7 +60,6 @@
       :src="`/video/${props.track.slug}.mp4`"
       v-model:time="videoTime"
       :playing="playState === PlayState.Playing"
-      @update:playing="onMediaPlaying"
       muted
       preload="auto"
       playsinline
@@ -77,7 +76,7 @@ import { computed, ref, UnwrapRef, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { delta } from '@/utils/math'
-import { useMediaMetadata } from '@/composable/media'
+import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
@@ -104,11 +103,6 @@ const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
 const videoTime = ref(0)
-
-const hasPlayed = ref(false)
-watch(() => playing.value, playing => {
-  if (playing) hasPlayed.value = true
-})
 
 watch(() => time.value, time => {
   if (delta(time, videoTime.value) > SYNC_THRESHOLD_SECS) {
@@ -158,7 +152,7 @@ const placeholderTracks = [
 ]
 const placeholder = computed<boolean>(() => placeholderTracks.includes(props.track.slug))
 
-useMediaMetadata(ref(props.track), hasPlayed)
+useMediaSession(ref(props.track), playing, time)
 
 useLocalStorage(
   computed(() => `${props.track.slug}.position`),

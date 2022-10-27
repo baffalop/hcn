@@ -155,11 +155,7 @@ const nextTrack = computed<Track|null>(() => getTrack(1))
 const prevTrack = computed<Track|null>(() => getTrack(-1))
 
 // TODO remove once all track videos are real
-const placeholderTracks = [
-  'restrictions-and-ejection',
-  'saying-goodbye',
-  'wire-and-fences',
-]
+const placeholderTracks: string[] = []
 const placeholder = computed<boolean>(() => placeholderTracks.includes(props.track.slug))
 
 function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, state: MediaState): void {

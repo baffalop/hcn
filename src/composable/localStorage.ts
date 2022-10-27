@@ -11,7 +11,6 @@ export function useLocalStorage<T> (
 
   const store = (key: string, value: T) => {
     const encoded = encode(value)
-    console.log(`storing value ${encoded} at key ${key}`)
     localStorage.setItem(key, encoded)
   }
 

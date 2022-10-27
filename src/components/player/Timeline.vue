@@ -21,6 +21,7 @@
 import { computed } from 'vue'
 
 import { formatSecs } from '@/utils/time'
+import { clamp } from '@/utils/math'
 import TimelineSlider from '@components/player/TimelineSlider.vue'
 
 const props = defineProps<{
@@ -38,7 +39,7 @@ const timeValue = computed({
   set: (time: number) => emit('update:time', time)
 })
 
-const timeFormatted = computed(() => formatSecs(props.time))
+const timeFormatted = computed(() => formatSecs(clamp(props.time, 0, props.duration)))
 const durationFormatted = computed(() => formatSecs(props.duration))
 </script>
 

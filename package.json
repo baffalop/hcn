@@ -13,6 +13,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.12",
     "postcss": "^8.4.17",
+    "srt-parser-2": "^1.1.8",
     "vue": "^3.2.40",
     "vue-router": "^4.1.5"
   },

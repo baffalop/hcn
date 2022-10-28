@@ -27,13 +27,6 @@
       {{ currentLine.line }}
     </p>
   </TransitionGroup>
-
-  <!--
-  <form v-if="false" class="flex w-4/5 max-w-lg gap-2" @submit.prevent="addLine">
-    <input ref="input" type="text" v-model="currentLine.line" class="text-black w-full">
-    <button type="submit" class="px-3 max-w-min bg-primary-blue text-xl font-bold rounded-lg">+</button>
-  </form>
-  -->
 </template>
 <script setup lang="ts">
 import { computed, ref } from 'vue'
@@ -46,8 +39,6 @@ const props = defineProps<{
 }>()
 
 const EXPIRY_SECS = 6
-
-const input = ref<HTMLInputElement|null>(null)
 
 interface TranscriptionLine {
   start: number
@@ -76,20 +67,6 @@ const previousLine = computed(() => findMostRecentLine(
   transcription.value.filter(line => line.line !== currentLine.value.line),
   props.time
 ))
-
-function addLine (): void {
-  if (currentLine.value.line === '' && currentLine.value.start !== 0) {
-    console.log(`time set: ${props.time}`)
-    currentLine.value.start = props.time
-  } else {
-    console.log(`new line: ${props.time}`)
-    currentLine.value.end = props.time
-    transcription.value.push({ start: props.time, line: '' })
-    transcription.value.sort((a, b) => b.start - a.start)
-  }
-
-  input.value?.focus()
-}
 
 function findMostRecentLine (lines: TranscriptionLine[], time: number): TranscriptionLine {
   return lines.reduce((prev, cur) => {

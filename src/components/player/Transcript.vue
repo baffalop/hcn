@@ -13,7 +13,7 @@
   >
     <p
       :key="previousLine.start.toFixed(0)"
-      class="text-gray-400 transition-opacity duration-700"
+      class="text-gray-100/60 transition-opacity duration-700"
       :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
     >
       {{ previousLine.line }}
@@ -21,7 +21,7 @@
 
     <p
       :key="currentLine.start.toFixed(0)"
-      class="transition-opacity duration-700"
+      class="text-grey-100 transition-opacity duration-700"
       :class="currentLine.end && time - currentLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
     >
       {{ currentLine.line }}

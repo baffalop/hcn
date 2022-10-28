@@ -16,7 +16,7 @@
       class="text-gray-100/60 transition-opacity duration-700"
       :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
     >
-      {{ previousLine.line }}
+      {{ previousLine.text }}
     </p>
 
     <p
@@ -24,7 +24,7 @@
       class="text-grey-100 transition-opacity duration-700"
       :class="currentLine.end && time - currentLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
     >
-      {{ currentLine.line }}
+      {{ currentLine.text }}
     </p>
   </TransitionGroup>
 </template>
@@ -34,8 +34,8 @@ import { computed } from 'vue'
 export type Transcription = TranscriptionLine[]
 export interface TranscriptionLine {
   start: number
-  end?: number
-  line: string
+  end: number
+  text: string
 }
 
 const props = defineProps<{
@@ -47,7 +47,7 @@ const EXPIRY_SECS = 6
 
 const currentLine = computed(() => findMostRecentLine(props.transcription, props.time))
 const previousLine = computed(() => findMostRecentLine(
-  props.transcription.filter(line => line.line !== currentLine.value.line),
+  props.transcription.filter(line => line.text !== currentLine.value.text),
   props.time
 ))
 
@@ -59,7 +59,7 @@ function findMostRecentLine (lines: TranscriptionLine[], time: number): Transcri
 }
 
 function blankLine (): TranscriptionLine {
-  return { start: 0, line: '' }
+  return { start: 0, end: 0, text: '' }
 }
 </script>
 

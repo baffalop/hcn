@@ -49,13 +49,13 @@ const EXPIRY_SECS = 6
 
 const input = ref<HTMLInputElement|null>(null)
 
-interface Line {
+interface TranscriptionLine {
   start: number
   end?: number
   line: string
 }
 
-const transcription = ref<Line[]>([
+const transcription = ref<TranscriptionLine[]>([
   {"start":148.445383,"line":"And not be part of the crowd","end":150.057817},
   {"start":141.622436,"line":"And, it's very very difficult for a kid of that age to resist that temptation","end":148.445383},
   {"start":137.913398,"line":"Things like that as they had in the Hitler Youth","end":141.622436},
@@ -91,14 +91,14 @@ function addLine (): void {
   input.value?.focus()
 }
 
-function findMostRecentLine (lines: Line[], time: number): Line {
+function findMostRecentLine (lines: TranscriptionLine[], time: number): TranscriptionLine {
   return lines.reduce((prev, cur) => {
     if (cur.start > time) return prev
     return cur.start > prev.start ? cur : prev
   }, blankLine())
 }
 
-function blankLine (): Line {
+function blankLine (): TranscriptionLine {
   return { start: 0, line: '' }
 }
 </script>

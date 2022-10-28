@@ -23,7 +23,7 @@
       </button>
     </div>
 
-    <Transcript :transcription="transcription" :track="track" :time="time" />
+    <Transcript v-if="track.transcription" :transcription="track.transcription" :time="time" />
 
     <RouterLink
       v-if="prevTrack"
@@ -83,7 +83,7 @@ import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
-import Transcript, { Transcription } from '@components/player/Transcript.vue'
+import Transcript from '@components/player/Transcript.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 
@@ -187,22 +187,6 @@ function getTrack (offset: number): Track|null {
 function atLeastOneMediaIs (state: MediaState): boolean {
   return mediaStates.value.audio === state || mediaStates.value.video === state
 }
-
-const transcription: Transcription = [
-  {"start":148.445383,"line":"And not be part of the crowd","end":150.057817},
-  {"start":141.622436,"line":"And, it's very very difficult for a kid of that age to resist that temptation","end":148.445383},
-  {"start":137.913398,"line":"Things like that as they had in the Hitler Youth","end":141.622436},
-  {"start":134.186143,"line":"Uniforms, campfires, learning to shoot rifles","end":137.913398},
-  {"start":105.05566,"line":"to resist the temptations the Nazis offered for kids of that age","end":109.756262},
-  {"start":101.749868,"line":"You know, it's very difficult for a 12, 13, 14 year-old","end":105.05566},
-  {"start":81.545969,"line":"And I probably would","end":83.677251},
-  {"start":79.575164,"line":"Would I have been a Nazi?","end":81.545969},
-  {"start":73.704323,"line":"sometimes think what I would have been if I hadn't been Jewish","end":79.575164},
-  {"start":70.002884,"line":"but I'm concerned that...","end":73.704323},
-  {"start":60.522463,"line":"Well obviously my contemporaries who committed these atrocities are dreadful","end":70.002884},
-  {"start":54.747394,"line":"Well, you know you're a survivor because you're there","end":60.522463},
-  {"start":53.908808,"line":"And, erm...","end":54.747394}
-]
 
 </script>
 

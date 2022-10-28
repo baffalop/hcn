@@ -124,7 +124,7 @@ function onClickPlayPause () {
 }
 
 watch(() => time.value, time => {
-  emit('update:time', time))
+  emit('update:time', time)
 
   if (delta(time, videoTime.value) > SYNC_THRESHOLD_SECS) {
     console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)

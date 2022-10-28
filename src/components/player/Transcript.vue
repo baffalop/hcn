@@ -59,7 +59,7 @@ function findMostRecentLine (lines: TranscriptionLine[], time: number): Transcri
 }
 
 function blankLine (): TranscriptionLine {
-  return { start: 0, end: 0, text: '' }
+  return { start: -1, end: 0, text: '' }
 }
 </script>
 

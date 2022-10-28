@@ -23,7 +23,7 @@
       </button>
     </div>
 
-    <DroppableTranscript v-if="track.transcription" :transcription="track.transcription" :time="time" />
+    <DroppableTranscript :transcription="track.transcription ?? []" :time="time" />
 
     <RouterLink
       v-if="prevTrack"

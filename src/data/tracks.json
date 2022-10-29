@@ -4,14 +4,118 @@
     "title": "Constant Vigilance",
     "artist": "Linda O’Keeffe",
     "duration": 362.187755,
-    "bgColor": "rgb(107, 142, 112)"
+    "bgColor": "rgb(107, 142, 112)",
+    "transcript": [
+      {
+        "text": "Well, you know you're a survivor because you're there",
+        "start": 62.617,
+        "end": 69.25
+      },
+      {
+        "text": "Well obviously my contemporaries who committed these atrocities are dreadful",
+        "start": 69.251,
+        "end": 78
+      },
+      {
+        "text": "but I'm concerned that...",
+        "start": 78.001,
+        "end": 81.233
+      },
+      {
+        "text": "sometimes think what I would have been if I hadn't been Jewish",
+        "start": 81.23400000000001,
+        "end": 87.233
+      },
+      {
+        "text": "Would I have been a Nazi?",
+        "start": 87.23400000000001,
+        "end": 89.43299999999999
+      },
+      {
+        "text": "And I probably would",
+        "start": 89.434,
+        "end": 91.267
+      },
+      {
+        "text": "You know, it's very difficult for a 12, 13, 14 year-old",
+        "start": 108.55,
+        "end": 112.717
+      },
+      {
+        "text": "to resist the temptations the Nazis offered for kids of that age",
+        "start": 112.718,
+        "end": 117.417
+      },
+      {
+        "text": "Uniforms, campfires, learning to shoot rifles",
+        "start": 140.883,
+        "end": 145.017
+      },
+      {
+        "text": "Things like that as they had in the Hitler Youth",
+        "start": 145.417,
+        "end": 149.117
+      },
+      {
+        "text": "And, it's very very difficult for a kid of that age to resist that temptation",
+        "start": 149.118,
+        "end": 154.883
+      },
+      {
+        "text": "And not be part of the crowd",
+        "start": 155.133,
+        "end": 156.917
+      }
+    ]
   },
   {
     "slug": "restrictions-and-ejection",
     "title": "Restrictions and Ejection",
     "artist": "Linda O’Keeffe",
     "duration": 536.11102,
-    "bgColor": "rgb(189, 104, 89)"
+    "bgColor": "rgb(189, 104, 89)",
+    "transcript": [
+      {
+        "text": "So, at this time, in various countries",
+        "start": 0,
+        "end": 4.129
+      },
+      {
+        "text": "People realised that awful things were happening in Germany",
+        "start": 4.13,
+        "end": 8.057
+      },
+      {
+        "text": "And they lobbied governments and they said,",
+        "start": 8.058,
+        "end": 10.5
+      },
+      {
+        "text": "\"We know you have a severe unemployment problem...\"",
+        "start": 10.501,
+        "end": 14.443
+      },
+      {
+        "text": "\"We know you don't want to add to it by bringing a lot of refugees into the country...\"",
+        "start": 17,
+        "end": 22.714
+      },
+      {
+        "text": "\"But will you save some of the children?\"",
+        "start": 22.715,
+        "end": 26.129
+      },
+      {
+        "text": "And so some countries, including Britain, said yes",
+        "start": 27.286,
+        "end": 33.514
+      },
+      {
+        "text": "And they organised what was called the Kindertransport",
+        "start": 33.557,
+        "end": 39.114
+      }
+    ]
   },
   {
     "slug": "saying-goodbye",

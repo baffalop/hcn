@@ -43,7 +43,7 @@ const props = defineProps<{
   time: number
 }>()
 
-const EXPIRY_SECS = 6
+const EXPIRY_SECS = 4
 
 const currentLine = computed(() => findMostRecentLine(props.transcription, props.time))
 const previousLine = computed(() => findMostRecentLine(

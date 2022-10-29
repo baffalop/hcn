@@ -1,5 +1,5 @@
 import { basename } from 'node:path'
-import { writeFile } from 'node:fs'
+import { promises as fs } from 'node:fs'
 
 import { globby } from 'globby'
 import { getAudioDurationInSeconds } from 'get-audio-duration'
@@ -28,11 +28,9 @@ for (const path of paths) {
 
 const dataEncoded = JSON.stringify(tracksData, null, 2)
 
-writeFile(DATA_PATH, dataEncoded + '\n', err => {
-  if (err) {
-    console.error(err)
-    return
-  }
-
-  console.log('Updating track data', tracksData)
-})
+try {
+  await fs.writeFile(DATA_PATH, dataEncoded + '\n')
+  console.log('Updated track data', tracksData)
+} catch (e) {
+  console.error(e)
+}

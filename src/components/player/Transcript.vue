@@ -39,15 +39,15 @@ export interface TranscriptionLine {
 }
 
 const props = defineProps<{
-  transcription: Transcription
+  transcript: Transcription
   time: number
 }>()
 
 const EXPIRY_SECS = 4
 
-const currentLine = computed(() => findMostRecentLine(props.transcription, props.time))
+const currentLine = computed(() => findMostRecentLine(props.transcript, props.time))
 const previousLine = computed(() => findMostRecentLine(
-  props.transcription.filter(line => line.text !== currentLine.value.text),
+  props.transcript.filter(line => line.text !== currentLine.value.text),
   props.time
 ))
 

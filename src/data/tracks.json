@@ -4,30 +4,14 @@
     "title": "Constant Vigilance",
     "artist": "Linda O’Keeffe",
     "duration": 362.187755,
-    "bgColor": "rgb(107, 142, 112)",
-    "transcription": [
-      {"start":148.445383,"text":"And not be part of the crowd","end":150.057817},
-      {"start":141.622436,"text":"And, it's very very difficult for a kid of that age to resist that temptation","end":148.445383},
-      {"start":137.913398,"text":"Things like that as they had in the Hitler Youth","end":141.622436},
-      {"start":134.186143,"text":"Uniforms, campfires, learning to shoot rifles","end":137.913398},
-      {"start":105.05566,"text":"to resist the temptations the Nazis offered for kids of that age","end":109.756262},
-      {"start":101.749868,"text":"You know, it's very difficult for a 12, 13, 14 year-old","end":105.05566},
-      {"start":81.545969,"text":"And I probably would","end":83.677251},
-      {"start":79.575164,"text":"Would I have been a Nazi?","end":81.545969},
-      {"start":73.704323,"text":"sometimes think what I would have been if I hadn't been Jewish","end":79.575164},
-      {"start":70.002884,"text":"but I'm concerned that...","end":73.704323},
-      {"start":60.522463,"text":"Well obviously my contemporaries who committed these atrocities are dreadful","end":70.002884},
-      {"start":54.747394,"text":"Well, you know you're a survivor because you're there","end":60.522463},
-      {"start":53.908808,"text":"And, erm...","end":54.747394}
-    ]
+    "bgColor": "rgb(107, 142, 112)"
   },
   {
     "slug": "restrictions-and-ejection",
     "title": "Restrictions and Ejection",
     "artist": "Linda O’Keeffe",
     "duration": 536.11102,
-    "bgColor": "rgb(189, 104, 89)",
-    "transcription": [{"text":"So, at this time, in various countries","start":0,"end":4.129},{"text":"People realised that awful things were happening in Germany","start":4.13,"end":8.057},{"text":"And they lobbied governments and they said,","start":8.058,"end":10.5},{"text":"\"We know you have a severe unemployment problem...\"","start":10.501,"end":14.443},{"text":"\"We know you don't want to add to it by bringing a lot of refugees into the country...\"","start":17,"end":22.714},{"text":"\"But will you save some of the children?\"","start":22.715,"end":26.129},{"text":"And so some countries, including Britain, said yes","start":27.286,"end":33.514},{"text":"And they organised what was called the Kindertransport","start":33.557,"end":39.114}]
+    "bgColor": "rgb(189, 104, 89)"
   },
   {
     "slug": "saying-goodbye",

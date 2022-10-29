@@ -24,7 +24,7 @@
         </button>
       </div>
 
-      <DroppableTranscript :transcription="track.transcription ?? []" :time="time" />
+      <DroppableTranscript :transcript="track.transcript ?? []" :time="time" />
 
       <RouterLink
         v-if="prevTrack"
@@ -87,6 +87,7 @@ import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import DroppableTranscript from '@components/player/DroppableTranscript.vue'
 import FileDrop from '@components/FileDrop.vue'
+import { Transcription } from '@components/player/Transcript.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 

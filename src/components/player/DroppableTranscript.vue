@@ -1,6 +1,6 @@
 <template>
   <FileDrop @drop="onDrop">
-    <Transcript :transcription="droppedTranscription ?? transcription" :time="time" />
+    <Transcript :transcript="droppedTranscript ?? transcript" :time="time" />
   </FileDrop>
 </template>
 
@@ -12,15 +12,15 @@ import FileDrop from '@components/FileDrop.vue'
 import Transcript, { Transcription } from '@components/player/Transcript.vue'
 
 const props = defineProps<{
-  transcription: Transcription
+  transcript: Transcription
   time: number
 }>()
 
-const droppedTranscription = ref<Transcription|null>()
+const droppedTranscript = ref<Transcription|null>()
 
 async function onDrop (file: File): Promise<void> {
   try {
-    droppedTranscription.value = await parseFile(file)
+    droppedTranscript.value = await parseFile(file)
   } catch (e) {
     alert('Invalid file: please drop a .srt file')
   }

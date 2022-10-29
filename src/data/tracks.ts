@@ -7,7 +7,7 @@ export interface Track {
   duration: number
   artist: string
   bgColor?: string
-  transcription?: Transcription
+  transcript?: Transcription
 }
 
 export const tracks = tracksJson as Track[]

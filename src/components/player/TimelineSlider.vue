@@ -6,7 +6,7 @@
       '--progress': `${progress}`,
     }"
   >
-    <div class="track bg-gray-600 w-full"></div>
+    <div class="track w-full backdrop-brightness-75 -backdrop-hue-rotate-30"></div>
     <div class="progress bg-gray-100 absolute left-0 top-1/2 transform -translate-y-1/2"></div>
     <input
       type="range"

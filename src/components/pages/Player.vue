@@ -1,6 +1,8 @@
 <template>
   <div class="player grid h-full grid-cols-1 gap-10 content-center justify-items-center">
-    <h2 class="text-4xl place-self-end justify-self-center">{{ track.title }}</h2>
+    <FileDrop class="place-self-end justify-self-center" @drop="onVideoFileDrop">
+      <h2 class="text-4xl">{{ track.title }}</h2>
+    </FileDrop>
 
     <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-4/5 max-w-lg" />
 
@@ -59,7 +61,7 @@
     <Media
       ref="video"
       type="video"
-      :src="`/video/${props.track.slug}.mp4`"
+      :src="droppedVideoUrl ?? `/video/${props.track.slug}.mp4`"
       v-model:time="videoTime"
       :playing="playState === PlayState.Playing"
       muted
@@ -84,6 +86,7 @@ import { useLocalStorage } from '@/composable/localStorage'
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import DroppableTranscript from '@components/player/DroppableTranscript.vue'
+import FileDrop from '@components/FileDrop.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 
@@ -186,6 +189,28 @@ function getTrack (offset: number): Track|null {
 
 function atLeastOneMediaIs (state: MediaState): boolean {
   return mediaStates.value.audio === state || mediaStates.value.video === state
+}
+
+const droppedVideo = ref<File|null>(null)
+const droppedVideoUrl = computed<string|null>(() => {
+  if (droppedVideo.value === null) {
+    return null
+  }
+
+  return URL.createObjectURL(droppedVideo.value)
+})
+
+function onVideoFileDrop (file: File): void {
+  if (file.type !== 'video/mp4') {
+    console.log('wrong type', file.type)
+    return
+  }
+
+  droppedVideo.value = file
+
+  if (playing.value) {
+    video.value?.play()
+  }
 }
 
 </script>

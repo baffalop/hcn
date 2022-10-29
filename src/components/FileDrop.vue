@@ -2,10 +2,10 @@
   <div
     class="drop max-h-max"
     :class="{ 'ring-4 ring-inset ring-primary-pink-300': draggingOver }"
-    @dragenter.prevent="onDragEnter"
-    @dragleave="onDragLeave"
+    @dragenter.prevent.stop="onDragEnter"
+    @dragleave.stop="onDragLeave"
     @dragover.prevent
-    @drop.prevent="onDrop"
+    @drop.prevent.stop="onDrop"
   >
     <slot />
   </div>

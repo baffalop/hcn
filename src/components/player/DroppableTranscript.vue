@@ -23,7 +23,7 @@ async function onDrop (file: File): Promise<void> {
   try {
     droppedTranscription.value = await parseFile(file)
   } catch (e) {
-    alert('Wrong file type: please drop a .srt file')
+    alert('Invalid file: please drop a .srt file')
   }
 }
 

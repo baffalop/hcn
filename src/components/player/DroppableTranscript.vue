@@ -39,10 +39,10 @@ async function parseFile (file: File): Promise<Transcription> {
   }
 
   const parsed = parser.value.fromSrt(contents)
-  return parsed.map(line => ({
-    ...line,
-    start: line.startSeconds,
-    end: line.endSeconds,
+  return parsed.map(({ text, startSeconds, endSeconds }) => ({
+    text,
+    start: startSeconds,
+    end: endSeconds,
   }))
 }
 

@@ -16,7 +16,6 @@ const props = defineProps<{
   time: number
 }>()
 
-const parser = ref<SrtParser|null>(null)
 const droppedTranscription = ref<Transcription|null>()
 
 async function onDrop (file: File): Promise<void> {
@@ -33,12 +32,8 @@ async function parseFile (file: File): Promise<Transcription> {
   }
 
   const contents = await file.text()
+  const parsed = new SrtParser().fromSrt(contents)
 
-  if (parser.value === null) {
-    parser.value = new SrtParser()
-  }
-
-  const parsed = parser.value.fromSrt(contents)
   return parsed.map(({ text, startSeconds, endSeconds }) => ({
     text,
     start: startSeconds,

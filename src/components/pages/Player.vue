@@ -25,7 +25,7 @@
         </button>
       </div>
 
-      <DroppableTranscript :transcript="track.transcript ?? []" :time="time" />
+      <DroppableTranscript :transcript="track.transcript ?? []" :time="time" class="self-start" />
 
       <RouterLink
         v-if="prevTrack"

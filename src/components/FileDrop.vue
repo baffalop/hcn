@@ -1,6 +1,6 @@
 <template>
   <div
-    class="drop max-h-max"
+    class="drop"
     :class="{ 'ring-4 ring-inset ring-primary-pink-300': draggingOver }"
     @dragenter.prevent.stop="onDragEnter"
     @dragleave.stop="onDragLeave"

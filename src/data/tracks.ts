@@ -1,4 +1,5 @@
 import tracksJson from './tracks.json'
+import { Transcription } from '@components/player/Transcript.vue'
 
 export interface Track {
   title: string
@@ -6,6 +7,7 @@ export interface Track {
   duration: number
   artist: string
   bgColor?: string
+  transcript?: Transcription
 }
 
 export const tracks = tracksJson as Track[]

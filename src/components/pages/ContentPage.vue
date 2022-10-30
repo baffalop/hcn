@@ -3,9 +3,9 @@
     <RouterLink
       :to="{ name: 'index' }"
       title="Back"
-      class="absolute left-12 top-12 w-10 invert"
+      class="absolute text-gray-100 left-12 top-12 w-10"
     >
-      <img alt="Back" src="/icon/play-simple.svg" class="transform -scale-100">
+      <Icon src="/icon/play-simple.svg" class="transform -scale-100" />
     </RouterLink>
 
     <RouterView v-slot="{ Component }">
@@ -20,6 +20,7 @@
 import { useRoute } from 'vue-router'
 
 import PageTransition from '@components/PageTransition.vue'
+import Icon from '@components/Icon.vue'
 
 const route = useRoute()
 </script>

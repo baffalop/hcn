@@ -45,6 +45,6 @@ const durationFormatted = computed(() => formatSecs(props.duration))
 
 <style scoped>
 .timestamp {
-  @apply text-base text-gray-300 tabular-nums whitespace-nowrap;
+  @apply text-base text-white/75 tabular-nums whitespace-nowrap;
 }
 </style>

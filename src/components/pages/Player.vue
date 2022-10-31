@@ -230,7 +230,18 @@ enum Font {
 
 const fontCount = Object.keys(Font).length / 2
 
-const font = ref<Font>(initFont())
+const font = useLocalStorage<Font>(
+  ref('player.title.font'),
+  Font.AgrandirWide,
+  f => f.toFixed(0),
+  parseInt,
+  () => true,
+)
+
+function cycleFont (): void {
+  font.value = (font.value + 1) % fontCount
+}
+
 const titleClass = computed<string>(() => {
   switch (font.value) {
     case Font.AgrandirWide:
@@ -243,20 +254,6 @@ const titleClass = computed<string>(() => {
       return 'font-editorial font-normal'
   }
 })
-
-function initFont (): Font {
-  const stored = localStorage.getItem('player.title.font')
-  if (stored == null) {
-    return Font.AgrandirWide
-  }
-
-  return parseInt(stored)
-}
-
-function cycleFont (): void {
-  font.value = (font.value + 1) % fontCount
-  localStorage.setItem('player.title.font', font.value.toFixed(0))
-}
 
 </script>
 

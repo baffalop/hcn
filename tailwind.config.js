@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        text: ['Agrandir']
+        agrandir: ['Agrandir'],
+        editorial: ['"Editorial New"']
       },
       colors: {
         primary: {

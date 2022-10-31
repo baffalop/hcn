@@ -1,47 +1,41 @@
 <template>
   <FileDrop class="h-full" @drop="onVideoFileDrop">
-    <div class="player grid h-full grid-cols-1 gap-10 content-center justify-items-center">
-      <h2 class="text-4xl place-self-end justify-self-center">{{ track.title }}</h2>
+    <div class="player grid h-full grid-cols-1 gap-12 p-6 max-w-screen-md mx-auto content-center justify-items-center items-center">
+      <div class="flex items-center justify-between w-full self-end">
+        <RouterLink :to="{ name: 'index' }" title="Back" class="control text-gray-100 hover:text-gray-100">
+          <Icon src="/icon/play-borderless.svg" class="transform -scale-100" />
+        </RouterLink>
 
-      <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-4/5 max-w-lg" />
+        <button class="control !w-6 !h-6" :title="`${showTranscript ? 'Hide' : 'Show'} transcriptions`" @click="showTranscript = !showTranscript">
+          <Icon src="/icon/menu-borderless.svg" />
+        </button>
+      </div>
 
-      <div class="flex items-center justify-center gap-6 -mt-12">
+      <h2 class="text-4xl">{{ track.title }}</h2>
+
+      <div class="flex items-center justify-center gap-10">
         <button class="control" title="Back 10 seconds" @click="time -= 10">
-          <Icon src="/icon/rew-simple.svg" />
+          <Icon src="/icon/rew-borderless.svg" />
         </button>
 
         <button
-          class="control transition-opacity duration-500"
+          class="control !w-14 !h-14 transition-opacity duration-500"
           :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
           :title="playing ? 'Pause' : 'Play'"
           @click="onClickPlayPause"
         >
-          <Icon v-show="!playing" src="/icon/play-simple.svg" />
-          <Icon v-show="playing" src="/icon/pause-simple.svg" />
+          <Icon v-show="!playing" src="/icon/play-borderless.svg" />
+          <Icon v-show="playing" src="/icon/pause-borderless.svg" />
         </button>
 
         <button class="control" title="Forward 10 seconds" @click="time += 10">
-          <Icon src="/icon/ffw-simple.svg" />
+          <Icon src="/icon/ffw-borderless.svg" />
         </button>
       </div>
 
-      <DroppableTranscript :transcript="track.transcript ?? []" :time="time" class="self-start" />
+      <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
 
-      <RouterLink
-        v-if="prevTrack"
-        :to="{ name: 'player', params: { slug: prevTrack.slug } }"
-        class="absolute bottom-14 left-2 w-1/3"
-      >
-        &lt; {{ prevTrack.title }}
-      </RouterLink>
-
-      <RouterLink
-        v-if="nextTrack"
-        :to="{ name: 'player', params: { slug: nextTrack.slug } }"
-        class="absolute bottom-14 right-2 w-1/3"
-      >
-        {{ nextTrack.title }} &gt;
-      </RouterLink>
+      <DroppableTranscript :transcript="track.transcript ?? []" :time="time" :class="{ invisible: !showTranscript }" class="-mt-6" />
 
       <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
 
@@ -116,6 +110,8 @@ const playing = ref(false)
 const duration = ref(props.track.duration)
 const time = ref(0)
 const videoTime = ref(0)
+
+const showTranscript = ref(false)
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)
@@ -220,10 +216,10 @@ function onVideoFileDrop (file: File): void {
 
 <style scoped>
 .player {
-  grid-template-rows: 1.2fr min-content min-content 1fr;
+  grid-template-rows: 1fr 15% max-content max-content minmax(max-content, 1fr);
 }
 
 .control {
-  @apply cursor-pointer w-10;
+  @apply w-8 h-8;
 }
 </style>

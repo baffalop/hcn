@@ -1,19 +1,19 @@
 <template>
-  <div class="grid grid-cols-2 gap-1">
+  <div class="grid grid-cols-2">
+    <span class="timestamp justify-self-start">
+      {{ timeFormatted }}
+    </span>
+
+    <span class="timestamp justify-self-end">
+      {{ durationFormatted }}
+    </span>
+
     <TimelineSlider
       v-model:time="timeValue"
       :duration="duration"
       :playing="playing"
       class="col-span-full"
     />
-
-    <span class="timestamp justify-self-start">
-        {{ timeFormatted }}
-      </span>
-
-    <span class="timestamp justify-self-end">
-        {{ durationFormatted }}
-      </span>
   </div>
 </template>
 

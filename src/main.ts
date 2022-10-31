@@ -9,7 +9,6 @@ import { pageTransition } from '@/transitionState'
 import App from '@/App.vue'
 import Index from '@components/pages/Index.vue'
 import Player from '@components/pages/Player.vue'
-import ContentPage from '@components/pages/ContentPage.vue'
 import NotFound from '@components/pages/NotFound.vue'
 
 const slugRegex = tracks.map(track => track.slug).join('|')
@@ -17,26 +16,19 @@ const slugRegex = tracks.map(track => track.slug).join('|')
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'index', component: Index },
   {
-    path: '/',
-    component: ContentPage,
-    name: 'content',
-    children: [
-      {
-        path: `/play/:slug(${slugRegex})`,
-        name: 'player',
-        component: Player,
-        props: route => {
-          const slug = route.params.slug as string
-          const track = tracks.find(track => track.slug === slug)
+    path: `/play/:slug(${slugRegex})`,
+    name: 'player',
+    component: Player,
+    props: route => {
+      const slug = route.params.slug as string
+      const track = tracks.find(track => track.slug === slug)
 
-          if (track == null) {
-            throw new Error(`Slug not recognised: ${slug}`)
-          }
+      if (track == null) {
+        throw new Error(`Slug not recognised: ${slug}`)
+      }
 
-          return { track }
-        },
-      },
-    ],
+      return { track }
+    },
   },
   { path: '/:pathMatch(.*)*', name: '404', component: NotFound },
 ]
@@ -59,5 +51,5 @@ app.use(router)
 app.mount('#app')
 
 function isContentPage (route: RouteLocationNormalized): boolean {
-  return route.matched.some(r => r.name === 'content')
+  return route.matched.some(r => r.name === 'player')
 }

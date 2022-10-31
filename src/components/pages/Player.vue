@@ -145,7 +145,7 @@ watch(() => time.value, time => {
   }
 })
 
-useMediaSession(ref(props.track), playing, time)
+useMediaSession(computed(() => props.track), playing, time)
 
 const mediaStates = ref({
   audio: MediaState.Waiting,

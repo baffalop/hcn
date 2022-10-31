@@ -112,8 +112,15 @@ enum PlayState {
 
 const playing = ref(false)
 const duration = ref(props.track.duration)
-const time = ref(0)
 const videoTime = ref(0)
+
+const time = useLocalStorage(
+  computed(() => `${props.track.slug}.position`),
+  0,
+  t => t.toFixed(1),
+  parseFloat,
+  (t1, t2) => delta(t1, t2) > 1,
+)
 
 const showTranscript = ref(false)
 
@@ -139,14 +146,6 @@ watch(() => time.value, time => {
 })
 
 useMediaSession(ref(props.track), playing, time)
-
-useLocalStorage(
-  computed(() => `${props.track.slug}.position`),
-  time,
-  t => t.toFixed(1),
-  parseFloat,
-  (t1, t2) => delta(t1, t2) > 1,
-)
 
 const mediaStates = ref({
   audio: MediaState.Waiting,

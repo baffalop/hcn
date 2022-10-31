@@ -38,10 +38,13 @@ export interface TranscriptionLine {
   text: string
 }
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
+  enabled?: boolean
   transcript: Transcription
   time: number
-}>()
+}>(), {
+  enabled: true,
+})
 
 const EXPIRY_SECS = 4
 
@@ -52,6 +55,10 @@ const previousLine = computed(() => findMostRecentLine(
 ))
 
 function findMostRecentLine (lines: TranscriptionLine[], time: number): TranscriptionLine {
+  if (!props.enabled) {
+    return blankLine()
+  }
+
   return lines.reduce((prev, cur) => {
     if (cur.start > time) return prev
     return cur.start > prev.start ? cur : prev

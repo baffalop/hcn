@@ -1,6 +1,6 @@
 <template>
   <FileDrop @drop="onDrop">
-    <Transcript :transcript="droppedTranscript ?? transcript" :time="time" />
+    <Transcript :enabled="enabled" :transcript="droppedTranscript ?? transcript" :time="time" />
   </FileDrop>
 </template>
 
@@ -11,10 +11,13 @@ import SrtParser from 'srt-parser-2'
 import FileDrop from '@components/FileDrop.vue'
 import Transcript, { Transcription } from '@components/player/Transcript.vue'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
+  enabled?: boolean
   transcript: Transcription
   time: number
-}>()
+}>(), {
+  enabled: true
+})
 
 const droppedTranscript = ref<Transcription|null>()
 

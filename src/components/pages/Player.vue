@@ -6,7 +6,11 @@
           <Icon src="/icon/play-borderless.svg" class="transform -scale-100" />
         </RouterLink>
 
-        <button class="control !w-6 !h-6" :title="`${showTranscript ? 'Hide' : 'Show'} transcriptions`" @click="showTranscript = !showTranscript">
+        <button
+          :title="`${showTranscript ? 'Hide' : 'Show'} transcriptions`"
+          class="control !w-6 !h-6"
+          @click="showTranscript = !showTranscript"
+        >
           <Icon src="/icon/menu-borderless.svg" />
         </button>
       </div>
@@ -35,7 +39,7 @@
 
       <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
 
-      <DroppableTranscript :transcript="track.transcript ?? []" :time="time" :class="{ invisible: !showTranscript }" class="-mt-6" />
+      <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
 
       <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
 

@@ -122,7 +122,13 @@ const time = useLocalStorage(
   (t1, t2) => delta(t1, t2) > 1,
 )
 
-const showTranscript = ref(false)
+const showTranscript = useLocalStorage(
+  ref('player.transcriptEnabled'),
+  false,
+  v => v ? '1' : '0',
+  v => v === '1',
+  () => true,
+)
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)

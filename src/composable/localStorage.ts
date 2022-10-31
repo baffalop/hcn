@@ -1,13 +1,15 @@
 import { Ref, shallowRef, watch } from 'vue'
 
 export function useLocalStorage<T> (
-  key: Ref<string>,
+  key: string | Ref<string>,
   initialValue: T,
-  encode: (v: T) => string,
-  decode: (v: string) => T,
-  shouldStore: (newValue: T, oldValue: T) => boolean,
+  encode: (v: T) => string = JSON.stringify,
+  decode: (v: string) => T = JSON.parse,
+  shouldStore: (newValue: T, oldValue: T) => boolean = () => true,
 ): Ref<T> {
-  const value = shallowRef<T>(retrieve(key.value))
+  const getKey: () => string = typeof key === 'string' ? () => key : () => key.value
+
+  const value = shallowRef<T>(retrieve(getKey()))
   const lastStoredValue = shallowRef<T>(value.value)
 
   function store (key: string, value: T): void {
@@ -20,17 +22,19 @@ export function useLocalStorage<T> (
     return retrieved == null ? initialValue : decode(retrieved)
   }
 
-  watch(() => key.value, (newKey, oldKey) => {
-    if (oldKey != null) {
-      store(oldKey, value.value)
-    }
+  if (typeof key !== 'string') {
+    watch(() => key.value, (newKey, oldKey) => {
+      if (oldKey != null) {
+        store(oldKey, value.value)
+      }
 
-    value.value = retrieve(newKey)
-  }, { immediate: true })
+      value.value = retrieve(newKey)
+    }, { immediate: true })
+  }
 
   watch(() => value.value, value => {
     if (shouldStore(value, lastStoredValue.value)) {
-      store(key.value, value)
+      store(getKey(), value)
       lastStoredValue.value = value
     }
   })

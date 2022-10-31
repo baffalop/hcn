@@ -122,13 +122,7 @@ const time = useLocalStorage(
   (t1, t2) => delta(t1, t2) > 1,
 )
 
-const showTranscript = useLocalStorage(
-  ref('player.transcriptEnabled'),
-  false,
-  v => v ? '1' : '0',
-  v => v === '1',
-  () => true,
-)
+const showTranscript = useLocalStorage('player.transcriptEnabled', false)
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)
@@ -230,13 +224,7 @@ enum Font {
 
 const fontCount = Object.keys(Font).length / 2
 
-const font = useLocalStorage<Font>(
-  ref('player.title.font'),
-  Font.AgrandirWide,
-  f => f.toFixed(0),
-  parseInt,
-  () => true,
-)
+const font = useLocalStorage<Font>('player.title.font', Font.AgrandirWide)
 
 function cycleFont (): void {
   font.value = (font.value + 1) % fontCount

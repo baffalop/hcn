@@ -115,7 +115,7 @@ const duration = ref(props.track.duration)
 const videoTime = ref(0)
 
 const time = useLocalStorage(
-  computed(() => `${props.track.slug}.position`),
+  computed(() => `player.position.${props.track.slug}`),
   0,
   t => t.toFixed(1),
   parseFloat,

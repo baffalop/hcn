@@ -3,7 +3,7 @@
     <div class="player grid h-full grid-cols-1 gap-12 w-5/6 max-w-screen-md mx-auto content-center justify-items-center items-center">
       <div class="flex items-center justify-between w-full self-end">
         <RouterLink :to="{ name: 'index' }" title="Back" class="control text-gray-100 hover:text-gray-100">
-          <Icon src="/icon/play-borderless.svg" class="transform -scale-100" />
+          <Icon src="/icon/play-plain.svg" class="transform -scale-100" />
         </RouterLink>
 
         <button
@@ -11,7 +11,7 @@
           class="control !w-6 !h-6"
           @click="showTranscript = !showTranscript"
         >
-          <Icon src="/icon/menu-borderless.svg" />
+          <Icon src="/icon/menu-plain.svg" />
         </button>
       </div>
 
@@ -19,7 +19,7 @@
 
       <div class="flex items-center justify-center gap-10">
         <button class="control" title="Back 10 seconds" @click="time -= 10">
-          <Icon src="/icon/rew-borderless.svg" />
+          <Icon src="/icon/rew-plain.svg" />
         </button>
 
         <button
@@ -28,12 +28,12 @@
           :title="playing ? 'Pause' : 'Play'"
           @click="onClickPlayPause"
         >
-          <Icon v-show="!playing" src="/icon/play-borderless.svg" />
-          <Icon v-show="playing" src="/icon/pause-borderless.svg" />
+          <Icon v-show="!playing" src="/icon/play-plain.svg" />
+          <Icon v-show="playing" src="/icon/pause-plain.svg" />
         </button>
 
         <button class="control" title="Forward 10 seconds" @click="time += 10">
-          <Icon src="/icon/ffw-borderless.svg" />
+          <Icon src="/icon/ffw-plain.svg" />
         </button>
       </div>
 

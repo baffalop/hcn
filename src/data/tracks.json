@@ -130,5 +130,12 @@
     "artist": "Linda O’Keeffe",
     "duration": 477.33551,
     "bgColor": "rgb(98, 83, 61)"
+  },
+  {
+    "slug": "enosh",
+    "title": "Enosh",
+    "artist": "Louise Wilson",
+    "duration": 681.038367,
+    "bgColor": "rgb(205, 130, 69)"
   }
 ]

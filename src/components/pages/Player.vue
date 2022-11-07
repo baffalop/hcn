@@ -2,8 +2,8 @@
   <FileDrop class="h-full" @drop="onVideoFileDrop">
     <div class="player grid h-full grid-cols-1 gap-12 w-5/6 max-w-screen-md mx-auto content-center justify-items-center items-center">
       <div class="flex items-center justify-between w-full self-end">
-        <RouterLink :to="{ name: 'index' }" title="Back" class="w-14 text-gray-100 hover:text-gray-100">
-          <Icon view-box="0 0 300 150" src="/icon/arrow-back-straight.svg" />
+        <RouterLink :to="{ name: 'index' }" title="Back" class="w-10 text-gray-100 hover:text-gray-100">
+          <Icon src="/icon/arrow-back-bend.svg" />
         </RouterLink>
 
         <button

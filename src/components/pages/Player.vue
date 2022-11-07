@@ -16,9 +16,9 @@
         </button>
       </div>
 
-      <div class="mb-4 space-y-3">
+      <div class="space-y-3">
         <h2 class="text-4xl">{{ track.title }}</h2>
-        <h3 class="text-3xl text-gray-800/40">{{ track.artist }}</h3>
+        <ClippingText :text="track.artist" class="text-3xl backdrop-brightness-75 -backdrop-hue-rotate-30" />
       </div>
 
       <div class="flex items-center justify-center gap-10">
@@ -82,16 +82,18 @@
 import { computed, ref, UnwrapRef, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
+import { Transcription } from '@components/player/Transcript.vue'
 import { delta } from '@/utils/math'
 import { formatSecs } from '@/utils/time'
 import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
+
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import Icon from '@components/Icon.vue'
 import DroppableTranscript from '@components/player/DroppableTranscript.vue'
 import FileDrop from '@components/FileDrop.vue'
-import { Transcription } from '@components/player/Transcript.vue'
+import ClippingText from '@components/ClippingText.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 

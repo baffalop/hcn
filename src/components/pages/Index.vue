@@ -20,7 +20,7 @@
       <table class="text-left max-w-max mx-auto">
         <tbody>
         <tr v-for="(track, i) in tracks">
-          <td class="px-2">{{ formatTrackNumber(i) }}.</td>
+          <td>{{ i + 1 }}.</td>
           <td class="px-2"><RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink></td>
           <td class="px-2">{{ track.artist }}</td>
           <td class="px-2 text-base text-gray-300">{{ formatSecs(track.duration) }}</td>
@@ -34,10 +34,6 @@
 <script setup lang="ts">
 import { tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
-
-function formatTrackNumber (i: number): string {
-  return (i + 1).toFixed(0).padStart(2, '0')
-}
 </script>
 
 <style scoped>

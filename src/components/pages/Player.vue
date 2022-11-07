@@ -2,13 +2,13 @@
   <FileDrop class="h-full" @drop="onVideoFileDrop">
     <div class="player grid h-full grid-cols-1 gap-12 w-5/6 max-w-screen-md mx-auto content-center justify-items-center items-center">
       <div class="flex items-center justify-between w-full self-end">
-        <RouterLink :to="{ name: 'index' }" title="Back" class="control text-gray-100 hover:text-gray-100">
-          <Icon src="/icon/play-plain.svg" class="transform -scale-100" />
+        <RouterLink :to="{ name: 'index' }" title="Back" class="!w-14 text-gray-100 hover:text-gray-100">
+          <Icon src="/icon/arrow-back-straight.svg" />
         </RouterLink>
 
         <button
           :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`"
-          class="control !w-10 !h-10"
+          class="control !w-10"
           @click="showTranscript = !showTranscript"
         >
           <Icon v-show="showTranscript" src="/icon/transcript-bubble-off.svg" />

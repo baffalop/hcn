@@ -15,13 +15,14 @@
     </div>
 
     <div id="menu" class="h-screen w-full mx-auto flex flex-col justify-center">
-      <h2 class="mt-10 mb-6 text-2xl">Linda O’Keeffe</h2>
+      <h2 class="mt-10 mb-6 text-3xl">Menu</h2>
 
       <ul class="text-left max-w-max mx-auto">
         <li v-for="(track, i) in tracks">
           <span>{{ formatTrackNumber(i) }}.</span>
           <RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink>
-          <span class="text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
+          <span>{{ track.artist }}</span>
+          <span class="ml-2 text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
         </li>
       </ul>
     </div>

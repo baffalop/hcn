@@ -17,14 +17,16 @@
     <div id="menu" class="h-screen w-full mx-auto flex flex-col justify-center">
       <h2 class="mt-10 mb-6 text-3xl">Menu</h2>
 
-      <ul class="text-left max-w-max mx-auto">
-        <li v-for="(track, i) in tracks">
-          <span>{{ formatTrackNumber(i) }}.</span>
-          <RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink>
-          <span>{{ track.artist }}</span>
-          <span class="ml-2 text-base text-gray-300">{{ formatSecs(track.duration) }}</span>
-        </li>
-      </ul>
+      <table class="text-left max-w-max mx-auto">
+        <tbody>
+        <tr v-for="(track, i) in tracks">
+          <td class="px-2">{{ formatTrackNumber(i) }}.</td>
+          <td class="px-2"><RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink></td>
+          <td class="px-2">{{ track.artist }}</td>
+          <td class="px-2 text-base text-gray-300">{{ formatSecs(track.duration) }}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>

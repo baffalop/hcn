@@ -14,14 +14,14 @@
       </p>
     </div>
 
-    <div id="menu" class="h-screen w-full mx-auto flex flex-col justify-center">
+    <div id="menu" class="h-screen w-full px-3 mx-auto flex flex-col justify-center">
       <h2 class="mt-10 mb-6 text-3xl">Menu</h2>
 
-      <table class="text-left max-w-max mx-auto font-editorial">
+      <table class="text-left w-auto mx-auto font-editorial">
         <tbody>
-        <tr v-for="(track, i) in tracks">
+        <tr v-for="(track, i) in tracks" class="align-top">
           <td class="font-agrandir">{{ i + 1 }}.</td>
-          <td class="px-2"><RouterLink :to="{ name: 'player', params: { slug: track.slug } }" class="mx-1.5">{{ track.title }}</RouterLink></td>
+          <td class="px-2"><RouterLink :to="{ name: 'player', params: { slug: track.slug } }">{{ track.title }}</RouterLink></td>
           <td class="px-2">{{ track.artist }}</td>
           <td class="px-2 text-base text-gray-300 font-agrandir">{{ formatSecs(track.duration) }}</td>
         </tr>

@@ -8,10 +8,10 @@
 
         <button
           :title="`${showTranscript ? 'Hide' : 'Show'} transcriptions`"
-          class="control !w-6 !h-6"
+          class="control !w-10 !h-10"
           @click="showTranscript = !showTranscript"
         >
-          <Icon src="/icon/menu-plain.svg" />
+          <Icon src="/icon/transcript-bubble.svg" />
         </button>
       </div>
 

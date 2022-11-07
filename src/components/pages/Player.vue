@@ -7,11 +7,12 @@
         </RouterLink>
 
         <button
-          :title="`${showTranscript ? 'Hide' : 'Show'} transcriptions`"
+          :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`"
           class="control !w-10 !h-10"
           @click="showTranscript = !showTranscript"
         >
-          <Icon src="/icon/transcript-bubble.svg" />
+          <Icon v-show="showTranscript" src="/icon/transcript-bubble-off.svg" />
+          <Icon v-show="!showTranscript" src="/icon/transcript-bubble.svg" />
         </button>
       </div>
 

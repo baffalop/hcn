@@ -16,7 +16,10 @@
         </button>
       </div>
 
-      <h2 class="text-4xl mb-4">{{ track.title }}</h2>
+      <div class="mb-4 space-y-3">
+        <h2 class="text-4xl">{{ track.title }}</h2>
+        <h3 class="text-3xl text-gray-800/40">{{ track.artist }}</h3>
+      </div>
 
       <div class="flex items-center justify-center gap-10">
         <button class="control" title="Back 10 seconds" @click="time -= 10">

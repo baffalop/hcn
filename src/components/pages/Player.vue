@@ -1,6 +1,6 @@
 <template>
   <FileDrop class="h-full" @drop="onVideoFileDrop">
-    <div class="player grid h-full grid-cols-1 gap-12 w-5/6 max-w-screen-md mx-auto content-center justify-items-center items-center">
+    <div class="player grid h-full grid-cols-1 gap-14 w-5/6 max-w-screen-md mx-auto content-center justify-items-center items-center">
       <div class="flex items-center justify-between w-full self-end">
         <RouterLink :to="{ name: 'index' }" title="Back" class="w-10 text-gray-100 hover:text-gray-100">
           <Icon viewbox="0 20 300 300" src="/icon/arrow-back-bend.svg" />
@@ -16,7 +16,7 @@
         </button>
       </div>
 
-      <h2 class="text-4xl">{{ track.title }}</h2>
+      <h2 class="text-4xl mb-4">{{ track.title }}</h2>
 
       <div class="flex items-center justify-center gap-10">
         <button class="control" title="Back 10 seconds" @click="time -= 10">
@@ -220,7 +220,7 @@ function onVideoFileDrop (file: File): void {
 
 <style scoped>
 .player {
-  grid-template-rows: 1fr 15% max-content max-content minmax(max-content, 1fr);
+  grid-template-rows: 1.5fr max-content max-content max-content minmax(max-content, 1fr);
 }
 
 .control {

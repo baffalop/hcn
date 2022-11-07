@@ -16,7 +16,7 @@
         </button>
       </div>
 
-      <h2 class="text-4xl cursor-pointer" :class="titleClass" @click="cycleFont">{{ track.title }}</h2>
+      <h2 class="text-4xl">{{ track.title }}</h2>
 
       <div class="flex items-center justify-center gap-10">
         <button class="control" title="Back 10 seconds" @click="time -= 10">
@@ -216,47 +216,11 @@ function onVideoFileDrop (file: File): void {
   }
 }
 
-enum Font {
-  AgrandirWide = 0,
-  AgrandirNarrow,
-  EditorialUltralight,
-  EditorialRegular,
-}
-
-const fontCount = Object.keys(Font).length / 2
-
-const font = useLocalStorage<Font>('player.title.font', Font.AgrandirWide)
-
-function cycleFont (): void {
-  font.value = (font.value + 1) % fontCount
-}
-
-const titleClass = computed<string>(() => {
-  switch (font.value) {
-    case Font.AgrandirWide:
-      return 'font-agrandir font-wide'
-    case Font.AgrandirNarrow:
-      return 'font-agrandir font-narrow'
-    case Font.EditorialUltralight:
-      return 'font-editorial font-light'
-    case Font.EditorialRegular:
-      return 'font-editorial font-normal'
-  }
-})
-
 </script>
 
 <style scoped>
 .player {
   grid-template-rows: 1fr 15% max-content max-content minmax(max-content, 1fr);
-}
-
-.font-wide {
-  font-stretch: normal;
-}
-
-.font-narrow {
-  font-stretch: condensed;
 }
 
 .control {

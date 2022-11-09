@@ -18,7 +18,7 @@
 
       <div class="space-y-3">
         <h2 class="text-4xl">{{ track.title }}</h2>
-        <ClippingText :text="track.artist" class="text-3xl backdrop-brightness-75 -backdrop-hue-rotate-30" />
+        <ClippingText :text="track.artist" class="text-3xl backdrop-brightness-70 -backdrop-hue-rotate-30" />
       </div>
 
       <div class="flex items-center justify-center gap-10">

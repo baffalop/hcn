@@ -85,6 +85,9 @@ module.exports = {
       transitionProperty: {
         height: 'height',
       },
+      backdropBrightness: {
+        70: '0.7',
+      }
     },
   },
   plugins: [],

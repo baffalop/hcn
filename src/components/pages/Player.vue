@@ -16,32 +16,54 @@
         </button>
       </div>
 
-      <div class="space-y-3">
+      <div class="space-y-3" @click="showCredits = !showCredits">
         <h2 class="text-4xl">{{ track.title }}</h2>
         <ClippingText :text="track.artist" class="text-3xl backdrop-brightness-70 -backdrop-hue-rotate-30" />
       </div>
 
-      <div class="flex items-center justify-center gap-10">
-        <button class="control" title="Back 10 seconds" @click="time -= 10">
-          <Icon src="/icon/rew-plain.svg" />
-        </button>
-
-        <button
-          class="control !w-14 !h-14 transition-opacity duration-500"
-          :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
-          :title="playing ? 'Pause' : 'Play'"
-          @click="onClickPlayPause"
+      <div class="h-32 w-full">
+        <Transition
+          mode="out-in"
+          enter-from-class="!h-0"
+          enter-active-class="overflow-y-hidden transition-height duration-500 delay-100"
+          leave-active-class="overflow-y-hidden transition-height duration-300"
+          leave-to-class="!h-0"
         >
-          <Icon v-show="!playing" src="/icon/play-plain.svg" />
-          <Icon v-show="playing" src="/icon/pause-plain.svg" />
-        </button>
+          <div v-if="!showCredits" key="controls" class="h-32 w-full space-y-14">
+            <div class="flex items-center justify-center gap-10">
+              <button class="control" title="Back 10 seconds" @click="time -= 10">
+                <Icon src="/icon/rew-plain.svg" />
+              </button>
 
-        <button class="control" title="Forward 10 seconds" @click="time += 10">
-          <Icon src="/icon/ffw-plain.svg" />
-        </button>
+              <button
+                class="control !w-14 !h-14 transition-opacity duration-500"
+                :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
+                :title="playing ? 'Pause' : 'Play'"
+                @click="onClickPlayPause"
+              >
+                <Icon v-show="!playing" src="/icon/play-plain.svg" />
+                <Icon v-show="playing" src="/icon/pause-plain.svg" />
+              </button>
+
+              <button class="control" title="Forward 10 seconds" @click="time += 10">
+                <Icon src="/icon/ffw-plain.svg" />
+              </button>
+            </div>
+
+            <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
+          </div>
+
+          <div v-else class="text-center space-y-4 h-24">
+            <p>
+              With special thanks to...
+            </p>
+
+            <button class="control !w-12 !h-12" title="Replay" @click="playing = true">
+              <Icon src="/icon/rew-plain.svg" />
+            </button>
+          </div>
+        </Transition>
       </div>
-
-      <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
 
       <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
 
@@ -119,6 +141,7 @@ enum PlayState {
 const playing = ref(false)
 const duration = ref(props.track.duration)
 const videoTime = ref(0)
+const showCredits = ref(false)
 
 const time = useLocalStorage(
   computed(() => `player.position.${props.track.slug}`),
@@ -225,7 +248,7 @@ function onVideoFileDrop (file: File): void {
 
 <style scoped>
 .player {
-  grid-template-rows: 1.5fr max-content max-content max-content minmax(max-content, 1fr);
+  grid-template-rows: 1.5fr max-content max-content minmax(max-content, 1fr);
 }
 
 .control {

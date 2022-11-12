@@ -22,15 +22,9 @@
       </div>
 
       <div class="h-32 w-full">
-        <Transition
-          mode="out-in"
-          enter-from-class="!h-0"
-          enter-active-class="overflow-y-hidden transition-height duration-500 delay-100"
-          leave-active-class="overflow-y-hidden transition-height duration-300"
-          leave-to-class="!h-0"
-        >
+        <Transition mode="out-in" name="staggered" :duration="600">
           <div v-if="!showCredits" key="controls" class="h-32 w-full space-y-14">
-            <div class="flex items-center justify-center gap-10">
+            <div class="controls flex items-center justify-center gap-10">
               <button class="control" title="Back 10 seconds" @click="time -= 10">
                 <Icon src="/icon/rew-plain.svg" />
               </button>
@@ -253,5 +247,34 @@ function onVideoFileDrop (file: File): void {
 
 .control {
   @apply w-8 h-8;
+}
+
+.staggered-enter-active > *, .staggered-leave-active > * {
+  transition-property: transform, opacity;
+  @apply transform duration-300 ease-in-out;
+}
+
+.staggered-enter-active > :nth-child(2), .staggered-leave-active > :nth-last-child(2) {
+  @apply delay-150;
+}
+
+.staggered-enter-active > :nth-child(3), .staggered-leave-active > :nth-last-child(3) {
+  @apply delay-300;
+}
+
+.staggered-enter-from > * {
+  @apply -translate-y-6 opacity-0;
+}
+
+.staggered-enter-to > * {
+  @apply translate-y-0 opacity-100;
+}
+
+.staggered-leave-to > * {
+  @apply translate-y-0 opacity-100;
+}
+
+.staggered-leave-to > * {
+  @apply translate-y-6 opacity-0;
 }
 </style>

@@ -47,18 +47,30 @@
             <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
           </div>
 
-          <div v-else class="text-center h-24">
-            <button class="control !w-12 !h-12 mb-14" title="Replay" @click="playing = true">
+          <div v-else class="grid grid-cols-2 gap-10 place-items-center h-24">
+            <button class="control !w-12 !h-12 justify-self-end" title="Replay" @click="playing = true">
               <Icon src="/icon/rew-plain.svg" />
             </button>
 
-            <p>
-              With grateful thanks to:
-            </p>
+            <RouterLink
+              v-if="nextTrack"
+              :to="{ name: 'player', params: { slug: nextTrack.slug } }"
+              class="justify-self-start text-gray-100 hover:text-gray-100 inline"
+            >
+              <button class="w-14" title="Next Track">
+                <Icon src="/icon/arrow-back-straight.svg" class="transform -scale-100" />
+              </button>
+            </RouterLink>
 
-            <p>
-              {{ track.credits }}
-            </p>
+            <div class="col-span-full">
+              <p>
+                With grateful thanks to:
+              </p>
+
+              <p>
+                {{ track.credits }}
+              </p>
+            </div>
           </div>
         </Transition>
       </div>

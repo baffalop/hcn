@@ -258,6 +258,10 @@ function onVideoFileDrop (file: File): void {
   @apply transform duration-300 ease-in-out;
 }
 
+.staggered-enter-active > * {
+  @apply duration-500;
+}
+
 .staggered-enter-active > :nth-child(2), .staggered-leave-active > :nth-last-child(2) {
   @apply delay-150;
 }

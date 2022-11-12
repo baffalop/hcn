@@ -55,10 +55,10 @@
             <RouterLink
               v-if="nextTrack"
               :to="{ name: 'player', params: { slug: nextTrack.slug } }"
-              class="justify-self-start text-gray-100 hover:text-gray-100 inline"
+              class="w-12 h-12 justify-self-start text-gray-100 hover:text-gray-100"
             >
-              <button class="w-14" title="Next Track">
-                <Icon src="/icon/arrow-back-straight.svg" class="transform -scale-100" />
+              <button title="Next Track" class="w-full h-full">
+                <Icon src="/icon/chevron-back.svg" class="transform -scale-100" />
               </button>
             </RouterLink>
 

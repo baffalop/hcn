@@ -44,11 +44,11 @@ try {
 }
 
 async function tryReadSrt (slug) {
-  const srtPath = `src/data/${slug}.srt`
+  const srtPath = `src/data/transcript/${slug}.srt`
 
   try {
     const srt = await fs.readFile(srtPath, 'utf8')
-    const parsed = new SrtParser().fromSrt(srt)
+    const parsed = parser.fromSrt(srt)
     console.log(`found and parsed srt for ${slug}`)
 
     return parsed.map(({ text, startSeconds, endSeconds }) => ({

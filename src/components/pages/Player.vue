@@ -47,7 +47,11 @@
             <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
           </div>
 
-          <div v-else class="text-center space-y-4 h-24">
+          <div v-else class="text-center h-24">
+            <button class="control !w-12 !h-12 mb-14" title="Replay" @click="playing = true">
+              <Icon src="/icon/rew-plain.svg" />
+            </button>
+
             <p>
               With grateful thanks to:
             </p>
@@ -55,10 +59,6 @@
             <p>
               {{ track.credits }}
             </p>
-
-            <button class="control !w-12 !h-12" title="Replay" @click="playing = true">
-              <Icon src="/icon/rew-plain.svg" />
-            </button>
           </div>
         </Transition>
       </div>

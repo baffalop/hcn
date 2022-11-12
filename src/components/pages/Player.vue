@@ -49,7 +49,11 @@
 
           <div v-else class="text-center space-y-4 h-24">
             <p>
-              With special thanks to...
+              With grateful thanks to:
+            </p>
+
+            <p>
+              {{ track.credits }}
             </p>
 
             <button class="control !w-12 !h-12" title="Replay" @click="playing = true">

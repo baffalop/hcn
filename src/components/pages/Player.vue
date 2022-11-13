@@ -6,11 +6,7 @@
           <Icon viewbox="0 20 300 300" src="/icon/arrow-back-bend.svg" />
         </RouterLink>
 
-        <button
-          :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`"
-          class="w-10"
-          @click="showTranscript = !showTranscript"
-        >
+        <button :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`" class="w-10">
           <Icon v-show="showTranscript" src="/icon/transcript-bubble-off.svg" />
           <Icon v-show="!showTranscript" src="/icon/transcript-bubble.svg" />
         </button>
@@ -21,27 +17,59 @@
         <ClippingText :text="track.artist" class="text-3xl backdrop-brightness-70 -backdrop-hue-rotate-30" />
       </div>
 
-      <div class="flex items-center justify-center gap-10">
-        <button class="control" title="Back 10 seconds" @click="time -= 10">
-          <Icon src="/icon/rew-plain.svg" />
-        </button>
+      <div class="h-32 w-full">
+        <Transition mode="out-in" name="staggered" :duration="{ leave: 700, enter: 1100 }">
+          <div v-if="!hasEnded" key="controls" class="h-32 w-full space-y-14">
+            <div class="controls flex items-center justify-center gap-10">
+              <button class="control" title="Back 10 seconds" @click="skip(-10)">
+                <Icon src="/icon/rew-plain.svg" />
+              </button>
 
-        <button
-          class="control !w-14 !h-14 transition-opacity duration-500"
-          :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
-          :title="playing ? 'Pause' : 'Play'"
-          @click="onClickPlayPause"
-        >
-          <Icon v-show="!playing" src="/icon/play-plain.svg" />
-          <Icon v-show="playing" src="/icon/pause-plain.svg" />
-        </button>
+              <button
+                class="control !w-14 !h-14 transition-opacity duration-500"
+                :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
+                :title="playing ? 'Pause' : 'Play'"
+                @click="onClickPlayPause"
+              >
+                <Icon v-show="!playing" src="/icon/play-plain.svg" />
+                <Icon v-show="playing" src="/icon/pause-plain.svg" />
+              </button>
 
-        <button class="control" title="Forward 10 seconds" @click="time += 10">
-          <Icon src="/icon/ffw-plain.svg" />
-        </button>
+              <button class="control" title="Forward 10 seconds" @click="skip(10)">
+                <Icon src="/icon/ffw-plain.svg" />
+              </button>
+            </div>
+
+            <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
+          </div>
+
+          <div v-else class="grid grid-cols-2 gap-10 place-items-center h-24">
+            <button class="control !w-12 !h-12 justify-self-end" title="Replay" @click="replay">
+              <Icon src="/icon/rew-plain.svg" />
+            </button>
+
+            <RouterLink
+              v-if="nextTrack"
+              :to="{ name: 'player', params: { slug: nextTrack.slug } }"
+              class="w-12 h-12 justify-self-start text-gray-100 hover:text-gray-100"
+            >
+              <button title="Next Track" class="w-full h-full">
+                <Icon src="/icon/chevron-back.svg" class="transform -scale-100" />
+              </button>
+            </RouterLink>
+
+            <div class="col-span-full">
+              <p>
+                With grateful thanks to:
+              </p>
+
+              <p>
+                {{ track.credits }}
+              </p>
+            </div>
+          </div>
+        </Transition>
       </div>
-
-      <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
 
       <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
 
@@ -83,7 +111,7 @@ import { computed, ref, UnwrapRef, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { Transcription } from '@components/player/Transcript.vue'
-import { delta } from '@/utils/math'
+import { clamp, delta } from '@/utils/math'
 import { formatSecs } from '@/utils/time'
 import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
@@ -125,10 +153,11 @@ const time = useLocalStorage(
   0,
   t => t.toFixed(1),
   parseFloat,
-  (t1, t2) => delta(t1, t2) > 1,
+  (newTime, oldTime) => delta(newTime, oldTime) > 1 || newTime >= duration.value - 0.1,
 )
 
 const showTranscript = useLocalStorage('player.transcriptEnabled', false)
+const hasEnded = computed<boolean>(() => time.value >= duration.value - 0.1)
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)
@@ -140,6 +169,15 @@ function onClickPlayPause () {
     video.value?.play()
     audio.value?.play()
   }
+}
+
+function skip (interval: number): void {
+  time.value = clamp(time.value + interval, 0, duration.value - 0.1)
+}
+
+function replay (): void {
+  time.value = 0
+  playing.value = true
 }
 
 watch(() => time.value, time => {
@@ -172,7 +210,6 @@ const playState = computed<PlayState>(() => {
 
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))
-const prevTrack = computed<Track|null>(() => getTrack(-1))
 
 function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, state: MediaState): void {
   mediaStates.value[mediaKey] = state
@@ -225,10 +262,43 @@ function onVideoFileDrop (file: File): void {
 
 <style scoped>
 .player {
-  grid-template-rows: 1.5fr max-content max-content max-content minmax(max-content, 1fr);
+  grid-template-rows: 1.2fr max-content max-content minmax(max-content, 1fr);
 }
 
 .control {
   @apply w-8 h-8;
+}
+
+.staggered-enter-active > *, .staggered-leave-active > * {
+  transition-property: transform, opacity;
+  @apply transform duration-300 ease-in-out;
+}
+
+.staggered-enter-active > * {
+  @apply duration-700;
+}
+
+.staggered-enter-active > :nth-child(2), .staggered-leave-active > :nth-last-child(2) {
+  @apply delay-200;
+}
+
+.staggered-enter-active > :nth-child(3), .staggered-leave-active > :nth-last-child(3) {
+  @apply delay-400;
+}
+
+.staggered-enter-from > * {
+  @apply -translate-y-6 opacity-0;
+}
+
+.staggered-enter-to > * {
+  @apply translate-y-0 opacity-100;
+}
+
+.staggered-leave-to > * {
+  @apply translate-y-0 opacity-100;
+}
+
+.staggered-leave-to > * {
+  @apply translate-y-6 opacity-0;
 }
 </style>

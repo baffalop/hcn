@@ -6,6 +6,7 @@ export interface Track {
   slug: string
   duration: number
   artist: string
+  credits: string
   bgColor?: string
   transcript?: Transcription
 }

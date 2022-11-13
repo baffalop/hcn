@@ -52,7 +52,7 @@ async function tryReadSrt (slug) {
     console.log(`found and parsed srt for ${slug}`)
 
     return parsed.map(({ text, startSeconds, endSeconds }) => ({
-      text,
+      text: toCurlyQuotes(text),
       start: startSeconds,
       end: endSeconds,
     }))
@@ -65,4 +65,16 @@ async function tryReadSrt (slug) {
 
     return null
   }
+}
+
+/**
+ * Detect uses of apostrophy (') and convert to left and right quotes (‘ and ’)
+ *
+ * @param {string} text
+ * @return {string}
+ */
+function toCurlyQuotes (text) {
+  return text
+    .replace(/^'|(?<=\s)'/g, '‘')
+    .replace(/'$|'(?=\s)/g, '’')
 }

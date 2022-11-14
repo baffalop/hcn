@@ -13,10 +13,6 @@ body {
   font-stretch: condensed;
 }
 
-a {
-  @apply font-medium text-primary-green hover:text-primary-green-300;
-}
-
 button {
   @apply cursor-pointer;
 }

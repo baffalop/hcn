@@ -10,6 +10,7 @@
       src="/img/toms-knife.jpeg"
       alt="A hand holding a silverware knife"
       class="fixed top-48 left-0 right-0 mx-auto w-4/5 h-[60vh] object-contain"
+      :style="{ opacity: `${titleImageOpacity}%` }"
     >
 
     <div class="px-4 mx-auto max-w-screen-md relative">
@@ -26,7 +27,7 @@
       </p>
     </div>
 
-    <div id="menu" class="h-screen w-full px-3 mx-auto flex flex-col justify-center">
+    <div id="menu" class="relative h-screen w-full px-3 mx-auto flex flex-col justify-center">
       <h2 class="mt-10 mb-6 text-3xl">Menu</h2>
 
       <table class="text-left w-auto mx-auto font-editorial">
@@ -44,8 +45,29 @@
 </template>
 
 <script setup lang="ts">
+import { computed, onMounted, onUnmounted, ref } from 'vue'
+
 import { tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
+
+const SCROLL_SCALE = 350
+
+const scrollY = ref(0)
+const titleImageOpacity = computed(
+  () => Math.max(0, SCROLL_SCALE - scrollY.value) * 100 / SCROLL_SCALE
+)
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
+
+function onScroll (): void {
+  scrollY.value = window.scrollY
+}
 </script>
 
 <style scoped>

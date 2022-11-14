@@ -6,7 +6,7 @@
           <Icon viewbox="0 20 300 300" src="/icon/arrow-back-bend.svg" />
         </RouterLink>
 
-        <button :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`" class="w-10">
+        <button :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`" class="w-10" @click="showTranscript = !showTranscript">
           <Icon v-show="showTranscript" src="/icon/transcript-bubble-off.svg" />
           <Icon v-show="!showTranscript" src="/icon/transcript-bubble.svg" />
         </button>

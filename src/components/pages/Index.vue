@@ -1,8 +1,12 @@
 <template>
-  <div class="bg-primary-brick h-full w-full py-24">
-    <h1 class="text-5xl font-light italic text-stone-900">Encountering Survival</h1>
+  <div class="bg-primary-brick min-h-full w-full">
+    <div class="h-[60vh] mb-14">
+      <h1 class="text-5xl font-light italic text-stone-900 sticky top-24">
+        Encountering Survival
+      </h1>
+    </div>
 
-    <div class="h-4/5 px-4 mx-auto max-w-screen-md flex flex-col justify-center">
+    <div class="px-4 mx-auto max-w-screen-md">
       <p>
         Welcome to some audio guides for Holocaust Centre North.
       </p>
@@ -16,7 +20,7 @@
       </p>
     </div>
 
-    <div id="menu" class="bg-primary-brick h-screen w-full px-3 mx-auto flex flex-col justify-center">
+    <div id="menu" class="h-screen w-full px-3 mx-auto flex flex-col justify-center">
       <h2 class="mt-10 mb-6 text-3xl">Menu</h2>
 
       <table class="text-left w-auto mx-auto font-editorial">

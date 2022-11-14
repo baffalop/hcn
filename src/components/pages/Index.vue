@@ -1,12 +1,18 @@
 <template>
   <div class="bg-primary-brick min-h-full w-full">
-    <div class="h-[60vh] mb-14">
-      <h1 class="text-5xl font-light italic text-stone-900 sticky top-24">
+    <div class="h-[70vh] mb-14">
+      <h1 class="text-5xl font-light italic text-stone-900 sticky top-20">
         Encountering Survival
       </h1>
     </div>
 
-    <div class="px-4 mx-auto max-w-screen-md">
+    <img
+      src="/img/toms-knife.jpeg"
+      alt="A hand holding a silverware knife"
+      class="fixed top-48 left-0 right-0 mx-auto w-4/5 h-[60vh] object-contain"
+    >
+
+    <div class="px-4 mx-auto max-w-screen-md relative">
       <p>
         Welcome to some audio guides for Holocaust Centre North.
       </p>

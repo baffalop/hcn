@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary-brick min-h-full w-full">
+  <div class="min-h-full w-full">
     <header class="h-[70vh] mb-4">
       <h1 class="text-5xl font-light italic text-stone-900 sticky top-0 pt-20 mb-10">
         Encountering Survival
@@ -49,6 +49,9 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 
 import { tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
+import { setBackground } from '@/composable/body'
+
+setBackground({ class: 'bg-primary-brick' })
 
 const SCROLL_SCALE = 280
 

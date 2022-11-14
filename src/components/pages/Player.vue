@@ -73,8 +73,6 @@
 
       <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
 
-      <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
-
       <Media
         ref="audio"
         type="audio"
@@ -107,7 +105,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, UnwrapRef, watch } from 'vue'
+import { computed, defineEmits, ref, UnwrapRef, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { Transcription } from '@components/player/Transcript.vue'
@@ -115,6 +113,7 @@ import { clamp, delta } from '@/utils/math'
 import { formatSecs } from '@/utils/time'
 import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
+import { setBackground } from '@/composable/body'
 
 import Media from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
@@ -132,6 +131,8 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'update:time', time: number): void
 }>()
+
+setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-900' })
 
 enum MediaState {
   Waiting,

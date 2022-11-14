@@ -1,8 +1,8 @@
 <template>
   <FadeTransition
     mode="out-in"
-    in="duration-400"
-    out="duration-200"
+    in="duration-700"
+    out="duration-300"
     @before-leave="transitionOut"
     @enter="transitionIn"
   >

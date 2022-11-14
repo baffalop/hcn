@@ -9,7 +9,8 @@ html, body {
 }
 
 body {
-  @apply bg-stone-900 font-agrandir text-gray-100 text-lg text-center leading-snug tracking-wider;
+  @apply bg-primary-brick font-agrandir text-gray-100 text-lg text-center leading-snug tracking-wider;
+  transition: background-color 700ms;
   font-stretch: condensed;
 }
 

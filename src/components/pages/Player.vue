@@ -73,6 +73,8 @@
 
       <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
 
+      <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
+
       <Media
         ref="audio"
         type="audio"

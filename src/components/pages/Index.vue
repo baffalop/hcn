@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-primary-brick h-full w-full">
+  <div class="bg-primary-brick h-full w-full py-24">
+    <h1 class="text-5xl italic text-stone-900">Encountering Survival</h1>
+
     <div class="h-4/5 px-4 mx-auto max-w-screen-md flex flex-col justify-center">
       <p>
         Welcome to some audio guides for Holocaust Centre North.

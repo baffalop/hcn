@@ -1,17 +1,17 @@
 <template>
   <div class="bg-primary-brick min-h-full w-full">
-    <div class="h-[70vh] mb-14">
-      <h1 class="text-5xl font-light italic text-stone-900 sticky top-20">
+    <header class="h-[70vh] mb-4">
+      <h1 class="text-5xl font-light italic text-stone-900 sticky top-0 pt-20 mb-10">
         Encountering Survival
       </h1>
-    </div>
 
-    <img
-      src="/img/toms-knife.jpeg"
-      alt="A hand holding a silverware knife"
-      class="fixed top-48 left-0 right-0 mx-auto w-4/5 h-[60vh] object-contain"
-      :style="{ opacity: `${titleImageOpacity}%` }"
-    >
+      <img
+        src="/img/toms-knife.jpeg"
+        alt="A hand holding a silverware knife"
+        class="fixed w-full mx-auto px-6 h-[65vh] object-contain object-top"
+        :style="{ opacity: `${titleImageOpacity}%` }"
+      >
+    </header>
 
     <div class="px-4 mx-auto max-w-screen-md relative">
       <p>
@@ -50,7 +50,7 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { tracks } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
 
-const SCROLL_SCALE = 350
+const SCROLL_SCALE = 280
 
 const scrollY = ref(0)
 const titleImageOpacity = computed(

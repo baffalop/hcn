@@ -27,19 +27,12 @@
       </p>
     </div>
 
-    <div id="menu" class="relative h-screen w-full px-3 mx-auto flex flex-col justify-center">
-      <h2 class="mt-10 mb-6 text-3xl">Menu</h2>
-
-      <table class="text-left w-auto mx-auto font-editorial">
-        <tbody>
-        <tr v-for="(track, i) in tracks" class="align-top">
-          <td class="font-agrandir">{{ i + 1 }}.</td>
-          <td class="px-2"><RouterLink :to="{ name: 'player', params: { slug: track.slug } }">{{ track.title }}</RouterLink></td>
-          <td class="px-2">{{ track.artist }}</td>
-          <td class="px-2 text-base text-gray-300 font-agrandir">{{ formatSecs(track.duration) }}</td>
-        </tr>
-        </tbody>
-      </table>
+    <div id="menu" class="relative min-h-screen px-3 flex flex-col items-center justify-center">
+      <ul class="w-auto space-y-6">
+        <li v-for="track in tracks">
+          <TrackLink :track="track" />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -48,8 +41,8 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 
 import { tracks } from '@/data/tracks'
-import { formatSecs } from '@/utils/time'
 import { setBackground } from '@/composable/body'
+import TrackLink from '@components/TrackLink.vue'
 
 setBackground({ class: 'bg-primary-brick' })
 

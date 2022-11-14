@@ -1,7 +1,7 @@
 <template>
   <RouterLink
     :to="{ name: 'player', params: { slug: track.slug } }"
-    class="grid grid-cols-2 gap-1 gap-x-2 p-3 justify-items-start items-end max-w-max font-editorial"
+    class="grid grid-cols-2 gap-1 gap-x-2 p-3 font-editorial justify-items-start items-end min-w-max max-w-max"
   >
     <span class="col-span-full">{{ track.title }}</span>
     <span>{{ track.artist }}</span>

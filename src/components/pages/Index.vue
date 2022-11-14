@@ -28,8 +28,8 @@
     </div>
 
     <div id="menu" class="relative min-h-screen px-3 flex flex-col items-center justify-center">
-      <ul class="w-auto space-y-6">
-        <li v-for="track in tracks">
+      <ul class="w-full max-w-lg space-y-8">
+        <li v-for="(track, i) in tracks" :style="{ marginLeft: `${itemMargin(i)}%` }">
           <TrackLink :track="track" />
         </li>
       </ul>
@@ -63,6 +63,10 @@ onUnmounted(() => {
 
 function onScroll (): void {
   scrollY.value = window.scrollY
+}
+
+function itemMargin (index: number): number {
+  return Math.sin(index * 1.2) * -20 + 20
 }
 </script>
 

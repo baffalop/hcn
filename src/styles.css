@@ -9,8 +9,7 @@ html, body {
 }
 
 body {
-  background: rgb(16, 27, 29);
-  @apply font-agrandir text-gray-100 text-lg text-center leading-snug tracking-wider;
+  @apply bg-stone-900 font-agrandir text-gray-100 text-lg text-center leading-snug tracking-wider;
   font-stretch: condensed;
 }
 

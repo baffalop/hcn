@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full">
+  <div class="bg-primary-brick h-full w-full">
     <div class="h-4/5 px-4 mx-auto max-w-screen-md flex flex-col justify-center">
       <p>
         Welcome to some audio guides for Holocaust Centre North.
@@ -14,7 +14,7 @@
       </p>
     </div>
 
-    <div id="menu" class="h-screen w-full px-3 mx-auto flex flex-col justify-center">
+    <div id="menu" class="bg-primary-brick h-screen w-full px-3 mx-auto flex flex-col justify-center">
       <h2 class="mt-10 mb-6 text-3xl">Menu</h2>
 
       <table class="text-left w-auto mx-auto font-editorial">
@@ -37,12 +37,4 @@ import { formatSecs } from '@/utils/time'
 </script>
 
 <style scoped>
-#menu {
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    theme(colors.primary.green.900) 20%,
-    theme(colors.primary.green.900)
-  );
-}
 </style>

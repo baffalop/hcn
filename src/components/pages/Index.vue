@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-full w-full">
-    <header class="h-[64vh] mb-8">
+    <header class="h-[62vh] mb-8">
       <h1 class="text-5xl font-light italic text-stone-900 sticky top-0 pt-20 mb-10">
         Encountering Survival
       </h1>

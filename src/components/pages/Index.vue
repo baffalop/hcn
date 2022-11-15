@@ -13,7 +13,7 @@
       >
     </header>
 
-    <div class="px-4 mx-auto max-w-screen-md relative">
+    <div class="px-4 mx-auto max-w-screen-md relative text-left text-justify">
       <p>Dear Listener,</p>
 
       <p>

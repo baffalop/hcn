@@ -3,9 +3,13 @@
     :to="{ name: 'player', params: { slug: track.slug } }"
     class="grid grid-cols-2 gap-1 gap-x-2 p-3 font-editorial justify-items-start items-end min-w-max max-w-max"
   >
-    <span class="col-span-full">{{ track.title }}</span>
-    <span>{{ track.artist }}</span>
-    <span class="font-agrandir text-neutral-300 text-base">{{ durationFormatted }}</span>
+    <span class="col-span-full text-xl">{{ track.title }}</span>
+    <span class="filter -hue-rotate-15 brightness-[.65]" :class="{ 'text-primary-brick': !color }" :style="{ color }">
+      {{ track.artist }}
+    </span>
+    <span class="font-agrandir text-base filter saturate-[.4] brightness-[1.6]" :class="{ 'text-primary-brick': !color }" :style="{ color }">
+      {{ durationFormatted }}
+    </span>
   </RouterLink>
 </template>
 
@@ -14,7 +18,8 @@ import { Track } from '@/data/tracks'
 import { formatSecs } from '@/utils/time'
 
 const props = defineProps<{
-  track: Track,
+  track: Track
+  color?: string
 }>()
 
 const durationFormatted = formatSecs(props.track.duration)

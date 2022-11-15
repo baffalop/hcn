@@ -1,34 +1,48 @@
-STTV - Svelte / Typescript / Tailwind / Vite Template
-=====================================================
+# Encountering Survival
 
-Get up and running with Svelte, Typescript, Tailwind and Vite. Also includes testing setup using Jest.
+An audio player for Holocaust Centre North, Huddersfield.
 
-Installation
-------------
+## Installation
+
+Requires `git lfs`.
 
 ```
-npx degit "srmullen/sttv#main" my_app
-cd my_app
-npm install
+pnpm i
 ```
 
-Scripts
--------
+## Netlify configuration
 
-### Start a development server
-
-`npm run dev`
-
-### Run tests
-
-`npm run test`
-or
-`npm run test:watch`
-
-### Build the application
+### Build script
 
 `npm run build`
 
-### Serve the application
+(Though the site is built with `pnpm`, Netlify doesn't support it. Using a workaround in `netlify.toml`  )
 
-`npm run serve`
+### Publish directory
+
+`dist`
+
+### Env variables
+
+To enable git lfs:
+
+```
+GIT_LFS_ENABLED = true
+GIT_LFS_FETCH_INCLUDE = *.mp3,*.mp4,*.webp,*.jpg,*.png,*.jpeg,*.svg,*.gif,*.pdf
+```
+
+## Scripts
+
+### Start a development server
+
+`pnpm start`
+
+### Build the application
+
+`pnpm build`
+
+Will output to the `dist` folder.
+
+### Preview the build
+
+`pnpm preview`

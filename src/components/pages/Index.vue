@@ -13,7 +13,7 @@
       >
     </header>
 
-    <div class="mt-6 px-6 mx-auto max-w-screen-md relative text-left text-justify">
+    <div class="mt-6 px-6 mx-auto max-w-screen-md relative text-left text-justify space-y-6">
       <p>Dear Listener,</p>
 
       <p>

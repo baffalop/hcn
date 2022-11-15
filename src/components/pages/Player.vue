@@ -134,7 +134,7 @@ const emit = defineEmits<{
   (e: 'update:time', time: number): void
 }>()
 
-setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-900' })
+setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-700' })
 
 enum MediaState {
   Waiting,

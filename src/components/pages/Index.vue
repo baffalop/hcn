@@ -39,8 +39,8 @@
       <p>Please scroll down and select a track by clicking on a title.</p>
     </div>
 
-    <div id="menu" class="mt-32 py-12 px-3 min-h-screen flex flex-col items-center justify-center relative">
-      <ul class="w-full max-w-lg space-y-8">
+    <div id="menu" class="mt-32 py-12 px-6 w-full min-h-screen flex flex-col items-center justify-center relative">
+      <ul class="w-full space-y-8 flex flex-col items-center">
         <li v-for="(track, i) in tracks" :style="{ marginLeft: `${itemMargin(i)}%` }">
           <TrackLink :track="track" />
         </li>
@@ -78,7 +78,7 @@ function onScroll (): void {
 }
 
 function itemMargin (index: number): number {
-  return Math.sin(index * 1.2) * -20 + 18
+  return Math.sin(index * 0.8) * -40
 }
 </script>
 

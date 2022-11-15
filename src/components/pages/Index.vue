@@ -78,7 +78,7 @@ function onScroll (): void {
 }
 
 function itemMargin (index: number): number {
-  return Math.sin(index * 1.2) * -20 + 20
+  return Math.sin(index * 1.2) * -20 + 18
 }
 </script>
 

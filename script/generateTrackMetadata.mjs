@@ -43,6 +43,10 @@ try {
   console.error(e)
 }
 
+/**
+ * @param {string} slug
+ * @returns {Promise<null|{start: number, end: number, text: string}[]>}
+ */
 async function tryReadSrt (slug) {
   const srtPath = `src/data/transcript/${slug}.srt`
 

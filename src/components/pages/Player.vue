@@ -159,7 +159,7 @@ const time = useLocalStorage(
 const showTranscript = useLocalStorage('player.transcriptEnabled', false)
 const hasEnded = computed<boolean>(() => time.value >= duration.value - 0.1)
 
-setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-700' })
+setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-600' })
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)

@@ -14,17 +14,29 @@
     </header>
 
     <div class="px-4 mx-auto max-w-screen-md relative">
+      <p>Dear Listener,</p>
+
       <p>
-        Welcome to some audio guides for Holocaust Centre North.
+        Collecting, preserving, caring for and sharing the stories from the community of Holocaust Centre North, is a primary objective of what Holocaust Centre North does. Yet, every day we are aware of so much that cannot be cared for or be preserved for posterity, either because it was lost, destroyed, stolen or left behind. Or because of it being immaterial, and as such defies archival practices.
       </p>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Our Encountering Survival audio guides were always imagined as an attempt to give space to what is loudest in its material absence: the memory of a grandparents’ smell; the long journey of a single, remaining family heirloom; those phrases which encapsulate a lifetime of mourning.
+        Artists Linda O Keeffe and Louise K Wilson have worked alongside each other for this commission, focusing on ‘voices’ and ‘objects’ and respectively. Across 10 tracks, their work mediates object histories and explores the textures of loss, trauma and childhood memories.
+        But most important, they have also created an intimate record which bears witness to the act of remembering itself.
       </p>
 
       <p>
-        Now please scroll down and select a track.
+        Encountering Survival is the audio guide created for an archive which honours a community of Holocaust survivors that built new lives in the North of England.
+        It gives insight into the decades of their remembering and celebrates the full and meaningful lives they survived to live.
       </p>
+
+      <p>
+        Take a moment. And when you are ready, let us take you along.
+        We invite you to listen with us, as they remember: The whys, the hows and the nevertheless of their survival.
+      </p>
+
+      <p>Please scroll down and select a track by clicking on a title.</p>
     </div>
 
     <div id="menu" class="relative min-h-screen px-3 flex flex-col items-center justify-center">

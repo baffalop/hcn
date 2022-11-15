@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-full w-full">
-    <header class="h-[62vh] mb-8">
+    <header class="h-[62vh]">
       <h1 class="text-5xl font-light italic text-stone-900 sticky top-0 pt-20 mb-10">
         Encountering Survival
       </h1>
@@ -13,7 +13,7 @@
       >
     </header>
 
-    <div class="px-6 mx-auto max-w-screen-md relative text-left text-justify">
+    <div class="mt-6 px-6 mx-auto max-w-screen-md relative text-left text-justify">
       <p>Dear Listener,</p>
 
       <p>
@@ -39,7 +39,7 @@
       <p>Please scroll down and select a track by clicking on a title.</p>
     </div>
 
-    <div id="menu" class="relative min-h-screen px-3 flex flex-col items-center justify-center">
+    <div id="menu" class="mt-32 py-12 px-3 min-h-screen flex flex-col items-center justify-center relative">
       <ul class="w-full max-w-lg space-y-8">
         <li v-for="(track, i) in tracks" :style="{ marginLeft: `${itemMargin(i)}%` }">
           <TrackLink :track="track" />

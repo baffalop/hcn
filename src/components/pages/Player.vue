@@ -14,7 +14,9 @@
 
       <div class="space-y-3">
         <h2 class="text-4xl">{{ track.title }}</h2>
-        <ClippingText :text="track.artist" class="text-3xl backdrop-brightness-70 -backdrop-hue-rotate-30" />
+        <h3 class="text-3xl filter -hue-rotate-30 brightness-70" :class="{ 'text-stone-600': !track.bgColor }" :style="{ color: track.bgColor }">
+          {{ track.artist }}
+        </h3>
       </div>
 
       <div class="h-32 w-full">
@@ -40,7 +42,7 @@
               </button>
             </div>
 
-            <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
+            <Timeline v-model:time="time" :duration="duration" :playing="playing" :color="track.bgColor" class="w-full" />
           </div>
 
           <div v-else class="grid grid-cols-2 gap-10 place-items-center h-24">
@@ -122,7 +124,6 @@ import Timeline from '@components/player/Timeline.vue'
 import Icon from '@components/Icon.vue'
 import DroppableTranscript from '@components/player/DroppableTranscript.vue'
 import FileDrop from '@components/FileDrop.vue'
-import ClippingText from '@components/ClippingText.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 
@@ -133,8 +134,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'update:time', time: number): void
 }>()
-
-setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-700' })
 
 enum MediaState {
   Waiting,
@@ -161,6 +160,8 @@ const time = useLocalStorage(
 
 const showTranscript = useLocalStorage('player.transcriptEnabled', false)
 const hasEnded = computed<boolean>(() => time.value >= duration.value - 0.1)
+
+setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-700' })
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)

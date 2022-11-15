@@ -6,7 +6,7 @@
       '--progress': `${progress}`,
     }"
   >
-    <div class="track w-full backdrop-brightness-70 -backdrop-hue-rotate-30"></div>
+    <div class="track w-full filter -hue-rotate-30 brightness-70" :style="{ backgroundColor: color }"></div>
     <div class="progress bg-gray-100 absolute left-0 top-1/2 transform -translate-y-1/2"></div>
     <input
       type="range"
@@ -24,6 +24,7 @@ import { computed } from 'vue'
 const props = defineProps<{
   time: number
   duration: number
+  color?: string
   playing?: boolean
 }>()
 

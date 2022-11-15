@@ -12,6 +12,7 @@
       v-model:time="timeValue"
       :duration="duration"
       :playing="playing"
+      :color="color"
       class="col-span-full"
     />
   </div>
@@ -28,6 +29,7 @@ const props = defineProps<{
   time: number
   duration: number
   playing: boolean
+  color?: string
 }>()
 
 const emit = defineEmits<{

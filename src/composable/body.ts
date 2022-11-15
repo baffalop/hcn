@@ -4,8 +4,9 @@ let lastClass: string | null = null
 
 export function setBackground (bg: { color: string } | { class: string }): void {
   onMounted(() => {
+    document.body.style.removeProperty('background-color')
+
     if (lastClass != null) {
-      document.body.style.removeProperty('background-color')
       document.body.classList.remove(lastClass)
     }
 

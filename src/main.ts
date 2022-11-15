@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory, RouteLocationNormalized, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteLocationNormalized, RouteRecordRaw } from 'vue-router'
 
 import './tailwind.css'
 import './styles.css'
@@ -35,7 +35,7 @@ const routes: RouteRecordRaw[] = [
 
 const app = createApp(App)
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   async scrollBehavior (to, from) {
     if (to.name === 'index' && isContentPage(from)) {

@@ -1,77 +1,21 @@
 [
   {
-    "slug": "constant-vigilance",
-    "title": "Constant Vigilance",
+    "slug": "objects",
+    "title": "Objects That Remain",
+    "artist": "Louise K Wilson",
+    "duration": 804.754286
+  },
+  {
+    "slug": "saying-goodbye",
+    "title": "Saying Goodbye",
     "artist": "Linda O Keeffe",
-    "credits": "Heinz Skyte",
-    "duration": 362.187755,
-    "bgColor": "rgb(107, 142, 112)",
-    "transcript": [
-      {
-        "text": "Well, you know you're a survivor because you're there",
-        "start": 62.617,
-        "end": 69.25
-      },
-      {
-        "text": "Well obviously my contemporaries who committed these atrocities are dreadful",
-        "start": 69.251,
-        "end": 78
-      },
-      {
-        "text": "but I'm concerned that...",
-        "start": 78.001,
-        "end": 81.233
-      },
-      {
-        "text": "sometimes think what I would have been if I hadn't been Jewish",
-        "start": 81.23400000000001,
-        "end": 87.233
-      },
-      {
-        "text": "Would I have been a Nazi?",
-        "start": 87.23400000000001,
-        "end": 89.43299999999999
-      },
-      {
-        "text": "And I probably would",
-        "start": 89.434,
-        "end": 91.267
-      },
-      {
-        "text": "You know, it's very difficult for a 12, 13, 14 year-old",
-        "start": 108.55,
-        "end": 112.717
-      },
-      {
-        "text": "to resist the temptations the Nazis offered for kids of that age",
-        "start": 112.718,
-        "end": 117.417
-      },
-      {
-        "text": "Uniforms, campfires, learning to shoot rifles",
-        "start": 140.883,
-        "end": 145.017
-      },
-      {
-        "text": "Things like that as they had in the Hitler Youth",
-        "start": 145.417,
-        "end": 149.117
-      },
-      {
-        "text": "And, it's very very difficult for a kid of that age to resist that temptation",
-        "start": 149.118,
-        "end": 154.883
-      },
-      {
-        "text": "And not be part of the crowd",
-        "start": 155.133,
-        "end": 156.917
-      }
-    ]
+    "credits": "Suzanne Ripton",
+    "duration": 560.039184,
+    "bgColor": "rgb(182, 141, 86)"
   },
   {
     "slug": "children-of-propaganda",
-    "title": "Children of Propaganda",
+    "title": "The Children of Propaganda",
     "artist": "Linda O Keeffe",
     "credits": "Martin Kapel, Val Ginsburg, and Joseph Young reading ‘Why? Explaining the Holocaust’ by Peter Hayes",
     "duration": 536.11102,
@@ -375,12 +319,763 @@
     ]
   },
   {
-    "slug": "saying-goodbye",
-    "title": "Saying Goodbye",
-    "artist": "Linda O Keeffe",
-    "credits": "Suzanne Ripton",
-    "duration": 560.039184,
-    "bgColor": "rgb(182, 141, 86)"
+    "slug": "anger",
+    "title": "Anger",
+    "artist": "Louise K Wilson"
+  },
+  {
+    "slug": "song-and-painting",
+    "title": "The Song and the Painting",
+    "artist": "Louise K Wilson",
+    "duration": 764.029388,
+    "transcript": [
+      {
+        "text": "I no longer have any reason to speak Slovak",
+        "start": 25.47,
+        "end": 28.56
+      },
+      {
+        "text": "I haven't done so for the last 80 odd years",
+        "start": 28.56,
+        "end": 33.06
+      },
+      {
+        "text": "and the very few words in my head.",
+        "start": 33.06,
+        "end": 36.93
+      },
+      {
+        "text": "...of pageants. And I can remember standing on the little stage",
+        "start": 53.49,
+        "end": 72.3
+      },
+      {
+        "text": "in the village hall in ‘?’ with-",
+        "start": 72.66,
+        "end": 76.14
+      },
+      {
+        "text": "Sokol was this physical exercise movement.",
+        "start": 76.48,
+        "end": 81.55
+      },
+      {
+        "text": "1000s of us belonged. And the song I sang",
+        "start": 82.27,
+        "end": 85.75
+      },
+      {
+        "text": "was the song we used to sing as children",
+        "start": 85.78,
+        "end": 89.41
+      },
+      {
+        "text": "when we were going into the exercise class.",
+        "start": 89.41,
+        "end": 92.92
+      },
+      {
+        "text": "I couldn't tell you clearly what it was. But I did sing one.",
+        "start": 94.27000000000001,
+        "end": 100.66
+      },
+      {
+        "text": "And now I can't remember it.",
+        "start": 101.11,
+        "end": 103.36
+      },
+      {
+        "text": "Underneath Kriváň and Kriváň is one of the highest mountains in the Tatras.",
+        "start": 106.84,
+        "end": 115.72
+      },
+      {
+        "text": "If my geography still holds out. I never went to the Tatras.",
+        "start": 116.11,
+        "end": 120.85
+      },
+      {
+        "text": "And there's a good reason for that. A) I don't think my father",
+        "start": 120.85,
+        "end": 124.6
+      },
+      {
+        "text": "would ever afford a - a skiing holiday day for the family.",
+        "start": 124.6,
+        "end": 129.73
+      },
+      {
+        "text": "And I went to a Jewish school and every winter,",
+        "start": 130.42,
+        "end": 136.72
+      },
+      {
+        "text": "our playground was turned into an ice rink.",
+        "start": 137.47,
+        "end": 140.29
+      },
+      {
+        "text": "So we went skating and mother was a keen swimmer",
+        "start": 140.32,
+        "end": 146.77
+      },
+      {
+        "text": "and we swam in the Danube.",
+        "start": 147.25,
+        "end": 148.99
+      },
+      {
+        "text": "Before the late 1920s, the Danube used to freeze over",
+        "start": 150.25,
+        "end": 154.36
+      },
+      {
+        "text": "and people used to skate on the Danube.",
+        "start": 154.36,
+        "end": 157.21
+      },
+      {
+        "text": "And I even brought my shoes with the skates screwed in,",
+        "start": 161.26,
+        "end": 166.36
+      },
+      {
+        "text": "with me to England.",
+        "start": 166.6,
+        "end": 167.74
+      },
+      {
+        "text": "I haven't got them anymore, because I don't skate anymore.",
+        "start": 167.77,
+        "end": 170.56
+      },
+      {
+        "text": "It used to hang in our dining room come whatever it was,",
+        "start": 197.17000000000002,
+        "end": 202.78
+      },
+      {
+        "text": "it hung above our grand piano.",
+        "start": 203.17000000000002,
+        "end": 207.13
+      },
+      {
+        "text": "This room was between the room, which was our general room",
+        "start": 210.4,
+        "end": 216.61
+      },
+      {
+        "text": "in the flat and that general room contained-",
+        "start": 217.32999999999998,
+        "end": 220.84
+      },
+      {
+        "text": "we had a posh dining room, which also included our grand piano",
+        "start": 220.93,
+        "end": 226.69
+      },
+      {
+        "text": "with Judith hanging over the grand piano.",
+        "start": 226.69,
+        "end": 229.3
+      },
+      {
+        "text": "And we also had our cupboard cabinet,",
+        "start": 230.68,
+        "end": 234.67000000000002
+      },
+      {
+        "text": "which had our clothes in it.",
+        "start": 235.72,
+        "end": 238.27
+      },
+      {
+        "text": "And as well as that, my father had a very large desk,",
+        "start": 238.3,
+        "end": 243.1
+      },
+      {
+        "text": "with a telephone which was very unusual in those days.",
+        "start": 243.49,
+        "end": 247.51
+      },
+      {
+        "text": "And that was the desk at which he would do his writing.",
+        "start": 247.81,
+        "end": 251.44
+      },
+      {
+        "text": "And father and mother had twin beds pushed together",
+        "start": 251.44,
+        "end": 254.41
+      },
+      {
+        "text": "And the divan across the beds,",
+        "start": 254.63,
+        "end": 256.82
+      },
+      {
+        "text": "because Father used to have a nap after lunch,",
+        "start": 257.21,
+        "end": 259.79
+      },
+      {
+        "text": "because midday was when you had your main meal.",
+        "start": 259.79,
+        "end": 262.61
+      },
+      {
+        "text": "I very clearly remember the painting, because I was petrified of it.",
+        "start": 265.55,
+        "end": 269.69
+      },
+      {
+        "text": "And if I woke up and I was a bit afraid, I wanted to go in mother's bed,",
+        "start": 270.08,
+        "end": 273.65
+      },
+      {
+        "text": "I had to go through here.",
+        "start": 273.65,
+        "end": 274.97
+      },
+      {
+        "text": "With a grand piano there and she hung up on this side of the grand piano",
+        "start": 275.06,
+        "end": 279.53
+      },
+      {
+        "text": "And she used to terrify me.",
+        "start": 280.79,
+        "end": 282.32
+      },
+      {
+        "text": "There she is. There's Judith with a blooming head behind her skirt.",
+        "start": 284.65999999999997,
+        "end": 288.47
+      },
+      {
+        "text": "My sister and I learned piano, my brother learned violin.",
+        "start": 288.98,
+        "end": 292.97
+      },
+      {
+        "text": "Mother played the piano.",
+        "start": 293,
+        "end": 294.77
+      },
+      {
+        "text": "And father was very interested in opera and music.",
+        "start": 295.4,
+        "end": 299.3
+      },
+      {
+        "text": "So there was music in the house.",
+        "start": 299.33,
+        "end": 301.67
+      },
+      {
+        "text": "My brother used to make little crystal sets,",
+        "start": 301.82,
+        "end": 304.55
+      },
+      {
+        "text": "which we had a little thing,",
+        "start": 304.58,
+        "end": 305.87
+      },
+      {
+        "text": "you used to put your little pin in, and it would then make crackling noises.",
+        "start": 305.87,
+        "end": 310.61
+      },
+      {
+        "text": "And we used to listen eventually, to Mr. Hitler shouting.",
+        "start": 311.36,
+        "end": 317.21
+      },
+      {
+        "text": "And I remember that very distinctly.",
+        "start": 317.54,
+        "end": 319.88
+      },
+      {
+        "text": "Radios, I suppose were quite novel things in those days.",
+        "start": 320.99,
+        "end": 326.09
+      },
+      {
+        "text": "And father used to go into that room to listen to broadcasts.",
+        "start": 326.09,
+        "end": 330.59
+      },
+      {
+        "text": "And I can remember broadcasts of Hitler,",
+        "start": 331.13,
+        "end": 334.76
+      },
+      {
+        "text": "because he used to always shout when he was speaking.",
+        "start": 334.76,
+        "end": 338
+      },
+      {
+        "text": "I can't remember the contents because I think as a young child,",
+        "start": 338.33,
+        "end": 342.14
+      },
+      {
+        "text": "it wasn't of interest to me. We had a communal room",
+        "start": 342.14,
+        "end": 345.59000000000003
+      },
+      {
+        "text": "in which my brother sister and I slept.",
+        "start": 345.59000000000003,
+        "end": 348.17
+      },
+      {
+        "text": "We had our dining table, and father had his large desk.",
+        "start": 348.17,
+        "end": 352.22
+      },
+      {
+        "text": "And we had a telephone on the desk. So that was it.",
+        "start": 352.64,
+        "end": 356.51
+      },
+      {
+        "text": "There. The next door, we had this other in between room",
+        "start": 356.72,
+        "end": 360.83
+      },
+      {
+        "text": "where we had a grand piano and we had this fantastic painting",
+        "start": 360.84,
+        "end": 364.74
+      },
+      {
+        "text": "of Judith and Helofernes.",
+        "start": 365.43,
+        "end": 367.89
+      },
+      {
+        "text": "It used to frighten me a bit.",
+        "start": 367.98,
+        "end": 369.84
+      },
+      {
+        "text": "So I - my father was a banker -",
+        "start": 369.84,
+        "end": 372.18
+      },
+      {
+        "text": "I think most of the memory is just that it was there",
+        "start": 372.21,
+        "end": 376.2
+      },
+      {
+        "text": "above the piano. And that was all.",
+        "start": 376.2,
+        "end": 379.5
+      },
+      {
+        "text": "And that picture now hangs in my daughter's house,",
+        "start": 379.83,
+        "end": 383.55
+      },
+      {
+        "text": "because I haven't got room for picture, which is 4.6 ft by 4ft.",
+        "start": 383.82,
+        "end": 386.73
+      },
+      {
+        "text": "It was only after the war, when I started doing research on it,",
+        "start": 386.76,
+        "end": 393.03
+      },
+      {
+        "text": "but it was hidden during the war.",
+        "start": 393.57,
+        "end": 396.84000000000003
+      },
+      {
+        "text": "And eventually, through my eldest cousin, Igot to find out",
+        "start": 397.32,
+        "end": 404.58
+      },
+      {
+        "text": "that it had been hidden by, at my grandmother's farm,",
+        "start": 404.64,
+        "end": 409.14
+      },
+      {
+        "text": "by some peasants or something.",
+        "start": 409.14,
+        "end": 411.18
+      },
+      {
+        "text": "And it ended up in my uncle's house, after he had returned from Russia,",
+        "start": 411.81,
+        "end": 420.03
+      },
+      {
+        "text": "with the Czechoslovak army contingent,",
+        "start": 420.6,
+        "end": 423.21
+      },
+      {
+        "text": "which was within the Russian army at the time,",
+        "start": 423.21,
+        "end": 426.39
+      },
+      {
+        "text": "and he was a doctor, and it ended up in his house.",
+        "start": 426.69,
+        "end": 431.55
+      },
+      {
+        "text": "And then in the 1990s, after my uncle had died,",
+        "start": 432,
+        "end": 436.98
+      },
+      {
+        "text": "my sister and I went to where my uncle lived.",
+        "start": 437.35,
+        "end": 442.3
+      },
+      {
+        "text": "And it was called Senec. And we told his second wife",
+        "start": 443.44,
+        "end": 451.09
+      },
+      {
+        "text": "because his first wife had been murdered in Auschwitz with his daughter.",
+        "start": 451.12,
+        "end": 455.83
+      },
+      {
+        "text": "And this other lady had no idea that this painting actually belonged to",
+        "start": 456.73,
+        "end": 464.05
+      },
+      {
+        "text": "my side of the family and not to her.",
+        "start": 464.32,
+        "end": 468.31
+      },
+      {
+        "text": "So she was quite amenable for us to retrieve it.",
+        "start": 468.7,
+        "end": 474.01
+      },
+      {
+        "text": "And we brought it over to England.",
+        "start": 474.43,
+        "end": 477.1
+      },
+      {
+        "text": "My sister didn't want to have this large painting.",
+        "start": 477.55,
+        "end": 482.05
+      },
+      {
+        "text": "But there were two other paintings two some very much smaller ones.",
+        "start": 482.41,
+        "end": 486.85
+      },
+      {
+        "text": "And she was going to have one and my brother could have had the other.",
+        "start": 487.3,
+        "end": 492.46
+      },
+      {
+        "text": "But my brother didn't want any of things.",
+        "start": 493.03,
+        "end": 496.6
+      },
+      {
+        "text": "He didn't want anything to do with the Holocaust anymore at that stage.",
+        "start": 496.6,
+        "end": 501.7
+      },
+      {
+        "text": "Can you see her, I can't see her anymore?",
+        "start": 507.31,
+        "end": 510.13
+      },
+      {
+        "text": "Oh, well come up a bit further then.",
+        "start": 510.7,
+        "end": 511.96
+      },
+      {
+        "text": "Yes, let me just see if I can see her.",
+        "start": 511.96,
+        "end": 514.36
+      },
+      {
+        "text": "I can see her clearly enough.",
+        "start": 516.04,
+        "end": 517.81
+      },
+      {
+        "text": "Now I can see her better",
+        "start": 518.89,
+        "end": 520.54
+      },
+      {
+        "text": "And be able to see her better still.",
+        "start": 521.35,
+        "end": 523.72
+      },
+      {
+        "text": "Yes, I can see her now.",
+        "start": 524.23,
+        "end": 525.67
+      },
+      {
+        "text": "Hello, Judith. Haven't seen you for a bit.",
+        "start": 525,
+        "end": 528.06
+      },
+      {
+        "text": "I think it was painted in the 18th century for Ludwig the II",
+        "start": 536.76,
+        "end": 542.55
+      },
+      {
+        "text": "Or Ludwig the mad or whatever he was called.",
+        "start": 542.58,
+        "end": 545.52
+      },
+      {
+        "text": "And it's 4ft6 by 4ft.",
+        "start": 546.27,
+        "end": 550.62
+      },
+      {
+        "text": "It's got a beautiful frame. But Judith herself has fantastic little plaits,",
+        "start": 550.62,
+        "end": 558.3
+      },
+      {
+        "text": "a beautiful gown and a bejewelled sword,",
+        "start": 558.3,
+        "end": 564.09
+      },
+      {
+        "text": "which she's holding in her left hand and with her right hand,",
+        "start": 564.09,
+        "end": 569.07
+      },
+      {
+        "text": "Just behind her skirt, you can see the head of Holofernes.",
+        "start": 569.43,
+        "end": 574.86
+      },
+      {
+        "text": "It is sort of tastefully hidden, but obviously,",
+        "start": 575.34,
+        "end": 579.84
+      },
+      {
+        "text": "She has cut off his head and killed him.",
+        "start": 580.02,
+        "end": 582.9
+      },
+      {
+        "text": "And there she is standing, looking straight ahead of herself",
+        "start": 583.56,
+        "end": 588.03
+      },
+      {
+        "text": "When the picture came, because it's so large,",
+        "start": 588.06,
+        "end": 590.91
+      },
+      {
+        "text": "she didn't really have any room for it.",
+        "start": 591,
+        "end": 592.77
+      },
+      {
+        "text": "So she said would I like it in my house.",
+        "start": 592.89,
+        "end": 596.49
+      },
+      {
+        "text": "So I was very happy to have whatever came really,",
+        "start": 596.88,
+        "end": 600.63
+      },
+      {
+        "text": "because it's just about the only heirloom that we've got.",
+        "start": 600.63,
+        "end": 604.8
+      },
+      {
+        "text": "It's very striking. Whenever we had anyone coming into our house",
+        "start": 607.24,
+        "end": 610.63
+      },
+      {
+        "text": "for the first time, they would always notice the picture.",
+        "start": 610.63,
+        "end": 613.03
+      },
+      {
+        "text": "And we would always have a conversation about the story behind it",
+        "start": 613.03,
+        "end": 617.71
+      },
+      {
+        "text": "And where it had come from.",
+        "start": 617.71,
+        "end": 618.82
+      },
+      {
+        "text": "So it's now in the stairwell on the third floor of our townhouse.",
+        "start": 620.38,
+        "end": 627.04
+      },
+      {
+        "text": "It was really quite difficult to get up there,",
+        "start": 628.12,
+        "end": 630.61
+      },
+      {
+        "text": "one of my sons stood on the bannister.",
+        "start": 630.64,
+        "end": 633.19
+      },
+      {
+        "text": "It's sort of trying to manoeuvre this very heavy, large picture.",
+        "start": 633.85,
+        "end": 637.48
+      },
+      {
+        "text": "So I've no idea how we'll ever get it down again, really?",
+        "start": 638.38,
+        "end": 641.71
+      },
+      {
+        "text": "I see it every day when I come up and downstairs from my bedroom.",
+        "start": 642.22,
+        "end": 645.49
+      },
+      {
+        "text": "But yes, it's sort of part of my life, now, I suppose.",
+        "start": 647.02,
+        "end": 650.77
+      },
+      {
+        "text": "It's you know, the one very large, concrete thing",
+        "start": 650.8,
+        "end": 657.82
+      },
+      {
+        "text": "that has come from my mother's home.",
+        "start": 657.82,
+        "end": 661.45
+      },
+      {
+        "text": "So yes, it's got place, close to my heart, really.",
+        "start": 661.9,
+        "end": 666.07
+      },
+      {
+        "text": "It's the only thing really, that's come.",
+        "start": 666.49,
+        "end": 669.34
+      },
+      {
+        "text": "And is it very coincidental that I'm called Judith?",
+        "start": 670.24,
+        "end": 673.72
+      },
+      {
+        "text": "It's a guilt frame. And it's plaster work.",
+        "start": 678.22,
+        "end": 683.56
+      },
+      {
+        "text": "Decorated with flowers and bunches of grapes and leaves and things",
+        "start": 683.8,
+        "end": 690.76
+      },
+      {
+        "text": "They are quite intricate, but it's been quite damaged.",
+        "start": 691.15,
+        "end": 695.26
+      },
+      {
+        "text": "And to get it restored the frame and the picture",
+        "start": 695.74,
+        "end": 698.65
+      },
+      {
+        "text": "It would have been very expensive.",
+        "start": 698.65,
+        "end": 701.05
+      },
+      {
+        "text": "But we were also advised that actually that might",
+        "start": 701.05,
+        "end": 704.02
+      },
+      {
+        "text": "change the nature of it, so we decided that we would leave it as it is.",
+        "start": 704.02,
+        "end": 709.72
+      },
+      {
+        "text": "And I think it's more evocative, really, that it is damaged.",
+        "start": 709.96,
+        "end": 719.05
+      },
+      {
+        "text": "I think it just shows us a lot of history to the painting,",
+        "start": 720.46,
+        "end": 726.73
+      },
+      {
+        "text": "not just about the painting when it was painted,",
+        "start": 727.42,
+        "end": 730.06
+      },
+      {
+        "text": "but the the life of the painting, that it's travelled.",
+        "start": 730.06,
+        "end": 734.74
+      },
+      {
+        "text": "You know, hundreds of miles.",
+        "start": 736.51,
+        "end": 738.73
+      },
+      {
+        "text": "It's been in hiding.",
+        "start": 738.73,
+        "end": 740.11
+      },
+      {
+        "text": "I think it just adds to the story of the painting.",
+        "start": 741.34,
+        "end": 747.82
+      },
+      {
+        "text": "So I like it as it is",
+        "start": 749.74,
+        "end": 751.39
+      }
+    ]
+  },
+  {
+    "slug": "terezin",
+    "title": "Terezin",
+    "artist": "Louise K Wilson",
+    "duration": 729.678367
   },
   {
     "slug": "wires-and-fences",
@@ -796,6 +1491,81 @@
         "end": 426.54
       }
     ]
+  },
+  {
+    "slug": "constant-vigilance",
+    "title": "Constant Vigilance",
+    "artist": "Linda O Keeffe",
+    "credits": "Heinz Skyte",
+    "duration": 362.187755,
+    "bgColor": "rgb(107, 142, 112)",
+    "transcript": [
+      {
+        "text": "Well, you know you're a survivor because you're there",
+        "start": 62.617,
+        "end": 69.25
+      },
+      {
+        "text": "Well obviously my contemporaries who committed these atrocities are dreadful",
+        "start": 69.251,
+        "end": 78
+      },
+      {
+        "text": "but I'm concerned that...",
+        "start": 78.001,
+        "end": 81.233
+      },
+      {
+        "text": "sometimes think what I would have been if I hadn't been Jewish",
+        "start": 81.23400000000001,
+        "end": 87.233
+      },
+      {
+        "text": "Would I have been a Nazi?",
+        "start": 87.23400000000001,
+        "end": 89.43299999999999
+      },
+      {
+        "text": "And I probably would",
+        "start": 89.434,
+        "end": 91.267
+      },
+      {
+        "text": "You know, it's very difficult for a 12, 13, 14 year-old",
+        "start": 108.55,
+        "end": 112.717
+      },
+      {
+        "text": "to resist the temptations the Nazis offered for kids of that age",
+        "start": 112.718,
+        "end": 117.417
+      },
+      {
+        "text": "Uniforms, campfires, learning to shoot rifles",
+        "start": 140.883,
+        "end": 145.017
+      },
+      {
+        "text": "Things like that as they had in the Hitler Youth",
+        "start": 145.417,
+        "end": 149.117
+      },
+      {
+        "text": "And, it's very very difficult for a kid of that age to resist that temptation",
+        "start": 149.118,
+        "end": 154.883
+      },
+      {
+        "text": "And not be part of the crowd",
+        "start": 155.133,
+        "end": 156.917
+      }
+    ]
+  },
+  {
+    "slug": "stolperstien",
+    "title": "Stolperstien",
+    "artist": "Louise K Wilson"
   },
   {
     "slug": "enosh",

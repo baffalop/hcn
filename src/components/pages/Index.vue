@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-full w-full">
-    <header class="h-[67vh] mb-8">
+    <header class="h-[64vh] mb-8">
       <h1 class="text-5xl font-light italic text-stone-900 sticky top-0 pt-20 mb-10">
         Encountering Survival
       </h1>
@@ -8,12 +8,12 @@
       <img
         src="/img/toms-knife.jpeg"
         alt="A hand holding a silverware knife"
-        class="fixed w-full mx-auto px-6 h-[65vh] object-contain object-top"
+        class="fixed w-full mx-auto px-10 h-[65vh] object-contain object-top"
         :style="{ opacity: `${titleImageOpacity}%` }"
       >
     </header>
 
-    <div class="px-4 mx-auto max-w-screen-md relative text-left text-justify">
+    <div class="px-6 mx-auto max-w-screen-md relative text-left text-justify">
       <p>Dear Listener,</p>
 
       <p>

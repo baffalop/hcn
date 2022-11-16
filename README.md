@@ -12,12 +12,6 @@ pnpm i
 
 ## Netlify configuration
 
-### Build script
-
-`npm run build`
-
-(Though the site is built with `pnpm`, Netlify doesn't support it. Using a workaround in `netlify.toml`  )
-
 ### Publish directory
 
 `dist`
@@ -30,6 +24,10 @@ To enable git lfs:
 GIT_LFS_ENABLED = true
 GIT_LFS_FETCH_INCLUDE = *.mp3,*.mp4,*.webp,*.jpg,*.png,*.jpeg,*.svg,*.gif,*.pdf
 ```
+
+### Build script
+
+This is specified in the `netlify.toml` and does not need to be manually set.
 
 ## Scripts
 

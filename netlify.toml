@@ -8,7 +8,3 @@
 [[redirect]]
   from = '/play/*'
   to = '/'
-
-[[redirect]]
-  from = '/menu'
-  to = '/'

@@ -15,7 +15,7 @@
 
     <img
       src="/img/blobs.png"
-      class="fixed top-44 object-cover w-full max-w-screen-xl h-[calc(100vh-11rem)] left-0 right-0 mx-auto object-[top_0_right_23%]"
+      class="fixed top-32 object-cover w-full max-w-screen-xl h-[calc(100vh-8rem)] left-0 right-0 mx-auto object-[top_0_right_23%]"
       :style="{
         filter: `brightness(${blobsBrightness})`,
         opacity: `${(blobsBrightness - 0.6) * 100 + 70}%`,

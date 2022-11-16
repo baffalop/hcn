@@ -15,11 +15,10 @@
 
     <img
       src="/img/blobs.png"
-      class="fixed top-0 object-cover w-full max-w-screen-xl h-full max-h-screen left-0 right-0 mx-auto object-[top_0_right_23%]"
+      class="fixed top-44 object-cover w-full max-w-screen-xl h-[calc(100vh-11rem)] left-0 right-0 mx-auto object-[top_0_right_23%]"
       :style="{
-        marginTop: `calc(47vh - ${scrollY * 0.2}px)`,
         filter: `brightness(${blobsBrightness})`,
-        opacity: `${blobsBrightness * 25 + 75}%`,
+        opacity: `${blobsBrightness * 30 + 70}%`,
       }"
     >
 

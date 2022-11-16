@@ -4,11 +4,3 @@
 
 [build]
   command = "npx pnpm i --store=node_modules/.pnpm-store --frozen-lockfile && npm run build"
-
-[[redirect]]
-  from = '/play/*'
-  to = '/'
-
-[[redirect]]
-  from = '/menu'
-  to = '/'

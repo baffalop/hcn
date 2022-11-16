@@ -18,8 +18,8 @@
       class="fixed w-full h-full object-cover object-right-top"
       :style="{
         top: `calc(50% - ${scrollY * 0.2}px)`,
-        filter: `brightness(${(titleImageOpacity - 20) / 120 + 0.7})`,
-        opacity: `${titleImageOpacity / 4 + 75}%`,
+        filter: `brightness(${blobsBrightness})`,
+        opacity: `${blobsBrightness * 25 + 75}%`,
       }"
     >
 
@@ -77,11 +77,15 @@ import TrackLink from '@components/TrackLink.vue'
 
 setBackground({ class: 'bg-primary-brick' })
 
-const SCROLL_SCALE = 280
+const OPACITY_SCROLL_SCALE = 280
+const BRIGHTNESS_SCROLL_SCALE = 320
 
 const scrollY = ref(0)
 const titleImageOpacity = computed(
-  () => Math.max(0, SCROLL_SCALE - scrollY.value) * 100 / SCROLL_SCALE
+  () => Math.max(0, OPACITY_SCROLL_SCALE - scrollY.value) * 100 / OPACITY_SCROLL_SCALE
+)
+const blobsBrightness = computed(
+  () => Math.max(0, BRIGHTNESS_SCROLL_SCALE - scrollY.value) / (BRIGHTNESS_SCROLL_SCALE * 3) + 0.6
 )
 
 const menu = ref<HTMLElement>()

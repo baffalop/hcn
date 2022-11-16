@@ -13,7 +13,17 @@
       >
     </header>
 
-    <div class="mt-6 px-6 mx-auto max-w-screen-md relative text-left text-justify space-y-6">
+    <img
+      src="/img/blobs.png"
+      class="fixed w-full h-full object-cover object-right-top"
+      :style="{
+        top: `calc(50% - ${scrollY * 0.2}px)`,
+        filter: `brightness(${(titleImageOpacity - 20) / 120 + 0.7})`,
+        opacity: `${titleImageOpacity / 4 + 75}%`,
+      }"
+    >
+
+    <div class="intro mt-6 px-6 mx-auto max-w-screen-md relative text-left text-justify space-y-6">
       <p>Dear Listener,</p>
 
       <p>

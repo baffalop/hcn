@@ -26,17 +26,19 @@
       <p>Dear Listener,</p>
 
       <p>
-        Collecting, preserving, caring for and sharing the stories from the community of Holocaust Centre North, is a primary objective of what Holocaust Centre North does. Yet, every day we are aware of so much that cannot be cared for or be preserved for posterity, either because it was lost, destroyed, stolen or left behind. Or because of it being immaterial, and as such defies archival practices.
+        Collecting, preserving, caring for and sharing the stories from the community of Holocaust Centre North, is a primary objective of what Holocaust Centre North does.
+        Yet, every day we are aware of so much that cannot be cared for or be preserved for posterity, either because it was lost, destroyed, stolen or left behind.
+        Or because of it being immaterial, and as such defies archival practices.
       </p>
 
       <p>
-        Our Encountering Survival audio guides were always imagined as an attempt to give space to what is loudest in its material absence: the memory of a grandparents’ smell; the long journey of a single, remaining family heirloom; those phrases which encapsulate a lifetime of mourning.
+        Our <em>Encountering Survival</em> audio guides were always imagined as an attempt to give space to what is loudest in its material absence: the memory of a grandparents’ smell; the long journey of a single, remaining family heirloom; those phrases which encapsulate a lifetime of mourning.
         Artists Linda O Keeffe and Louise K Wilson have worked alongside each other for this commission, focusing on ‘voices’ and ‘objects’ and respectively. Across 10 tracks, their work mediates object histories and explores the textures of loss, trauma and childhood memories.
         But most important, they have also created an intimate record which bears witness to the act of remembering itself.
       </p>
 
       <p>
-        Encountering Survival is the audio guide created for an archive which honours a community of Holocaust survivors that built new lives in the North of England.
+        <em>Encountering Survival</em> is the audio guide created for an archive which honours a community of Holocaust survivors that built new lives in the North of England.
         It gives insight into the decades of their remembering and celebrates the full and meaningful lives they survived to live.
       </p>
 

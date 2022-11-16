@@ -1,7 +1,7 @@
 <template>
   <RouterView v-slot="{ Component }">
     <PageTransition>
-      <component :is="Component" :key="route.params?.slug ?? route.name" />
+      <component :is="Component" :key="route.params?.slug ?? 'index'" />
     </PageTransition>
   </RouterView>
 </template>

@@ -15,6 +15,7 @@ const slugRegex = tracks.map(track => track.slug).join('|')
 
 const routes: RouteRecordRaw[] = [
   { path: '/', name: 'index', component: Index },
+  { path: '/menu', name: 'menu', component: Index },
   {
     path: `/play/:slug(${slugRegex})`,
     name: 'player',

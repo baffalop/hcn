@@ -39,7 +39,14 @@
       <p>Please scroll down and select a track by clicking on a title.</p>
     </div>
 
-    <div id="menu" class="mt-32 py-12 px-6 w-full min-h-screen flex flex-col items-center justify-center relative">
+    <div
+      ref="menu"
+      v-intersect="{
+        observerOptions: { threshold: 0.5 },
+        onChange: onMenuIntersect
+      }"
+      class="mt-32 py-12 px-6 w-full min-h-screen flex flex-col items-center justify-center relative"
+    >
       <ul class="w-full space-y-8 flex flex-col items-center">
         <li v-for="(track, i) in tracks" :style="{ marginLeft: `${itemMargin(i)}%` }">
           <TrackLink :track="track" />
@@ -51,9 +58,11 @@
 
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 import { tracks } from '@/data/tracks'
 import { setBackground } from '@/composable/body'
+import { vIntersect } from '@/directive/intersect'
 import TrackLink from '@components/TrackLink.vue'
 
 setBackground({ class: 'bg-primary-brick' })
@@ -65,8 +74,16 @@ const titleImageOpacity = computed(
   () => Math.max(0, SCROLL_SCALE - scrollY.value) * 100 / SCROLL_SCALE
 )
 
+const menu = ref<HTMLElement>()
+
+const router = useRouter()
+
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
+
+  if (router.currentRoute.value.name === 'menu') {
+    menu.value?.scrollIntoView()
+  }
 })
 
 onUnmounted(() => {
@@ -75,6 +92,10 @@ onUnmounted(() => {
 
 function onScroll (): void {
   scrollY.value = window.scrollY
+}
+
+function onMenuIntersect (isIntersecting: boolean): void {
+  router.replace({ name: isIntersecting ? 'menu' : 'index' })
 }
 
 function itemMargin (index: number): number {

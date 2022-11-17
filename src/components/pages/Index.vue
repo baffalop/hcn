@@ -48,13 +48,18 @@
       </p>
     </div>
 
+    <Icon
+      src="/icon/arrow-back-straight.svg"
+      class="w-16 transform -rotate-90 mx-auto mt-10 mb-14"
+    />
+
     <div
       ref="menu"
       v-intersect="{
         observerOptions: { threshold: 0.5 },
         onChange: onMenuIntersect
       }"
-      class="mt-32 py-12 px-6 w-full min-h-screen flex flex-col items-center justify-center relative"
+      class="py-12 px-6 w-full min-h-screen flex flex-col items-center justify-center relative"
     >
       <ul class="w-full space-y-8 flex flex-col items-center">
         <li v-for="(track, i) in tracks" :style="{ marginLeft: `${itemMargin(i)}%` }">
@@ -73,6 +78,7 @@ import { tracks } from '@/data/tracks'
 import { setBackground } from '@/composable/body'
 import { vIntersect } from '@/directive/intersect'
 import TrackLink from '@components/TrackLink.vue'
+import Icon from '@components/Icon.vue'
 
 setBackground({ class: 'bg-primary-brick' })
 

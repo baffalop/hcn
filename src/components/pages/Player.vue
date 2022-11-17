@@ -107,7 +107,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineEmits, ref, UnwrapRef, watch } from 'vue'
+import { computed, ref, UnwrapRef, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { Transcription } from '@components/player/Transcript.vue'

@@ -46,8 +46,6 @@
         Take a moment. And when you are ready, let us take you along.
         We invite you to listen with us, as they remember: The whys, the hows and the nevertheless of their survival.
       </p>
-
-      <p>Please scroll down and select a track by clicking on a title.</p>
     </div>
 
     <div

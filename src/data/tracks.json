@@ -10,7 +10,7 @@
     "title": "Saying Goodbye",
     "artist": "Linda O Keeffe",
     "credits": "Suzanne Ripton",
-    "duration": 560.039184,
+    "duration": 493.897143,
     "bgColor": "rgb(182, 141, 86)"
   },
   {
@@ -18,7 +18,7 @@
     "title": "The Children of Propaganda",
     "artist": "Linda O Keeffe",
     "credits": "Martin Kapel, Val Ginsburg, and Joseph Young reading ‘Why? Explaining the Holocaust’ by Peter Hayes",
-    "duration": 536.11102,
+    "duration": 568.894694,
     "bgColor": "rgb(189, 104, 89)",
     "transcript": [
       {
@@ -321,7 +321,180 @@
   {
     "slug": "anger",
     "title": "Anger",
-    "artist": "Louise K Wilson"
+    "artist": "Louise K Wilson",
+    "duration": 267.128163,
+    "transcript": [
+      {
+        "text": "Val Ginsburg: Now I must point out that",
+        "start": 0.599,
+        "end": 2.279
+      },
+      {
+        "text": "whenever and wherever the Nazis occupied the country,",
+        "start": 2.2800000000000002,
+        "end": 7.05
+      },
+      {
+        "text": "they made a special point of indoctrinating the population",
+        "start": 7.77,
+        "end": 16.2
+      },
+      {
+        "text": "spreading all sorts of vicious rumours",
+        "start": 17.58,
+        "end": 21.69
+      },
+      {
+        "text": "presenting the Jews as Communists, Bolsheviks,",
+        "start": 22.86,
+        "end": 26.43
+      },
+      {
+        "text": "they were presented as vermin to be exterminated.",
+        "start": 26.82,
+        "end": 29.82
+      },
+      {
+        "text": "And it seemed to work.",
+        "start": 30.84,
+        "end": 32.94
+      },
+      {
+        "text": "In fact 80% of the German killing machine",
+        "start": 34.47,
+        "end": 41.07
+      },
+      {
+        "text": "- of the Holocaust killing machine was non-German.",
+        "start": 41.33,
+        "end": 69.35
+      },
+      {
+        "text": "They knew that hunger is demoralising.",
+        "start": 69.42,
+        "end": 76.47
+      },
+      {
+        "text": "It reduces people to animal level.",
+        "start": 76,
+        "end": 80.68
+      },
+      {
+        "text": "And that’s what they wanted to do.",
+        "start": 81.43,
+        "end": 83.08
+      },
+      {
+        "text": "They wanted to dehumanise us, to demoralise us",
+        "start": 83.5,
+        "end": 87.67
+      },
+      {
+        "text": "and to isolate us completely from the non-Jewish population.",
+        "start": 88.02,
+        "end": 94.95
+      },
+      {
+        "text": "And then they could do away with us.",
+        "start": 94.96000000000001,
+        "end": 97.84
+      },
+      {
+        "text": "They told us to wear yellow Stars of David front and back,",
+        "start": 99.1,
+        "end": 106.53999999999999
+      },
+      {
+        "text": "to brand us as different from all the other people.",
+        "start": 106.81,
+        "end": 110.47
+      },
+      {
+        "text": "Iby Knill: I personally found that very  - I got very angry about it.",
+        "start": 126.35,
+        "end": 130.91
+      },
+      {
+        "text": "Because I couldn’t see why I should be any different to anybody else",
+        "start": 130.95,
+        "end": 134.82
+      },
+      {
+        "text": "Because none of my friends were wearing yellow stars",
+        "start": 134.82,
+        "end": 138.69
+      },
+      {
+        "text": "And I thought I would put them into an awkward situation,",
+        "start": 138.72,
+        "end": 142.82999999999998
+      },
+      {
+        "text": "if I stayed in friendships or relationships with them.",
+        "start": 142.86,
+        "end": 147.45
+      },
+      {
+        "text": "We were also taught that on public transport, we weren’t allowed to sit down.",
+        "start": 148.14,
+        "end": 152.49
+      },
+      {
+        "text": "In shops we were the last ones to be served. And I just decided",
+        "start": 154.02,
+        "end": 159.63
+      },
+      {
+        "text": "that I wasn’t going to use public transport under those circumstances.",
+        "start": 159.63,
+        "end": 163.65
+      },
+      {
+        "text": "I would rather walk to school and use a scarf to cover my yellow star.",
+        "start": 163.65,
+        "end": 167.94
+      },
+      {
+        "text": "So I seemed to spend most of my time queuing up in shops to get food",
+        "start": 189.72,
+        "end": 195.12
+      },
+      {
+        "text": "Because the rule was that people with yellow stars",
+        "start": 195.54,
+        "end": 200.28
+      },
+      {
+        "text": "should be the last ones to be served in shops.",
+        "start": 200.34,
+        "end": 202.92000000000002
+      },
+      {
+        "text": "So quite often by the time it became your turn,",
+        "start": 203.28,
+        "end": 205.82999999999998
+      },
+      {
+        "text": "there was hardly anything in the food shops nearby.",
+        "start": 205.82999999999998,
+        "end": 209.13
+      },
+      {
+        "text": "Also, our business had been what they called aryanised,",
+        "start": 211.47,
+        "end": 218.82
+      },
+      {
+        "text": "that the state took it over and put a non-Jewish person in charge",
+        "start": 214.44,
+        "end": 218.88
+      },
+      {
+        "text": "Although my parents had still to continue to work there.",
+        "start": 218.87,
+        "end": 221.69
+      }
+    ]
   },
   {
     "slug": "song-and-painting",
@@ -1497,7 +1670,7 @@
     "title": "Constant Vigilance",
     "artist": "Linda O Keeffe",
     "credits": "Heinz Skyte",
-    "duration": 362.187755,
+    "duration": 406.360816,
     "bgColor": "rgb(107, 142, 112)",
     "transcript": [
       {

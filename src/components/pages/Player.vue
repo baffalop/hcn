@@ -14,7 +14,7 @@
 
       <div class="space-y-3">
         <h2 class="text-4xl">{{ track.title }}</h2>
-        <h3 class="text-3xl filter -hue-rotate-30 brightness-70" :class="{ 'text-stone-600': !track.bgColor }" :style="{ color: track.bgColor }">
+        <h3 class="text-3xl filter-accent" :class="{ 'text-stone-600': !track.bgColor }" :style="{ color: track.bgColor }">
           {{ track.artist }}
         </h3>
       </div>
@@ -263,6 +263,8 @@ function onVideoFileDrop (file: File): void {
 </script>
 
 <style scoped>
+@tailwind components;
+
 .player {
   grid-template-rows: 1.2fr max-content max-content minmax(max-content, 1fr);
 }

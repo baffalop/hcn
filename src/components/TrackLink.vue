@@ -4,7 +4,7 @@
     class="grid grid-cols-2 gap-1 gap-x-2 p-3 font-editorial justify-items-start items-end min-w-max max-w-max"
   >
     <span class="col-span-full text-xl">{{ track.title }}</span>
-    <span class="filter -hue-rotate-15 brightness-[.65]" :class="{ 'text-primary-brick': !color }" :style="{ color }">
+    <span class="filter-accent" :class="{ 'text-primary-brick-600': !color }" :style="{ color }">
       {{ track.artist }}
     </span>
     <span class="font-agrandir text-base filter saturate-[.4] brightness-[1.6]" :class="{ 'text-primary-brick': !color }" :style="{ color }">

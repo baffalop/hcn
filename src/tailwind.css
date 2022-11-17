@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .filter-accent {
+    @apply filter -hue-rotate-15 brightness-70;
+  }
+}

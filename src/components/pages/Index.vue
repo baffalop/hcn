@@ -50,7 +50,13 @@
 
     <Icon
       src="/icon/arrow-back-straight.svg"
-      class="w-16 transform -rotate-90 mx-auto mt-10 mb-14"
+      class="arrow w-16 transform -rotate-90 mx-auto mt-10 mb-6"
+      :class="arrowVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'"
+      v-intersect="{
+        observerOptions: { threshold: 1 },
+        onChange: onArrowVisible,
+        disposeWhen: true,
+      }"
     />
 
     <div
@@ -71,7 +77,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 import { tracks } from '@/data/tracks'
@@ -96,6 +102,14 @@ const blobsBrightness = computed(
 const menu = ref<HTMLElement>()
 
 const router = useRouter()
+
+const arrowVisible = ref(false)
+async function onArrowVisible (visible: boolean): Promise<void> {
+  if (visible) {
+    await nextTick()
+    arrowVisible.value = true
+  }
+}
 
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
@@ -123,4 +137,7 @@ function itemMargin (index: number): number {
 </script>
 
 <style scoped>
+.arrow {
+  transition: opacity 700ms 700ms linear, transform 1.2s 700ms ease-in-out;
+}
 </style>

@@ -73,7 +73,10 @@
         </Transition>
       </div>
 
-      <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
+      <div class="-mt-6 relative">
+        <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
+        <Toast ref="toast" />
+      </div>
 
       <Media
         ref="audio"
@@ -120,6 +123,7 @@ import Timeline from '@components/player/Timeline.vue'
 import Icon from '@components/Icon.vue'
 import DroppableTranscript from '@components/player/DroppableTranscript.vue'
 import FileDrop from '@components/FileDrop.vue'
+import Toast from '@components/Toast.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 
@@ -177,6 +181,7 @@ setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'b
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)
 const video = ref<MediaInstance|null>(null)
+const toast = ref<InstanceType<typeof Toast>>()
 
 function onClickPlayPause () {
   playing.value = !playing.value
@@ -207,6 +212,13 @@ watch(() => time.value, time => {
 watch(() => playState.value, state => {
   if (state === PlayState.Error) {
     playing.value = false
+    toast.value?.show('Error loading audio. Please check your network and try again.')
+  }
+})
+
+watch(() => videoState.value, state => {
+  if (state === MediaState.Error) {
+    toast.value?.show('Error loading video')
   }
 })
 

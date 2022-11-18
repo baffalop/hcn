@@ -17,9 +17,9 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'My Awesome App',
-        short_name: 'MyApp',
-        description: 'My Awesome App description',
+        name: 'Encountering Survival',
+        short_name: 'Encountering Survival',
+        description: 'A series of audio guides for Holocaust Centre North',
         theme_color: '#6c6966',
         icons: [
           {

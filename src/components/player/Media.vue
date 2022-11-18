@@ -8,8 +8,19 @@
     @pause="updatePlaying(false)"
     @timeupdate="updateTime"
     @durationchange="updateDuration"
+    @waiting="onStateChange(MediaState.Waiting)"
+    @canplay="onStateChange(MediaState.CanPlay)"
+    @error="onStateChange(MediaState.Error)"
   />
 </template>
+
+<script lang="ts">
+export enum MediaState {
+  Error,
+  Waiting,
+  CanPlay,
+}
+</script>
 
 <script setup lang="ts">
 import { ref, Ref, watch } from 'vue'
@@ -27,6 +38,7 @@ const emit = defineEmits<{
   (e: 'update:playing', playing: boolean): void
   (e: 'update:time', time: number): void
   (e: 'update:duration', duration: number): void
+  (e: 'update:state', state: MediaState): void
 }>()
 
 defineExpose({ play })
@@ -53,6 +65,10 @@ watch(() => props.src, () => {
 
 function play (): void {
   media.value?.play()
+}
+
+function onStateChange (state: MediaState): void {
+  emit('update:state', state)
 }
 
 function updatePlaying (playing: boolean): void {

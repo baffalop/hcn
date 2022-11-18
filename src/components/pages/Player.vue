@@ -84,9 +84,7 @@
         :playing="playState === PlayState.Playing"
         @update:playing="onMediaPlaying"
         @update:duration="duration = $event"
-        @waiting="onMediaStateChange('audio', MediaState.Waiting)"
-        @canplay="onMediaStateChange('audio', MediaState.CanPlay)"
-        @error="onMediaStateChange('audio', MediaState.Error)"
+        @update:state="audioState = $event"
       />
 
       <Media
@@ -100,16 +98,14 @@
         playsinline
         class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
         :class="playState === PlayState.Playing ? 'opacity-100' : 'opacity-0'"
-        @waiting="onMediaStateChange('video', MediaState.Waiting)"
-        @canplay="onMediaStateChange('video', MediaState.CanPlay)"
-        @error="onMediaStateChange('video', MediaState.Error)"
+        @update:state="videoState = $event"
       />
     </div>
   </FileDrop>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, UnwrapRef, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { Transcription } from '@components/player/Transcript.vue'
@@ -119,7 +115,7 @@ import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
 import { setBackground } from '@/composable/body'
 
-import Media from '@components/player/Media.vue'
+import Media, { MediaState } from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import Icon from '@components/Icon.vue'
 import DroppableTranscript from '@components/player/DroppableTranscript.vue'
@@ -134,12 +130,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'update:time', time: number): void
 }>()
-
-enum MediaState {
-  Waiting,
-  CanPlay,
-  Error,
-}
 
 enum PlayState {
   Paused,
@@ -160,10 +150,8 @@ const time = useLocalStorage(
   (newTime, oldTime) => delta(newTime, oldTime) > 1 || newTime >= duration.value - 0.1,
 )
 
-const mediaStates = ref({
-  audio: MediaState.Waiting,
-  video: MediaState.Waiting,
-})
+const audioState = ref(MediaState.Waiting)
+const videoState = ref(MediaState.Waiting)
 
 const playState = computed<PlayState>(() => {
   if (!playing.value) {
@@ -174,7 +162,7 @@ const playState = computed<PlayState>(() => {
     return PlayState.Suspended
   }
 
-  if (mediaStates.value.audio === MediaState.Error) {
+  if (audioState.value === MediaState.Error) {
     return PlayState.Error
   }
 
@@ -227,10 +215,6 @@ useMediaSession(computed(() => props.track), playing, time)
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))
 
-function onMediaStateChange (mediaKey: keyof UnwrapRef<typeof mediaStates>, state: MediaState): void {
-  mediaStates.value[mediaKey] = state
-}
-
 function onMediaPlaying (nowPlaying: boolean): void {
   // break feedback loop of media reporting it's paused when it's been paused to wait for the other media
   if (!nowPlaying && playState.value === PlayState.Suspended) {
@@ -249,7 +233,7 @@ function getTrack (offset: number): Track|null {
 }
 
 function atLeastOneMediaIs (state: MediaState): boolean {
-  return mediaStates.value.audio === state || mediaStates.value.video === state
+  return audioState.value === state || videoState.value === state
 }
 
 const droppedVideo = ref<File|null>(null)

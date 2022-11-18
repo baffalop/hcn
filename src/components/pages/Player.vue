@@ -86,6 +86,7 @@
         @update:duration="duration = $event"
         @waiting="onMediaStateChange('audio', MediaState.Waiting)"
         @canplay="onMediaStateChange('audio', MediaState.CanPlay)"
+        @error="onMediaStateChange('audio', MediaState.Error)"
       />
 
       <Media
@@ -101,6 +102,7 @@
         :class="playState === PlayState.Playing ? 'opacity-100' : 'opacity-0'"
         @waiting="onMediaStateChange('video', MediaState.Waiting)"
         @canplay="onMediaStateChange('video', MediaState.CanPlay)"
+        @error="onMediaStateChange('video', MediaState.Error)"
       />
     </div>
   </FileDrop>
@@ -136,12 +138,14 @@ const emit = defineEmits<{
 enum MediaState {
   Waiting,
   CanPlay,
+  Error,
 }
 
 enum PlayState {
   Paused,
   Playing,
   Suspended,
+  Error,
 }
 
 const playing = ref(false)
@@ -168,6 +172,10 @@ const playState = computed<PlayState>(() => {
 
   if (atLeastOneMediaIs(MediaState.Waiting)) {
     return PlayState.Suspended
+  }
+
+  if (mediaStates.value.audio === MediaState.Error) {
+    return PlayState.Error
   }
 
   return PlayState.Playing
@@ -205,6 +213,12 @@ watch(() => time.value, time => {
   if (delta(time, videoTime.value) > SYNC_THRESHOLD_SECS) {
     console.log(`syncing video (${formatSecs(videoTime.value)}) to audio (${formatSecs(time)})`)
     videoTime.value = time
+  }
+})
+
+watch(() => playState.value, state => {
+  if (state === PlayState.Error) {
+    playing.value = false
   }
 })
 

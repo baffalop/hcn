@@ -156,6 +156,23 @@ const time = useLocalStorage(
   (newTime, oldTime) => delta(newTime, oldTime) > 1 || newTime >= duration.value - 0.1,
 )
 
+const mediaStates = ref({
+  audio: MediaState.Waiting,
+  video: MediaState.Waiting,
+})
+
+const playState = computed<PlayState>(() => {
+  if (!playing.value) {
+    return PlayState.Paused
+  }
+
+  if (atLeastOneMediaIs(MediaState.Waiting)) {
+    return PlayState.Suspended
+  }
+
+  return PlayState.Playing
+})
+
 const showTranscript = useLocalStorage('player.transcriptEnabled', false)
 const hasEnded = computed<boolean>(() => time.value >= duration.value - 0.1)
 
@@ -192,23 +209,6 @@ watch(() => time.value, time => {
 })
 
 useMediaSession(computed(() => props.track), playing, time)
-
-const mediaStates = ref({
-  audio: MediaState.Waiting,
-  video: MediaState.Waiting,
-})
-
-const playState = computed<PlayState>(() => {
-  if (!playing.value) {
-    return PlayState.Paused
-  }
-
-  if (atLeastOneMediaIs(MediaState.Waiting)) {
-    return PlayState.Suspended
-  }
-
-  return PlayState.Playing
-})
 
 const trackIndex = computed<number>(() => tracks.findIndex(track => track.slug === props.track.slug))
 const nextTrack = computed<Track|null>(() => getTrack(1))

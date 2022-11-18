@@ -50,7 +50,7 @@
 
     <Icon
       src="/icon/arrow-back-straight.svg"
-      class="arrow w-16 transform -rotate-90 mx-auto mt-10 mb-6"
+      class="arrow w-16 transform -rotate-90 mx-auto mt-14 mb-6"
       :class="arrowVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'"
       v-intersect="{
         observerOptions: { threshold: 1 },
@@ -138,6 +138,6 @@ function itemMargin (index: number): number {
 
 <style scoped>
 .arrow {
-  transition: opacity 700ms 700ms linear, transform 1.2s 700ms ease-in-out;
+  transition: opacity 500ms ease-in 700ms, transform 1s ease-out 700ms;
 }
 </style>

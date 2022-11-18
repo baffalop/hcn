@@ -20,7 +20,6 @@ export default defineConfig({
         name: 'Encountering Survival',
         short_name: 'Encountering Survival',
         description: 'A series of audio guides for Holocaust Centre North',
-        theme_color: '#6c6966',
         icons: [
           {
             src: 'android-chrome-192x192.png',

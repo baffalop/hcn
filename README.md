@@ -1,6 +1,6 @@
 # Encountering Survival
 
-An audio player for Holocaust Centre North, Huddersfield.
+A series of audio artworks for Holocaust Centre North examining survivorship.
 
 ## Installation
 

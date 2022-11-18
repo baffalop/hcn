@@ -138,6 +138,6 @@ function itemMargin (index: number): number {
 
 <style scoped>
 .arrow {
-  transition: opacity 500ms ease-in 700ms, transform 1s ease-out 700ms;
+  transition: opacity 500ms ease-in 500ms, transform 1s ease-out 500ms;
 }
 </style>

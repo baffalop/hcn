@@ -1,8 +1,6 @@
 import { InjectionKey, onMounted, provide, Ref, StyleValue } from 'vue'
 
-export type Theme =
-  | { color: string }
-  | { class: Class }
+export type Theme = { color: string } | { class: Class }
 
 interface Class {
   bg: string

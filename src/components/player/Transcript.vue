@@ -69,6 +69,12 @@ watch(() => props.enabled, enabled => {
   }
 })
 
+watch(() => hasCurrentLine.value, has => {
+  if (has) {
+    emit('cancel-message')
+  }
+})
+
 function findMostRecentLine (lines: TranscriptionLine[], time: number): TranscriptionLine {
   if (!props.enabled) {
     return blankLine()

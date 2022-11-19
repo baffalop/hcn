@@ -12,7 +12,7 @@
     leave-active-class="!duration-500 ease-in-out absolute w-screen transform"
   >
     <p
-      :key="enabled ? previousLine?.start.toFixed(0) ?? 0 : 0"
+      :key="enabled ? previousLine?.start.toFixed(0) ?? 'noprev' : 'noprev'"
       class="text-gray-100/60 transition-opacity duration-700"
       :class="enabled && hasPreviousLine ? 'opacity-100' : 'opacity-0'"
     >
@@ -20,7 +20,7 @@
     </p>
 
     <p
-      :key="enabled ? currentLine?.start.toFixed(0) ?? 0 : 0"
+      :key="enabled ? currentLine?.start.toFixed(0) ?? 'none' : 'none'"
       class="text-grey-100 transition-opacity duration-700"
       :class="enabled && hasCurrentLine ? 'opacity-100' : 'opacity-0'"
     >

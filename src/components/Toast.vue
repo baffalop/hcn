@@ -1,7 +1,6 @@
 <template>
   <Transition
     appear
-    mode="out-in"
     enter-from-class="opacity-0 translate-y-10"
     enter-to-class="opacity-100 translate-y-0"
     enter-active-class="duration-500 transition-all ease-in-out"
@@ -11,12 +10,11 @@
     @after-enter="startTimeout"
   >
       <div
-        v-if="message"
-        :key="message"
+        v-if="currentMessage"
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -mt-2
           rounded-full py-0.5 px-3 backdrop-filter backdrop-brightness-70 -backdrop-hue-rotate-30"
       >
-        {{ message }}
+        {{ currentMessage }}
       </div>
   </Transition>
 </template>
@@ -29,22 +27,32 @@ defineExpose({
   dismiss,
 })
 
-const TIMEOUT_MS = 1000
+type Timing = 'short' | 'long'
 
-const message = ref<string|null>(null)
+const TIMEOUT_SHORT_MS = 500
+const TIMEOUT_LONG_MS = 3000
 
-function show (newMessage: string): void {
-  message.value = newMessage
+const currentMessage = ref<string|null>(null)
+const currentTiming = ref<Timing>('short')
+const timeout = ref<number|null>(null)
+
+function show (message: string, timing: Timing): void {
+  currentMessage.value = message
+  currentTiming.value = timing
 }
 
 function dismiss (): void {
-  message.value = null
+  currentMessage.value = null
 }
 
 function startTimeout (): void {
-  window.setTimeout(() => {
-    message.value = null
-  }, TIMEOUT_MS)
+  if (timeout.value !== null) {
+    window.clearTimeout(timeout.value)
+  }
+
+  timeout.value = window.setTimeout(() => {
+    currentMessage.value = null
+  }, currentTiming.value === 'short' ? TIMEOUT_SHORT_MS : TIMEOUT_LONG_MS)
 }
 </script>
 

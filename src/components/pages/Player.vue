@@ -79,7 +79,7 @@
           :transcript="track.transcript ?? []"
           :time="time"
           class="-mt-6"
-          @message="toast?.show($event)"
+          @message="toast?.show($event, 'short')"
           @cancel-message="toast?.dismiss()"
         />
 
@@ -229,13 +229,13 @@ watch(() => time.value, time => {
 watch(() => playState.value, state => {
   if (state === PlayState.Error) {
     playing.value = false
-    toast.value?.show('Error loading audio. Please check your network and try again.')
+    toast.value?.show('Error loading audio. Please check your network and try again.', 'long')
   }
 })
 
 watch(() => videoState.value, state => {
   if (state === MediaState.Error) {
-    toast.value?.show('Error loading video')
+    toast.value?.show('Error loading video', 'long')
   }
 })
 

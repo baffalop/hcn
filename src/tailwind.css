@@ -4,10 +4,10 @@
 
 @layer components {
   .filter-accent {
-    @apply filter -hue-rotate-15 brightness-70;
+    @apply filter -hue-rotate-30 brightness-70;
   }
 
   .filter-accent-pale {
-    @apply filter saturate-[.4] brightness-[1.6];
+    @apply filter saturate-[.4] brightness-[1.7];
   }
 }

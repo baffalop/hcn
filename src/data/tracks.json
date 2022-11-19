@@ -3,7 +3,8 @@
     "slug": "objects",
     "title": "Objects That Remain",
     "artist": "Louise K Wilson",
-    "duration": 804.754286
+    "duration": 804.754286,
+    "bgColor": "rgb(200, 177, 107)"
   },
   {
     "slug": "saying-goodbye",
@@ -11,7 +12,7 @@
     "artist": "Linda O Keeffe",
     "credits": "Suzanne Ripton",
     "duration": 493.897143,
-    "bgColor": "rgb(182, 141, 86)"
+    "bgColor": "rgb(211, 167, 123)"
   },
   {
     "slug": "children-of-propaganda",
@@ -323,6 +324,7 @@
     "title": "Anger",
     "artist": "Linda O Keeffe",
     "duration": 267.128163,
+    "bgColor": "rgb(149, 136, 143)",
     "transcript": [
       {
         "text": "Val Ginsburg: Now I must point out that",
@@ -501,6 +503,7 @@
     "title": "The Song and the Painting",
     "artist": "Louise K Wilson",
     "duration": 764.029388,
+    "bgColor": "rgb(160, 101, 115)",
     "transcript": [
       {
         "text": "I no longer have any reason to speak Slovak",
@@ -1248,7 +1251,8 @@
     "slug": "terezin",
     "title": "Terezin",
     "artist": "Louise K Wilson",
-    "duration": 729.678367
+    "duration": 729.678367,
+    "bgColor": "rgb(212, 167, 123)"
   },
   {
     "slug": "wires-and-fences",
@@ -1256,7 +1260,7 @@
     "artist": "Linda O Keeffe",
     "credits": "Ibi Ginsburg, John Chillag, Eugene Black, Arek Hersh and families; and Kath Shackleton, Fettle Animation & BBC.",
     "duration": 477.33551,
-    "bgColor": "rgb(98, 83, 61)",
+    "bgColor": "rgb(99, 82, 61)",
     "transcript": [
       {
         "text": "And as walked,",
@@ -1739,7 +1743,8 @@
     "slug": "stolperstein",
     "title": "Stolperstein",
     "artist": "Louise K Wilson",
-    "duration": 552.045714
+    "duration": 552.045714,
+    "bgColor": "rgb(170, 161, 108)"
   },
   {
     "slug": "enosh",
@@ -1747,7 +1752,7 @@
     "artist": "Louise K Wilson",
     "credits": "Rudi Leavor and family; and Stephen Muir",
     "duration": 681.038367,
-    "bgColor": "rgb(205, 130, 69)",
+    "bgColor": "rgb(204, 129, 68)",
     "transcript": [
       {
         "text": "Enosh",

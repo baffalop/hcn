@@ -74,7 +74,15 @@
       </div>
 
       <div class="-mt-6 relative">
-        <DroppableTranscript :enabled="showTranscript" :transcript="track.transcript ?? []" :time="time" class="-mt-6" />
+        <DroppableTranscript
+          :enabled="showTranscript"
+          :transcript="track.transcript ?? []"
+          :time="time"
+          class="-mt-6"
+          @message="toast?.show($event)"
+          @cancel-message="toast?.dismiss()"
+        />
+
         <Toast ref="toast" />
       </div>
 

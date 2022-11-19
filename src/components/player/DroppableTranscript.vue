@@ -1,6 +1,12 @@
 <template>
   <FileDrop @drop="onDrop">
-    <Transcript :enabled="enabled" :transcript="droppedTranscript ?? transcript" :time="time" />
+    <Transcript
+      :enabled="enabled"
+      :transcript="droppedTranscript ?? transcript"
+      :time="time"
+      @message="emit('message', $event)"
+      @cancel-message="emit('cancel-message')"
+    />
   </FileDrop>
 </template>
 
@@ -18,6 +24,11 @@ const props = withDefaults(defineProps<{
 }>(), {
   enabled: true
 })
+
+const emit = defineEmits<{
+  (e: 'message', message: string): void
+  (e: 'cancel-message'): void
+}>()
 
 const droppedTranscript = ref<Transcription|null>()
 

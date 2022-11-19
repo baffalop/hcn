@@ -14,7 +14,7 @@
     <p
       :key="previousLine.start.toFixed(0)"
       class="text-gray-100/60 transition-opacity duration-700"
-      :class="previousLine.end && time - previousLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
+      :class="!hasPreviousLine ? 'opacity-0' : 'opacity-100'"
     >
       {{ previousLine.text }}
     </p>
@@ -22,7 +22,7 @@
     <p
       :key="currentLine.start.toFixed(0)"
       class="text-grey-100 transition-opacity duration-700"
-      :class="currentLine.end && time - currentLine.end > EXPIRY_SECS ? 'opacity-0' : 'opacity-100'"
+      :class="!hasCurrentLine ? 'opacity-0' : 'opacity-100'"
     >
       {{ currentLine.text }}
     </p>
@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 
 export type Transcription = TranscriptionLine[]
 export interface TranscriptionLine {
@@ -47,6 +47,11 @@ const props = withDefaults(defineProps<{
   enabled: true,
 })
 
+const emit = defineEmits<{
+  (e: 'message', message: string): void
+  (e: 'cancel-message'): void
+}>()
+
 const EXPIRY_SECS = 4
 
 const currentLine = computed(() => findMostRecentLine(props.transcript, props.time))
@@ -54,6 +59,15 @@ const previousLine = computed(() => findMostRecentLine(
   props.transcript.filter(line => line.text !== currentLine.value.text),
   props.time
 ))
+
+const hasCurrentLine = computed(() => isExtant(currentLine.value))
+const hasPreviousLine = computed(() => isExtant(previousLine.value))
+
+watch(() => props.enabled, enabled => {
+  if (!hasCurrentLine.value) {
+    emit('message', `Transcriptions ${enabled ? 'on' : 'off'}`)
+  }
+})
 
 function findMostRecentLine (lines: TranscriptionLine[], time: number): TranscriptionLine {
   if (!props.enabled) {
@@ -64,6 +78,10 @@ function findMostRecentLine (lines: TranscriptionLine[], time: number): Transcri
     if (cur.start > time) return prev
     return cur.start > prev.start ? cur : prev
   }, blankLine())
+}
+
+function isExtant (line: TranscriptionLine): boolean {
+  return !!line.end && props.time - line.end < EXPIRY_SECS
 }
 
 function blankLine (): TranscriptionLine {

@@ -89,6 +89,8 @@
         <Toast ref="toast" />
       </div>
 
+      <div class="background fixed inset-0 -z-20 bg-accent"></div>
+
       <Media
         ref="audio"
         type="audio"

@@ -1,40 +1,36 @@
 <template>
   <div class="grid grid-cols-2">
-    <span class="timestamp justify-self-start filter-accent-pale" :style="{ color }">
+    <span class="timestamp justify-self-start filter-accent-pale" v-bind="themeAttrs('text', theme)">
       {{ timeFormatted }}
     </span>
 
-    <span class="timestamp justify-self-end filter-accent-pale" :style="{ color }">
+    <span class="timestamp justify-self-end filter-accent-pale" v-bind="themeAttrs('text', theme)">
       {{ durationFormatted }}
     </span>
 
-    <TimelineSlider
-      v-model:time="timeValue"
-      :duration="duration"
-      :playing="playing"
-      :color="color"
-      class="col-span-full"
-    />
+    <TimelineSlider v-model:time="timeValue" :duration="duration" :playing="playing" class="col-span-full" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, inject } from 'vue'
 
 import { formatSecs } from '@/utils/time'
 import { clamp } from '@/utils/math'
+import { themeKey, themeAttrs } from '@/composable/theme'
 import TimelineSlider from '@components/player/TimelineSlider.vue'
 
 const props = defineProps<{
   time: number
   duration: number
   playing: boolean
-  color?: string
 }>()
 
 const emit = defineEmits<{
   (e: 'update:time', time: number): void
 }>()
+
+const theme = inject(themeKey)
 
 const timeValue = computed({
   get: (): number => props.time,

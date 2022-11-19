@@ -42,7 +42,7 @@
               </button>
             </div>
 
-            <Timeline v-model:time="time" :duration="duration" :playing="playing" :color="track.bgColor" class="w-full" />
+            <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
           </div>
 
           <div v-else class="grid grid-cols-2 gap-10 place-items-center h-24">
@@ -116,7 +116,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, provide, ref, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { Transcription } from '@components/player/Transcript.vue'
@@ -124,7 +124,7 @@ import { clamp, delta } from '@/utils/math'
 import { formatSecs } from '@/utils/time'
 import { useMediaSession } from '@/composable/media'
 import { useLocalStorage } from '@/composable/localStorage'
-import { setBackground } from '@/composable/body'
+import { setTheme } from '@/composable/theme'
 
 import Media, { MediaState } from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
@@ -184,7 +184,16 @@ const playState = computed<PlayState>(() => {
 const showTranscript = useLocalStorage('player.transcriptEnabled', false)
 const hasEnded = computed<boolean>(() => time.value >= duration.value - 0.1)
 
-setBackground(props.track.bgColor ? { color: props.track.bgColor } : { class: 'bg-stone-600' })
+setTheme(computed(
+  () => props.track.bgColor
+    ? { color: props.track.bgColor }
+    : {
+      class: {
+        bg: 'bg-stone-600',
+        text: 'text-stone-600',
+      }
+    }
+))
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)

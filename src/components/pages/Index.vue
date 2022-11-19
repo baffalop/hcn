@@ -81,12 +81,17 @@ import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 import { tracks } from '@/data/tracks'
-import { setBackground } from '@/composable/body'
+import { setTheme } from '@/composable/theme'
 import { vIntersect } from '@/directive/intersect'
 import TrackLink from '@components/TrackLink.vue'
 import Icon from '@components/Icon.vue'
 
-setBackground({ class: 'bg-primary-brick' })
+setTheme(ref({
+  class: {
+    bg: 'bg-primary-brick',
+    text: 'text-primary-brick',
+  }
+}))
 
 const OPACITY_SCROLL_SCALE = 280
 const BRIGHTNESS_SCROLL_SCALE = 320

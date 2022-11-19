@@ -25,6 +25,7 @@ import { ref } from 'vue'
 
 defineExpose({
   show,
+  dismiss,
 })
 
 const TIMEOUT_MS = 3000
@@ -36,6 +37,10 @@ function show (newMessage: string): void {
   window.setTimeout(() => {
     message.value = null
   }, TIMEOUT_MS)
+}
+
+function dismiss (): void {
+  message.value = null
 }
 </script>
 

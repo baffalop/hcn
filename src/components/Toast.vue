@@ -8,6 +8,7 @@
     leave-from-class="opacity-100 translate-y-0"
     leave-to-class="opacity-0 -translate-y-10"
     leave-active-class="duration-500 ease-in-out transform"
+    @after-enter="startTimeout"
   >
       <div
         v-if="message"
@@ -28,19 +29,22 @@ defineExpose({
   dismiss,
 })
 
-const TIMEOUT_MS = 3000
+const TIMEOUT_MS = 1000
 
 const message = ref<string|null>(null)
 
 function show (newMessage: string): void {
   message.value = newMessage
-  window.setTimeout(() => {
-    message.value = null
-  }, TIMEOUT_MS)
 }
 
 function dismiss (): void {
   message.value = null
+}
+
+function startTimeout (): void {
+  window.setTimeout(() => {
+    message.value = null
+  }, TIMEOUT_MS)
 }
 </script>
 

@@ -14,9 +14,7 @@
 
       <div class="space-y-3">
         <h2 class="text-4xl">{{ track.title }}</h2>
-        <h3 class="text-3xl filter-accent" :class="{ 'text-stone-600': !track.bgColor }" :style="{ color: track.bgColor }">
-          {{ track.artist }}
-        </h3>
+        <ClippingText :text="track.artist" class="text-3xl backdrop-filter-accent" />
       </div>
 
       <div class="h-32 w-full">
@@ -116,7 +114,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
 import { Transcription } from '@components/player/Transcript.vue'
@@ -132,6 +130,7 @@ import Icon from '@components/Icon.vue'
 import DroppableTranscript from '@components/player/DroppableTranscript.vue'
 import FileDrop from '@components/FileDrop.vue'
 import Toast from '@components/Toast.vue'
+import ClippingText from '@components/ClippingText.vue'
 
 const SYNC_THRESHOLD_SECS = 2
 

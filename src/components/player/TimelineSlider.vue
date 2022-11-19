@@ -6,7 +6,7 @@
       '--progress': `${progress}`,
     }"
   >
-    <div class="track w-full filter-accent" v-bind="themeAttrs('bg', theme)"></div>
+    <div class="track w-full backdrop-filter-accent"></div>
     <div class="progress bg-gray-100 absolute left-0 top-1/2 transform -translate-y-1/2"></div>
     <input
       type="range"
@@ -19,9 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue'
-
-import { themeKey, themeAttrs } from '@/composable/theme'
+import { computed } from 'vue'
 
 const props = defineProps<{
   time: number
@@ -32,8 +30,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'update:time', value: number): void
 }>()
-
-const theme = inject(themeKey)
 
 const current = computed({
   get: () => props.time,

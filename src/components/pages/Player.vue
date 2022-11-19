@@ -84,8 +84,6 @@
         <Toast ref="toast" />
       </div>
 
-      <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
-
       <Media
         ref="audio"
         type="audio"

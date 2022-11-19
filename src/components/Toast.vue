@@ -4,10 +4,10 @@
     mode="out-in"
     enter-from-class="opacity-0 translate-y-10"
     enter-to-class="opacity-100 translate-y-0"
-    enter-active-class="duration-700 transition-all ease-in-out"
+    enter-active-class="duration-500 transition-all ease-in-out"
     leave-from-class="opacity-100 translate-y-0"
     leave-to-class="opacity-0 -translate-y-10"
-    leave-active-class="duration-500 ease-in-out transform"
+    leave-active-class="duration-300 ease-in-out transform"
     @after-enter="startTimeout"
   >
       <div

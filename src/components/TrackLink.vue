@@ -7,7 +7,7 @@
     <span class="filter-accent" :class="{ 'text-primary-brick-600': !color }" :style="{ color }">
       {{ track.artist }}
     </span>
-    <span class="font-agrandir text-base filter saturate-[.4] brightness-[1.6]" :class="{ 'text-primary-brick': !color }" :style="{ color }">
+    <span class="font-agrandir text-base filter-accent-pale" :class="{ 'text-primary-brick': !color }" :style="{ color }">
       {{ durationFormatted }}
     </span>
   </RouterLink>

@@ -6,4 +6,8 @@
   .filter-accent {
     @apply filter -hue-rotate-15 brightness-70;
   }
+
+  .filter-accent-pale {
+    @apply filter saturate-[.4] brightness-[1.6];
+  }
 }

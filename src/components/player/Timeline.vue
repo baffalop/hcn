@@ -1,10 +1,10 @@
 <template>
   <div class="grid grid-cols-2">
-    <span class="timestamp justify-self-start">
+    <span class="timestamp justify-self-start filter-accent-pale" :style="{ color }">
       {{ timeFormatted }}
     </span>
 
-    <span class="timestamp justify-self-end">
+    <span class="timestamp justify-self-end filter-accent-pale" :style="{ color }">
       {{ durationFormatted }}
     </span>
 

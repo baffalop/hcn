@@ -1,10 +1,10 @@
 <template>
   <div class="grid grid-cols-2">
-    <span class="timestamp justify-self-start filter-accent-pale" v-bind="themeAttrs('text', theme)">
+    <span class="timestamp justify-self-start text-accent filter-accent-pale">
       {{ timeFormatted }}
     </span>
 
-    <span class="timestamp justify-self-end filter-accent-pale" v-bind="themeAttrs('text', theme)">
+    <span class="timestamp justify-self-end text-accent filter-accent-pale">
       {{ durationFormatted }}
     </span>
 
@@ -13,11 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue'
+import { computed } from 'vue'
 
 import { formatSecs } from '@/utils/time'
 import { clamp } from '@/utils/math'
-import { themeKey, themeAttrs } from '@/composable/theme'
 import TimelineSlider from '@components/player/TimelineSlider.vue'
 
 const props = defineProps<{
@@ -29,8 +28,6 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'update:time', time: number): void
 }>()
-
-const theme = inject(themeKey)
 
 const timeValue = computed({
   get: (): number => props.time,

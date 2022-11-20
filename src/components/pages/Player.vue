@@ -84,8 +84,6 @@
         <Toast ref="toast" />
       </div>
 
-      <div class="background fixed inset-0 -z-20" :style="{ backgroundColor: track.bgColor ?? 'unset' }"></div>
-
       <Media
         ref="audio"
         type="audio"
@@ -185,16 +183,7 @@ const playState = computed<PlayState>(() => {
 const showTranscript = useLocalStorage('player.transcriptEnabled', false)
 const hasEnded = computed<boolean>(() => time.value >= duration.value - 0.1)
 
-setTheme(computed(
-  () => props.track.bgColor
-    ? { color: props.track.bgColor }
-    : {
-      class: {
-        bg: 'bg-stone-600',
-        text: 'text-stone-600',
-      }
-    }
-))
+setTheme(props.track.bgColor)
 
 type MediaInstance = InstanceType<typeof Media>
 const audio = ref<MediaInstance|null>(null)

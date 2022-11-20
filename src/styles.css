@@ -26,3 +26,12 @@ h1, h2, h3, h4, h5, h6 {
 p:not(:last-child) {
   @apply mb-3;
 }
+
+.backdrop-filter-accent {
+  @apply backdrop-filter backdrop-brightness-70 -backdrop-hue-rotate-30;
+}
+
+.transition-opacity .backdrop-filter-accent {
+  @apply backdrop-filter-none filter-accent;
+  background-color: var(--theme-color);
+}

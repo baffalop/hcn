@@ -6,16 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 import { setTheme } from '@/composable/theme'
 
-setTheme(ref({
-  class: {
-    bg: 'bg-stone-600',
-    text: 'text-stone-600',
-  }
-}))
+setTheme('#6c6966') // stone-600
 </script>
 
 <style scoped>

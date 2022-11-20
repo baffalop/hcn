@@ -7,7 +7,7 @@ export interface Track {
   duration: number
   artist: string
   credits: string
-  bgColor?: string
+  bgColor: string
   transcript?: Transcription
 }
 

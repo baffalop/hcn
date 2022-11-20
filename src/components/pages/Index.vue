@@ -86,12 +86,7 @@ import { vIntersect } from '@/directive/intersect'
 import TrackLink from '@components/TrackLink.vue'
 import Icon from '@components/Icon.vue'
 
-setTheme(ref({
-  class: {
-    bg: 'bg-primary-brick',
-    text: 'text-primary-brick',
-  }
-}))
+setTheme('#a55b50') // primary-brick
 
 const OPACITY_SCROLL_SCALE = 280
 const BRIGHTNESS_SCROLL_SCALE = 320

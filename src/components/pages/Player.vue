@@ -71,7 +71,7 @@
         </Transition>
       </div>
 
-      <div class="-mt-6 relative">
+      <div class="relative">
         <DroppableTranscript
           :enabled="showTranscript"
           :transcript="track.transcript ?? []"

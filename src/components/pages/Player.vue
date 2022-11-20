@@ -292,7 +292,7 @@ function onVideoFileDrop (file: File): void {
 @tailwind components;
 
 .player {
-  grid-template-rows: 1.1fr max-content max-content minmax(max-content, 1fr);
+  grid-template-rows: 1fr max-content max-content minmax(max-content, 1fr);
 }
 
 .control {

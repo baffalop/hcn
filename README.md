@@ -1,6 +1,6 @@
 # Encountering Survival
 
-A series of audio artworks for Holocaust Centre North examining survivorship.
+A series of audio artworks for Holocaust Centre North responding to archival interviews with survivors.
 
 ## Installation
 

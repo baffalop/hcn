@@ -79,6 +79,10 @@ watch(() => hasCurrentLine.value, has => {
 })
 
 function findMostRecentLine (lines: TranscriptionLine[], time: number, to?: number): LineEntry {
+  if (!props.enabled) {
+    return [null, null]
+  }
+
   let prev: LineEntry = [null, null]
 
   for (const [index, line] of lines.slice(0, to).entries()) {

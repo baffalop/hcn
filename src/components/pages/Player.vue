@@ -63,7 +63,7 @@
               </button>
             </RouterLink>
 
-            <div class="col-span-full">
+            <div class="col-span-full max-w-lg">
               <p>
                 With grateful thanks to:
               </p>

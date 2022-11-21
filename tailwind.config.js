@@ -11,6 +11,7 @@ module.exports = {
         editorial: ['"Editorial New"']
       },
       colors: {
+        accent: 'var(--theme-color)',
         primary: {
           brick: {
             DEFAULT: '#A55B50',

@@ -32,6 +32,5 @@ p:not(:last-child) {
 }
 
 .transition-opacity .backdrop-filter-accent {
-  @apply backdrop-filter-none filter-accent;
-  background-color: var(--theme-color);
+  @apply backdrop-filter-none bg-accent filter-accent;
 }

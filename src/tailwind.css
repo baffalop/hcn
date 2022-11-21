@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  .bg-accent {
-    background-color: var(--theme-color);
-  }
-
-  .text-accent {
-    color: var(--theme-color);
-  }
-
   .filter-accent {
     @apply filter -hue-rotate-30 brightness-70;
   }

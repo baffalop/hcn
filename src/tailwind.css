@@ -7,6 +7,10 @@
     @apply filter -hue-rotate-30 brightness-70;
   }
 
+  .backdrop-filter-accent {
+    @apply backdrop-filter backdrop-brightness-70 -backdrop-hue-rotate-30;
+  }
+
   .filter-accent-pale {
     @apply filter saturate-[.4] brightness-[1.7];
   }

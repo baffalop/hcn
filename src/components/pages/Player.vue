@@ -44,7 +44,12 @@
           </div>
 
           <div v-else class="grid grid-cols-2 gap-10 place-items-center h-24">
-            <button class="control !w-12 !h-12 justify-self-end" title="Replay" @click="replay">
+            <button
+              title="Replay"
+              class="control !w-12 !h-12"
+              :class="{ 'justify-self-end': !!nextTrack, 'col-span-full justify-self-center': !nextTrack }"
+              @click="replay"
+            >
               <Icon src="/icon/rew-plain.svg" />
             </button>
 

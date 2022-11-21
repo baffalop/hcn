@@ -68,8 +68,7 @@
                 With grateful thanks to:
               </p>
 
-              <p>
-                {{ track.credits }}
+              <p v-html="track.credits">
               </p>
             </div>
           </div>

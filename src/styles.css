@@ -29,6 +29,8 @@ p:not(:last-child) {
 
 /* backdrop-filter doesn't like to transition opacity in Chrome
    Workaround: replace with solid accent colour for the duration of the transition */
-.transition-opacity .backdrop-filter-accent {
+.transition-opacity .backdrop-filter-accent,
+.staggered-enter-active .backdrop-filter-accent,
+.staggered-leave-active .backdrop-filter-accent {
   @apply backdrop-filter-none bg-accent filter-accent;
 }

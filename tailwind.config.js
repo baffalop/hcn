@@ -124,6 +124,7 @@ module.exports = {
       },
       transitionDelay: {
         '400': '400ms',
+        '600': '600ms',
       },
       transitionProperty: {
         height: 'height',

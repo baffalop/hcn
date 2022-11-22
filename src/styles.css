@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-  @apply bg-primary-brick font-agrandir text-gray-100 text-lg text-center font-condensed leading-snug tracking-wider;
+  @apply bg-primary-brick font-agrandir text-gray-100 text-lg text-center leading-snug tracking-wider;
   transition: background-color 700ms;
 }
 
@@ -18,11 +18,7 @@ button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-editorial font-stretch-normal;
-}
-
-em {
-  @apply font-stretch-normal;
+  @apply font-editorial;
 }
 
 p:not(:last-child) {

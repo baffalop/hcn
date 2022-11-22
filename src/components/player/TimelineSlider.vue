@@ -6,7 +6,12 @@
       '--progress': `${progress}`,
     }"
   >
-    <div class="track w-full backdrop-filter-accent"></div>
+    <div
+      class="track w-full
+        bg-accent filter-accent supports-[backdrop-filter]:bg-transparent supports-[backdrop-filter]:filter-none
+        supports-[backdrop-filter]:backdrop-filter-accent
+      "
+    ></div>
     <div class="progress bg-gray-100 absolute left-0 top-1/2 transform -translate-y-1/2"></div>
     <input
       type="range"

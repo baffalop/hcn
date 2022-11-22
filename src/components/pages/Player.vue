@@ -14,7 +14,12 @@
 
       <div class="space-y-3">
         <h2 class="text-4xl">{{ track.title }}</h2>
-        <ClippingText :text="track.artist" class="text-3xl backdrop-filter-accent" />
+        <ClippingText
+          :text="track.artist"
+          class="text-3xl text-accent filter-accent
+            supports-[backdrop-filter]:supports-[clip-path]:filter-none
+            supports-[backdrop-filter]:supports-[clip-path]:backdrop-filter-accent"
+        />
       </div>
 
       <div class="h-32 w-full">

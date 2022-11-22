@@ -1,6 +1,6 @@
 <template>
   <h3 class="inline-block px-0.5">
-    <span class="text-transparent">{{ text }}</span>
+    <span class="supports-[backdrop-filter]:supports-[clip-path]:text-transparent">{{ text }}</span>
 
     <svg aria-hidden="true" class="absolute pointer-events-none">
       <clipPath id="clipping-text">

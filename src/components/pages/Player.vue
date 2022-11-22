@@ -23,7 +23,7 @@
       </div>
 
       <div class="h-32 w-full">
-        <Transition mode="out-in" name="staggered" :duration="{ leave: 700, enter: 1100 }">
+        <Transition mode="out-in" name="staggered" :duration="{ leave: 900, enter: 1300 }">
           <div v-if="!hasEnded" key="controls" class="h-32 w-full space-y-14">
             <div class="controls flex items-center justify-center gap-10">
               <button class="control" title="Back 10 seconds" @click="skip(-10)">
@@ -73,8 +73,12 @@
                 With grateful thanks to:
               </p>
 
-              <p v-html="track.credits">
-              </p>
+              <p v-html="track.credits"></p>
+            </div>
+
+            <div class="col-span-full space-x-6">
+              <img src="/logo/heritage-fund.svg" alt="Heritage Fund logo" class="inline h-10">
+              <img src="/logo/iwm.svg" alt="Heritage Fund logo" class="inline h-10">
             </div>
           </div>
         </Transition>
@@ -316,6 +320,10 @@ function onVideoFileDrop (file: File): void {
 
 .staggered-enter-active > :nth-child(3), .staggered-leave-active > :nth-last-child(3) {
   @apply delay-400;
+}
+
+.staggered-enter-active > :nth-child(4), .staggered-leave-active > :nth-last-child(4) {
+  @apply delay-600;
 }
 
 .staggered-enter-from > * {

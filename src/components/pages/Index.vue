@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-full w-full">
+  <div class="min-h-full w-full pb-14">
     <header class="h-[62vh]">
       <h1 class="text-5xl font-light italic text-stone-900 sticky top-0 pt-20 mb-10">
         Encountering Survival
@@ -50,7 +50,7 @@
 
     <Icon
       src="/icon/arrow-back-straight.svg"
-      class="arrow w-16 transform -rotate-90 mx-auto mt-14 mb-6"
+      class="w-16 transform -rotate-90 mx-auto mt-14 mb-6 visible-transition"
       :class="arrowVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'"
       v-intersect="{
         observerOptions: { threshold: 1 },
@@ -72,6 +72,20 @@
           <TrackLink :track="track" />
         </li>
       </ul>
+    </div>
+
+    <div
+      class="relative space-x-6 mt-6 transform visible-transition"
+      :class="logosVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'"
+      v-intersect="{
+        observerOptions: { threshold: 0.5 },
+        onChange: onLogosVisible,
+        disposeWhen: true,
+      }"
+      :style="{ '--delay': '200ms' }"
+    >
+      <img src="/logo/heritage-fund.svg" alt="Heritage Fund logo" class="inline h-10">
+      <img src="/logo/iwm.svg" alt="Heritage Fund logo" class="inline h-10">
     </div>
   </div>
 </template>
@@ -111,6 +125,14 @@ async function onArrowVisible (visible: boolean): Promise<void> {
   }
 }
 
+const logosVisible = ref(false)
+async function onLogosVisible (visible: boolean): Promise<void> {
+  if (visible) {
+    await nextTick()
+    logosVisible.value = true
+  }
+}
+
 onMounted(() => {
   window.addEventListener('scroll', onScroll)
 
@@ -137,7 +159,8 @@ function itemMargin (index: number): number {
 </script>
 
 <style scoped>
-.arrow {
-  transition: opacity 500ms ease-in 500ms, transform 1s ease-out 500ms;
+.visible-transition {
+  --delay: 500ms;
+  transition: opacity 500ms ease-in var(--delay), transform 1s ease-out var(--delay);
 }
 </style>

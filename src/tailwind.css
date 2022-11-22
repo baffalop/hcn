@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .font-stretch-normal {
-    font-stretch: normal;
-  }
-
-  .font-condensed {
-    font-stretch: condensed;
-  }
-
-  .font-expanded {
-    font-stretch: expanded;
-  }
-}
-
 @layer components {
   .filter-accent {
     @apply filter -hue-rotate-30 brightness-70;

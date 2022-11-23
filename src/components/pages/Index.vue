@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-full w-full pb-14">
     <header class="h-[calc(75vh-12rem)]">
-      <a href="" class="fixed z-20 top-6 right-6 lg:top-10 lg:right-[5%] h-14">
+      <a href="" class="fixed z-20 top-6 right-6 lg:top-10 lg:right-10 h-14">
         <img
           src="/logo/hcn.svg"
           alt="Holocaust Centre North logo"

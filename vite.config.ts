@@ -18,7 +18,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       injectRegister: 'inline',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,svg,otf,png,jpeg}'],
+        globPatterns: ['**/*.{js,css,html,ico,svg,woff,png,jpeg}'],
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {

@@ -1,9 +1,15 @@
 <template>
   <div class="min-h-full w-full pb-14">
-    <header class="h-[62vh]">
-      <h1 class="text-5xl font-light italic text-stone-900 sticky top-0 pt-20 mb-10">
-        Encountering Survival
-      </h1>
+    <div class="h-[62vh]">
+      <header class="sticky top-0 py-6 lg:py-10 grid grid-rows-[auto_auto] justify-items-center items-end gap-y-6">
+        <a href="" class="mx-6 lg:mx-10 justify-self-end self-start">
+          <img alt="Holocaust Centre North logo" src="/logo/hcn.svg" class="w-32">
+        </a>
+
+        <h1 class="text-5xl font-light italic text-stone-900">
+          Encountering Survival
+        </h1>
+      </header>
 
       <img
         src="/img/toms-knife.jpeg"
@@ -11,7 +17,7 @@
         class="fixed w-full mx-auto px-10 h-[65vh] object-contain object-top"
         :style="{ opacity: `${titleImageOpacity}%` }"
       >
-    </header>
+    </div>
 
     <img
       src="/img/blobs.png"
@@ -159,6 +165,10 @@ function itemMargin (index: number): number {
 </script>
 
 <style scoped>
+header {
+  grid-template-columns: ;
+}
+
 .visible-transition {
   --delay: 500ms;
   transition: opacity 500ms ease-in var(--delay), transform 1s ease-out var(--delay);

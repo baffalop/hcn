@@ -4,7 +4,7 @@
       <a
         href="https://hcn.org.uk"
         title="Holocaust Centre North home page"
-        class="fixed z-20 top-6 right-6 lg:top-10 lg:right-10 h-14 opacity-[var(--fade)] lg:opacity-100"
+        class="fixed z-20 top-6 right-6 lg:top-10 lg:right-10 h-14 opacity-[var(--fade)]"
         :style="{ '--fade': `${logoOpacity}%` }"
         :class="{ 'hidden': logoOpacity === 0 }"
       >

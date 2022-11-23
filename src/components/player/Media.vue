@@ -54,7 +54,7 @@ watch(() => props.playing, playing => {
 })
 
 watch(() => props.time, (time, oldTime) => {
-  if (media.value && playPositionInitialised.value && delta(time, oldTime) > 0.5) {
+  if (media.value && playPositionInitialised.value && delta(time, oldTime) > 1) {
     media.value.currentTime = time
   }
 })

@@ -47,6 +47,10 @@ function setMediaMetadataFrom ({ title, artist }: Track): void {
   navigator.mediaSession.metadata = new MediaMetadata({
     title,
     artist,
+    artwork: [
+      { src: '/app-icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { src: '/app-icon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
   })
 }
 

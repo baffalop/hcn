@@ -184,7 +184,7 @@ const playState = computed<PlayState>(() => {
     return PlayState.Paused
   }
 
-  if (atLeastOneMediaIs(MediaState.Waiting)) {
+  if (audioState.value === MediaState.Waiting || videoState.value === MediaState.Waiting) {
     return PlayState.Suspended
   }
 
@@ -264,10 +264,6 @@ function getTrack (offset: number): Track|null {
   }
 
   return tracks[trackIndex.value + offset] ?? null
-}
-
-function atLeastOneMediaIs (state: MediaState): boolean {
-  return audioState.value === state || videoState.value === state
 }
 
 const droppedVideo = ref<File|null>(null)

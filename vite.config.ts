@@ -12,6 +12,9 @@ export default defineConfig({
     checker({ vueTsc: true }),
     compression(),
     VitePWA({
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.ts',
       registerType: 'autoUpdate',
       injectRegister: 'inline',
       workbox: {

@@ -25,10 +25,3 @@ registerRoute(
     cacheName: 'decorative',
   })
 )
-
-registerRoute(
-  ({ request, sameOrigin }) => sameOrigin && ['audio', 'video'].includes(request.destination),
-  new CacheFirst({
-    cacheName: 'media',
-  })
-)

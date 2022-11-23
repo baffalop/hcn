@@ -1,18 +1,15 @@
 <template>
   <div class="min-h-full w-full pb-14">
-    <div class="h-[62vh]">
-      <header
-        class="sticky top-0 py-6 lg:py-8 min-h-[10rem]
-          grid grid-cols-1 lg:grid-cols-[1fr_max-content_1fr] justify-items-center items-end gap-y-6"
-      >
-        <a href="" class="mx-6 lg:mx-10 justify-self-end self-start lg:col-start-3 lg:row-start-1">
-          <img alt="Holocaust Centre North logo" src="/logo/hcn.svg" class="w-32">
-        </a>
+    <header class="h-[62vh]">
+      <a href="#" class="fixed top-6 right-6 lg:top-8 lg:right-8 h-14">
+        <img alt="Holocaust Centre North logo" src="/logo/hcn.svg" class="h-full">
+      </a>
 
-        <h1 class="text-5xl font-light italic text-stone-900 lg:col-start-2">
+      <div class="sticky top-20 py-6 mt-20 lg:py-8 lg:top-12 lg:mt-12">
+        <h1 class="text-5xl font-light italic text-stone-900">
           Encountering Survival
         </h1>
-      </header>
+      </div>
 
       <img
         src="/img/toms-knife.jpeg"
@@ -20,7 +17,7 @@
         class="fixed w-full mx-auto px-10 h-[65vh] object-contain object-top"
         :style="{ opacity: `${titleImageOpacity}%` }"
       >
-    </div>
+    </header>
 
     <img
       src="/img/blobs.png"

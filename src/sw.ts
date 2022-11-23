@@ -1,7 +1,7 @@
 import { clientsClaim } from 'workbox-core'
 import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching'
 import { registerRoute } from 'workbox-routing'
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies'
+import { NetworkOnly, StaleWhileRevalidate } from 'workbox-strategies'
 
 declare const self: ServiceWorkerGlobalScope
 
@@ -24,4 +24,9 @@ registerRoute(
   new StaleWhileRevalidate({
     cacheName: 'decorative',
   })
+)
+
+registerRoute(
+  ({ request }) => ['audio', 'video'].includes(request.destination),
+  new NetworkOnly(),
 )

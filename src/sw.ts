@@ -16,6 +16,13 @@ registerRoute(
 )
 
 registerRoute(
+  ({ request, sameOrigin }) => sameOrigin && ['image', 'font'].includes(request.destination),
+  new StaleWhileRevalidate({
+    cacheName: 'decorative',
+  })
+)
+
+registerRoute(
   ({ request, sameOrigin }) => sameOrigin && ['audio', 'video'].includes(request.destination),
   new CacheFirst({
     cacheName: 'media',

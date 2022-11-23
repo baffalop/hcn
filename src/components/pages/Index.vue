@@ -1,12 +1,15 @@
 <template>
   <div class="min-h-full w-full pb-14">
     <div class="h-[62vh]">
-      <header class="sticky top-0 py-6 lg:py-10 grid grid-rows-[auto_auto] justify-items-center items-end gap-y-6">
-        <a href="" class="mx-6 lg:mx-10 justify-self-end self-start">
+      <header
+        class="sticky top-0 py-6 lg:py-8 min-h-[10rem]
+          grid grid-cols-1 lg:grid-cols-[1fr_max-content_1fr] justify-items-center items-end gap-y-6"
+      >
+        <a href="" class="mx-6 lg:mx-10 justify-self-end self-start lg:col-start-3 lg:row-start-1">
           <img alt="Holocaust Centre North logo" src="/logo/hcn.svg" class="w-32">
         </a>
 
-        <h1 class="text-5xl font-light italic text-stone-900">
+        <h1 class="text-5xl font-light italic text-stone-900 lg:col-start-2">
           Encountering Survival
         </h1>
       </header>
@@ -165,10 +168,6 @@ function itemMargin (index: number): number {
 </script>
 
 <style scoped>
-header {
-  grid-template-columns: ;
-}
-
 .visible-transition {
   --delay: 500ms;
   transition: opacity 500ms ease-in var(--delay), transform 1s ease-out var(--delay);

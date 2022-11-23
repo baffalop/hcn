@@ -1,7 +1,8 @@
 import { clientsClaim } from 'workbox-core'
 import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching'
 import { registerRoute } from 'workbox-routing'
-import { NetworkOnly, StaleWhileRevalidate } from 'workbox-strategies'
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies'
+import { RangeRequestsPlugin } from 'workbox-range-requests'
 
 declare const self: ServiceWorkerGlobalScope
 
@@ -27,6 +28,11 @@ registerRoute(
 )
 
 registerRoute(
-  ({ request }) => ['audio', 'video'].includes(request.destination),
-  new NetworkOnly(),
+  ({ request, sameOrigin }) => sameOrigin && ['audio', 'video'].includes(request.destination),
+  new CacheFirst({
+    cacheName: 'media',
+    plugins: [
+      new RangeRequestsPlugin(),
+    ],
+  })
 )

@@ -30,7 +30,7 @@
       class="fixed top-32 object-cover w-full max-w-screen-xl h-[calc(100vh-8rem)] left-0 right-0 mx-auto object-[top_0_right_23%]"
       :style="{
         filter: `brightness(${blobsBrightness})`,
-        opacity: `${(blobsBrightness - 0.6) * 100 + 70}%`,
+        opacity: `${(blobsBrightness - 0.6) * 100 + 75}%`,
       }"
     >
 
@@ -113,7 +113,7 @@ const logoOpacity = computed(
   () => Math.max(0, LOGO_SCROLL_OFFSET - scrollY.value) * 100 / LOGO_SCROLL_SCALE
 )
 const blobsBrightness = computed(
-  () => Math.max(0, BRIGHTNESS_SCROLL_SCALE - scrollY.value) / (BRIGHTNESS_SCROLL_SCALE * 3) + 0.6
+  () => Math.max(0, BRIGHTNESS_SCROLL_SCALE - scrollY.value) / (BRIGHTNESS_SCROLL_SCALE * 3) + 0.55
 )
 
 const menu = ref<HTMLElement>()

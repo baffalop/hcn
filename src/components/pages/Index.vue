@@ -2,7 +2,7 @@
   <div class="min-h-full w-full">
     <header class="h-[calc(78vh-14rem)]">
       <a
-        href=""
+        href="https://hcn.org.uk"
         title="Holocaust Centre North home page"
         class="fixed z-20 top-6 right-6 lg:top-10 lg:right-10 h-14 opacity-[var(--fade)] lg:opacity-100"
         :style="{ '--fade': `${logoOpacity}%` }"

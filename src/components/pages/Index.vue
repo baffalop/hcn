@@ -1,13 +1,14 @@
 <template>
   <div class="min-h-full w-full">
     <header class="h-[calc(78vh-14rem)]">
-      <a href="" class="fixed z-20 top-6 right-6 lg:top-10 lg:right-10 h-14">
-        <img
-          src="/logo/hcn.svg"
-          alt="Holocaust Centre North logo"
-          class="h-full opacity-[var(--fade)] lg:opacity-100"
-          :style="{ '--fade': `${logoOpacity}%` }"
-        >
+      <a
+        href=""
+        title="Holocaust Centre North home page"
+        class="fixed z-20 top-6 right-6 lg:top-10 lg:right-10 h-14 opacity-[var(--fade)] lg:opacity-100"
+        :style="{ '--fade': `${logoOpacity}%` }"
+        :class="{ 'hidden': logoOpacity === 0 }"
+      >
+        <img src="/logo/hcn.svg" alt="Holocaust Centre North logo" class="h-full">
       </a>
 
       <div class="sticky top-20 py-6 mt-20 lg:py-8 lg:top-12 lg:mt-12">

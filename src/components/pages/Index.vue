@@ -5,8 +5,8 @@
         <img
           src="/logo/hcn.svg"
           alt="Holocaust Centre North logo"
-          class="h-full"
-          :style="{ opacity: `${logoOpacity}%` }"
+          class="h-full opacity-[var(--fade)] lg:opacity-100"
+          :style="{ '--fade': `${logoOpacity}%` }"
         >
       </a>
 

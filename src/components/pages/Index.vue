@@ -116,7 +116,7 @@ setTheme('#a55b50') // primary-brick
 const OPACITY_SCROLL_SCALE = 280
 const BRIGHTNESS_SCROLL_SCALE = 320
 const LOGO_SCROLL_SCALE = 90
-const LOGO_SCROLL_OFFSET = 250
+const LOGO_SCROLL_OFFSET = 190
 
 const scrollY = ref(0)
 const titleImageOpacity = computed(

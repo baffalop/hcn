@@ -1,10 +1,12 @@
-import { precacheAndRoute, PrecacheEntry } from 'workbox-precaching'
+import { cleanupOutdatedCaches, precacheAndRoute, PrecacheEntry } from 'workbox-precaching'
 import { registerRoute } from 'workbox-routing'
 import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies'
 
 declare const self: ServiceWorkerGlobalScope
   & typeof globalThis
   & { __WB_MANIFEST: PrecacheEntry[] }
+
+cleanupOutdatedCaches()
 
 precacheAndRoute(self.__WB_MANIFEST)
 

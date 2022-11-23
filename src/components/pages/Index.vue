@@ -38,25 +38,49 @@
       <p>Dear Listener,</p>
 
       <p>
-        Collecting, preserving, caring for and sharing the stories from the community of Holocaust Centre North, is a primary objective of what Holocaust Centre North does.
-        Yet, every day we are aware of so much that cannot be cared for or be preserved for posterity, either because it was lost, destroyed, stolen or left behind.
-        Or because of it being immaterial, and as such defies archival practices.
+        Collecting, preserving, caring for and sharing the stories from
+        the northern community of Holocaust survivors and their
+        families is Holocaust Centre North’s primary objective. Yet,
+        every day we are aware of so much that cannot be preserved for
+        posterity, either because it was lost, destroyed, stolen, left
+        behind; or because of it being immaterial, and as such, defies
+        archival practices.
       </p>
 
       <p>
-        Our <em>Encountering Survival</em> audio guides were always imagined as an attempt to give space to what is loudest in its material absence: the memory of a grandparents’ smell; the long journey of a single, remaining family heirloom; those phrases which encapsulate a lifetime of mourning.
-        Artists Linda O Keeffe and Louise K Wilson have worked alongside each other for this commission, focusing on ‘voices’ and ‘objects’ and respectively. Across 10 tracks, their work mediates object histories and explores the textures of loss, trauma and childhood memories.
-        But most important, they have also created an intimate record which bears witness to the act of remembering itself.
+        Our <em>Encountering Survival</em> audio guide gives space to
+        what is loudest in its material absence: the scent of a grandparent’s
+        home, tobacco, sweets and an old jacket; the long
+        journey of a single, remaining family heirloom; those phrases
+        which encapsulate a lifetime of mourning.
+        Artists Linda O Keeffe and Louise K Wilson have worked
+        alongside each other for this commission, focusing on ‘voices’
+        and ‘objects’ respectively. Across 10 tracks, their work mediates
+        the histories of treasured objects, and the textures of loss,
+        trauma and childhood memories. They have created an
+        intimate record that bears witness to the act of remembering.
       </p>
 
       <p>
-        <em>Encountering Survival</em> is the audio guide created for an archive which honours a community of Holocaust survivors that built new lives in the North of England.
-        It gives insight into the decades of their remembering and celebrates the full and meaningful lives they survived to live.
+        <em>Encountering Survival</em> honours a community of Holocaust
+        survivors and refugees who built new lives in the North of
+        England. It offers insight into their memories of lives lived, and
+        testimony on experiences and objects forever lost. This audio
+        guide is a tribute to the organisation, Holocaust Survivors’
+        Friendship Association, the survivors helped build with a
+        community of care at its heart.
       </p>
 
       <p>
-        Take a moment. And when you are ready, let us take you along.
-        We invite you to listen with us, as they remember: The whys, the hows and the nevertheless of their survival.
+        So, take a moment, and when you are ready, let us take you
+        along. We invite you to listen with us as they remember.
+        The whys, the how, and the nevertheless of their survival.
+      </p>
+
+      <p>
+        The tracks have been curated to allow themes or notes to carry through
+        between both artists’ work. But please do not feel limited to
+        this and move freely through the audio experience.
       </p>
     </div>
 

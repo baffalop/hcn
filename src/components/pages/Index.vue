@@ -2,7 +2,12 @@
   <div class="min-h-full w-full pb-14">
     <header class="h-[calc(75vh-12rem)]">
       <a href="" class="fixed z-20 top-6 right-6 lg:top-10 lg:right-[5%] h-14">
-        <img alt="Holocaust Centre North logo" src="/logo/hcn.svg" class="h-full">
+        <img
+          src="/logo/hcn.svg"
+          alt="Holocaust Centre North logo"
+          class="h-full"
+          :style="{ opacity: `${logoOpacity}%` }"
+        >
       </a>
 
       <div class="sticky top-20 py-6 mt-20 lg:py-8 lg:top-12 lg:mt-12">
@@ -110,10 +115,15 @@ setTheme('#a55b50') // primary-brick
 
 const OPACITY_SCROLL_SCALE = 280
 const BRIGHTNESS_SCROLL_SCALE = 320
+const LOGO_SCROLL_SCALE = 90
+const LOGO_SCROLL_OFFSET = 250
 
 const scrollY = ref(0)
 const titleImageOpacity = computed(
   () => Math.max(0, OPACITY_SCROLL_SCALE - scrollY.value) * 100 / OPACITY_SCROLL_SCALE
+)
+const logoOpacity = computed(
+  () => Math.max(0, LOGO_SCROLL_OFFSET - scrollY.value) * 100 / LOGO_SCROLL_SCALE
 )
 const blobsBrightness = computed(
   () => Math.max(0, BRIGHTNESS_SCROLL_SCALE - scrollY.value) / (BRIGHTNESS_SCROLL_SCALE * 3) + 0.6

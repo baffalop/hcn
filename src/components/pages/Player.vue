@@ -295,8 +295,6 @@ function onVideoFileDrop (file: File): void {
 </script>
 
 <style scoped>
-@tailwind components;
-
 .player {
   grid-template-rows: 1fr max-content max-content minmax(max-content, 1fr);
 }

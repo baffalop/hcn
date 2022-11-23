@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import checker from 'vite-plugin-checker'
 import { VitePWA } from 'vite-plugin-pwa'
+import compression from 'vite-plugin-compression'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,6 +10,7 @@ export default defineConfig({
   plugins: [
     vue(),
     checker({ vueTsc: true }),
+    compression(),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'inline',

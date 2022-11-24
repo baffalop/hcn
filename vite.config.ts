@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import checker from 'vite-plugin-checker'
+import legacy from '@vitejs/plugin-legacy'
 import { VitePWA } from 'vite-plugin-pwa'
 import compression from 'vite-plugin-compression'
 
@@ -11,6 +12,7 @@ export default defineConfig({
     vue(),
     checker({ vueTsc: true }),
     compression(),
+    legacy(),
     VitePWA({
       strategies: 'injectManifest',
       srcDir: 'src',

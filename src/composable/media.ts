@@ -43,13 +43,14 @@ export function useMediaSession (track: Ref<Track>, playing: Ref<boolean>, time:
   }
 }
 
-function setMediaMetadataFrom ({ title, artist }: Track): void {
+function setMediaMetadataFrom ({ title, artist, slug }: Track): void {
   navigator.mediaSession.metadata = new MediaMetadata({
     title,
     artist,
     artwork: [
-      { src: '/app-icon-192x192.png', sizes: '192x192', type: 'image/png' },
-      { src: '/app-icon-512x512.png', sizes: '512x512', type: 'image/png' },
+      { src: `/img/album-art/${slug}-192x192.png`, sizes: '192x192', type: 'image/png' },
+      { src: `/img/album-art/${slug}-512x512.png`, sizes: '512x512', type: 'image/png' },
+      { src: `/img/album-art/${slug}-1024x1024.png`, sizes: '1024x1024', type: 'image/png' },
     ],
   })
 }

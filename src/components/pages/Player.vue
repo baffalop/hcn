@@ -86,6 +86,7 @@
 
       <div class="relative">
         <DroppableTranscript
+          v-if="!hasEnded"
           :enabled="showTranscript"
           :transcript="track.transcript ?? []"
           :time="time"

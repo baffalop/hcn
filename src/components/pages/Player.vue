@@ -1,139 +1,136 @@
 <template>
-  <FileDrop class="h-full" @drop="onVideoFileDrop">
-    <div class="player grid h-full grid-cols-1 gap-14 w-5/6 max-w-screen-md mx-auto content-center justify-items-center items-center">
-      <div class="flex items-center justify-between w-full self-end">
-        <RouterLink :to="{ name: 'menu' }" title="Back" class="w-10 text-gray-100 hover:text-gray-100">
-          <Icon viewbox="0 20 300 300" src="/icon/arrow-back-bend.svg" />
-        </RouterLink>
+  <div class="player grid h-full grid-cols-1 gap-14 w-5/6 max-w-screen-md mx-auto content-center justify-items-center items-center">
+    <div class="flex items-center justify-between w-full self-end">
+      <RouterLink :to="{ name: 'menu' }" title="Back" class="w-10 text-gray-100 hover:text-gray-100">
+        <Icon viewbox="0 20 300 300" src="/icon/arrow-back-bend.svg" />
+      </RouterLink>
 
-        <button :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`" class="w-10" @click="showTranscript = !showTranscript">
-          <Icon v-show="showTranscript" src="/icon/transcript-bubble-off.svg" />
-          <Icon v-show="!showTranscript" src="/icon/transcript-bubble.svg" />
-        </button>
-      </div>
+      <button :title="`Transcriptions ${showTranscript ? 'off' : 'on'}`" class="w-10" @click="showTranscript = !showTranscript">
+        <Icon v-show="showTranscript" src="/icon/transcript-bubble-off.svg" />
+        <Icon v-show="!showTranscript" src="/icon/transcript-bubble.svg" />
+      </button>
+    </div>
 
-      <div class="space-y-3">
-        <h2 class="text-4xl">{{ track.title }}</h2>
-        <ClippingText
-          :text="track.artist"
-          class="text-3xl text-accent filter-accent
+    <div class="space-y-3">
+      <h2 class="text-4xl">{{ track.title }}</h2>
+      <ClippingText
+        :text="track.artist"
+        class="text-3xl text-accent filter-accent
             supports-[backdrop-filter]:supports-[clip-path]:filter-none
             supports-[backdrop-filter]:supports-[clip-path]:backdrop-filter-accent"
-        />
-      </div>
+      />
+    </div>
 
-      <div class="h-32 w-full">
-        <Transition mode="out-in" name="staggered" :duration="{ leave: 900, enter: 1300 }">
-          <div v-if="!hasEnded" key="controls" class="h-32 w-full space-y-14">
-            <div class="controls flex items-center justify-center gap-10">
-              <button class="control" title="Back 10 seconds" @click="skip(-10)">
-                <Icon src="/icon/rew-plain.svg" />
-              </button>
-
-              <button
-                class="control !w-14 !h-14 transition-opacity duration-500"
-                :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
-                :title="playing ? 'Pause' : 'Play'"
-                @click="onClickPlayPause"
-              >
-                <Icon v-show="!playing" src="/icon/play-plain.svg" />
-                <Icon v-show="playing" src="/icon/pause-plain.svg" />
-              </button>
-
-              <button class="control" title="Forward 10 seconds" @click="skip(10)">
-                <Icon src="/icon/ffw-plain.svg" />
-              </button>
-            </div>
-
-            <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
-          </div>
-
-          <div v-else class="grid grid-cols-2 gap-10 place-items-center h-24">
-            <button
-              title="Replay"
-              class="control !w-12 !h-12"
-              :class="{ 'justify-self-end': !!nextTrack, 'col-span-full justify-self-center': !nextTrack }"
-              @click="replay"
-            >
+    <div class="h-32 w-full">
+      <Transition mode="out-in" name="staggered" :duration="{ leave: 900, enter: 1300 }">
+        <div v-if="!hasEnded" key="controls" class="h-32 w-full space-y-14">
+          <div class="controls flex items-center justify-center gap-10">
+            <button class="control" title="Back 10 seconds" @click="skip(-10)">
               <Icon src="/icon/rew-plain.svg" />
             </button>
 
-            <RouterLink
-              v-if="nextTrack"
-              :to="{ name: 'player', params: { slug: nextTrack.slug } }"
-              class="w-12 h-12 justify-self-start text-gray-100 hover:text-gray-100"
+            <button
+              class="control !w-14 !h-14 transition-opacity duration-500"
+              :class="playState === PlayState.Suspended ? 'opacity-50' : 'opacity-100'"
+              :title="playing ? 'Pause' : 'Play'"
+              @click="onClickPlayPause"
             >
-              <button title="Next Track" class="w-full h-full">
-                <Icon src="/icon/chevron-back.svg" class="transform -scale-100" />
-              </button>
-            </RouterLink>
+              <Icon v-show="!playing" src="/icon/play-plain.svg" />
+              <Icon v-show="playing" src="/icon/pause-plain.svg" />
+            </button>
 
-            <div class="col-span-full max-w-lg">
-              <p>
-                With grateful thanks to:
-              </p>
-
-              <p v-html="track.credits"></p>
-            </div>
-
-            <div class="col-span-full space-x-6">
-              <img src="/logo/heritage-fund.svg" alt="Heritage Fund logo" class="inline h-10">
-              <img src="/logo/iwm.svg" alt="Heritage Fund logo" class="inline h-10">
-            </div>
+            <button class="control" title="Forward 10 seconds" @click="skip(10)">
+              <Icon src="/icon/ffw-plain.svg" />
+            </button>
           </div>
-        </Transition>
-      </div>
 
-      <div class="relative">
-        <DroppableTranscript
-          v-if="!hasEnded"
-          :enabled="showTranscript"
-          :transcript="track.transcript ?? []"
-          :time="time"
-          class="-mt-6"
-          @message="toast?.show($event, 'short')"
-          @cancel-message="toast?.dismiss()"
-        />
+          <Timeline v-model:time="time" :duration="duration" :playing="playing" class="w-full" />
+        </div>
 
-        <Toast ref="toast" />
-      </div>
+        <div v-else class="grid grid-cols-2 gap-10 place-items-center h-24">
+          <button
+            title="Replay"
+            class="control !w-12 !h-12"
+            :class="{ 'justify-self-end': !!nextTrack, 'col-span-full justify-self-center': !nextTrack }"
+            @click="replay"
+          >
+            <Icon src="/icon/rew-plain.svg" />
+          </button>
 
-      <div class="background fixed inset-0 -z-20 bg-accent"></div>
+          <RouterLink
+            v-if="nextTrack"
+            :to="{ name: 'player', params: { slug: nextTrack.slug } }"
+            class="w-12 h-12 justify-self-start text-gray-100 hover:text-gray-100"
+          >
+            <button title="Next Track" class="w-full h-full">
+              <Icon src="/icon/chevron-back.svg" class="transform -scale-100" />
+            </button>
+          </RouterLink>
 
-      <Media
-        ref="audio"
-        type="audio"
-        :src="`/audio/${props.track.slug}.mp3`"
-        preload="auto"
-        v-model:time="time"
-        :playing="playState === PlayState.Playing"
-        @update:playing="onMediaPlaying"
-        @update:duration="duration = $event"
-        @update:state="audioState = $event"
-      />
+          <div class="col-span-full max-w-lg">
+            <p>
+              With grateful thanks to:
+            </p>
 
-      <Media
-        ref="video"
-        type="video"
-        :src="droppedVideoUrl ?? `/video/${props.track.slug}.mp4`"
-        v-model:time="videoTime"
-        :playing="playState === PlayState.Playing"
-        muted
-        preload="auto"
-        playsinline
-        class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
-        :class="playState === PlayState.Playing ? 'opacity-100' : 'opacity-0'"
-        @update:state="videoState = $event"
-      />
+            <p v-html="track.credits"></p>
+          </div>
+
+          <div class="col-span-full space-x-6">
+            <img src="/logo/heritage-fund.svg" alt="Heritage Fund logo" class="inline h-10">
+            <img src="/logo/iwm.svg" alt="Heritage Fund logo" class="inline h-10">
+          </div>
+        </div>
+      </Transition>
     </div>
-  </FileDrop>
+
+    <div class="relative">
+      <Transcript
+        v-if="!hasEnded"
+        :enabled="showTranscript"
+        :transcript="track.transcript ?? []"
+        :time="time"
+        class="-mt-6"
+        @message="toast?.show($event, 'short')"
+        @cancel-message="toast?.dismiss()"
+      />
+
+      <Toast ref="toast" />
+    </div>
+
+    <div class="background fixed inset-0 -z-20 bg-accent"></div>
+
+    <Media
+      ref="audio"
+      type="audio"
+      :src="`/audio/${props.track.slug}.mp3`"
+      preload="auto"
+      v-model:time="time"
+      :playing="playState === PlayState.Playing"
+      @update:playing="onMediaPlaying"
+      @update:duration="duration = $event"
+      @update:state="audioState = $event"
+    />
+
+    <Media
+      ref="video"
+      type="video"
+      :src="`/video/${props.track.slug}.mp4`"
+      v-model:time="videoTime"
+      :playing="playState === PlayState.Playing"
+      muted
+      preload="auto"
+      playsinline
+      class="fixed inset-0 -z-10 w-screen h-screen object-cover transition-opacity duration-500"
+      :class="playState === PlayState.Playing ? 'opacity-100' : 'opacity-0'"
+      @update:state="videoState = $event"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 
 import { Track, tracks } from '@/data/tracks'
-import { Transcription } from '@components/player/Transcript.vue'
 import { clamp, delta } from '@/utils/math'
 import { formatSecs } from '@/utils/time'
 import { useMediaSession } from '@/composable/media'
@@ -143,8 +140,7 @@ import { setTheme } from '@/composable/theme'
 import Media, { MediaState } from '@components/player/Media.vue'
 import Timeline from '@components/player/Timeline.vue'
 import Icon from '@components/Icon.vue'
-import DroppableTranscript from '@components/player/DroppableTranscript.vue'
-import FileDrop from '@components/FileDrop.vue'
+import Transcript, { Transcription } from '@components/player/Transcript.vue'
 import Toast from '@components/Toast.vue'
 import ClippingText from '@components/ClippingText.vue'
 
@@ -265,28 +261,6 @@ function getTrack (offset: number): Track|null {
   }
 
   return tracks[trackIndex.value + offset] ?? null
-}
-
-const droppedVideo = ref<File|null>(null)
-const droppedVideoUrl = computed<string|null>(() => {
-  if (droppedVideo.value === null) {
-    return null
-  }
-
-  return URL.createObjectURL(droppedVideo.value)
-})
-
-function onVideoFileDrop (file: File): void {
-  if (file.type !== 'video/mp4') {
-    console.log('wrong type', file.type)
-    return
-  }
-
-  droppedVideo.value = file
-
-  if (playing.value) {
-    video.value?.play()
-  }
 }
 
 </script>

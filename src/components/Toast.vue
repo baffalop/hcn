@@ -10,7 +10,7 @@
   >
       <div
         v-if="currentMessage"
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -mt-2
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -mt-2 min-w-max
           rounded-full py-0.5 px-3 backdrop-filter backdrop-brightness-70 -backdrop-hue-rotate-30"
       >
         {{ currentMessage }}

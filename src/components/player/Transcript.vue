@@ -1,36 +1,44 @@
 <template>
-  <TransitionGroup
-    tag="div"
-    class="h-24 w-screen px-4 flex flex-col justify-center relative"
-    name="line"
-    move-class="transition-all !duration-500 ease-in-out"
-    enter-from-class="!opacity-0 translate-y-10"
-    enter-to-class="opacity-100"
-    enter-active-class="!duration-700 transition-all ease-in-out transform"
-    leave-from-class="opacity-100"
-    leave-to-class="!opacity-0 -translate-y-10"
-    leave-active-class="!duration-500 ease-in-out absolute w-screen transform"
+  <FadeTransition
+    in="duration-700"
+    out="duration-500"
   >
-    <p
-      :key="enabled ? previousLine?.start.toFixed(0) ?? 'noprev' : 'noprev'"
-      class="text-gray-100/60 transition-opacity duration-700"
-      :class="enabled && hasPreviousLine ? 'opacity-100' : 'opacity-0'"
+    <TransitionGroup
+      v-if="enabled"
+      tag="div"
+      class="h-24 w-screen px-4 flex flex-col justify-center relative"
+      name="line"
+      move-class="transition-all !duration-500 ease-in-out"
+      enter-from-class="!opacity-0 translate-y-10"
+      enter-to-class="opacity-100"
+      enter-active-class="!duration-700 transition-all ease-in-out transform"
+      leave-from-class="opacity-100"
+      leave-to-class="!opacity-0 -translate-y-10"
+      leave-active-class="!duration-500 ease-in-out absolute w-screen transform"
     >
-      {{ enabled ? previousLine?.text : '' }}
-    </p>
+      <p
+        :key="enabled ? previousLine?.start.toFixed(0) ?? 'noprev' : 'noprev'"
+        class="text-gray-100/60 transition-opacity duration-700"
+        :class="enabled && hasPreviousLine ? 'opacity-100' : 'opacity-0'"
+      >
+        {{ enabled ? previousLine?.text : '' }}
+      </p>
 
-    <p
-      :key="enabled ? currentLine?.start.toFixed(0) ?? 'none' : 'none'"
-      class="text-grey-100 transition-opacity duration-700"
-      :class="enabled && hasCurrentLine ? 'opacity-100' : 'opacity-0'"
-    >
-      {{ enabled ? currentLine?.text : '' }}
-    </p>
-  </TransitionGroup>
+      <p
+        :key="enabled ? currentLine?.start.toFixed(0) ?? 'none' : 'none'"
+        class="text-grey-100 transition-opacity duration-700"
+        :class="enabled && hasCurrentLine ? 'opacity-100' : 'opacity-0'"
+      >
+        {{ enabled ? currentLine?.text : '' }}
+      </p>
+    </TransitionGroup>
+  </FadeTransition>
 </template>
 
 <script setup lang="ts">
 import { computed, watch } from 'vue'
+
+import FadeTransition from '@components/FadeTransition.vue'
 
 export type Transcription = TranscriptionLine[]
 export interface TranscriptionLine {

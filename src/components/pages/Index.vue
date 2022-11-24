@@ -66,9 +66,9 @@
         survivors and refugees who built new lives in the North of
         England. It offers insight into their memories of lives lived, and
         testimony on experiences and objects forever lost. This audio
-        guide is a tribute to the organisation, Holocaust Survivors’
-        Friendship Association, the survivors helped build with a
-        community of care at its heart.
+        guide is a tribute to the Holocaust Survivors’ Friendship Association,
+        the organisation the survivors helped build with a community of care
+        at its heart.
       </p>
 
       <p>

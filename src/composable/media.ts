@@ -50,7 +50,6 @@ function setMediaMetadataFrom ({ title, artist, slug }: Track): void {
     artwork: [
       { src: `/img/album-art/${slug}-192x192.png`, sizes: '192x192', type: 'image/png' },
       { src: `/img/album-art/${slug}-512x512.png`, sizes: '512x512', type: 'image/png' },
-      { src: `/img/album-art/${slug}-1024x1024.png`, sizes: '1024x1024', type: 'image/png' },
     ],
   })
 }

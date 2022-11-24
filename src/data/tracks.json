@@ -163,14 +163,14 @@
         "end": 114.49000000000001
       },
       {
-        "text": "But of course I couldn’t possibly take it.",
-        "start": 114,
-        "end": 119.75999999999999
-      },
-      {
         "text": "I knew where all the principal countries were.",
         "start": 114.47999999999999,
         "end": 117.96000000000001
+      },
+      {
+        "text": "But of course I couldn’t possibly take it.",
+        "start": 117.96000000000001,
+        "end": 119.75999999999999
       },
       {
         "text": "I got an atlas eventually, but not a globe.",
@@ -208,8 +208,13 @@
         "end": 157.38
       },
       {
-        "text": "I brought back any that she kind of (inaudible)",
+        "text": "I brought back any that she’d kind of written copiously in.",
         "start": 158.44,
+        "end": 162.1
+      },
+      {
+        "text": "Because I find the most moving thing is handwriting.",
+        "start": 162.1,
         "end": 166.09
       },
       {
@@ -378,12 +383,12 @@
         "end": 293.5
       },
       {
-        "text": "That was the middle of three as was by 1936.",
+        "text": "And I was the middle of three as was by 1936.",
         "start": 294.31,
         "end": 300.07
       },
       {
-        "text": "We’ve all got very English British sounding names.",
+        "text": "We’ve all got very English, British sounding names.",
         "start": 304.87,
         "end": 310.03
       },
@@ -533,7 +538,7 @@
         "end": 416.39
       },
       {
-        "text": "And this is a - I think like a cowboy bolt? A holster.",
+        "text": "And this is a - I think like a cowboy belt? A holster.",
         "start": 416.42,
         "end": 420.77
       },
@@ -628,14 +633,14 @@
         "end": 486.41
       },
       {
-        "text": "- like a baby, and clearly a baby was born",
-        "start": 486,
-        "end": 490.29
+        "text": "and Italy and Czech Republic and -",
+        "start": 486.411,
+        "end": 488.262
       },
       {
-        "text": "and Italy and Czech Republic and -",
-        "start": 486.39,
-        "end": 488.262
+        "text": "- like a baby, and clearly a baby was born",
+        "start": 488.263,
+        "end": 490.29
       },
       {
         "text": "and they took lots of photographs of them.",
@@ -668,7 +673,7 @@
         "end": 511.85
       },
       {
-        "text": "by aunt’s villa my... one of my mother sisters.",
+        "text": "by aunt’s villa my... one of my mother’s sisters.",
         "start": 512.54,
         "end": 517.13
       },
@@ -708,7 +713,7 @@
         "end": 542.9
       },
       {
-        "text": "And so when other people, so we ended up at his mother’s",
+        "text": "And so were other people, so we ended up at his mother’s",
         "start": 543.23,
         "end": 546.65
       },
@@ -723,7 +728,7 @@
         "end": 552.45
       },
       {
-        "text": "in this little country village and we bring sneakers. We just changed our hats.",
+        "text": "in this little country village and we’re playing silly beggars. We just chased our hats.",
         "start": 552.48,
         "end": 559.14
       },
@@ -775,11 +780,11 @@
       {
         "text": "yes that’s to do with father...",
         "start": 591.27,
-        "end": 593.52
+        "end": 594.52
       },
       {
         "text": "As there were three of us and we all lived in different places.",
-        "start": 593,
+        "start": 599,
         "end": 602.93
       },
       {
@@ -908,12 +913,12 @@
         "end": 698.97
       },
       {
-        "text": "they were the family that looked up to me,",
+        "text": "they were the family that looked after me,",
         "start": 699.78,
         "end": 701.94
       },
       {
-        "text": "and when I’m coming?",
+        "text": "and when am I coming?",
         "start": 702.18,
         "end": 703.26
       },
@@ -1028,29 +1033,14 @@
         "end": 799.33
       },
       {
-        "text": "I think this one of the items that were left",
-        "start": 799.33,
-        "end": 804.97
-      },
-      {
-        "text": "in the apartment in Mannheim,",
-        "start": 804.97,
-        "end": 806.74
-      },
-      {
-        "text": "when the family were deported.",
-        "start": 806.77,
-        "end": 807.91
-      },
-      {
         "text": "Her signet ring and a locket with her maiden initials on,",
-        "start": 807.91,
-        "end": 810.97
+        "start": 799.33,
+        "end": 803.2
       },
       {
         "text": "are nowhere to be found.",
-        "start": 811.3,
-        "end": 812.5
+        "start": 803.2,
+        "end": 804.5
       }
     ]
   },

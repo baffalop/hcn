@@ -93,7 +93,7 @@ function findMostRecentLine (lines: TranscriptionLine[], time: number, to?: numb
     prev = [index, line]
   }
 
-  return [null, null]
+  return prev
 }
 
 function isExtant (line: TranscriptionLine|null, time: number): boolean {

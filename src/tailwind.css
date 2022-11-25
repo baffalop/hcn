@@ -12,6 +12,6 @@
   }
 
   .filter-accent-pale {
-    @apply filter saturate-[.4] brightness-[1.7];
+    @apply filter saturate-[.4] brightness-200;
   }
 }

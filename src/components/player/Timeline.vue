@@ -1,10 +1,10 @@
 <template>
   <div class="grid grid-cols-2">
-    <span class="timestamp justify-self-start text-accent filter-accent-pale">
+    <span class="timestamp justify-self-start">
       {{ timeFormatted }}
     </span>
 
-    <span class="timestamp justify-self-end text-accent filter-accent-pale">
+    <span class="timestamp justify-self-end">
       {{ durationFormatted }}
     </span>
 
@@ -40,6 +40,6 @@ const durationFormatted = computed(() => formatSecs(props.duration))
 
 <style scoped>
 .timestamp {
-  @apply text-base text-white/75 tabular-nums whitespace-nowrap;
+  @apply text-base text-accent filter-accent-pale tabular-nums whitespace-nowrap;
 }
 </style>

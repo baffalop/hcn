@@ -1123,7 +1123,7 @@
         "end": 74.58
       },
       {
-        "text": "What do you remember most?",
+        "text": "So what do you remember most?",
         "start": 83.64,
         "end": 85.38
       },
@@ -1146,11 +1146,6 @@
         "text": "If they were talking about- everybody had to whisper.",
         "start": 94.52000000000001,
         "end": 97.07
-      },
-      {
-        "text": "Sshh.",
-        "start": 107.12,
-        "end": 107.42
       },
       {
         "text": "My mother pushed me under the bed.",
@@ -1193,7 +1188,7 @@
         "end": 133.37
       },
       {
-        "text": "I thought: ‘What’s happening, dad?'",
+        "text": "I thought: ‘What’s happening? What's that?'",
         "start": 133.37,
         "end": 136.64
       },
@@ -1203,7 +1198,7 @@
         "end": 141.95
       },
       {
-        "text": "the wooden stairs, the nice apartments?",
+        "text": "the wooden stairs, the nice apartments.",
         "start": 141,
         "end": 145.14
       },
@@ -1238,7 +1233,7 @@
         "end": 166.47
       },
       {
-        "text": "And we heard the door being broken with an ax.",
+        "text": "And we heard the door being broken with an axe.",
         "start": 168.84,
         "end": 172.65
       },
@@ -1358,7 +1353,7 @@
         "end": 297.36
       },
       {
-        "text": "and he had his little - I had only little I call it a yarmulke.",
+        "text": "and he had his little hat on, his little - I call it a yarmulke.",
         "start": 297,
         "end": 304.65
       },
@@ -1373,7 +1368,7 @@
         "end": 311.01
       },
       {
-        "text": "but it’s a ££",
+        "text": "but it’s a yarmulke.",
         "start": 311.4,
         "end": 312.12
       },
@@ -1430,11 +1425,11 @@
       {
         "text": "I can still smell him. He smelled of age and food.",
         "start": 354.12,
-        "end": 360.63
+        "end": 361.63
       },
       {
         "text": "What does it feel like, to be the one still alive?",
-        "start": 360,
+        "start": 378,
         "end": 382.5
       },
       {
@@ -1530,7 +1525,7 @@
       {
         "text": "So all you see is layer of survivor guilt and no happiness.",
         "start": 441.54,
-        "end": 485.19
+        "end": 446.19
       }
     ]
   },
@@ -2775,7 +2770,894 @@
     "artist": "Louise K Wilson",
     "duration": 729.678367,
     "bgColor": "rgb(212, 167, 123)",
-    "credits": "Shoshanah Hoffmann, Jeanne Jebson, and Hari Jonkers"
+    "credits": "Shoshanah Hoffmann, Jeanne Jebson, and Hari Jonkers",
+    "transcript": [
+      {
+        "text": "[Shoshanah speaking in German]",
+        "start": 24.45,
+        "end": 25.83
+      },
+      {
+        "text": "Dearest, this is the third time I’m writing directly to you",
+        "start": 25.83,
+        "end": 37.32
+      },
+      {
+        "text": "without ever having received any acknowledgement.",
+        "start": 37.41,
+        "end": 40.77
+      },
+      {
+        "text": "I can only repeat what I write in all these cards,",
+        "start": 41.49,
+        "end": 44.79
+      },
+      {
+        "text": "that I’m thinking of you with constant longing",
+        "start": 45.21,
+        "end": 48.54
+      },
+      {
+        "text": "and unchanged affection.",
+        "start": 48.63,
+        "end": 50.79
+      },
+      {
+        "text": "And that my heart has a great wish and hope",
+        "start": 51.33,
+        "end": 53.88
+      },
+      {
+        "text": "To be reunited with you one day.",
+        "start": 54.15,
+        "end": 56.37
+      },
+      {
+        "text": "...postcards that I was researching through",
+        "start": 56.55,
+        "end": 59.13
+      },
+      {
+        "text": "the Holocaust Centre in Huddersfield.",
+        "start": 59.13,
+        "end": 61.65
+      },
+      {
+        "text": "They mostly are written by Hugo Friedman,",
+        "start": 62.1,
+        "end": 67.08
+      },
+      {
+        "text": "who was a businessman in Vienna.",
+        "start": 67.59,
+        "end": 70.86
+      },
+      {
+        "text": "And some of them were written by his wife, Hildegard.",
+        "start": 71.7,
+        "end": 77.37
+      },
+      {
+        "text": "And they are to what we think was a-",
+        "start": 77.76,
+        "end": 82.17
+      },
+      {
+        "text": "She was actually a qualified nurse, Irma Doll.",
+        "start": 82.28999999999999,
+        "end": 84.84
+      },
+      {
+        "text": "And she lived in Vienna also, but we think she did some",
+        "start": 85.5,
+        "end": 89.03999999999999
+      },
+      {
+        "text": "possibly nannying work for Hugo and Hildegard.",
+        "start": 89.31,
+        "end": 93.09
+      },
+      {
+        "text": "Because they had two children.",
+        "start": 93.6,
+        "end": 95.19
+      },
+      {
+        "text": "They eventually got deported.",
+        "start": 95.52000000000001,
+        "end": 98.49000000000001
+      },
+      {
+        "text": "They all died in the Holocaust.",
+        "start": 99.33,
+        "end": 101.58
+      },
+      {
+        "text": "So, the postcards were sent to Irma Doll from Terezin.",
+        "start": 101.91,
+        "end": 107.61
+      },
+      {
+        "text": "[Shoshanah speaking in German.]",
+        "start": 127.08,
+        "end": 129.33
+      },
+      {
+        "text": "Ich umarme und küsse dich wie eh und je. Dein, Hugo.",
+        "start": 130.199,
+        "end": 138.48
+      },
+      {
+        "text": "The style of writing people have said is quite affectionate",
+        "start": 140.82,
+        "end": 145.38
+      },
+      {
+        "text": "And quite optimistic as well, which is interesting.",
+        "start": 145.62,
+        "end": 150.87
+      },
+      {
+        "text": "It doesn’t seem to contain doom and gloom.",
+        "start": 151.32,
+        "end": 154.65
+      },
+      {
+        "text": "Having said that, whilst there’s no particular evidence",
+        "start": 155.1,
+        "end": 158.46
+      },
+      {
+        "text": "of Hugo’s postcards being censored, each postcard,",
+        "start": 158.46,
+        "end": 161.97
+      },
+      {
+        "text": "from every prisoner were checked, so that there was",
+        "start": 161.97,
+        "end": 166.74
+      },
+      {
+        "text": "no overt messages in there of, you know,",
+        "start": 166.74,
+        "end": 170.28
+      },
+      {
+        "text": "what the conditions were like.",
+        "start": 170.28,
+        "end": 171.75
+      },
+      {
+        "text": "It’s interesting to see [inaudible]",
+        "start": 172.14,
+        "end": 178.29
+      },
+      {
+        "text": "the concerns they have for people.",
+        "start": 178.29,
+        "end": 180.36
+      },
+      {
+        "text": "So they’re talking very little about themselves",
+        "start": 180.69,
+        "end": 184.38
+      },
+      {
+        "text": "Other than the daily routine and",
+        "start": 184.38,
+        "end": 186.18
+      },
+      {
+        "text": "And quite often inquiring about other people that they knew",
+        "start": 186.51,
+        "end": 190.41
+      },
+      {
+        "text": "in Vienna or that other family members or...",
+        "start": 190.41,
+        "end": 193.44
+      },
+      {
+        "text": "I’ve always been curious about the typed element of communications",
+        "start": 195.78,
+        "end": 201.6
+      },
+      {
+        "text": "from concentration camps, because there is some interest",
+        "start": 201.6,
+        "end": 207.3
+      },
+      {
+        "text": "in whether there is any coding in there.",
+        "start": 207.3,
+        "end": 209.37
+      },
+      {
+        "text": "And if you look at the postcards, there are quite often",
+        "start": 210.09,
+        "end": 215.57999999999998
+      },
+      {
+        "text": "what you’d class as a typewriter errors.",
+        "start": 215.85,
+        "end": 219.6
+      },
+      {
+        "text": "So one letter comes out as bold or",
+        "start": 220.02,
+        "end": 223.2
+      },
+      {
+        "text": "slightly different to the other letters.",
+        "start": 223.53,
+        "end": 225.75
+      },
+      {
+        "text": "And there’s two or three examples of that",
+        "start": 226.14,
+        "end": 229.29
+      },
+      {
+        "text": "across different postcards.",
+        "start": 229.29,
+        "end": 231.12
+      },
+      {
+        "text": "Now, not exclusive to Hugo,",
+        "start": 231.57,
+        "end": 234.18
+      },
+      {
+        "text": "but generally across communications",
+        "start": 234.27,
+        "end": 236.46
+      },
+      {
+        "text": "from concentration camps and holding camps.",
+        "start": 236.46,
+        "end": 239.64
+      },
+      {
+        "text": "Whether there is some coded messaging in there",
+        "start": 240.03,
+        "end": 243.39
+      },
+      {
+        "text": "by putting those letters together",
+        "start": 243.87,
+        "end": 246.45
+      },
+      {
+        "text": "and obviously in their language,",
+        "start": 246.45,
+        "end": 247.86
+      },
+      {
+        "text": "seeing if there’s any sort of - [inaudible]",
+        "start": 247.86,
+        "end": 250.77
+      },
+      {
+        "text": "It seems credible, that at some point,",
+        "start": 250.77,
+        "end": 261.24
+      },
+      {
+        "text": "somebody would have tried to",
+        "start": 261.66,
+        "end": 264.9
+      },
+      {
+        "text": "communicate certain details through this,",
+        "start": 265.08,
+        "end": 268.08
+      },
+      {
+        "text": "this writing, communication.",
+        "start": 268.11,
+        "end": 270
+      },
+      {
+        "text": "Because I can only sort of say from my own psyche,",
+        "start": 270,
+        "end": 274.29
+      },
+      {
+        "text": "I think I would definitely try to put, you know,",
+        "start": 274.38,
+        "end": 278.07
+      },
+      {
+        "text": "some sort of message out there that would hint",
+        "start": 278.22,
+        "end": 281.79
+      },
+      {
+        "text": "at what was actually happening,",
+        "start": 281.79,
+        "end": 283.29
+      },
+      {
+        "text": "especially with somewhere, for instance,",
+        "start": 283.29,
+        "end": 286.71
+      },
+      {
+        "text": "like Terezin that was used as a propaganda machine.",
+        "start": 286.71,
+        "end": 291.27
+      },
+      {
+        "text": "And of course, the people in Terezin",
+        "start": 291.81,
+        "end": 294.06
+      },
+      {
+        "text": "would be aware that that was being staged.",
+        "start": 294.06,
+        "end": 296.88
+      },
+      {
+        "text": "But I think the drive to actually, well, counter that",
+        "start": 297.27,
+        "end": 302.01
+      },
+      {
+        "text": "would be too tempting for people who are",
+        "start": 302.01,
+        "end": 305.52
+      },
+      {
+        "text": "going to be able to sit down and actually think:",
+        "start": 306.18,
+        "end": 308.37
+      },
+      {
+        "text": "How can I do this? How can I get-",
+        "start": 308.4,
+        "end": 310.08
+      },
+      {
+        "text": "even if it’s just one sentence: out.",
+        "start": 310.08,
+        "end": 313.02
+      },
+      {
+        "text": "Then you know it’s got to be worth a try.",
+        "start": 313.59,
+        "end": 316.38
+      },
+      {
+        "text": "[Shoshanah reading German]",
+        "start": 332.7,
+        "end": 336.51
+      },
+      {
+        "text": "Excerpt from the Nazi propaganda film about Theresienstadt.",
+        "start": 365.67,
+        "end": 370.14
+      },
+      {
+        "text": "So the library excerpt begins with a shot outside",
+        "start": 375.18,
+        "end": 378.57
+      },
+      {
+        "text": "And there’s a signposting to the library",
+        "start": 378.57,
+        "end": 381.03
+      },
+      {
+        "text": "And then it cuts to someone entering",
+        "start": 381.06,
+        "end": 383.76
+      },
+      {
+        "text": "the glass door of the library.",
+        "start": 383.76,
+        "end": 385.5
+      },
+      {
+        "text": "We see the library desk and the staff there.",
+        "start": 385.65,
+        "end": 388.08
+      },
+      {
+        "text": "There’s a lady.",
+        "start": 388.08,
+        "end": 389.01
+      },
+      {
+        "text": "And then there’s men conversing, holding books.",
+        "start": 389.49,
+        "end": 391.83
+      },
+      {
+        "text": "It all seems very professional.",
+        "start": 391.86,
+        "end": 393.57
+      },
+      {
+        "text": "We see straight into the library with",
+        "start": 393.6,
+        "end": 395.97
+      },
+      {
+        "text": "many, many stacks of books.",
+        "start": 396,
+        "end": 397.40999999999997
+      },
+      {
+        "text": "There must be hundreds of them.",
+        "start": 397.40999999999997,
+        "end": 398.85
+      },
+      {
+        "text": "It all seems very professional.",
+        "start": 399.3,
+        "end": 401.1
+      },
+      {
+        "text": "And there are men reading books in the library,",
+        "start": 401.49,
+        "end": 404.61
+      },
+      {
+        "text": "conversing over books, we see, what we think,",
+        "start": 404.61,
+        "end": 407.58
+      },
+      {
+        "text": "is Hugo Friedman in a suit and bow tie.",
+        "start": 407.58,
+        "end": 410.15999999999997
+      },
+      {
+        "text": "And he sits down at a desk.",
+        "start": 410.15999999999997,
+        "end": 411.84000000000003
+      },
+      {
+        "text": "Everyone is smartly dressed in suits with jackets.",
+        "start": 412.44,
+        "end": 415.68
+      },
+      {
+        "text": "And also wearing the Star of David badges.",
+        "start": 415.71,
+        "end": 418.65
+      },
+      {
+        "text": "When they arrived at Terezin,",
+        "start": 422.07,
+        "end": 423.84
+      },
+      {
+        "text": "they were allowing us a number of suitcases,",
+        "start": 424.62,
+        "end": 427.23
+      },
+      {
+        "text": "and he’d filled his suitcase with books,",
+        "start": 427.56,
+        "end": 431.16
+      },
+      {
+        "text": "I think much to his wife’s delight, you know,",
+        "start": 432.12,
+        "end": 435.12
+      },
+      {
+        "text": "rather than provisions and clothes,",
+        "start": 435.12,
+        "end": 437.7
+      },
+      {
+        "text": "and possibly medicines and things like that.",
+        "start": 438.09,
+        "end": 440.94
+      },
+      {
+        "text": "He’d actually brought books.",
+        "start": 440.97,
+        "end": 442.23
+      },
+      {
+        "text": "The postcards were sent to",
+        "start": 464.28,
+        "end": 466.44
+      },
+      {
+        "text": "number 16 Malzgasse in Vienna.",
+        "start": 466.5,
+        "end": 469.35
+      },
+      {
+        "text": "That is actually a synagogue.",
+        "start": 469.38,
+        "end": 471.3
+      },
+      {
+        "text": "Irma Doll’s home address was Bauernmarkt 21.",
+        "start": 471.42,
+        "end": 475.47
+      },
+      {
+        "text": "Rather than sending them to her home address,",
+        "start": 475.56,
+        "end": 477.93
+      },
+      {
+        "text": "Hugo and Hildegard was sending them to a synagogue.",
+        "start": 477.96,
+        "end": 480.75
+      },
+      {
+        "text": "A 16 minute walk from Irma’s",
+        "start": 480.81,
+        "end": 484.17
+      },
+      {
+        "text": "Bauernmarkt 21 address.",
+        "start": 484.41,
+        "end": 486.69
+      },
+      {
+        "text": "One of the interesting parts of",
+        "start": 493.2,
+        "end": 494.64
+      },
+      {
+        "text": "compiling an object biography",
+        "start": 495.06,
+        "end": 496.86
+      },
+      {
+        "text": "is looking at the geography almost,",
+        "start": 497.43,
+        "end": 501.87
+      },
+      {
+        "text": "of people involved around objects.",
+        "start": 501.9,
+        "end": 505.26
+      },
+      {
+        "text": "The: is it practical",
+        "start": 505.26,
+        "end": 507.9
+      },
+      {
+        "text": "and sensible that this Irma Doll",
+        "start": 508.08,
+        "end": 513.6
+      },
+      {
+        "text": "that I’ve located at this address",
+        "start": 513.63,
+        "end": 516.21
+      },
+      {
+        "text": "would have visited these addresses?",
+        "start": 516.81,
+        "end": 520.65
+      },
+      {
+        "text": "So she would have left her house,",
+        "start": 522.09,
+        "end": 525.27
+      },
+      {
+        "text": "but where I believe her house would have stood,",
+        "start": 525.36,
+        "end": 528.6
+      },
+      {
+        "text": "there’s some billboards up at the moment",
+        "start": 528.69,
+        "end": 530.61
+      },
+      {
+        "text": "and it looks to have been some development work.",
+        "start": 530.61,
+        "end": 533.07
+      },
+      {
+        "text": "And then she would have turned right",
+        "start": 533.31,
+        "end": 535.35
+      },
+      {
+        "text": "down on to Fleischmarkt.",
+        "start": 535.35,
+        "end": 537.48
+      },
+      {
+        "text": "And then she would have turned",
+        "start": 538.65,
+        "end": 540.78
+      },
+      {
+        "text": "onto Rotenturmstraße",
+        "start": 540.9,
+        "end": 543.6
+      },
+      {
+        "text": "and she would have more or less walked then,",
+        "start": 543.96,
+        "end": 545.85
+      },
+      {
+        "text": "in a straight line across",
+        "start": 545.85,
+        "end": 548.64
+      },
+      {
+        "text": "the river there, which would have brought her",
+        "start": 548.73,
+        "end": 552.51
+      },
+      {
+        "text": "onto the other side,",
+        "start": 551.43,
+        "end": 553.26
+      },
+      {
+        "text": "where she would have continued on to Marienbrücke,",
+        "start": 553.26,
+        "end": 555.81
+      },
+      {
+        "text": "and then she would have turned left on to",
+        "start": 556.41,
+        "end": 559.05
+      },
+      {
+        "text": "Obere Donaustraße.",
+        "start": 559.05,
+        "end": 560.4
+      },
+      {
+        "text": "She would have only walked 220 metres",
+        "start": 560.67,
+        "end": 563.73
+      },
+      {
+        "text": "and then turned right on to Friedrich-Wilhelm -",
+        "start": 563.85,
+        "end": 568.35
+      },
+      {
+        "text": "She would have ended up in Leopoldgasse",
+        "start": 572.61,
+        "end": 576.51
+      },
+      {
+        "text": "which is quite a Jewish area, it was then",
+        "start": 576.54,
+        "end": 580.14
+      },
+      {
+        "text": "and I believe it still is now.",
+        "start": 580.14,
+        "end": 582.69
+      },
+      {
+        "text": "She’s heading more towards the direction",
+        "start": 583.41,
+        "end": 585.54
+      },
+      {
+        "text": "of where the Friedman’s lived -",
+        "start": 585.54,
+        "end": 590.37
+      },
+      {
+        "text": "The intended location would have been,",
+        "start": 590.37,
+        "end": 592.62
+      },
+      {
+        "text": "at this stage, the synagogue on Malzgasse.",
+        "start": 592.62,
+        "end": 595.98
+      },
+      {
+        "text": "The synagogue was destroyed",
+        "start": 596.04,
+        "end": 598.74
+      },
+      {
+        "text": "as part of the Kristallnacht",
+        "start": 598.74,
+        "end": 600.57
+      },
+      {
+        "text": "But there’s also quite near there now,",
+        "start": 600.93,
+        "end": 603.57
+      },
+      {
+        "text": "quite interestingly, there’s a",
+        "start": 603.57,
+        "end": 605.01
+      },
+      {
+        "text": "a Sigmund Freud Museum as well",
+        "start": 605.16,
+        "end": 607.23
+      },
+      {
+        "text": "So then she would have got to the Synagogue",
+        "start": 607.35,
+        "end": 610.74
+      },
+      {
+        "text": "There. Now that’s where she would have been",
+        "start": 610.74,
+        "end": 612.69
+      },
+      {
+        "text": "collecting the letters from Hugo and his family.",
+        "start": 612.72,
+        "end": 616.38
+      },
+      {
+        "text": "It became a synagogue in 1906.",
+        "start": 616.38,
+        "end": 618.84
+      },
+      {
+        "text": "It was destroyed in 1938.",
+        "start": 618.84,
+        "end": 622.23
+      },
+      {
+        "text": "And then it was used for the infirm and elderly",
+        "start": 622.86,
+        "end": 627.06
+      },
+      {
+        "text": "from 1939 until 1942.",
+        "start": 627.06,
+        "end": 631.53
+      },
+      {
+        "text": "Because that might be Irma’s association",
+        "start": 631.95,
+        "end": 635.28
+      },
+      {
+        "text": "with this particular building,",
+        "start": 635.4,
+        "end": 637.38
+      },
+      {
+        "text": "other than the Jewish synagogue.",
+        "start": 637.38,
+        "end": 639.21
+      },
+      {
+        "text": "Because she was a nurse.",
+        "start": 640.08,
+        "end": 642.72
+      },
+      {
+        "text": "In June of 1942, it became one of the four",
+        "start": 643.89,
+        "end": 648.66
+      },
+      {
+        "text": "Jewish assembly points in Vienna,",
+        "start": 648.78,
+        "end": 651.63
+      },
+      {
+        "text": "in preparation for their deportation.",
+        "start": 651.9,
+        "end": 654.42
+      },
+      {
+        "text": "So that whole journey would have taken",
+        "start": 655.38,
+        "end": 657.54
+      },
+      {
+        "text": "about 16 minutes from her home,",
+        "start": 658.14,
+        "end": 661.23
+      },
+      {
+        "text": "across to the synagogue.",
+        "start": 661.68,
+        "end": 662.91
+      },
+      {
+        "text": "She could then continue on to the Friedmann’s house,",
+        "start": 663.66,
+        "end": 667.74
+      },
+      {
+        "text": "Obviously, when they were still resident there",
+        "start": 668.28,
+        "end": 671.07
+      },
+      {
+        "text": "before they were deported.",
+        "start": 671.37,
+        "end": 672.9
+      },
+      {
+        "text": "This this journey was particularly interesting to me,",
+        "start": 673.26,
+        "end": 677.88
+      },
+      {
+        "text": "because I wanted to be reassured",
+        "start": 677.88,
+        "end": 681.69
+      },
+      {
+        "text": "that I was looking at the right person.",
+        "start": 681.69,
+        "end": 683.91
+      },
+      {
+        "text": "To me to actually do at this stage",
+        "start": 686.34,
+        "end": 690.21
+      },
+      {
+        "text": "a Street View walk from Irma Doll’s home address",
+        "start": 690.21,
+        "end": 694.83
+      },
+      {
+        "text": "to the synagogue, and then a little bit further",
+        "start": 695.34,
+        "end": 698.58
+      },
+      {
+        "text": "to Hugo’s house in Vienna is quite fascinating.",
+        "start": 698.82,
+        "end": 702.87
+      },
+      {
+        "text": "Because I’m seeing what they saw,",
+        "start": 702.87,
+        "end": 704.94
+      },
+      {
+        "text": "to some extent I know the landscapes",
+        "start": 704.94,
+        "end": 706.95
+      },
+      {
+        "text": "and buildings have changed.",
+        "start": 706.95,
+        "end": 709.71
+      },
+      {
+        "text": "But not so drastically that you can’t be actually stood",
+        "start": 710.52,
+        "end": 713.94
+      },
+      {
+        "text": "on the same pavement or leant against the same wall",
+        "start": 713.94,
+        "end": 717.78
+      },
+      {
+        "text": "or looking at the same windows,",
+        "start": 717.93,
+        "end": 720.57
+      },
+      {
+        "text": "you know, touching the same door.",
+        "start": 720.66,
+        "end": 724.68
+      }
+    ]
   },
   {
     "slug": "wires-and-fences",
@@ -3201,64 +4083,134 @@
     "credits": "Heinz Skyte and family, Kath Shackleton from Fettle Animation, and the BBC",
     "transcript": [
       {
-        "text": "Well, you know you’re a survivor because you're there",
-        "start": 62.617,
-        "end": 69.25
+        "text": "Well, you know, you’re a survivor, because you are there.",
+        "start": 49.86,
+        "end": 54.9
       },
       {
-        "text": "Well obviously my contemporaries who committed these atrocities are dreadful",
-        "start": 69.251,
-        "end": 78
+        "text": "Well, obviously my contemporaries",
+        "start": 56.25,
+        "end": 58.23
       },
       {
-        "text": "but I’m concerned that...",
-        "start": 78.001,
-        "end": 81.233
+        "text": "who committed these atrocities are dreadful",
+        "start": 58.23,
+        "end": 64.349
       },
       {
-        "text": "sometimes think what I would have been if I hadn’t been Jewish",
-        "start": 81.23400000000001,
-        "end": 87.233
+        "text": "but I’m concerned that sometimes I think",
+        "start": 64.349,
+        "end": 69.6
+      },
+      {
+        "text": "what I would have been, if I hadn’t been Jewish.",
+        "start": 70.35,
+        "end": 73.95
       },
       {
         "text": "Would I have been a Nazi?",
-        "start": 87.23400000000001,
-        "end": 89.43299999999999
+        "start": 73.95,
+        "end": 75.24
       },
       {
-        "text": "And I probably would",
-        "start": 89.434,
-        "end": 91.267
+        "text": "And I probably would.",
+        "start": 76.41,
+        "end": 77.52
       },
       {
-        "text": "You know, it’s very difficult for a 12, 13, 14 year-old",
-        "start": 108.55,
-        "end": 112.717
+        "text": "You know, it’s very difficult for a 12, 13, 14 year old",
+        "start": 95.37,
+        "end": 99
       },
       {
-        "text": "to resist the temptations the Nazis offered for kids of that age",
-        "start": 112.718,
-        "end": 117.417
+        "text": "to resist the temptations",
+        "start": 99.81,
+        "end": 101.4
       },
       {
-        "text": "Uniforms, campfires, learning to shoot rifles",
-        "start": 140.883,
-        "end": 145.017
+        "text": "the Nazis offered for kids of that age.",
+        "start": 101.4,
+        "end": 103.86
       },
       {
-        "text": "Things like that as they had in the Hitler Youth",
-        "start": 145.417,
-        "end": 149.117
+        "text": "Uniforms, camp fires,",
+        "start": 128.00900000000001,
+        "end": 129.9
       },
       {
-        "text": "And, it’s very very difficult for a kid of that age to resist that temptation",
-        "start": 149.118,
-        "end": 154.883
+        "text": "learning to shoot rifles,",
+        "start": 130.5,
+        "end": 132.21
       },
       {
-        "text": "And not be part of the crowd",
-        "start": 155.133,
-        "end": 156.917
+        "text": "things like that, as they did in the Hitler Youth.",
+        "start": 132.57,
+        "end": 135.27
+      },
+      {
+        "text": "And it’s very, very difficult for a kid of that age",
+        "start": 136.07999999999998,
+        "end": 139.47
+      },
+      {
+        "text": "to resist that temptation",
+        "start": 139.89,
+        "end": 141.45
+      },
+      {
+        "text": "and not be part of the crowd.",
+        "start": 142.26,
+        "end": 143.88
+      },
+      {
+        "text": "It’s a warning I suppose to people to be vigilant,",
+        "start": 170.96,
+        "end": 174.26
+      },
+      {
+        "text": "not to be bystanders,",
+        "start": 174.92000000000002,
+        "end": 176.84
+      },
+      {
+        "text": "but to speak out if they encounter bad things",
+        "start": 177.56,
+        "end": 182.09
+      },
+      {
+        "text": "or evil things.",
+        "start": 182.6,
+        "end": 183.71
+      },
+      {
+        "text": "This is exactly what’s happened:",
+        "start": 186.08,
+        "end": 187.88
+      },
+      {
+        "text": "The Germans stood by and did nothing",
+        "start": 188.33,
+        "end": 191.75
+      },
+      {
+        "text": "So that is the warning:",
+        "start": 191,
+        "end": 236.06
+      },
+      {
+        "text": "and sometimes enthusiastic supporters of Hitler.",
+        "start": 191.52,
+        "end": 234.15
+      },
+      {
+        "text": "Constant vigilance.",
+        "start": 237.65,
+        "end": 238.85
+      },
+      {
+        "text": "Constant vigilance.",
+        "start": 239.45,
+        "end": 240.65
       }
     ]
   },
@@ -3268,7 +4220,579 @@
     "artist": "Louise K Wilson",
     "duration": 552.045714,
     "bgColor": "rgb(170, 161, 108)",
-    "credits": "Judith Rhodes and Gunter Demnig"
+    "credits": "Judith Rhodes and Gunter Demnig",
+    "transcript": [
+      {
+        "text": "Hier wohnte -",
+        "start": 5.13,
+        "end": 5.94
+      },
+      {
+        "text": "Hier wohnte -",
+        "start": 8.13,
+        "end": 12.18
+      },
+      {
+        "text": "- deportiert.",
+        "start": 12.18,
+        "end": 12.84
+      },
+      {
+        "text": "- deportiert.",
+        "start": 15.15,
+        "end": 15.21
+      },
+      {
+        "text": "- ermordert.",
+        "start": 15.21,
+        "end": 17.79
+      },
+      {
+        "text": "They’re made out of brass and",
+        "start": 22.95,
+        "end": 25.44
+      },
+      {
+        "text": "they they always start off with:",
+        "start": 26.58,
+        "end": 28.65
+      },
+      {
+        "text": "‘Hier wohnte’",
+        "start": 28,
+        "end": 28.57
+      },
+      {
+        "text": "‘Hier lebte’",
+        "start": 28.57,
+        "end": 30.19
+      },
+      {
+        "text": "or sometimes ‘hier arbeitete’",
+        "start": 30.22,
+        "end": 31.96
+      },
+      {
+        "text": "‘here worked’ and then,",
+        "start": 31.96,
+        "end": 33.73
+      },
+      {
+        "text": "the name of the person, their year of birth.",
+        "start": 33.73,
+        "end": 36.7
+      },
+      {
+        "text": "And after that as much information as is known",
+        "start": 37.09,
+        "end": 40.96
+      },
+      {
+        "text": "about their eventual fate.",
+        "start": 40.99,
+        "end": 44.35
+      },
+      {
+        "text": "Sometimes there is a notation",
+        "start": 48.31,
+        "end": 52.36
+      },
+      {
+        "text": "that the person committed suicide",
+        "start": 52.36,
+        "end": 54.07
+      },
+      {
+        "text": "and they’re kind of quite affecting",
+        "start": 55.96,
+        "end": 58.24
+      },
+      {
+        "text": "the way it’s phrased sometimes it's sort of:",
+        "start": 58.24,
+        "end": 60.37
+      },
+      {
+        "text": "‘Selbstmord’, but I read one that said:",
+        "start": 60.43,
+        "end": 63.58
+      },
+      {
+        "text": "‘Fled into death.’",
+        "start": 64.03,
+        "end": 65.38
+      },
+      {
+        "text": "It’s an another way to learn history.",
+        "start": 75.25,
+        "end": 78.52
+      },
+      {
+        "text": "It’s an open book and you're reading:",
+        "start": 82.18,
+        "end": 84.91
+      },
+      {
+        "text": "They killed 6 million Jews.",
+        "start": 85.53999999999999,
+        "end": 87.88
+      },
+      {
+        "text": "That’s abstract.",
+        "start": 88.92,
+        "end": 91.2
+      },
+      {
+        "text": "But when the students just around the corner,",
+        "start": 93.24000000000001,
+        "end": 97.35
+      },
+      {
+        "text": "in their neighbourhood,",
+        "start": 98.61,
+        "end": 99.45
+      },
+      {
+        "text": "they can imagine and that idea they can read:",
+        "start": 101.31,
+        "end": 106.47
+      },
+      {
+        "text": "‘Paul, he was so old as me.’",
+        "start": 107.07,
+        "end": 109.86
+      },
+      {
+        "text": "When he was deported.",
+        "start": 111.84,
+        "end": 113.16
+      },
+      {
+        "text": "I think that’s another way to learn history.",
+        "start": 115.28999999999999,
+        "end": 119.4
+      },
+      {
+        "text": "In the old part of Cologne, the South part,",
+        "start": 133.14,
+        "end": 136.47
+      },
+      {
+        "text": "old women came and said to me:",
+        "start": 137.22,
+        "end": 140.85
+      },
+      {
+        "text": "Well, it’s pretty good what you're doing here",
+        "start": 141.18,
+        "end": 144.15
+      },
+      {
+        "text": "But here in our area, never lived gypsy people",
+        "start": 145.11,
+        "end": 151.2
+      },
+      {
+        "text": "and she really don’t know.",
+        "start": 152.57999999999998,
+        "end": 154.23
+      },
+      {
+        "text": "And it was ther same with the Jewish population.",
+        "start": 158.98,
+        "end": 162.13
+      },
+      {
+        "text": "They were totally, well, neighbours",
+        "start": 163.06,
+        "end": 167.77
+      },
+      {
+        "text": "And that was at least idea to bring back some names in front of the houses where it started",
+        "start": 168.79,
+        "end": 176.56
+      },
+      {
+        "text": "where other people were at their home",
+        "start": 176.82999999999998,
+        "end": 179.05
+      },
+      {
+        "text": "and then were called out",
+        "start": 179,
+        "end": 180.95
+      },
+      {
+        "text": "and were deported.",
+        "start": 181.94,
+        "end": 182.84
+      },
+      {
+        "text": "And bring back the names, that was -",
+        "start": 184.49,
+        "end": 186.56
+      },
+      {
+        "text": "Then I had a contact to the rabbi of Cologne",
+        "start": 186.56,
+        "end": 191
+      },
+      {
+        "text": "and he told me, I don’t know where it is in the Talmud.",
+        "start": 191.72,
+        "end": 196.19
+      },
+      {
+        "text": "But a man is forgotten when his name is forgotten.",
+        "start": 196.49,
+        "end": 199.34
+      },
+      {
+        "text": "That was idea to bring back the names.",
+        "start": 199.79,
+        "end": 202.22
+      },
+      {
+        "text": "Alfred Levy, Jahrgang 1881. Deportiert 1940 Gürs. 1942 - Ermordet.",
+        "start": 209.23,
+        "end": 218.77
+      },
+      {
+        "text": "They were cousins.",
+        "start": 224.24,
+        "end": 225.92000000000002
+      },
+      {
+        "text": "One of my great grandmother.",
+        "start": 227.72,
+        "end": 230.15
+      },
+      {
+        "text": "Older members of my family.",
+        "start": 233.15,
+        "end": 234.65
+      },
+      {
+        "text": "They were old men at the time,",
+        "start": 234.65,
+        "end": 237.26
+      },
+      {
+        "text": "who lived in a small town",
+        "start": 237.54,
+        "end": 239.55
+      },
+      {
+        "text": "on the Southern German Weinstraße,",
+        "start": 239.55,
+        "end": 241.8
+      },
+      {
+        "text": "and they were very, very much loved",
+        "start": 242.37,
+        "end": 246.6
+      },
+      {
+        "text": "members of the community",
+        "start": 246.6,
+        "end": 248.1
+      },
+      {
+        "text": "and very sadly missed when they were deported.",
+        "start": 248.16,
+        "end": 251.4
+      },
+      {
+        "text": "And there are still a handful of people alive today",
+        "start": 252.03,
+        "end": 256.23
+      },
+      {
+        "text": "who were children in the 1930s",
+        "start": 256.26,
+        "end": 257.94
+      },
+      {
+        "text": "who have very, very fond memories of these two old men.",
+        "start": 257.27,
+        "end": 261.62
+      },
+      {
+        "text": "...von Alfred Levy and seinem Bruder Gustav.",
+        "start": 261,
+        "end": 264.69
+      },
+      {
+        "text": "erzählte die heute 84-Jährige.",
+        "start": 264.18,
+        "end": 270.2
+      },
+      {
+        "text": "Oft machte sie einen Abstecher zur Wohnung der Levys,",
+        "start": 265.02,
+        "end": 267.84
+      },
+      {
+        "text": "Alfred, the younger brother by 10 years,",
+        "start": 280.32,
+        "end": 283.26
+      },
+      {
+        "text": "was very well known in Klingenmünster, their hometown.",
+        "start": 283.5,
+        "end": 286.95
+      },
+      {
+        "text": "He worked as a travelling salesman of",
+        "start": 287.4,
+        "end": 291.24
+      },
+      {
+        "text": "farming and domestic equipment.",
+        "start": 291.9,
+        "end": 295.02
+      },
+      {
+        "text": "and also ran a shop.",
+        "start": 295.02,
+        "end": 296.55
+      },
+      {
+        "text": "The brothers lived together.",
+        "start": 297.12,
+        "end": 299.1
+      },
+      {
+        "text": "They had a housekeeper",
+        "start": 299.90999999999997,
+        "end": 301.86
+      },
+      {
+        "text": "until it was forbidden by law",
+        "start": 302.58,
+        "end": 305.25
+      },
+      {
+        "text": "for Gentiles to work for Jewish families.",
+        "start": 305.25,
+        "end": 307.77
+      },
+      {
+        "text": "And then she had to stop looking after them.",
+        "start": 307.77,
+        "end": 310.05
+      },
+      {
+        "text": "He was very, very popular.",
+        "start": 314.1,
+        "end": 317.4
+      },
+      {
+        "text": "The children absolutely loved him.",
+        "start": 317.76,
+        "end": 319.59
+      },
+      {
+        "text": "He allowed them to run riot in their house,",
+        "start": 319.83,
+        "end": 323.61
+      },
+      {
+        "text": "play games with them,",
+        "start": 323.64,
+        "end": 325.29
+      },
+      {
+        "text": "fed them sweets and biscuits,",
+        "start": 325.65,
+        "end": 327.27
+      },
+      {
+        "text": "allowed them to ride on his horse.",
+        "start": 327.3,
+        "end": 330.18
+      },
+      {
+        "text": "They were much more innocent times.",
+        "start": 331.41,
+        "end": 333.24
+      },
+      {
+        "text": "Tripping the memory, or tripping the thoughts.",
+        "start": 339.93,
+        "end": 342.48
+      },
+      {
+        "text": "Sometimes people asked me:",
+        "start": 349.89,
+        "end": 352.8
+      },
+      {
+        "text": "‘You can make it in the Fabrik, by machine.’",
+        "start": 352,
+        "end": 357.67
+      },
+      {
+        "text": "But then I say:",
+        "start": 358.9,
+        "end": 360.01
+      },
+      {
+        "text": "‘Auschwitz was a fabric - for death.’",
+        "start": 361.15,
+        "end": 364.69
+      },
+      {
+        "text": "So, every stone is made by hand, individually.",
+        "start": 367.47,
+        "end": 372.36
+      },
+      {
+        "text": "I think it’s very important.",
+        "start": 375.21,
+        "end": 376.41
+      },
+      {
+        "text": "When I started, for me as an artist,",
+        "start": 390.9,
+        "end": 393.48
+      },
+      {
+        "text": "it was conceptual art.",
+        "start": 394.17,
+        "end": 395.52
+      },
+      {
+        "text": "In the way, I’d never had the idea to realise.",
+        "start": 396.93,
+        "end": 400.2
+      },
+      {
+        "text": "But what then a priest in Cologne,",
+        "start": 402.3,
+        "end": 406.38
+      },
+      {
+        "text": "a Protestant priest, who told me:",
+        "start": 406.38,
+        "end": 409.38
+      },
+      {
+        "text": "‘Well Gunter, you will never reach the million,",
+        "start": 409.62,
+        "end": 412.47
+      },
+      {
+        "text": "but you can start small.’",
+        "start": 413.52,
+        "end": 415.40999999999997
+      },
+      {
+        "text": "Well now, it’s I think, next year to go to:",
+        "start": 416.25,
+        "end": 422.91
+      },
+      {
+        "text": "100,000 stones. In 29 countries in Europe.",
+        "start": 422.09,
+        "end": 429.2
+      },
+      {
+        "text": "Maybe 30 countries.",
+        "start": 430.22,
+        "end": 431.72
+      },
+      {
+        "text": "And that’s idea:",
+        "start": 433.22,
+        "end": 434.39
+      },
+      {
+        "text": "to bring the stones to every country in Europe",
+        "start": 434.51,
+        "end": 437.72
+      },
+      {
+        "text": "where the Deutsche Wehrmacht, the SS, the Gestapo",
+        "start": 438.26,
+        "end": 443.72
+      },
+      {
+        "text": "deported people, killed people and with terror.",
+        "start": 444.56,
+        "end": 447.92
+      },
+      {
+        "text": "That there as a symbol, be these stones.",
+        "start": 448.55,
+        "end": 453.62
+      },
+      {
+        "text": "And that will go on and on.",
+        "start": 468.78,
+        "end": 470.07
+      },
+      {
+        "text": "And for this I made a foundation,",
+        "start": 470.88,
+        "end": 473.94
+      },
+      {
+        "text": "that it can go on, because well I’m born in ‘47, so.",
+        "start": 474.45,
+        "end": 480.03
+      },
+      {
+        "text": "But I think it will. It is for the future.",
+        "start": 482.55,
+        "end": 487.59
+      },
+      {
+        "text": "And especially young people are really, very interested.",
+        "start": 489.45,
+        "end": 495.9
+      },
+      {
+        "text": "How could this happened in the so called",
+        "start": 497.19,
+        "end": 500.85
+      },
+      {
+        "text": "Land der Dichter und Denker. Germany.",
+        "start": 501.29,
+        "end": 504.53
+      },
+      {
+        "text": "And at least, never have it happen again.",
+        "start": 506.15,
+        "end": 511.13
+      },
+      {
+        "text": "Hier wohnte -",
+        "start": 524.18,
+        "end": 524.93
+      },
+      {
+        "text": "Hier wohnte -",
+        "start": 527.15,
+        "end": 527.93
+      },
+      {
+        "text": "Deportiert.",
+        "start": 531.14,
+        "end": 531.83
+      },
+      {
+        "text": "Deportiert.",
+        "start": 534.14,
+        "end": 534.86
+      },
+      {
+        "text": "Ermordert.",
+        "start": 536.24,
+        "end": 536.81
+      }
+    ]
   },
   {
     "slug": "enosh",

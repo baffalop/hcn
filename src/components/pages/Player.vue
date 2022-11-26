@@ -68,10 +68,7 @@
           </RouterLink>
 
           <div class="col-span-full max-w-lg">
-            <p>
-              With grateful thanks to:
-            </p>
-
+            <p>With grateful thanks to:</p>
             <p v-html="track.credits"></p>
           </div>
 

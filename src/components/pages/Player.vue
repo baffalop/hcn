@@ -74,7 +74,7 @@
 
           <div class="col-span-full space-x-6">
             <img src="/logo/heritage-fund.svg" alt="Heritage Fund logo" class="inline h-10">
-            <img src="/logo/iwm.svg" alt="Heritage Fund logo" class="inline h-10">
+            <img src="/logo/iwm.svg" alt="Imperial War Museums logo" class="inline h-10">
           </div>
         </div>
       </Transition>

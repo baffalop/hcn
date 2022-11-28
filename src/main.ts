@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-import '@/tailwind.css'
 import '@/styles.css'
 
 import { tracks } from '@/data/tracks'

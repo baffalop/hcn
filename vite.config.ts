@@ -2,8 +2,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import checker from 'vite-plugin-checker'
 import legacy from '@vitejs/plugin-legacy'
-import { VitePWA } from 'vite-plugin-pwa'
 import compression from 'vite-plugin-compression'
+import imagemin from 'vite-plugin-imagemin'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,8 +12,11 @@ export default defineConfig({
   plugins: [
     vue(),
     checker({ vueTsc: true }),
-    compression(),
     legacy(),
+    compression(),
+    imagemin({
+      svgo: false, // svgo removes ids required for Icon.vue's <use> tag
+    }),
     VitePWA({
       strategies: 'injectManifest',
       srcDir: 'src',

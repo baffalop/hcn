@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   mode: 'jit',
   content: [
@@ -8,7 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         agrandir: ['Agrandir'],
-        editorial: ['"Editorial New"']
+        editorial: ['"Editorial New"'],
       },
       colors: {
         accent: 'var(--theme-color)',
@@ -134,5 +136,19 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addComponents }) => {
+      addComponents({
+        '.filter-accent': {
+          filter: 'brightness(.7) hue-rotate(-30deg)',
+        },
+        '.backdrop-filter-accent': {
+          backdropFilter: 'brightness(0.7) hue-rotate(-30deg)',
+        },
+        '.filter-accent-pale': {
+          filter: 'brightness(2) saturate(.4)',
+        },
+      })
+    }),
+  ],
 }

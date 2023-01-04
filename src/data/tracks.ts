@@ -11,4 +11,4 @@ export interface Track {
   transcript?: Transcription
 }
 
-export const tracks = tracksJson as Track[]
+export const tracks: Track[] = tracksJson

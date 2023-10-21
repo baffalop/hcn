@@ -1,6 +1,7 @@
-const plugin = require('tailwindcss/plugin')
+import { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
-module.exports = {
+export default {
   mode: 'jit',
   content: [
     './index.html',
@@ -151,4 +152,4 @@ module.exports = {
       })
     }),
   ],
-}
+} satisfies Config

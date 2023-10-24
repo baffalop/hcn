@@ -85,14 +85,10 @@
     </div>
 
     <Icon
+      ref="arrowEl"
       src="/icon/arrow-back-straight.svg"
       class="arrow w-16 transform -rotate-90 mx-auto mt-14 mb-6"
       :class="arrowVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'"
-      v-intersect="{
-        observerOptions: { threshold: 1 },
-        onChange: onArrowVisible,
-        disposeWhen: true,
-      }"
     />
 
     <div
@@ -113,9 +109,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useWindowScroll } from '@vueuse/core'
+import { useWindowScroll, useIntersectionObserver } from '@vueuse/core'
 
 import { tracks } from '@/data/tracks'
 import { setTheme } from '@/composable/theme'
@@ -146,13 +142,14 @@ const menu = ref<HTMLElement>()
 
 const router = useRouter()
 
+const arrowEl = ref<HTMLDivElement>()
 const arrowVisible = ref(false)
-async function onArrowVisible (visible: boolean): Promise<void> {
-  if (visible) {
-    await nextTick()
+const { stop } = useIntersectionObserver(arrowEl, ([{ isIntersecting }]) => {
+  if (isIntersecting) {
     arrowVisible.value = true
+    stop()
   }
-}
+}, { threshold: 1 })
 
 onMounted(() => {
   if (router.currentRoute.value.name === 'menu') {

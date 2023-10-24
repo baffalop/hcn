@@ -113,8 +113,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useWindowScroll } from '@vueuse/core'
 
 import { tracks } from '@/data/tracks'
 import { setTheme } from '@/composable/theme'
@@ -129,7 +130,8 @@ const BRIGHTNESS_SCROLL_SCALE = 320
 const LOGO_SCROLL_SCALE = 90
 const LOGO_SCROLL_OFFSET = 190
 
-const scrollY = ref(0)
+const { y: scrollY } = useWindowScroll()
+
 const titleImageOpacity = computed(
   () => Math.max(0, OPACITY_SCROLL_SCALE - scrollY.value) * 100 / OPACITY_SCROLL_SCALE
 )
@@ -153,20 +155,10 @@ async function onArrowVisible (visible: boolean): Promise<void> {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', onScroll)
-
   if (router.currentRoute.value.name === 'menu') {
     menu.value?.scrollIntoView()
   }
 })
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
-})
-
-function onScroll (): void {
-  scrollY.value = window.scrollY
-}
 
 function onMenuIntersect (isIntersecting: boolean): void {
   router.replace({ name: isIntersecting ? 'menu' : 'index' })

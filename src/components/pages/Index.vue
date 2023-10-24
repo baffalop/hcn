@@ -85,20 +85,13 @@
     </div>
 
     <Icon
-      ref="arrowEl"
+      ref="arrow"
       src="/icon/arrow-back-straight.svg"
       class="arrow w-16 transform -rotate-90 mx-auto mt-14 mb-6"
       :class="arrowVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'"
     />
 
-    <div
-      ref="menu"
-      v-intersect="{
-        observerOptions: { threshold: 0.5 },
-        onChange: onMenuIntersect
-      }"
-      class="py-12 px-6 w-full min-h-screen flex flex-col items-center justify-center relative"
-    >
+    <div ref="menu" class="py-12 px-6 w-full min-h-screen flex flex-col items-center justify-center relative">
       <ul class="w-full space-y-8 flex flex-col items-center">
         <li v-for="(track, i) in tracks" :style="{ marginLeft: `${itemMargin(i)}%` }">
           <TrackLink :track="track" />
@@ -115,7 +108,6 @@ import { useWindowScroll, useIntersectionObserver } from '@vueuse/core'
 
 import { tracks } from '@/data/tracks'
 import { setTheme } from '@/composable/theme'
-import { vIntersect } from '@/directive/intersect'
 import TrackLink from '@components/TrackLink.vue'
 import Icon from '@components/Icon.vue'
 
@@ -139,27 +131,27 @@ const blobsBrightness = computed(
 )
 
 const menu = ref<HTMLElement>()
+const arrow = ref<HTMLDivElement>()
 
 const router = useRouter()
 
-const arrowEl = ref<HTMLDivElement>()
 const arrowVisible = ref(false)
-const { stop } = useIntersectionObserver(arrowEl, ([{ isIntersecting }]) => {
+const { stop } = useIntersectionObserver(arrow, ([{ isIntersecting }]) => {
   if (isIntersecting) {
     arrowVisible.value = true
     stop()
   }
 }, { threshold: 1 })
 
+useIntersectionObserver(menu, ([{ isIntersecting }]) => {
+  router.replace({ name: isIntersecting ? 'menu' : 'index' })
+}, { threshold: 0.5 })
+
 onMounted(() => {
   if (router.currentRoute.value.name === 'menu') {
     menu.value?.scrollIntoView()
   }
 })
-
-function onMenuIntersect (isIntersecting: boolean): void {
-  router.replace({ name: isIntersecting ? 'menu' : 'index' })
-}
 
 function itemMargin (index: number): number {
   return Math.sin(index * 0.8) * -30

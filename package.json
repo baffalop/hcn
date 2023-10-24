@@ -11,6 +11,7 @@
     "generate-track-metadata": "node script/generateTrackMetadata.mjs"
   },
   "dependencies": {
+    "@vueuse/core": "^10.5.0",
     "srt-parser-2": "^1.1.8",
     "vue": "^3.2.40",
     "vue-router": "^4.1.5",

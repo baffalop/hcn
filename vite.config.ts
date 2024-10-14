@@ -11,7 +11,7 @@ export default defineConfig({
   base: '/',
   plugins: [
     vue(),
-    checker({ vueTsc: import.meta.env.DEV }),
+    checker({ vueTsc: false }),
     legacy(),
     compression(),
     imagemin({

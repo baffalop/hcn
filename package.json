@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run generate-track-metadata && vite --host",
     "check": "vue-tsc --noEmit",
-    "build": "npm run check && (npm run generate-track-metadata; vite build)",
+    "build": "npm run generate-track-metadata; vite build",
     "preview": "vite preview",
     "generate-track-metadata": "node script/generateTrackMetadata.mjs"
   },

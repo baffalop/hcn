@@ -11,7 +11,7 @@ export default defineConfig({
   base: '/',
   plugins: [
     vue(),
-    checker({ vueTsc: false }),
+    checker({ vueTsc: true }),
     legacy(),
     compression(),
     imagemin({
@@ -57,5 +57,12 @@ export default defineConfig({
       '@': '/src',
       '@components': '/src/components',
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        format: 'esm',
+      },
+    },
   },
 })

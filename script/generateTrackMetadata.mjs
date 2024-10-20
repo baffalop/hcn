@@ -56,7 +56,7 @@ async function tryReadSrt (slug) {
     console.log(`found and parsed srt for ${slug}`)
 
     return parsed.map(({ text, startSeconds, endSeconds }) => ({
-      text: toCurlyQuotes(text),
+      text: fixTypography(text),
       start: startSeconds,
       end: endSeconds,
     }))
@@ -73,12 +73,14 @@ async function tryReadSrt (slug) {
 
 /**
  * Detect uses of apostrophy (') and convert to left and right quotes (‘ and ’)
+ * Replace hyphens with en-dashes
  *
  * @param {string} text
  * @return {string}
  */
-function toCurlyQuotes (text) {
+function fixTypography (text) {
   return text
     .replace(/^'|(?<=\s)'/g, '‘')
     .replace(/'/g, '’')
+    .replace(/^-|-(?=\s|$)/g, '–')
 }

@@ -80,5 +80,5 @@ async function tryReadSrt (slug) {
 function toCurlyQuotes (text) {
   return text
     .replace(/^'|(?<=\s)'/g, '‘')
-    .replace("'", '’')
+    .replace(/'/g, '’')
 }

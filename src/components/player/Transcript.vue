@@ -6,19 +6,19 @@
     <TransitionGroup
       v-if="enabled"
       tag="div"
-      class="h-24 w-screen px-4 flex flex-col justify-center relative"
-      name="line"
-      move-class="transition-all !duration-500 ease-in-out"
+      class="h-24 w-screen px-4 flex flex-col justify-center"
+      :duration="700"
+      move-class="!duration-500 ease-in-out"
       enter-from-class="!opacity-0 translate-y-10"
       enter-to-class="opacity-100"
-      enter-active-class="!duration-700 transition-all ease-in-out transform"
+      enter-active-class="transition-all !duration-700 ease-in-out transform"
       leave-from-class="opacity-100"
       leave-to-class="!opacity-0 -translate-y-10"
-      leave-active-class="!duration-500 ease-in-out absolute w-screen transform"
+      leave-active-class="absolute top-0 left-0 w-screen !duration-500 ease-in-out transform"
     >
       <p
         :key="enabled ? previousLine?.start.toFixed(0) ?? 'noprev' : 'noprev'"
-        class="text-gray-100/60 transition-opacity duration-700"
+        class="text-gray-100/60 transition-all duration-700"
         :class="enabled && hasPreviousLine ? 'opacity-100' : 'opacity-0'"
       >
         {{ enabled ? previousLine?.text : '' }}
@@ -26,7 +26,7 @@
 
       <p
         :key="enabled ? currentLine?.start.toFixed(0) ?? 'none' : 'none'"
-        class="text-grey-100 transition-opacity duration-700"
+        class="text-grey-100 transition-all duration-700"
         :class="enabled && hasCurrentLine ? 'opacity-100' : 'opacity-0'"
       >
         {{ enabled ? currentLine?.text : '' }}

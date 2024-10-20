@@ -34,7 +34,7 @@
       }"
     >
 
-    <div class="intro mt-6 px-6 mx-auto max-w-screen-md relative text-left text-justify space-y-6">
+    <div class="intro mt-6 px-6 mx-auto max-w-screen-md relative text-justify space-y-6">
       <p>Dear Listener,</p>
 
       <p>
